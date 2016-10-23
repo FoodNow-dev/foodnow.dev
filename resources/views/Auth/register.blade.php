@@ -7,7 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css">
 @stop
 
-
 @section('content')
 
 <!-- Top content -->
@@ -16,7 +15,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-7 text text-center show-box animated flipInX">
-						<p><img src="/img/foodnow.png"></p>
+						<p><img src="/assets/img/foodnow.png"></p>
 						<h1><strong>FoodNow</strong> Registration Form</h1>
 						<div class="description">
 							<p>

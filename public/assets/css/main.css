@@ -1,5 +1,5 @@
 body{
-	background:url(/img/dining.jpg);
+	background:url(/assets/img/dining.jpg);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: 0px 215px;
@@ -124,7 +124,6 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 @media(max-width:768px) {
 	#login-dp {
 		background-color: inherit;
-		color: #fff;
 	}
 	#login-dp .bottom {
 		background-color: inherit;
@@ -148,7 +147,7 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 		padding-left: none;
 	}
 
-	.top-content .text { padding-top: 0; padding-bottom: 60px; }
+	.top-content .text { margin-top: 50px; padding-top: 0; padding-bottom: 60px; }
 	.top-content .top-big-link { margin-top: 25px; }
 	.top-content .top-big-link a.btn { margin-top: 10px; }
 }
