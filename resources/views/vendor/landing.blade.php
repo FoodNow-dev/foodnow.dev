@@ -16,29 +16,20 @@
 				<div class="row">
 					<div class="col-sm-7 text">
 						<h1>My Restaurant Preferences:</h1>
-						<div class="col-sm-7 text-left">
-							<div class="btn-group">
-								<button type="button" class="btn btn-danger">How far are you willing to go?</button>
-								<button type="button" class="btn bth-danger dropdown-toggle dropdown-tog">
-									<span class="sr-only">Toggle Drowpdown</span>
-								</button>
+						{{-- <div class="col-sm-7 text-left"> --}}
+							<div class="btn-group col-sm-7">
+								{{-- <button type="button" class="btn btn-danger">How far are you willing to go?</button> --}}
+								 <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    							How far are you willing to go?
+    							</button>
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="#">5 miles</a>
-									<a class="dropdown-item" href="#">Another action</a>
-									{{-- 	<label><input type="checkbox" value="">5 miles</label>
-									</div> --}}
-								{{-- 	<div class="checkbox">
-										<label><input type="checkbox" value="">10 miles</label>
-									</div>
-									<div class="checkbox">
-										<label><input type="checkbox" value="">15 miles</label>
-									</div>
-									<div class="checkbox">
-										<label><input type="checkbox" value"">20 miles</label>
-									</div> --}}
+									<div><a class="dropdown-item" href="#">5 miles</a></div>
+									<div><a class="dropdown-item" href="#">10 miles</a></div>
+									<div><a class="dropdown-item" href="#">15 miles</a></div>
+									<div><a class="dropdown-item" href="#">20 miles</a></div>
 								</div>
 							</div>
-						</div>
+						{{-- </div> --}}
 						<div class="col-sm-7 text-left">
 							<h4>What is your price range?</h4>
 							<div class="checkbox">
