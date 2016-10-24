@@ -16,10 +16,10 @@ class CreateFavoritesTable extends Migration
             
             $table->increments('id');
 
-            $table->string('user_id');
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->string('rest_id');
+            $table->integer('rest_id')->unsigned();
             $table->foreign('rest_id')->references('id')->on('restaurants');
 
             $table->timestamps();
@@ -34,6 +34,6 @@ class CreateFavoritesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('favorites')
+        Schema::drop('favorites');
     }
 }
