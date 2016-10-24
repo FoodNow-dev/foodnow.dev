@@ -14,21 +14,23 @@
 		<div class="inner-bg">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-7 text text-center">
+					<div class="col-sm-7 text">
 						<h1>My Restaurant Preferences:</h1>
 						<div class="col-sm-7 text-left">
-							<h4>How far are you willing to go?</h4>
-							<div class="checkbox">
-								<label><input type="checkbox" value="">5 miles</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value="">10 miles</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value="">15 miles</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value"">20 miles</label>
+							<div class="btn-group">
+								<h4>How far are you willing to go?</h4>
+								<div class="checkbox">
+									<label><input type="checkbox" value="">5 miles</label>
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox" value="">10 miles</label>
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox" value="">15 miles</label>
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox" value"">20 miles</label>
+								</div>
 							</div>
 						</div>
 						<div class="col-sm-7 text-left">
@@ -87,6 +89,7 @@
 							<div class="checkbox">
 								<label><input type="checkbox" value"">Vietnamese</label>
 							</div>
+					 	<button type="button" class="btn btn-primary center-block">Submit</button>
 							
 						</div>
 					</div>
