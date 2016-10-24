@@ -18,18 +18,24 @@
 						<h1>My Restaurant Preferences:</h1>
 						<div class="col-sm-7 text-left">
 							<div class="btn-group">
-								<h4>How far are you willing to go?</h4>
-								<div class="checkbox">
-									<label><input type="checkbox" value="">5 miles</label>
-								</div>
-								<div class="checkbox">
-									<label><input type="checkbox" value="">10 miles</label>
-								</div>
-								<div class="checkbox">
-									<label><input type="checkbox" value="">15 miles</label>
-								</div>
-								<div class="checkbox">
-									<label><input type="checkbox" value"">20 miles</label>
+								<button type="button" class="btn btn-danger">How far are you willing to go?</button>
+								<button type="button" class="btn bth-danger dropdown-toggle dropdown-tog">
+									<span class="sr-only">Toggle Drowpdown</span>
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">5 miles</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									{{-- 	<label><input type="checkbox" value="">5 miles</label>
+									</div> --}}
+								{{-- 	<div class="checkbox">
+										<label><input type="checkbox" value="">10 miles</label>
+									</div>
+									<div class="checkbox">
+										<label><input type="checkbox" value="">15 miles</label>
+									</div>
+									<div class="checkbox">
+										<label><input type="checkbox" value"">20 miles</label>
+									</div> --}}
 								</div>
 							</div>
 						</div>
