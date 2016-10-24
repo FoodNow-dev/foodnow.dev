@@ -16,9 +16,7 @@
 				<div class="row">
 					<div class="col-sm-7 text">
 						<h1>My Restaurant Preferences:</h1>
-						{{-- <div class="col-sm-7 text-left"> --}}
 							<div class="btn-group col-sm-7">
-								{{-- <button type="button" class="btn btn-danger">How far are you willing to go?</button> --}}
 								 <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     							How far are you willing to go?
     							</button>
@@ -29,21 +27,16 @@
 									<div><a class="dropdown-item" href="#">20 miles</a></div>
 								</div>
 							</div>
-						{{-- </div> --}}
 						<div class="col-sm-7 text-left">
-							<h4>What is your price range?</h4>
-							<div class="checkbox">
-								<label><input type="checkbox" value="">$</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value="">$$</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value="">$$$</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value"">$$$$</label>
-							</div>
+								 <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    							What is your price range?
+    							</button>
+    							<div class="dropdown-menu">
+    								<div><a class="dropdown-item" href="#">$</a></div>
+    								<div><a class="dropdown-item" href="#">$$</a></div>
+    								<div><a class="dropdown-item" href="#">$$$</a></div>
+    								<div><a class="dropdown-item" href="#">$$$$</a></div>
+    							</div>
 						</div>
 						<div class="col-sm-7 text-left">
 							<h4>What cuisine are you craving?</h4>
