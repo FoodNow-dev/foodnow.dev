@@ -5,13 +5,8 @@
 	float: left;
 }
 
-.col-sm-8 {
-	/*width: 50vw;*/
-	/*height: 100vh;*/
-	border: 1px solid black;
-}
-
-.map {
+#map {
 	height: 75vh;
 	width: 75vw;
+	border: 1px solid black;
 }

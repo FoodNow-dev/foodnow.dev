@@ -19,5 +19,9 @@
 			</div>
 		</div>
 	</div>
-	
+@stop
+
+@section('js-script')
+	<!-- GOOGLE MAPS API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFAFmUfcWBHdFGHFsmXWXWAI2Bz7Wxp-0&callback=initMap"></script>
 @stop
