@@ -15,10 +15,10 @@ class CreateReviewsTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('created_by');
+            $table->integer('created_by')->unsigned();
             $table->foreign('created_by')->references('id')->on('users');
 
-            $table->integer('rest_id');
+            $table->integer('rest_id')->unsigned();
             $table->foreign('rest_id')->references('id')->on('restaurants');
 
             $table->text('content');
