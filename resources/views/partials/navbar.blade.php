@@ -8,51 +8,55 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"><img id="logo" src="/img/foodnow.png"></a>
+			<a class="navbar-brand" href="#"><img id="logo" src="/assets/img/foodnow.png"></a>
 		</div>
 
 		{{-- Collect the nav links, forms, and other content for toggling --}}
 		<div class="collapse navbar-collapse" id="navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a class="hvr-background" href="#">Link</a></li>
-				<li><a class="hvr-background" href="#">Link</a></li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle hvr-icon-dropdown" data-toggle="dropdown">Dropdown &nbsp;&nbsp;&nbsp;</a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
-					</ul>
-				</li>
+				<li><a class="hvr-background" href="#">About Us</a></li>
+				<li><a class="hvr-background" href="#">Contact Us</a></li>
 			</ul>
 
-	  		{{-- Login Dropdown --}}
 			<ul class="nav navbar-nav navbar-right">
+
+			@if(false)
+				<li><p class="navbar-text">Welcome</p></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle hvr-icon-dropdown" data-toggle="dropdown">Username &nbsp;&nbsp;&nbsp;</a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Profile</a></li>
+						<li><a href="#">Edit Account</a></li>
+						<li><a href="#">Settings</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Logout</a></li>
+					</ul>
+				</li>
+
+			@else
+
+		  		{{-- Login Dropdown --}}
 				<li><p class="navbar-text">Already have an account?</p></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle hvr-icon-dropdown" data-toggle="dropdown"><b>Login Here &nbsp;&nbsp;&nbsp;</b></a>
 					<ul id="login-dp" class="dropdown-menu">
 						<li>
 							<div class="row">
-								<div class="col-md-12">
+								<div class="col-md-12 text-center">
 									Login via
 									<div class="social-buttons">
 										<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-										<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+										
 									</div>
 									or
-									<form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+									<form class="form" role="form" method="post" action="{{-- {{ action('Auth\AuthController@postLogin') }} --}}" accept-charset="UTF-8" id="login-nav">
 										<div class="form-group">
-											<label class="sr-only" for="inputEmail2">Email address</label>
-											<input type="email" class="form-control" id="inputEmail2" placeholder="Email address" required>
+											<label class="sr-only" for="email-login">Email address</label>
+											<input type="email" class="form-control" id="email-login" name="email" placeholder="Email address" autofocus required>
 										</div>
 										<div class="form-group">
-											<label class="sr-only" for="inputPassword2">Password</label>
-											<input type="password" class="form-control" id="inputPassword2" placeholder="Password" required>
+											<label class="sr-only" for="password-login">Password</label>
+											<input type="password" class="form-control" id="password-login" name="password" placeholder="Password" required>
 											<div class="help-block text-right"><a href="">Forget the password ?</a></div>
 										</div>
 										<div class="form-group">
@@ -66,12 +70,13 @@
 									</form>
 								</div>
 								<div class="bottom text-center">
-									New here ? <a href="#"><b>Join Us</b></a>
+									New here ? <a href="{{-- {{ action('Auth\AuthController@getRegister')}} --}} "><b>Join Us</b></a>
 								</div>
 							</div>{{-- /.row --}}
 						</li>
 					</ul>{{-- /.dropdown-menu, /#login-dp --}}
 				</li>{{-- /.dropdown --}}
+				@endif
 			</ul>{{-- /.nav navbar-nav navbar-right --}}
 		</div>{{-- /.navbar-collapse --}}
 	</div>{{-- /.container-fluid --}}

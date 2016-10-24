@@ -1,9 +1,14 @@
 body{
-	background:url(/img/dining.jpg);
-	background-size: cover;
+	background:url(/assets/img/dining.jpg);
+	background-size: 100%;
 	background-repeat: no-repeat;
-	background-position: 0px 180px;
-	background-color: #cde;
+	background-position: 0px 215px;
+	background-color: rgba(59,103,140,.25);
+
+}
+
+.show-box {
+	box-shadow: 0px 0px 10px rgba(8, 59, 112, 1);
 }
 
 /*****************************************/
@@ -104,11 +109,12 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 }
 
 #login-dp .social-buttons {
-	margin:12px 0    
+	margin:12px 0;
+	margin-bottom: 5px;    
 }
 
 #login-dp .social-buttons a {
-	width: 49%;
+	width: 98%;
 }
 
 #login-dp .form-group {
@@ -118,13 +124,40 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 @media(max-width:768px) {
 	#login-dp {
 		background-color: inherit;
-		color: #fff;
 	}
 	#login-dp .bottom {
 		background-color: inherit;
 		border-top:0 none;
 	}
+
+	.footer-bottom .pull-left,
+	.footer-bottom .pull-right {
+		float: none !important;
+	}
+
+	.footer-bottom .pull-left {
+		position: relative;
+		top: 40px;
+	}
+	.social {
+		position: relative;
+		bottom:30px;
+	}
+	.footer-bottom .container {
+		padding-left: none;
+	}
+
+	.top-content .text { margin-top: 50px; padding-top: 0; padding-bottom: 60px; }
+	.top-content .top-big-link { margin-top: 25px; }
+	.top-content .top-big-link a.btn { margin-top: 10px; }
 }
+
+
+
+
+
+
+
 
 /********************************/
 /*      Navbar Animations       */
@@ -293,12 +326,12 @@ footer ul {
 	margin-left: 0;
 	padding-left: 0;
 	margin-top: 15px;
-	color: #7F8C8D;
+	color: #083b66;
 }
 
 .social li {
-	background: none repeat scroll 0 0 #B5B5B5;
-	border: 2px solid #B5B5B5;
+	background: none repeat scroll 0 0 #083b66;
+	border: 2px solid #083b66;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	-o-border-radius: 50%;
@@ -325,12 +358,12 @@ footer ul {
 	-o-transform: scale(1.1) rotate(360deg);
 }
 .social li a {
-	color: #EDEFF1;
+	color: #d5b33b ;
 }
 
 .social li:hover {
-	border: 2px solid #083b66;
-	background: #083b66;
+	border: 2px solid  #d5b33b;
+	background: #d5b33b;
 }
 
 footer > div > div > p {
@@ -346,13 +379,15 @@ footer > div > div > div {
 .social li a i {
 	font-size: 16px;
 	margin: 0 0 0 5px;
-	color: #EDEFF1 !important;
+	color:#d5b33b;
+}
+
+.social li a i:hover {
+	color: #083b66;
 }
 
 .footer-bottom {
 	width: 100%;
-	position: absolute;
-	bottom: 0px;
 	background: #FEFEFE;
 	border-top: 1px solid black;
 	padding-top: 10px;
