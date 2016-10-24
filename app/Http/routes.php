@@ -22,7 +22,14 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+// Landing page routes...
 Route::get('/vendor/landing', function()
 {
 	return view('vendor/landing');
+});
+
+// Map page routes...
+Route::get('vendor/map', function()
+{
+	return view('vendor/map');
 });
