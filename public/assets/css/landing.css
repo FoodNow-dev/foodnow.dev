@@ -6,15 +6,16 @@
     padding: 10px 0 50px 0;
 }
 
-/*.top-right {
+.top-right {
 	float: right;
-	width: 25%;
-	padding-top: 5px;
-	font-size: 12px;
+	/*width: 25%;*/
+	/*padding-top: 5px;*/
+	/*font-size: 12px;*/
 	color: white;
-	line-height: 100px;
+	/*line-height: 100px;*/
 	text-align: right;
-}*/
+	bottom: 284px;
+}
 .top-content .text {
 	margin-top: 100px;
 	margin-right: 0px;	
