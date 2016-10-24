@@ -15,7 +15,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-7 text text-center show-box animated flipInX">
-						<p><img src="/assets/img/foodnow.png"></p>
+						<p class="animated zoomIn"><img src="/assets/img/foodnow.png"></p>
 						<h1><strong>FoodNow</strong> Registration Form</h1>
 						<div class="description">
 							<p>
@@ -27,7 +27,7 @@
 							<a class="btn btn-link-2" href="#">Here's another useless Button</a>
 						</div>
 					</div>
-					<div class="col-sm-5 form-box animated flipInY">
+					<div class="col-sm-5 form-box animated bounceInRight">
 						<div class="form-top show-box">
 							<div class="form-top-left">
 								<h3>Sign up now for FREE</h3>
@@ -41,7 +41,7 @@
 							<form role="form" action="{{-- {{ action('Auth\AuthController@postRegister') }} --}}" method="post" class="registration-form">
 								<div class="form-group">
 									<label class="sr-only" for="form-first-name">First name</label>
-									<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name" autofocus>
+									<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
 								</div>
 								<div class="form-group">
 									<label class="sr-only" for="form-last-name">Last name</label>
