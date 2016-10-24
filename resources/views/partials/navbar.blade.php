@@ -8,7 +8,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"><img id="logo" src="/img/foodnow.png"></a>
+			<a class="navbar-brand" href="#"><img id="logo" src="/assets/img/foodnow.png"></a>
 		</div>
 
 		{{-- Collect the nav links, forms, and other content for toggling --}}
@@ -16,7 +16,6 @@
 			<ul class="nav navbar-nav">
 				<li><a class="hvr-background" href="#">About Us</a></li>
 				<li><a class="hvr-background" href="#">Contact Us</a></li>
-				
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
