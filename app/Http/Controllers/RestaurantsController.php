@@ -183,4 +183,16 @@ class Restaurants extends Controller
 
         return back()->with($data);
     }
+
+    public function setFavorite(Request $request) {
+
+        $favorite = Favorite::with('restaurant')->firstOrCreate([
+            'rest_id' => $request->input('rest_id'),
+            'user_id' => $request->user()->id
+        ]);
+
+        $favorite->save();
+
+        return back();
+    }
 }

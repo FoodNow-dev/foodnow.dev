@@ -97,4 +97,18 @@ class Users extends Controller
         $user->delete();
         return redirect()->action('RestaurantsController@index');
     }
+
+    public function setFriend(Request $request, $status) {
+
+        $friend = Friend::with('users')->firstOrCreate([
+            'friend_id' => $request->input('user_id'),
+            'user_id' => $request->user()->id,
+            'action_id' => $request->user()->id,
+            'status' => $status
+        ]);
+
+        $friend->save();
+
+        return back();
+    }
 }

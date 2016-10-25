@@ -13,9 +13,60 @@
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->safeEmail,
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
+        'email' => $faker->unique()->safeEmail,
+        'address' => $faker->streetAddress,
+        'city' => $faker->city,
+        'state' => $faker->stateAbbr,
+        'zipcode' => $faker->postcode,
+        'image' => $faker->imageUrl($width = 850, $height = 400),
         'password' => bcrypt(str_random(10)),
-        'remember_token' => str_random(10),
+        'remember_token' => str_random(10)
     ];
 });
+
+$factory->define(App\Models\Restaurant::class, function (Faker\Generator $faker) {
+	return [
+		'name' => $faker->company,
+		'url' => $faker->url,
+		'address' => $faker->streetAddress,
+		'city' => $faker->city,
+        'state' => $faker->stateAbbr,
+        'zipcode' => $faker->postcode,
+        'first_image' => $faker->imageUrl($width = 850, $height = 400),
+        'second_image' => $faker->imageUrl($width = 850, $height = 400),
+        'cuisine' => $faker->word
+	];
+});
+
+$factory->define(App\Models\Friend::class, function (Faker\Generator $faker) {
+	$user_id = App\User::all()->random()->id;
+	$friend = App\User::all()->random()->id;
+	return [
+		'user_id' => $user_id,
+		'friend_id' => $friend,
+		'action_id' => $user_id,
+		'status' => $faker->numberBetween($min = 0, $max = 3)
+	];
+});
+
+$factory->define(App\Models\Review::class, function (Faker\Generator $faker) {
+	return [
+		'created_by' => App\User::all()->random()->id,
+		'rest_id' => App\Restaurant::all()->random()->id,
+		'content' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
+		'score' => $faker->numberBetween($min = 1, $max = 5),
+		'price' => $faker->numberBetween($min = 1, $max = 4)
+	];
+});
+
+$factory->define(App\Models\Favorite::class, function (Faker\Generator $faker) {
+	return [
+		'user_id' => App\User::all()->random()->id,
+		'rest_id' => App\Restaurant::all()->random()->id
+	];
+});
+
+
+
