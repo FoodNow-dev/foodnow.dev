@@ -38,30 +38,31 @@
 							</div>
 						</div>
 						<div class="form-bottom show-box">
-							<form role="form" action="{{-- {{ action('Auth\AuthController@postRegister') }} --}}" method="post" class="registration-form">
+							<form role="form" action="{{ action('Auth\AuthController@postRegister') }}" method="POST" class="registration-form">
+								{!! csrf_field() !!}
 								<div class="form-group">
-									<label class="sr-only" for="form-first-name">First name</label>
-									<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+									<label class="sr-only" for="first_name">First name</label>
+									<input type="text" name="first_name" placeholder="First name..." class="first_name form-control" id="first_name">
 								</div>
 								<div class="form-group">
-									<label class="sr-only" for="form-last-name">Last name</label>
-									<input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
+									<label class="sr-only" for="last_name">Last name</label>
+									<input type="text" name="last_name" placeholder="Last name..." class="last_name form-control" id="last_name">
 								</div>
 								<div class="form-group">
-									<label class="sr-only" for="form-email">Email</label>
-									<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+									<label class="sr-only" for="email">Email</label>
+									<input type="text" name="email" placeholder="Email..." class="email form-control" id="email">
 								</div>
 								<div class="form-group">
-									<label class="sr-only" for="form-address">Street Address</label>
-									<input type="text" name="form-address" placeholder="Street Address..." class="form-address form-control" id="form-address">
+									<label class="sr-only" for="address">Street Address</label>
+									<input type="text" name="address" placeholder="Street Address..." class="address form-control" id="address">
 								</div>
 								<div class="form-group">
-									<label class="sr-only" for="form-city">City</label>
-									<input type="text" name="form-city" placeholder="City..." class="form-city form-control" id="form-city">
+									<label class="sr-only" for="city">City</label>
+									<input type="text" name="city" placeholder="City..." class="city form-control" id="city">
 								</div>
 								<div class="form-group">
-									<label class="sr-only" for="form-state">State</label>
-									<select name="form-state" class="form-state form-control" id="form-state">
+									<label class="sr-only" for="state">State</label>
+									<select name="state" class="state form-control" id="state">
 										<option>State ...</option>
 										<option value="AK">Alaska</option>
 										<option value="AL">Alabama</option>
@@ -117,16 +118,16 @@
 										<option value="WY">Wyoming</option>
 									</select>
 								
-									<label class="sr-only" for="form-zipcode">Zipcode</label>
-									<input type="number" name="form-zipcode" placeholder="Zipcode..." class="form-zipcode form-control" id="form-zipcode">
+									<label class="sr-only" for="zipcode">Zipcode</label>
+									<input type="number" name="zipcode" placeholder="Zipcode..." class="zipcode form-control" id="zipcode">
 								</div>
 								<div class="form-group">
 									<label class="sr-only" for="password">Password</label>
 									<input type="password" name="password" placeholder="Password..." class="password form-control" id="password">
 								</div>
 								<div class="form-group">
-									<label class="sr-only" for="form-confirm-password">Confirm Password</label>
-									<input type="password" name="form-confirm-password" placeholder="Confirm Password..." class="form-confirm-password form-control" id="form-confirm-password">
+									<label class="sr-only" for="password_confirmation">Confirm Password</label>
+									<input type="password" name="password_confirmation" placeholder="Confirm Password..." class="password_confirmation form-control" id="password_confirmation">
 								</div>
 								<button type="submit" class="btn btn-register">Sign me up!</button>
 							</form>

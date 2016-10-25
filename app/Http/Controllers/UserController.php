@@ -9,7 +9,7 @@ use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class Users extends Controller
+class UserController extends Controller
 {
 
     public function __construct()
@@ -82,7 +82,7 @@ class Users extends Controller
 
         $request->session()->flash('SUCCESS_MESSAGE', 'Update Successful');
 
-        return redirect()->action('UsersController@show', $user->id);
+        return redirect()->action('UserController@show', $user->id);
     }
 
     /**
@@ -111,4 +111,25 @@ class Users extends Controller
 
         return back();
     }
+
+    public function friendsList(Request $request)
+    {
+        return Friend::allFriends($request->user()->id);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
