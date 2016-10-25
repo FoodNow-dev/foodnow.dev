@@ -9,6 +9,8 @@
 @stop
 
 @section('content')
+	<script src="/assets/js/scripts.js"></script>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-5">
@@ -25,11 +27,11 @@
 @stop
 
 @section('js-script')
-	<script src="/assets/js/scripts.js"></script>
 
 	<!-- GOOGLE MAPS API -->
     {{-- // <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFAFmUfcWBHdFGHFsmXWXWAI2Bz7Wxp-0&callback=initMap"></script> --}}
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4PSgGcaNsGm6_cRV9qOC_HzBgeP769do&libraries=places&callback=initMap" async defer></script>
 
+	{{-- // <script src="https://maps.googleapis.com/maps/api/place/textsearch/json?query=Mexican+Restaurant&sensor=true&location=40.846,-73.938&radius=20&key=AIzaSyA4PSgGcaNsGm6_cRV9qOC_HzBgeP769do&callback=initMap" async defer></script> --}}
 @stop

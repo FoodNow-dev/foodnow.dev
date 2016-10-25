@@ -11,10 +11,11 @@ function initMap() {
 
     infowindow = new google.maps.InfoWindow();
     var service = new google.maps.places.PlacesService(map);
-    service.nearbySearch({
+    service.textSearch({
         location: userLoc,
+        query: 'Mexican',
         radius: 8046.72,
-        type: ['restaurant']
+        // type: ['restaurant']
     }, callback);
 }
 
@@ -26,17 +27,21 @@ function callback(results, status) {
     }
 }
 
+
 function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
-        position: place.geometry.location
+        position: place.geometry.location,
     });
 
     google.maps.event.addListener(marker, 'click', function() {
         infowindow.setContent(
-            '<div><strong>' + place.name + '</strong>'
-            + '<br>' + place.id + '</div>');
+            '<div><strong>' + place.name + '</strong>' + '<br>'
+            + place.rating + '<br>'
+            + place.price_level + '<br>'
+            + place.vicinity + '<br>'
+            + place.opening_hours.open_now + '</div>');
         infowindow.open(map, this);
         console.log(place);
     });
