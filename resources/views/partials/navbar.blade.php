@@ -20,16 +20,16 @@
 
 			<ul class="nav navbar-nav navbar-right">
 
-			@if(false)
+			@if(Auth::check())
 				<li><p class="navbar-text">Welcome</p></li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle hvr-icon-dropdown" data-toggle="dropdown">Username &nbsp;&nbsp;&nbsp;</a>
+					<a href="#" class="dropdown-toggle hvr-icon-dropdown" data-toggle="dropdown">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }} &nbsp;&nbsp;&nbsp;</a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="#">Profile</a></li>
 						<li><a href="#">Edit Account</a></li>
 						<li><a href="#">Settings</a></li>
 						<li class="divider"></li>
-						<li><a href="#">Logout</a></li>
+						<li><a href="{{ action('Auth\AuthController@getLogout') }}">Logout</a></li>
 					</ul>
 				</li>
 
@@ -49,7 +49,8 @@
 										
 									</div>
 									or
-									<form class="form" role="form" method="post" action="{{-- {{ action('Auth\AuthController@postLogin') }} --}}" accept-charset="UTF-8" id="login-nav">
+									<form class="form" role="form" method="post" action="{{ action('Auth\AuthController@postLogin') }}" accept-charset="UTF-8" id="login-nav">
+										{{ csrf_field() }}
 										<div class="form-group">
 											<label class="sr-only" for="email-login">Email address</label>
 											<input type="email" class="form-control" id="email-login" name="email" placeholder="Email address" autofocus required>
