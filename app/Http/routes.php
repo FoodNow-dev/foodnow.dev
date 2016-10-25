@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use SKAgarwal\GoogleApi\PlacesApi;
 
 Route::get('/', 'Auth\AuthController@getRegister');
 
@@ -33,3 +34,11 @@ Route::get('vendor/map', function()
 {
 	return view('vendor/map');
 });
+
+
+
+
+
+
+
+
