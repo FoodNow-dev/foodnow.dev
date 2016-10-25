@@ -54,7 +54,7 @@ $factory->define(App\Models\Friend::class, function (Faker\Generator $faker) {
 $factory->define(App\Models\Review::class, function (Faker\Generator $faker) {
 	return [
 		'created_by' => App\User::all()->random()->id,
-		'rest_id' => App\Restaurant::all()->random()->id,
+		'rest_id' => App\Models\Restaurant::all()->random()->id,
 		'content' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
 		'score' => $faker->numberBetween($min = 1, $max = 5),
 		'price' => $faker->numberBetween($min = 1, $max = 4)
@@ -64,7 +64,7 @@ $factory->define(App\Models\Review::class, function (Faker\Generator $faker) {
 $factory->define(App\Models\Favorite::class, function (Faker\Generator $faker) {
 	return [
 		'user_id' => App\User::all()->random()->id,
-		'rest_id' => App\Restaurant::all()->random()->id
+		'rest_id' => App\Models\Restaurant::all()->random()->id
 	];
 });
 
