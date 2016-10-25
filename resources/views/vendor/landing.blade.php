@@ -16,8 +16,8 @@
 		<div class="inner-bg">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-6 text">
-						<h1>My Restaurant Preferences:</h1>
+					<div class="col-sm-5 text">
+						<h1><strong>My Restaurant Preferences:</strong></h1>
 						<form class="form-horizontal" method="POST" action="#">
 							<div class="form-group">
 								<label for="distance" class="col-sm-6 control-label">How far are you willing to go?</label>
@@ -59,66 +59,18 @@
 	    								<option value="soul">Soul</option>
 	    								<option value="thai">Thai</option>
 	    								<option value="vietnamese">Vietnamese</option>
-	    								
+
  									</select>
  								</div>
  							</div>
+ 							<div class="col-sm-offset-4 col-sm-6 col-xs-2" ><button type="submit" class="btn btn-default">Submit</button></div>
 						</form>
-							{{-- <div class="btn-group" role="group">
-								 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    							How far are you willing to go?
-    							<span class="caret"></span>
-    							</button>
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="#">5 miles</a></li>
-									<li><a class="dropdown-item" href="#">10 miles</a></li>
-									<li><a class="dropdown-item" href="#">15 miles</a></li>
-									<li><a class="dropdown-item" href="#">20 miles</a></li>
-								</ul>
-							</div>
-							<select name="">
-								<option value="1">$</option>
-								<option value="2">$$</option>
-
-							</select>
-						
-						<div class="btn-group" role="group">
-								 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    							What is your price range?
-    							<span class="caret"></span>
-    							</button>
-    							<ul class="dropdown-menu">
-    								<li><a class="dropdown-item" href="#">$</a></li>
-    								<li><a class="dropdown-item" href="#">$$</a></li>
-    								<li><a class="dropdown-item" href="#">$$$</a></li>
-    								<li><a class="dropdown-item" href="#">$$$$</a></li>
-    							</ul>
-						</div>
-						<div class="btn-group" role="group">
-								 <button class="btn  btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    							What cuisine are you craving?
-    							<span class="caret"></span>
-    							</button>
-    							<ul class="dropdown-menu">
-    								<li><a class="dropdown-item" href="#">American</a></li>
-    								<li><a class="dropdown-item" href="#">Breakfast Food</a></li>
-    								<li><a class="dropdown-item" href="#">Cajun</a></li>
-    								<li><a class="dropdown-item" href="#">Chinese</a></li>
-    								<li><a class="dropdown-item" href="#">German</a></li>
-    								<li><a class="dropdown-item" href="#">Indian</a></li>
-    								<li><a class="dropdown-item" href="#">Italian</a></li>
-    								<li><a class="dropdown-item" href="#">Japanese/ Sushi</a></li>
-    								<li><a class="dropdown-item" href="#">Meditterranean</a></li>
-    								<li><a class="dropdown-item" href="#">Mexican</a></li>
-    								<li><a class="dropdown-item" href="#">Soul</a></li>
-    								<li><a class="dropdown-item" href="#">Thai</a></li>
-    								<li><a class="dropdown-item" href="#">Vietnamese</a></li>
-    							</ul>
-						<button type="button" class="btn btn-default">Submit</button>							
-						</div> --}}
-						{{-- <div class=" col-sm-6"> --}}
-						{{-- 	<p>Hello</p>
-						</div> --}} 
+					</div>
+					<div class="col-sm-5 col-sm-offset-1 text">
+						<h1>OR....</h1>
+						<h1> Let Us Choose Your Dinner Tonight!</h1>
+						<br>
+						<div class="col-sm-6 col-sm-offset-3 col-xs-2" ><button type="submit" class="btn btn-default">Pick at Random</button></div>
 					</div>
 				</div>
 			</div>
