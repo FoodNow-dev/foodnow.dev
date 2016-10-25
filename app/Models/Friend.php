@@ -32,5 +32,4 @@ class Friend extends BaseModel
 					->orderBy('users.name');
 	}
 
-	public function friendRequest()
 }
