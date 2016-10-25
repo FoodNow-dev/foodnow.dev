@@ -16,18 +16,18 @@
 		<div class="inner-bg">
 			<div class="container">
 				<div class="row">
-					<div class="col-xm-7 col-sm-offset-5 text">
-						<h1><strong>Reset Your Password:</strong></h1>
+					<div class="col-sm-6 col-sm-offset-3 text">
+						<h1 class="col-xs-offset-3"><strong>Reset Your Password</strong></h1>
 						<form class="form-horizontal" method="POST" action="#">
-							<label for="password" class="col-sm-6 control-label">Type New Password</label>
-							<div class="form-group col-sm-6">
-								<input type="password" name="password" class="form-control" placeholder="confirm password" value="">
+							<label for="password" class="col-xs-6 control-label">New Password:</label>
+							<div class="form-group col-xs-6 col-sm-6">
+								<input type="password" name="password" class="form-control" placeholder="password" value="">
 							</div>
-							<label for="confirm" class="col-sm-6 control-label">Confirm Password</label>
-							<div class="form-group col-sm-6">
-								<input type="password" name="confirm" class="form-control" placeholder="confirm password" value="">
+							<label for="confirm" class="col-xs-6 control-label">Confirm Password:</label>
+							<div class="form-group col-xs-6 col-sm-6">
+								<input type="password" name="confirm" class="form-control" placeholder="password" value="">
 							</div>
-							<button type="submit" class="btn btn-default">Submit</button>
+							<div class="col-xs-offset-4"><button type="submit" class="btn btn-default">Submit</button></div>
 						</form>
 					</div>
 				</div>
