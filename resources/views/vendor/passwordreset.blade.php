@@ -17,17 +17,17 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6 col-sm-offset-3 text">
-						<h1 class="col-xs-offset-3"><strong>Reset Your Password</strong></h1>
+						<h1 class="col-xs-offset-3 col-lg-offset-2"><strong>Reset Your Password</strong></h1>
 						<form class="form-horizontal" method="POST" action="#">
-							<label for="password" class="col-xs-6 control-label">New Password:</label>
+							<label for="password" class="col-xs-6 col-lg-5 control-label">New Password:</label>
 							<div class="form-group col-xs-6 col-sm-6">
 								<input type="password" name="password" class="form-control" placeholder="password" value="">
 							</div>
-							<label for="confirm" class="col-xs-6 control-label">Confirm Password:</label>
+							<label for="confirm" class="col-xs-6 col-lg-5 control-label">Confirm Password:</label>
 							<div class="form-group col-xs-6 col-sm-6">
 								<input type="password" name="confirm" class="form-control" placeholder="password" value="">
 							</div>
-							<div class="col-xs-offset-4"><button type="submit" class="btn btn-default">Submit</button></div>
+							<div class="col-xs-offset-4 col-lg-9"><button type="submit" class="btn btn-success">Submit</button></div>
 						</form>
 					</div>
 				</div>
