@@ -5,16 +5,27 @@
 {{-- the following section may change if I user custom css --}}
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/map.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css">
+	{{-- <link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css"> --}}
 @stop
 
 @section('content')
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-5">
 				List of places
+				<hr>
+				1. Place<br>Rating<br>Other Info<br>
+				<hr>
+				2. Place<br>Rating<br>Other Info<br>
+				<hr>
+				3. Place<br>Rating<br>Other Info<br>
+				<hr>
+				4. Place<br>Rating<br>Other Info<br>
+				<hr>
+				5. Place<br>Rating<br>Other Info<br>
+
 			</div>
-			<div class="col-sm-8">
+			<div class="col-sm-7">
 				<div id="map"></div>
 			</div>
 		</div>
@@ -22,6 +33,8 @@
 @stop
 
 @section('js-script')
+	<script src="/assets/js/scripts.js"></script>
+
 	<!-- GOOGLE MAPS API -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFAFmUfcWBHdFGHFsmXWXWAI2Bz7Wxp-0&callback=initMap"></script>
 @stop
