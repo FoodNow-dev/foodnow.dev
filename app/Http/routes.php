@@ -30,9 +30,7 @@ Route::get('vendor/map', function()
 	return view('vendor/map');
 });
 
-Route::resource('restaurants','RestaurantsController');
 
-Route::resource('users', 'UserController');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -43,9 +41,17 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+//Password reset routes...
+Route::get('vendor/passwordreset', function()
+{
+	return view('vendor/passwordreset');
+});
 
 
 
+Route::resource('restaurants','RestaurantsController');
+
+Route::resource('users', 'UserController');
 
 
 

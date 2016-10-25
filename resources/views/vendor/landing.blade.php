@@ -70,7 +70,7 @@
 						<h1>OR....</h1>
 						<h1> Let Us Choose Your Dinner Tonight!</h1>
 						<br>
-						<div class="col-sm-6 col-sm-offset-3 col-xs-2" ><button type="submit" class="btn btn-default">Pick at Random</button></div>
+						<div class="col-sm-6 col-sm-offset-3 col-xs-2" ><button type="submit" class="btn btn-success">Pick at Random</button></div>
 					</div>
 				</div>
 			</div>
