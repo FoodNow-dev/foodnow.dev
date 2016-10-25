@@ -44,6 +44,13 @@ Route::get('vendor/passwordreset', function()
 	return view('vendor/landing');
 });
 
+
+Route::get('vendor/editprofile', function()
+{
+	return view('vendor/editprofile');
+});
+
+
 // Map page routes...
 Route::get('vendor/map', function()
 {
@@ -52,6 +59,7 @@ Route::get('vendor/map', function()
 	$response = $googlePlaces->textSearch('Mexican restaurant', ['location' => '29.426791, -98.489602']);
 	return view('vendor/map')->with('data', $response);
 });
+
 
 Route::resource('restaurants','RestaurantsController');
 

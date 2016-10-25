@@ -27,7 +27,8 @@
 							<div class="form-group col-xs-6 col-sm-6">
 								<input type="password" name="confirm" class="form-control" placeholder="password" value="">
 							</div>
-							<div class="col-xs-offset-4 col-lg-9"><button type="submit" class="btn btn-success">Submit</button></div>
+							<div class="col-xs-offset-4 col-lg-8"><button type="submit" class="btn btn-success">Submit</button>
+							</div>
 						</form>
 					</div>
 				</div>
