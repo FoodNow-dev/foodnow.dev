@@ -13,7 +13,7 @@ use App\Models\Restaurant;
 | and give it the controller to call when that URI is requested.
 |
 */
-// use SKAgarwal\GoogleApi\PlacesApi;
+use SKAgarwal\GoogleApi\PlacesApi;
 
 Route::get('/', 'Auth\AuthController@getRegister');
 
@@ -41,14 +41,24 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 //Password reset routes...
 Route::get('vendor/passwordreset', function()
 {
-	return view('vendor/passwordreset');
+	return view('vendor/landing');
 });
+
 
 Route::get('vendor/editprofile', function()
 {
 	return view('vendor/editprofile');
 });
 
+
+// Map page routes...
+Route::get('vendor/map', function()
+{
+	$googlePlaces = new PlacesApi('AIzaSyBFAFmUfcWBHdFGHFsmXWXWAI2Bz7Wxp-0');
+	// do not hard code type and location
+	$response = $googlePlaces->textSearch('Mexican restaurant', ['location' => '29.426791, -98.489602']);
+	return view('vendor/map')->with('data', $response);
+});
 
 
 Route::resource('restaurants','RestaurantsController');
