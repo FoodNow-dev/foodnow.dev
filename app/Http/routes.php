@@ -41,6 +41,11 @@ Route::get('vendor/passwordreset', function()
 	return view('vendor/passwordreset');
 });
 
+Route::get('vendor/editprofile', function()
+{
+	return view('vendor/editprofile');
+});
+
 
 
 
