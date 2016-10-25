@@ -1,12 +1,17 @@
-.col-sm-4 {
-	/*width: 50vw;*/
-	/*height: 100vh;*/
-	border: 1px solid black;
-	float: left;
+.col-sm-5 {
+	height: 80vh;
+	background: rgba(8, 59, 112, .65);
+	color: #d5b33b;
+	border-radius: 5px;
 }
 
 #map {
-	height: 75vh;
-	width: 75vw;
+	height: 80vh;
 	border: 1px solid black;
+	margin-bottom: 2%;
+	border-radius: 5px;
+}
+
+.col-sm-7 {
+	padding-right: 0;
 }
