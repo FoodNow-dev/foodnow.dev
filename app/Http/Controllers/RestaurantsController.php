@@ -11,7 +11,7 @@ use App\Models\Review;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Illuminate\Support\Facades\Log;
 
-class Restaurants extends Controller
+class RestaurantsController extends Controller
 {
      public function __construct()
     {
