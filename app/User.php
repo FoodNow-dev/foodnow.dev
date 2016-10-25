@@ -56,6 +56,6 @@ class User extends BaseModel implements AuthenticatableContract,
     public static function search($searchTerm)
     {
         return self::where('first_name', 'LIKE', '%' . $searchTerm . '%')
-                    orWhere('last_name', 'LIKE', '%'. $searchTerm . '%');
+                    ->orWhere('last_name', 'LIKE', '%'. $searchTerm . '%');
     }
 }

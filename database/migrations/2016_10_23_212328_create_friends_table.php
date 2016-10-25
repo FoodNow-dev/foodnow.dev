@@ -22,6 +22,11 @@ class CreateFriendsTable extends Migration
             $table->integer('friend_id')->unsigned();
             $table->foreign('friend_id')->references('id')->on('users');
 
+            $table->integer('action_id')->unsigned();
+            $table->foreign('action_id')->references('id')->on('users');
+
+            $table->integer('status')->unsigned();
+
             $table->timestamps();
         });
     }
