@@ -35,6 +35,11 @@ Route::get('vendor/map', function()
 	return view('vendor/map');
 });
 
+//Password reset routes...
+Route::get('vendor/passwordreset', function()
+{
+	return view('vendor/passwordreset');
+});
 
 
 
