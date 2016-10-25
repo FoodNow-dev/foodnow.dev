@@ -6,6 +6,8 @@
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/landing.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/elements.css">
+
 @stop
 
 @section('content')
@@ -14,84 +16,61 @@
 		<div class="inner-bg">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-7 text">
-						<h1>My Restaurant Preferences:</h1>
-						<div class="col-sm-7 text-left">
-							<div class="btn-group">
-								<h4>How far are you willing to go?</h4>
-								<div class="checkbox">
-									<label><input type="checkbox" value="">5 miles</label>
-								</div>
-								<div class="checkbox">
-									<label><input type="checkbox" value="">10 miles</label>
-								</div>
-								<div class="checkbox">
-									<label><input type="checkbox" value="">15 miles</label>
-								</div>
-								<div class="checkbox">
-									<label><input type="checkbox" value"">20 miles</label>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-7 text-left">
-							<h4>What is your price range?</h4>
-							<div class="checkbox">
-								<label><input type="checkbox" value="">$</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value="">$$</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value="">$$$</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value"">$$$$</label>
-							</div>
-						</div>
-						<div class="col-sm-7 text-left">
-							<h4>What cuisine are you craving?</h4>
-							<div class="checkbox">
-								<label><input type="checkbox" value="">American</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value="">Breakfast Food</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value="">Cajun</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value"">Chinese</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value"">German</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value"">Indian</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value"">Italian</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value"">Japanese/Sushi</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value"">Mediterranean</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value"">Mexican</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value"">Soul</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value"">Thai</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value"">Vietnamese</label>
-							</div>
-					 	<button type="button" class="btn btn-primary center-block">Submit</button>
-							
-						</div>
+					<div class="col-sm-5 text">
+						<h1><strong>My Restaurant Preferences:</strong></h1>
+						<form class="form-horizontal" method="POST" action="#">
+							<div class="form-group">
+								<label for="distance" class="col-sm-6 control-label">How far are you willing to go?</label>
+								<div class="col-sm-6">
+     								<select name="distance" class="form-control">
+										 <option value="5">5 miles</option>
+										 <option value="10">10 miles</option>
+										 <option value="15">15 miles</option>
+										 <option value="20">20 miles</option>
+									</select>
+    							</div>
+    						</div>
+    						<div class="form-group">
+    							<label for="price" class="col-sm-6 control-label">What is your price range?</label>
+    							<div class="col-sm-6">
+    								<select name="price" class="form-control">
+    									<option value="1">$</option>
+    									<option value="2">$$</option>
+    									<option value="3">$$$</option>
+    									<option value="4">$$$$</option>
+    								</select>
+    							</div>
+ 							</div>
+ 							<div class="form-group">
+ 								<label for="cuisine" class="col-sm-6 control-label">What cuisine type are you craving</label>
+ 								<div class="col-sm-6">
+ 									<select name="price" class="form-control">
+
+	 									<option value="american">American</option>
+	    								<option value="breakfast">Breakfast Food</option>
+	    								<option value="cajun">Cajun</option>
+	    								<option value="chinese">Chinese</option>
+	    								<option value="german">German</option>
+	    								<option value="indian">Indian</option>
+	    								<option value="italian">Italian</option>
+	    								<option value="japanese">Japanese/ Sushi</option>
+	    								<option value="mediterranean">Meditterranean</option>
+	    								<option value="mexican">Mexican</option>
+	    								<option value="soul">Soul</option>
+	    								<option value="thai">Thai</option>
+	    								<option value="vietnamese">Vietnamese</option>
+
+ 									</select>
+ 								</div>
+ 							</div>
+ 							<div class="col-sm-offset-4 col-sm-6 col-xs-2" ><button type="submit" class="btn btn-default">Submit</button></div>
+						</form>
+					</div>
+					<div class="col-sm-5 col-sm-offset-1 text">
+						<h1>OR....</h1>
+						<h1> Let Us Choose Your Dinner Tonight!</h1>
+						<br>
+						<div class="col-sm-6 col-sm-offset-3 col-xs-2" ><button type="submit" class="btn btn-default">Pick at Random</button></div>
 					</div>
 				</div>
 			</div>
