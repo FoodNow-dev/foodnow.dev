@@ -17,11 +17,8 @@ use App\Models\Restaurant;
 
 Route::get('/', 'Auth\AuthController@getRegister');
 
-
-// Landing page routes...
-Route::get('/vendor/landing', function()
-{
-	return view('vendor/landing');
+Route::get('home', function() {
+	return view('restaurants.search');
 });
 
 // Map page routes...

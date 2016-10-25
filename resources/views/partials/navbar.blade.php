@@ -23,7 +23,7 @@
 			@if(Auth::check())
 				<li><p class="navbar-text">Welcome</p></li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle hvr-icon-dropdown" data-toggle="dropdown">Username &nbsp;&nbsp;&nbsp;</a>
+					<a href="#" class="dropdown-toggle hvr-icon-dropdown" data-toggle="dropdown">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }} &nbsp;&nbsp;&nbsp;</a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="#">Profile</a></li>
 						<li><a href="#">Edit Account</a></li>
