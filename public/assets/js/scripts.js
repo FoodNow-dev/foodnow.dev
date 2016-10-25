@@ -43,7 +43,7 @@ function createMarker(place) {
 }
 
 
-
+/Users/Mittsy/vagrant-lamp/sites/foodnow.dev/public/assets/js/scripts.js
 
 
 
