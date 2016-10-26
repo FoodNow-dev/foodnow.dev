@@ -52,13 +52,7 @@ class RestaurantsController extends Controller
         $request->session()->forget('ERROR_MESSAGE');
 
         $restaurant = new Restaurant();
-        $restaurant->name = $request->input('name');
-        $restaurant->url = $request->input('url');
-        $restaurant->address = $request->input('address');
-        $restaurant->city = $request->input('city');
-        $restaurant->state = $request->input('state');
-        $restaurant->zipcode = $request->input('zipcode');
-        $restaurant->save();
+        $restaurant->place_id = $request->input('place_id');
         
         if (!empty($request->file('image'))) {
             if ($request->file('image')->isValid()) {
@@ -90,55 +84,6 @@ class RestaurantsController extends Controller
     {
         $data['restaurant'] = Restaurant::findOrFail($id);
         return view('restaurants.show')->with($data);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Request $request, $id)
-    {
-        $data['restaurant'] = Restaurant::findOrFail($id);
-
-        if(!$data['restaurant']->ownedBy($request->user())) {
-            $request->session()->flash('ERROR_MESSAGE', 'You do not have permission');
-            return redirect()->action('RestaurantsController@index');
-        } 
-        return view('restaurants.edit')->with($data);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $request->session()->flash('ERROR_MESSAGE', 'Invalid Inputs');
-        $this->validate($request, Restaurant::$rules);
-        $request->session()->forget('ERROR_MESSAGE');
-
-        $restaurant = Restaurant::findOrFail($id);
-
-        if(!$restaurant->ownedBy($request->user())) {
-            $request->session()->flash('ERROR_MESSAGE', 'You do not have permission');
-            return redirect()->action('RestaurantsController@index');
-        } 
-
-        $restaurant->title = $request->get('title');
-        $restaurant->url = $request->get('url');
-        $restaurant->content = $request->get('content');
-        $restaurant->save();
-
-        Log::info('Updated restaurant: ' . $restaurant);
-
-        $request->session()->flash('SUCCESS_MESSAGE', 'restaurant was saved successfully');
-
-        return redirect()->action('RestaurantsController@show', $restaurant->id);
     }
 
     /**

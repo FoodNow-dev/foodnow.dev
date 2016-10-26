@@ -28,15 +28,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Models\Restaurant::class, function (Faker\Generator $faker) {
 	return [
-		'name' => $faker->company,
-		'url' => $faker->url,
-		'address' => $faker->streetAddress,
-		'city' => $faker->city,
-        'state' => $faker->stateAbbr,
-        'zipcode' => $faker->postcode,
-        'first_image' => $faker->imageUrl($width = 850, $height = 400),
-        'second_image' => $faker->imageUrl($width = 850, $height = 400),
-        'cuisine' => $faker->word
+		'place_id' => '3db637d7a0e4c30950d639632068790c13e9f298'
 	];
 });
 
