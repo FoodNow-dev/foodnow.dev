@@ -15,21 +15,21 @@
 		<div class="inner-bg">
 			<div class="container">
 				<div class="row">
-					<div class=" col-xs-10 col-sm-5 text">
-						<h1 class="col-xs-offset-3 col-lg-offset-2"><strong>Edit Profile:</strong></h1>
+					<div class=" col-xs-12 col-sm-6 text">
+						<h1 class="col-xs-offset-1 col-md-offset-0"><strong>Edit Profile:</strong></h1>
 						<form class="form-horizontal" method="POST" action="#">
 							{{-- <label for="firstName" class="col-xs-6 col-lg-5 control-label">First Name:</label> --}}
-							<div class="form-group col-xs-6 col-sm-10 col-xs-offset-4">
-								<input type="text" name="firstName" class="form-control" placeholder="First name" value="">
+							<div class="form-group col-xs-7 col-sm-10">
+								<input type="text" name="firstName" class="form-control " placeholder="First name" value="">
 							</div>
 
 							{{-- <label for="lastName" class="col-xs-6 col-lg-5 control-label">Last Name:</label> --}}
-							<div class="form-group col-xs-10 col-sm-10">
+							<div class="form-group col-xs-7 col-sm-10">
 								<input type="text" name="lastName" class="form-control" placeholder="Last name" value="">
 							</div>
 
 							{{-- <label for="phone" class="col-xs-6 col-lg-5 control-label">Phone #:</label> --}}
-							<div class="form-group col-xs-10 col-sm-10">
+							<div class="form-group col-xs-7 col-sm-10">
 								<input type="text" name="phone" class="form-control" placeholder="Phone #"
 								value="">
 							</div>
@@ -94,23 +94,23 @@
 							</div>
 
 							{{-- <label for="city" class="col-xs-6 col-lg-5 control-label">City:</label> --}}
-							<div class="form-group col-xs-10 col-sm-10">
+							<div class="form-group col-xs-7 col-sm-10">
 								<input type="text" name="city" class="form-control" placeholder="City"
 								value="">
 							</div>
 
 							{{-- <label for="zipcode" class="col-xs-6 col-lg-5 control-label">ZIP code:</label> --}}
-							<div class="form-group col-xs-10 col-sm-10">
+							<div class="form-group col-xs-7 col-sm-10 col-sm-offset-4">
 								<input type="text" name="zipcode" class="form-control" placeholder="Zipcode"
 								value="">
 							</div>
 
 							{{-- <label for="password" class="col-xs-6 col-lg-5 control-label">Password:</label> --}}
-							<div class="form-group col-xs-offset-3 col-sm-2 col-lg-7">
+						{{-- 	<div class="form-group col-xs-offset-3 col-sm-2 col-lg-7">
 								<button type="submit" class="btn btn-success">Change Password</button>
-							</div>
-{{-- 
-							<div class="form-group col-xs-offset-3 col-sm-2 col-lg-7">
+							</div> --}}
+
+						{{-- 	<div class="form-group col-xs-offset-3 col-sm-2 col-lg-7">
 								<button type="submit" class="btn btn-success">Submit</button>
 
 							</div> --}}
