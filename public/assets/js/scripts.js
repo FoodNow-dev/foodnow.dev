@@ -12,6 +12,8 @@ function initMap() {
     infowindow = new google.maps.InfoWindow();
     var service = new google.maps.places.PlacesService(map);
     service.textSearch({
+    // service.getDetails({
+
         location: userLoc,
         query: 'French',
         radius: 8046.72,
@@ -33,18 +35,23 @@ function createMarker(place) {
     var marker = new google.maps.Marker({
         map: map,
         position: place.geometry.location,
-    });
+        id: place.place_id
+        });
+        // console.log(marker.id)
+
 
     google.maps.event.addListener(marker, 'click', function() {
         infowindow.setContent(
-            '<div><strong>' + place.name + '</strong>' + '<br>'
-            + place.rating + '<br>'
+            // '<div><strong>' + place.name + '</strong>' + '<br>'
+            '<div> <img src="' + place.photos[0].getUrl({'maxWidth': 50, 'maxHeight': 50}) + '"> <br>'
+            + '<strong>' + place.name + '</strong> <br>'
+            + place.rating + ' • '
             + place.price_level + '<br>'
-            + place.formatted_address + '<br>'
-            + place.opening_hours.open_now + '<br>'
-            // + '<img src="' + place.icon + '>' + '<br>'
-            // + place.photos["0"].html_attributions["0"] 
+            
+            // + place.formatted_address + '<br>'
+            // + place.opening_hours.open_now + '<br>'
             + '</div>');
+        // console.log(place.photos[0].getUrl({'maxWidth': 200, 'maxHeight': 200}))
         infowindow.open(map, this);
         console.log(place);
     });
