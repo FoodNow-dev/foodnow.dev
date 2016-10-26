@@ -2,36 +2,31 @@
 
 @section('title', 'Profile')
 
-@section('css', '')
+@section('css')
+	<link rel="stylesheet" type="text/css" href="/assets/css/profile.css">
+@stop
 
 @section('content')
 
-<div class="row">
-		<div class="col-md-3">
-			<p class="lead"><b> {{ $user->name }} </b></p>
-			<ul>
-				<li>User since {{ $user->created_at->diffForHumans() }} </li>
-				<li><a href="mailto:{{  $user->email }}">{{ $user->email }}</a></li>
-			
-			</ul>
-		</div>
-
-		<div class="col-md-9">
-
-			<div class="well show-box">
-				@if ($user->id == Auth::id())
-					<div class="text-right">
+<div class="top-content">
+		<div class="inner-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-5 text text-center show-box animated flipInX">
+						<p class="animated zoomIn"><img class="img-circle" src="{{ (isset($user->image)) ? $user->image : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png' }}"></p>
+						<h1><strong>{{ $user->first_name }} {{ $user->last_name }}</strong></h1>
+						<ul class="profile-list">
+							<li>{{ $user->email }}</li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
 					</div>
-				@endif
-				<hr>
-				
-				
-					
-
-
-			</div> <!-- /.well box -->
-		</div> <!-- /.col-md-9 -->
-	</div> <!-- /.row -->
-
-
+				</div>
+			</div>
+		</div>
+	</div>
 @stop
+
+
+
