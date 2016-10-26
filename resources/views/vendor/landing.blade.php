@@ -20,7 +20,7 @@
 						<h1><strong>My Restaurant Preferences:</strong></h1>
 						<form class="form-horizontal" method="POST" action="#">
 							<div class="form-group">
-								<label for="distance" class="control-label col-sm-6">How far are you willing to go?</label>
+								<label for="distance" class="control-label col-xs-12 col-sm-6 text-left">How far are you willing to go?</label>
 								<div class="col-sm-6 col-xs-6 col-xs-offset-3 col-sm-offset-0">
      								<select name="distance" class="form-control">
 										 <option value="5">5 miles</option>
@@ -31,7 +31,7 @@
     							</div>
     						</div>
     						<div class="form-group">
-    							<label for="price" class="col-sm-6 control-label">What is your price range?</label>
+    							<label for="price" class="col-xs-12 col-sm-6 control-label text-left">What is your price range?</label>
     							<div class="col-sm-6 col-xs-6 col-xs-offset-3 col-sm-offset-0">
     								<select name="price" class="form-control">
     									<option value="1">$</option>
@@ -42,7 +42,7 @@
     							</div>
  							</div>
  							<div class="form-group">
- 								<label for="cuisine" class="col-sm-6 control-label">What cuisine type are you craving</label>
+ 								<label for="cuisine" class="col-xs-12 col-sm-6 control-label text-left">What cuisine type are you craving</label>
  								<div class="col-sm-6 col-xs-6 col-xs-offset-3 col-sm-offset-0">
  									<select name="price" class="form-control">
 
