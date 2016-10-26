@@ -121,7 +121,7 @@
 							</div>
 
 							<div class = "row">
-								<div class="form-group col-xs-offset-3 col-sm-2 col-lg-11">
+								<div class="form-group col-xs-offset-5 col-sm-3 col-lg-11">
 									<button type="submit" class="btn btn-success">Submit</button>
 
 								</div>
@@ -130,14 +130,16 @@
 					</div>
 					<div col-xs-2 col-xs-offset-2 text>
 						<form>
-							<div class="col-sm-12 col-sm-offset-12 text">
-								<div class="row>"
-									<div class="form-group">
-	                        			<label for="image">Item image</label>
-	                        			<input type="file" class="form-control-file" id="image_url" name="image_url" enctype="multipart/form-data"  aria-describedby="fileHelp">
-	                       				 <small id="fileHelp" class="form-text text-muted">Add a Profile Picture. Allowed file types are .jpeg, .jpg, .gif, and .png</small>
-	                    			</div>
-	                    			<div class="col-sm-7 col-sm-offset-2">
+							<div class="col-xs-4 col-sm-offset-1 text">
+								<div class="row">
+								    <div class="form-group">
+                        				<label for="image">Profile Picture</label>
+                        				<img src="http://placehold.it/350x150">
+                        				<input type="file" class="form-control-file" id="image_url" name="image_url" enctype="multipart/form-data"  aria-describedby="fileHelp">
+                       					 <small id="fileHelp" class="form-text text-muted">Add a Profile Picture. Allowed file types are .jpeg, .jpg, .gif, and .png</small>
+                    				</div>
+								
+	                    			<div class="col-xs-7 col-sm-offset-2">
 	                           			 <button type="submit" class="btn btn-primary">Submit</button>
 	                       		    </div>
 	                       		</div>
