@@ -22,6 +22,30 @@
 							<li></li>
 						</ul>
 					</div>
+					<div class="col-sm-5 col-sm-offset-2 text text-center show-box animated flipInX">
+						<h1><strong>My Restaurant Reviews</strong></h1>
+
+						<h3> Chilli's Review</h3>
+						<ul style="list-style-type:none">
+								<li>lorem ipsum</li>
+								<li>lorem ipsum</li>
+								<li>lorem ipsum</li>
+						</ul>
+
+						<h3> Hop Doddy's Restaurant Review</h3>
+						<ul style="list-style-type:none">
+								<li>lorem ipsum</li>
+								<li>lorem ipsum</li>
+								<li>lorem ipsum</li>
+						</ul>
+						<h3> Olive Garden Review</h3>
+						<ul style="list-style-type:none">
+								<li>lorem ipsum</li>
+								<li>lorem ipsum</li>
+								<li>lorem ipsum</li>
+						</ul>
+
+					</div>
 				</div>
 			</div>
 		</div>

@@ -130,11 +130,13 @@
 					</div>
 					<div col-xs-2 col-xs-offset-2 text>
 						<form>
-							<div class="col-xs-4 col-sm-offset-1 text">
+							<div class="col-xs-10 col-sm-offset-1 col-lg-5 text">
 								<div class="row">
 								    <div class="form-group">
                         				<label for="image">Profile Picture</label>
-                        				<img src="http://placehold.it/350x150">
+                        				{{-- <img src="http://placehold.it/350x150"> --}}
+                        				<p class="animated zoomIn"><img class="img-circle" src="{{ (isset($user->image)) ? $user->image : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png' }}"></p>
+
                         				<input type="file" class="form-control-file" id="image_url" name="image_url" enctype="multipart/form-data"  aria-describedby="fileHelp">
                        					 <small id="fileHelp" class="form-text text-muted">Add a Profile Picture. Allowed file types are .jpeg, .jpg, .gif, and .png</small>
                     				</div>
