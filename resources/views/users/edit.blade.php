@@ -22,7 +22,7 @@
 						<form class="form-horizontal" method="POST" action="#">
 							<div class = "row">
 								<div class="form-group col-xs-7 col-sm-10">
-									<input type="text" name="firstName" class="form-control " placeholder="First name" value="">
+									<input type="text" name="firstName" class="form-control col-xs-offset-3" placeholder="First name" value="">
 								</div>
 							</div>
 
@@ -130,7 +130,7 @@
 					</div>
 					<div col-xs-2 col-xs-offset-2 text>
 						<form>
-							<div class="col-xs-10 col-sm-offset-1 col-lg-5 text">
+							<div class="col-xs-10 col-sm-offset-1  col-md-5 text">
 								<div class="row">
 								    <div class="form-group">
                         				<label for="image">Profile Picture</label>
