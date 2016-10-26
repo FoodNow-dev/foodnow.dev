@@ -16,7 +16,11 @@
 			<div class="col-sm-5">
 				<h1>List of places</h1>
 				<hr>
-				1. Place<br>Rating<br>Other Info<br>
+				Name <br>
+				Score • Dollar • Type <br>
+				Description <br>
+				Menu <br>
+				Hours <br>
 				<hr>
 			</div>
 			<div class="col-sm-7">

@@ -81,7 +81,7 @@ input[type="number"] {
 
 .btn-register,
 .password,
-.form-confirm-password{
+.password_confirmation{
     position: relative;
     bottom: 35px;
 }
