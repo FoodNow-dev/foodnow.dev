@@ -8,6 +8,10 @@
 	/*justify-right: 0%;*/
 }
 
+.row{
+	margin-left:0;
+}
+
 .top-right {
 	float: right;
 	/*width: 25%;*/
