@@ -45,9 +45,9 @@ Route::get('vendor/passwordreset', function()
 });
 
 
-Route::get('vendor/editprofile', function()
+Route::get('vendor/edit', function()
 {
-	return view('vendor/editprofile');
+	return view('vendor/edit');
 });
 
 
