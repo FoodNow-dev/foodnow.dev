@@ -13,7 +13,7 @@ function initMap() {
     var service = new google.maps.places.PlacesService(map);
     service.textSearch({
         location: userLoc,
-        query: 'Mexican',
+        query: 'French',
         radius: 8046.72,
         // type: ['restaurant']
     }, callback);
@@ -40,8 +40,11 @@ function createMarker(place) {
             '<div><strong>' + place.name + '</strong>' + '<br>'
             + place.rating + '<br>'
             + place.price_level + '<br>'
-            + place.vicinity + '<br>'
-            + place.opening_hours.open_now + '</div>');
+            + place.formatted_address + '<br>'
+            + place.opening_hours.open_now + '<br>'
+            // + '<img src="' + place.icon + '>' + '<br>'
+            // + place.photos["0"].html_attributions["0"] 
+            + '</div>');
         infowindow.open(map, this);
         console.log(place);
     });
