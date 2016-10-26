@@ -1,8 +1,6 @@
-.col-sm-5 {
-	height: 80vh;
-	background: rgba(8, 59, 112, .65);
-	color: #d5b33b;
-	border-radius: 5px;
+.container {
+	background-color: none;
+	
 }
 
 #map {
@@ -14,4 +12,25 @@
 
 .col-sm-7 {
 	padding-right: 0;
+
+}
+
+.list {
+	background: rgba(8, 59, 112, .65);
+	border: 1px solid #d5b33b;
+	padding: 0px;
+	color: #d5b33b;
+	border-radius: 5px;
+	overflow: hidden;
+    position: relative;
+    width: 100%;
+	
+}
+
+#results > div > p > img {
+	height: 100%;
+    width: 25%;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
