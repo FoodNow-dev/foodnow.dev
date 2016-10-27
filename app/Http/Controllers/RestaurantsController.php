@@ -15,7 +15,7 @@ class RestaurantsController extends Controller
 {
      public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -24,8 +24,11 @@ class RestaurantsController extends Controller
      */
     public function index(Request $request)
     {
-        $data['request'] = $request;
-        $data['restaurants'] = (isset($request->search)) ? Restaurant::search($request->search)->paginate(6) :  Restaurant::with('user')->orderBy('created_at', 'desc')->paginate(6);
+        $data['radius'] = $request->input('radius');
+        $data['minprice'] = $request->input('minprice');
+        $data['food'] = $request->input('food');
+        $data['maxprice'] = $request->input('maxprice');
+
         return view('restaurants.index')->with($data);
     }
 
@@ -80,9 +83,10 @@ class RestaurantsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        $data['restaurant'] = Restaurant::findOrFail($id);
+        $data['place_id'] = $request->input('placeId');
+        dd($data);
         return view('restaurants.show')->with($data);
     }
 

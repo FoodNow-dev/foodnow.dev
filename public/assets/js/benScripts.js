@@ -1,15 +1,16 @@
 
+radius *= 1609.34;
 
 function priceFormat(level) {
     switch (level) {
         case 1 :
             return '$';
         case 2 :
-            return '$$';
+            return '$ $';
         case 3 :
-            return '$$$';
+            return '$ $ $';
         case 4 :
-            return '$$$$';
+            return '$ $ $ $';
     }
 
 }
@@ -42,7 +43,6 @@ function rating(level) {
 }
 
 function item_tmpl(data){
-    console.log(data);
     var formattedAddress = data.formatted_address.split(",").join("<br>");
     
     var content = '<div class="list text-right animated fadeInLeft"><p>';
@@ -52,10 +52,18 @@ function item_tmpl(data){
             content += '<img class="left" src"http://www.gemologyproject.com/wiki/images/5/5f/Placeholder.jpg">';
         }          
         content += '<div class="info"></p><h3>' + data.name + '</h3><p>';
-        content += (data.rating) ? '<img src="' + rating(data.rating) + '">': 'No Rating Available';
-        content += '</p><p>' + formattedAddress + '<br>';
+        content += (data.rating) ? '<img src="' + rating(data.rating) + '"><br>': 'No Rating Available<br>';
         content += (data.price_level) ? priceFormat(data.price_level) : 'No Price Info Available' ;
-        content += '</p></div></div>';
+        content += '</p><p>' + formattedAddress + '<br></p>';
+        content += '<form method="POST" action="{{ action("RestaurantsController@show") }}">';
+        content += '<input type="hidden" name="placeId" value="' + data.place_id + '"><button class="btn view" type="submit">View Restaurant</button>';
+
+
+
+
+
+
+        content += '</div></div>';
     return content;
 }
 
@@ -84,8 +92,12 @@ function initMap() {
             service = new google.maps.places.PlacesService(map);
             service.textSearch({
                 location: userLoc,
-                query: 'French',
-                type: ['Restaurant']
+                radius: radius,
+                open_now: true,
+                query: food,
+                minPriceLevel: minPrice,
+                maxPriceLevel: maxPrice,
+                types: 'Restaurant'
             }, callback);
             
         } else {
@@ -121,6 +133,7 @@ function createMarker(place) {
     
     google.maps.event.addListener(marker, 'click', function() {
         service.getDetails(request, function(place, status) {
+            console.log(place);
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var contentStr = '<div>' 
                     + '<strong><em>PLACE ID: </em></strong>' + place.place_id + '<br>'
