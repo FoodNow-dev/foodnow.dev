@@ -2,6 +2,41 @@ var map;
 var infowindow;
 var service;
 
+// --------------------------- GEOLOCATION ---------------------------
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(shoqPosition, showError);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function showPosition(position) {
+    var latlon = position.coords.ltitude + "," + position.corrds.longitude;
+
+    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+    +latlon+"&zoom=14&size=400x300&sensor=false";
+
+    document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation.")
+            break;
+        case error.PERMISSION_UNAVAILABLE:
+            alert("Location information is unavailable.")
+            break;
+        case error.TIMEOUT:
+            alert("The request to get user location timed out.")
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("An unknown error occurred.")
+            break;
+    }
+}
+
 // --------------------------- RENDERS MAP ---------------------------
 function initMap() {
     var userLoc = new google.maps.LatLng(29.443134, -98.48138);
