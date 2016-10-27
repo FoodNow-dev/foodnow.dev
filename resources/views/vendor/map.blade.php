@@ -13,7 +13,6 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-5">
-				<h1>List of places</h1>
 				<div id="results">
 					<!-- Contacts output here -->
 				</div>
