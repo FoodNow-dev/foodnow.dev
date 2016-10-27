@@ -17,7 +17,8 @@ footer {
 }
 
 .container {
-	background-color: none;
+	width:90%;
+	
 	
 }
 
@@ -28,6 +29,8 @@ footer {
 	margin-bottom: 2%;
 	border-radius: 5px;
 	position: fixed !important;
+	right: 6%;
+	top:0px;
 	margin-top: 70px;
 }
 
@@ -38,7 +41,7 @@ footer {
 
 .list {
 	background: rgba(8, 59, 112, .85);
-	border: 1px solid #d5b33b;
+	border: 4px solid #d5b33b;
 	padding: 0px;
 	color: #d5b33b;
 	border-radius: 10px;
@@ -57,6 +60,7 @@ footer {
     position: absolute;
     left: 0;
     top: 0;
+    border-right: 2px solid #d5b33b;
 }
 
 .info {
@@ -71,5 +75,7 @@ footer {
     margin-bottom: 90px;
 }
 
-
+.view {
+	background-color: none;
+}
 
