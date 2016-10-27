@@ -54,10 +54,6 @@ Route::get('vendor/edit', function()
 // Map page routes...
 Route::get('vendor/map', function()
 {
-	// $googlePlaces = new PlacesApi('AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA');
-	// do not hard code type and location
-	// $response = $googlePlaces->textSearch('Mexican restaurant', ['location' => '29.426791, -98.489602']);
-	// return view('vendor/map')->with('data', $response);
 	return view('vendor/map');
 });
 
