@@ -1,75 +1,5 @@
-// var map;
-// var infowindow;
-// // var request;
-// var service;
-// var markers;
-
-// // --------------------------- RENDERS MAP ---------------------------
-// function initMap() {
-//     var userLoc = {lat: 29.426791, lng: -98.489602};
-
-//     map = new google.maps.Map(document.getElementById('map'), {
-//         center: userLoc,
-//         zoom: 15
-//     });
-
-//     infowindow = new google.maps.InfoWindow();
-//     service = new google.maps.places.PlacesService(map);
-//     service.textSearch({
-//     // service.getDetails({
-//         location: userLoc,
-//         query: 'French',
-//         // change to read miles correctly
-//         radius: 8046.72,
-//         // type: ['restaurant']
-//     }, callback);
-// }
-
-// // --------------------------- AFTER MAP IS MADE ---------------------------
-// // --------------------------- MARKERS WILL BE PLACED ---------------------------
-// function callback(results, status) {
-//     if (status === google.maps.places.PlacesServiceStatus.OK) {
-//         for (var i = 0; i < results.length; i++) {
-//             createMarker(results[i]);
-//         }
-//         // console.log(results)
-//     }
-// }
-
-// function createMarker(place) {
-//     var placeLoc = place.geometry.location;
-//     var marker = new google.maps.Marker({
-//         map: map,
-//         position: place.geometry.location,
-//         id: place.place_id
-//         });
-//         // console.log(marker.id)
-
-//     google.maps.event.addListener(marker, 'click', function() {
-//         infowindow.setContent(
-//             '<div> <img src="' + place.photos[0].getUrl({'maxWidth': 50, 'maxHeight': 50}) + '"> <br>'
-//             + '<strong>' + place.name + '</strong> <br>'
-//             + place.rating + ' • '
-//             + place.price_level + '<br>'
-            
-//             // + place.formatted_address + '<br>'
-//             // + place.opening_hours.open_now + '<br>'
-//             + '</div>');
-//         // console.log(place.photos[0].getUrl({'maxWidth': 200, 'maxHeight': 200}))
-//         infowindow.open(map, this);
-//         // console.log(place);
-//         return marker;
-//     });
-// }
-
-
-
-
-
-
 var map;
 var infowindow;
-// var request;
 var service;
 var gmarkers = [];
 var geocoder = null;
@@ -78,7 +8,7 @@ var bounds = null;
 // --------------------------- RENDERS MAP ---------------------------
 function initMap() {
     geocoder = new google.maps.Geocoder();
-    var userLoc = new google.maps.LatLng(29.426791, -98.489602);
+    var userLoc = new google.maps.LatLng(29.443134, -98.48138);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
@@ -93,7 +23,7 @@ function initMap() {
             service = new google.maps.places.PlacesService(map);
             service.textSearch({
                 location: userLoc,
-                query: 'French'
+                query: 'Thai'
             }, callback);
         } else {
             alert("Geocode was not successful for the following reason: ")
@@ -129,25 +59,27 @@ function createMarker(place) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var contentStr = '<div>' 
                     + '<strong><em>PLACE ID: </em></strong>' + place.place_id + '<br>'
-                    + '<img src="' + place.photos[0].getUrl({'maxWidth': 50, 'maxHeight': 50}) + '"> <br>'
-                    + '<strong>' + place.name + '</strong> <br>'
-                    + place.vicinity + '<br>'
+                    + '<strong>' + place.name + '</strong> <br>';
 
-                    + place.formatted_phone_number + '<br>'
-                    + '<a>' + place.website + '</a> <br>'
-                    + '<strong><em>OPEN: </em></strong>' + place.opening_hours.open_now + '<br>'
-                    + '<strong><em>PRICE LEVEL: </em></strong>' + place.price_level + '<br>'
-                    + '<strong><em>RATING: </em></strong>' + place.rating + '<br>'
-                    + '<strong><em>REVIEW: </em></strong>' + place.reviews[0].author_name + '<br>'
-                    + '<strong><em>REVIEW: </em></strong>' + place.reviews[0].rating + '<br>'
-                    + '<strong><em>REVIEW: </em></strong>' + place.reviews[0].text + '<br>'
-
-
-                // '<h5>' + place.name + '</h5><p>' + place.formatted_address;
-                
-                // if (!!place.formatted_phone_number) contentStr += '<br>' + place.formatted_phone_number;
-                // if (!!place.website) contentStr += '<br><a target="_blank" href="' + place.website + '">' + place.website + '</a>';
-                // contentStr += '<br>' + place.types + '</p>';
+                    contentStr += (place.photos[0]) ? '<img src="' + place.photos[0].getUrl({'maxWidth': 50, 'maxHeight': 50}) + '">' : "<br><em>No Image Provided</em>";
+                    
+                    contentStr += (place.vicinity) ? '<br>' + place.vicinity : "<br><em>No Address Provided</em>";
+                    
+                    contentStr += (place.formatted_phone_number) ? '<br>' + place.formatted_phone_number : "<br><em>No Phone Number Provided</em>";
+                    
+                    contentStr += (place.website) ? '<br> <a href="' + place.website + '">Website</a>' : "<br><em>No Website Provided</em>";
+                    
+                    contentStr += (place.opening_hours) ? '<br>'+ place.opening_hours.open_now : "<br><em>No Hours Provided</em>";
+                    
+                    contentStr += (place.price_level) ? '<br>'+ place.price_level : "<br><em>No Prices Provided</em>";
+                    
+                    contentStr += (place.rating)? '<br>'+ place.rating : "<br><em>No Ratings Yet</em>";
+                    
+                    contentStr += (place.reviews[0].author_name) ? '<br>'+ place.reviews[0].author_name : "<br><em>No Reviews Yet</em>";
+                    
+                    contentStr += (place.reviews[0].rating) ? '<br>'+ place.reviews[0].rating : "<br><em>No Reviews Yet</em>";
+                    
+                    contentStr += (place.reviews[0].text) ? '<br>'+ place.reviews[0].text : "<br><em>No Reviews Yet</em>";
 
                 infowindow.setContent(contentStr);
                 infowindow.open(map, marker);
