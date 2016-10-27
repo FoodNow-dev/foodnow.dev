@@ -15,6 +15,11 @@ use App\Models\Restaurant;
 */
 use SKAgarwal\GoogleApi\PlacesApi;
 
+Route::get('restaurants/restaurant', function(){
+
+	return view('restaurants/restaurant');
+});
+
 Route::get('/', 'Auth\AuthController@getRegister');
 
 Route::get('home', function() {

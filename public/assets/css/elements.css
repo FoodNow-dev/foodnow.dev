@@ -18,3 +18,7 @@ button.btn {
 .submit{
     background: #fff;
 }
+
+#email_body{
+    color:black;
+}
