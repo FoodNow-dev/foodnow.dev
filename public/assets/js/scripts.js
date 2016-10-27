@@ -129,25 +129,30 @@ function createMarker(place) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var contentStr = '<div>' 
                     + '<strong><em>PLACE ID: </em></strong>' + place.place_id + '<br>'
-                    + '<img src="' + place.photos[0].getUrl({'maxWidth': 50, 'maxHeight': 50}) + '"> <br>'
-                    + '<strong>' + place.name + '</strong> <br>'
-                    + place.vicinity + '<br>'
-
-                    + place.formatted_phone_number + '<br>'
-                    + '<a>' + place.website + '</a> <br>'
-                    + '<strong><em>OPEN: </em></strong>' + place.opening_hours.open_now + '<br>'
-                    + '<strong><em>PRICE LEVEL: </em></strong>' + place.price_level + '<br>'
-                    + '<strong><em>RATING: </em></strong>' + place.rating + '<br>'
-                    + '<strong><em>REVIEW: </em></strong>' + place.reviews[0].author_name + '<br>'
-                    + '<strong><em>REVIEW: </em></strong>' + place.reviews[0].rating + '<br>'
-                    + '<strong><em>REVIEW: </em></strong>' + place.reviews[0].text + '<br>'
+                    + '<strong>' + place.name + '</strong> <br>';
 
 
-                // '<h5>' + place.name + '</h5><p>' + place.formatted_address;
-                
-                // if (!!place.formatted_phone_number) contentStr += '<br>' + place.formatted_phone_number;
-                // if (!!place.website) contentStr += '<br><a target="_blank" href="' + place.website + '">' + place.website + '</a>';
-                // contentStr += '<br>' + place.types + '</p>';
+                    if (!!place.photos[0].getUrl({'maxWidth': 50, 'maxHeight': 50})) contentStr += '<img src="' + place.photos[0].getUrl({'maxWidth': 50, 'maxHeight': 50}) + '">';
+                    if (!!place.vicinity) contentStr += '<br>' + place.vicinity;
+                    if (!!place.formatted_phone_number) contentStr += '<br>' + place.formatted_phone_number;
+                    if (!!place.website) contentStr += '<br> <a href="' + place.website + '">Website</a>';
+                    if (!!place.opening_hours.open_now) contentStr += '<br>'+ place.opening_hours.open_now;
+                    if (!!place.price_level) contentStr += '<br>'+ place.price_level;
+                    if (!!place.rating) contentStr += '<br>'+ place.rating;
+                    if (!!place.reviews[0].author_name) contentStr += '<br>'+ place.reviews[0].author_name;
+                    if (!!place.reviews[0].rating) contentStr += '<br>'+ place.reviews[0].rating;
+                    if (!!place.reviews[0].text) contentStr += '<br>'+ place.reviews[0].text;
+
+
+                    // + '<img src="' + place.photos[0].getUrl({'maxWidth': 50, 'maxHeight': 50}) + '"> <br>'
+                    // + place.formatted_phone_number + '<br>'
+                    // + '<a>' + place.website + '</a> <br>'
+                    // + '<strong><em>OPEN: </em></strong>' + place.opening_hours.open_now + '<br>'
+                    // + '<strong><em>PRICE LEVEL: </em></strong>' + place.price_level + '<br>'
+                    // + '<strong><em>RATING: </em></strong>' + place.rating + '<br>'
+                    // + '<strong><em>REVIEW: </em></strong>' + place.reviews[0].author_name + '<br>'
+                    // + '<strong><em>REVIEW: </em></strong>' + place.reviews[0].rating + '<br>'
+                    // + '<strong><em>REVIEW: </em></strong>' + place.reviews[0].text + '<br>'
 
                 infowindow.setContent(contentStr);
                 infowindow.open(map, marker);
