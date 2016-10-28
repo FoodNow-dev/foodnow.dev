@@ -23,7 +23,7 @@ function showPosition(position) {
     // document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
 
     // console.log(latlon);
-    initMap();
+    initMap(latlon);
 }
 
 function showError(error) {
@@ -46,7 +46,7 @@ function showError(error) {
 }
 
 // --------------------------- RENDERS MAP ---------------------------
-function initMap() {
+function initMap(latlon) {
     console.log("initMap");
 
     // var userLoc = new google.maps.LatLng(29.443134, -98.48138);
