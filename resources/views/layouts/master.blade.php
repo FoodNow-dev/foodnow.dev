@@ -41,11 +41,13 @@
 
 	</head>
 	<body>
+		<div id="wrapper">
 
-		@include('partials.navbar')
+			@include('partials.navbar')
 
-		@yield('content')
-
+			@yield('content')
+		</div>
+		<div id="push"></div>
 		@include('partials.footer')
 		
 		{{-- jQuery --}}
