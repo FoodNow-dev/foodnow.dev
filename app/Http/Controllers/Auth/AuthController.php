@@ -72,4 +72,9 @@ class AuthController extends Controller
         ]);
     }
 
+    public function getRegister()
+    {
+        return View::make('auth.register');
+    }
+
 }
