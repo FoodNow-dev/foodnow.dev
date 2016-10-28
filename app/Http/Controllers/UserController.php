@@ -117,6 +117,13 @@ class UserController extends Controller
     {
         return Friend::allFriends($request->user()->id);
     }
+
+    //method for users to send text messages to friends
+    public function sendText(Request $request)
+    {
+
+        return view('restaurants.restaurant');
+    }
 }
 
 
