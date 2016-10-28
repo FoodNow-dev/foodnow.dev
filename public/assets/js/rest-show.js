@@ -1,63 +1,4 @@
-radius *= 1609.34;
 
-function priceFormat(level) {
-    switch (level) {
-        case 1 :
-            return '$';
-        case 2 :
-            return '$ $';
-        case 3 :
-            return '$ $ $';
-        case 4 :
-            return '$ $ $ $';
-    }
-
-}
-
-function rating(level) {
-    switch (true) {
-        case (level < .25) :
-            return '/assets/img/star-rating0.png';
-        case (level >= .25 && level < .75) :
-            return '/assets/img/star-rating-half.png';
-        case (level >= .75 && level < 1.25) :
-            return '/assets/img/star-rating1.png';
-        case (level >= 1.25 && level < 1.75) :
-            return '/assets/img/star-rating1half.png';
-        case (level >= 1.75 && level < 2.25) :
-            return '/assets/img/star-rating2.png';
-        case (level >= 2.25 && level < 2.75) :
-            return '/assets/img/star-rating2half.png';
-        case (level >= 2.75 && level < 3.25) :
-            return '/assets/img/star-rating3.png';
-        case (level >= 3.25 && level < 3.75) :
-            return '/assets/img/star-rating3half.png';
-        case (level >= 3.75 && level < 4.25) :
-            return '/assets/img/star-rating4.png';
-        case (level >= 4.25 && level < 4.75) :
-            return '/assets/img/star-rating4half.png';
-        case (level >= 4.75) :
-            return '/assets/img/star-rating5.png';
-    }
-}
-
-function item_tmpl(data){
-    var formattedAddress = data.formatted_address.split(",").join("<br>");
-    
-    var content = '<div class="list text-right animated fadeInLeft"><p>';
-        if (data.photos[0]){
-            content += '<img class="left" src="' + data.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500}) + '">';
-        } else {
-            content += '<img class="left" src"http://www.gemologyproject.com/wiki/images/5/5f/Placeholder.jpg">';
-        }          
-        content += '<a href="/restaurants/' + data.place_id + '"> <div class="info"></p><h3>' + data.name + '</a></h3><p>';
-        content += (data.rating) ? '<img src="' + rating(data.rating) + '"><br>': 'No Rating Available<br>';
-        content += (data.price_level) ? priceFormat(data.price_level) : 'No Price Info Available' ;
-        content += '</p><p>' + formattedAddress + '<br></p>';
-
-        content += '</div></div>';
-    return content;
-}
 
 // --------------------------- RENDERS MAP ---------------------------
 var map;
@@ -102,21 +43,16 @@ function showError(error) {
 // --------------------------- RENDERS MAP ---------------------------
 function initMap() {
     var userLoc = new google.maps.LatLng(29.443134, -98.48138);
+    // map = new google.maps.Map(document.getElementById('map'), {
+    //     center: userLoc,
+    //     zoom: 13
+    // });
 
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: userLoc,
-        zoom: 13
-    });
-    
+        
     infowindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
     service.textSearch({
         location: userLoc,
-        radius: radius,
-        open_now: true,
-        query: food,
-        minPriceLevel: minPrice,
-        maxPriceLevel: maxPrice,
         types: 'Restaurant'
     }, callback);
 }
@@ -127,9 +63,8 @@ function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
-            $('#results').append(item_tmpl(results[i]));
+            console.log(results[i]);
         }
-        console.log(results)
     }
 }
 
@@ -147,6 +82,7 @@ function createMarker(place) {
 // --------------------------- INFOWINDOWS ---------------------------
     google.maps.event.addListener(marker, 'click', function() {
         service.getDetails(request, function(place, status) {
+            console.log(place);
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var contentStr = '<div>';
                     // PLACE ID
@@ -171,8 +107,3 @@ function createMarker(place) {
         });
     });
 }
-
-
-
-
-

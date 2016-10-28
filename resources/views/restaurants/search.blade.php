@@ -55,6 +55,8 @@
 										<option value="4">$$$$</option>
 									</select>
 								</div>
+							</div>
+							<div class="form-group">
 								<div class="form-group">
 									<label for="cuisine" class="col-xs-12 col-sm-6 control-label text-left">What cuisine type are you craving</label>
 									<select name="food" class="form-control">

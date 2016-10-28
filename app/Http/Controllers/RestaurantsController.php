@@ -83,12 +83,13 @@ class RestaurantsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show($placeId)
     {
-        $data['place_id'] = $request->input('placeId');
-        dd($data);
+        $data['placeId'] = $placeId; 
         return view('restaurants.show')->with($data);
     }
+
+
 
     /**
      * Remove the specified resource from storage.
