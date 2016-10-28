@@ -20,6 +20,9 @@ Route::get('restaurants/restaurant', function(){
 	return view('restaurants/restaurant');
 });
 
+Route::post('restaurants/restaurant', 'UserController@sendText');
+
+
 Route::get('/', 'Auth\AuthController@getRegister');
 
 Route::get('home', function() {

@@ -26,7 +26,8 @@
 				<div class="row">
 					<div class="col-xs-10 col-sm-5 text">
 						<h1>Update Your Friends Where Dinner Is</h1>
-						<form class="form-horizontal col-xs-10 col-xs-offset-3" method="POST" action="#">
+						<form class="form-horizontal col-xs-10 col-xs-offset-3" method="POST" action="/restaurants/restaurant">
+						{!! csrf_field() !!}
 							<div class="form-group col-xs-8 col-xs-offset-7">
 								<input type="text" name="friendName" class="form-control" placeholder="Friend's name" value="">
 							</div>
