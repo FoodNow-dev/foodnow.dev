@@ -23,12 +23,14 @@
 	bottom: 284px;
 }
 .top-content .text {
-	margin-top: 100px;
+	margin-top: 50px;
 	margin-right: 0px;	
 	padding-top: 25px;
 	padding-bottom: 50px;
 	background-color: rgba(8, 59, 112, .65);
 	color: #fff;
+	height: 500px;
+	width: 50%;
 	border-radius: 5px;
 }
 
@@ -56,6 +58,19 @@
 
 .top-content .top-big-link {
 	margin-top: 35px;
+}
+
+.or {
+	position: absolute;
+	top: 305px;
+	left: 43%;
+	z-index: 1000;
+	font-size: 6em;
+	color: #d5b33b;
+	font-family: 'Bevan', cursive;
+	background-color: ;
+	
+	width: 205px;
 }
 
 .btn-link-1 {
@@ -112,7 +127,7 @@
 	width: 25%;
 	padding-top: 5px;
 	font-size: 66px;
-	color: #d5b33b;;
+	color: #d5b33b;
 	line-height: 100px;
 	text-align: right;
 }
@@ -127,3 +142,31 @@
 .form-bottom form .input-error {
 	border-color: #19b9e7;
 }
+/*body > div > div > div > div.row > div.col-sm-6.text{
+	border-right: 2px dotted #d5b33b;
+}
+body > div > div > div > div.row > div.col-sm-5.text {
+	border-left: 2px dotted #d5b33b;
+}*/
+
+.top-line {
+	position: absolute;
+    border: 3px solid #d5b33b;
+    height: 175px;
+    top: 0px;
+    right: -2px;
+    z-index: 1000;
+}
+
+.bottom-line {
+	position: absolute;
+    border: 3px solid #d5b33b;
+    height: 215px;
+    bottom: 0px;
+    right: -2px;
+    z-index: 1000;
+}
+
+
+
+
