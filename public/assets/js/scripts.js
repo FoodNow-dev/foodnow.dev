@@ -18,6 +18,8 @@ function showPosition(position) {
     var latlon = position.coords.latitude + ", " + position.coords.longitude;
 
     console.log(latlon);
+    console.log(position);
+    console.log("TESTING");
     // var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=400x300&sensor=false";
 
     // document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
