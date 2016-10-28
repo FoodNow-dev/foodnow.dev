@@ -13,18 +13,18 @@
 	<div class="top-content">
 		<div class="inner-bg">
 			<div class="container">
-				<div class="row">
-					<div class="col-xs-10 col-sm-5 text">
-						<img src="http://placehold.it/250x150">
+				<div class="row col-xs-12">
+					<div class="col-xs-12 col-xs-offset-1 col-sm-4 col-sm-offset-0 text">
+						<img src="http://placehold.it/150x150">
 						<h1>Restaurant Name</h1>
 					</div>
-					<div class="col-xs-10 col-sm-5 col-sm-offset-2 text ">
-						<img src="http://placehold.it/250x150">
+					<div class="col-xs-12 col-xs-offset-1 col-sm-4 col-sm-offset-1 text ">
+						<img src="http://placehold.it/150x150">
 						<h1>Map</h1>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-10 col-sm-5 text">
+					<div class="col-xs-7 col-xs-offset-1 col-sm-5 text">
 						<h1>Update Your Friends Where Dinner Is</h1>
 						<form class="form-horizontal col-xs-10 col-xs-offset-3" method="POST" action="/restaurants/restaurant">
 						{!! csrf_field() !!}

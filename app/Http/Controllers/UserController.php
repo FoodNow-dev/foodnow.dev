@@ -141,9 +141,9 @@ class UserController extends Controller
 
         // $rules = [
         //     'friendName1'=>'required|min:1',
-        //     'friendPhone1'=>'required|numeric|size:11',
+        //     'friendPhone1'=>'required|numeric|min:11',
         //     'friendName2'=>'required|min:1',
-        //     'friendPhone2'=>'required|numeric|size:11',
+        //     'friendPhone2'=>'required|numeric|min:11',
         // ];
 
         // $request->session()->flash('ERROR_MESSAGE','Text Message was not sent');
