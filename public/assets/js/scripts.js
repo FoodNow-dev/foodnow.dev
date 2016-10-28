@@ -18,12 +18,12 @@ function showPosition(position) {
 
     var latlon = position.coords.latitude + ", " + position.coords.longitude;
 
-    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=400x300&sensor=false";
+    // var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=400x300&sensor=false";
 
-    document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
+    // document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
 
     // console.log(latlon);
-    // initMap();
+    initMap();
 }
 
 function showError(error) {
@@ -49,8 +49,8 @@ function showError(error) {
 function initMap() {
     console.log("initMap");
 
-    var userLoc = new google.maps.LatLng(29.443134, -98.48138);
-    // var userLoc = new google.maps.LatLng(latlon);
+    // var userLoc = new google.maps.LatLng(29.443134, -98.48138);
+    var userLoc = new google.maps.LatLng(latlon);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
