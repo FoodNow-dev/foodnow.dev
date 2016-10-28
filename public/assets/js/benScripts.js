@@ -70,13 +70,13 @@ function item_tmpl(data){
 var map;
 var infowindow;
 var service;
-var gmarkers = [];
-var geocoder = null;
-var bounds = null;
+// var gmarkers = [];
+// var geocoder = null;
+// var bounds = null;
 
 // --------------------------- RENDERS MAP ---------------------------
 function initMap() {
-    geocoder = new google.maps.Geocoder();
+    // geocoder = new google.maps.Geocoder();
     var userLoc = new google.maps.LatLng(29.426791, -98.489602);
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -84,9 +84,9 @@ function initMap() {
         zoom: 15
     });
 
-    geocoder.geocode({'address': "San Antonio, TX"}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            var point = results[0].geometry.location;
+    // geocoder.geocode({'address': "San Antonio, TX"}, function(results, status) {
+        // if (status == google.maps.GeocoderStatus.OK) {
+        //     var point = results[0].geometry.location;
 
             infowindow = new google.maps.InfoWindow();
             service = new google.maps.places.PlacesService(map);
@@ -100,10 +100,10 @@ function initMap() {
                 types: 'Restaurant'
             }, callback);
             
-        } else {
-            alert("Geocode was not successful for the following reason: ")
-        }
-    })
+        // } else {
+        //     alert("Geocode was not successful for the following reason: ")
+        // }
+    // })
 }
 
 // --------------------------- AFTER MAP IS MADE ---------------------------
@@ -155,10 +155,10 @@ function createMarker(place) {
             }
         });
     });
-    gmarkers.push(marker);
-    var side_bar_html = "<a href='javascript:google.maps.event.trigger(gmarkers[" + parseInt(gmarkers.length - 1) + "],\"click\");'>" + place.name + "</a><br>";
+    // gmarkers.push(marker);
+    // var side_bar_html = "<a href='javascript:google.maps.event.trigger(gmarkers[" + parseInt(gmarkers.length - 1) + "],\"click\");'>" + place.name + "</a><br>";
 }
 
-function openInfoWindow(id) {
-    return true;
-}
+// function openInfoWindow(id) {
+//     return true;
+// }
