@@ -1,34 +1,59 @@
 var map;
 var infowindow;
 var service;
-var gmarkers = [];
-var geocoder = null;
-var bounds = null;
+
+// --------------------------- GEOLOCATION ---------------------------
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(shoqPosition, showError);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function showPosition(position) {
+    var latlon = position.coords.ltitude + "," + position.corrds.longitude;
+
+    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+    +latlon+"&zoom=14&size=400x300&sensor=false";
+
+    document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation.")
+            break;
+        case error.PERMISSION_UNAVAILABLE:
+            alert("Location information is unavailable.")
+            break;
+        case error.TIMEOUT:
+            alert("The request to get user location timed out.")
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("An unknown error occurred.")
+            break;
+    }
+}
 
 // --------------------------- RENDERS MAP ---------------------------
 function initMap() {
-    geocoder = new google.maps.Geocoder();
     var userLoc = new google.maps.LatLng(29.443134, -98.48138);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
-        zoom: 15
+        zoom: 13
     });
-
-    geocoder.geocode({'address': "San Antonio, TX"}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            var point = results[0].geometry.location;
-
-            infowindow = new google.maps.InfoWindow();
-            service = new google.maps.places.PlacesService(map);
-            service.textSearch({
-                location: userLoc,
-                query: 'Thai'
-            }, callback);
-        } else {
-            alert("Geocode was not successful for the following reason: ")
-        }
-    })
+    
+    infowindow = new google.maps.InfoWindow();
+    service = new google.maps.places.PlacesService(map);
+    service.textSearch({
+        location: userLoc,
+        query: 'French',
+        type: 'restaurant',
+        radius: 50000
+    }, callback);
 }
 
 // --------------------------- AFTER MAP IS MADE ---------------------------
@@ -38,7 +63,6 @@ function callback(results, status) {
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
         }
-        // console.log(results)
     }
 }
 
@@ -52,34 +76,26 @@ function createMarker(place) {
     var request = {
         reference: place.reference
     };
-        // console.log(marker.id)
 
+// --------------------------- INFOWINDOWS ---------------------------
     google.maps.event.addListener(marker, 'click', function() {
         service.getDetails(request, function(place, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
-                var contentStr = '<div>' 
-                    + '<strong><em>PLACE ID: </em></strong>' + place.place_id + '<br>'
-                    + '<strong>' + place.name + '</strong> <br>';
+                var contentStr = '<div>';
+                    // PLACE ID
+                    // + '<strong><em>PLACE ID: </em></strong>' + place.place_id + '<br>'
 
-                    contentStr += (place.photos[0]) ? '<img src="' + place.photos[0].getUrl({'maxWidth': 50, 'maxHeight': 50}) + '">' : "<br><em>No Image Provided</em>";
-                    
+                    // PHOTOS
+                    contentStr += (place.photos) ? '<img class="pull-left" src="' + place.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}) + '">' : "<br><em>No Image Provided</em><br>";
+                    // NAME
+                    contentStr += '<strong>' + place.name + '</strong>';
+                    // ADDRESS
                     contentStr += (place.vicinity) ? '<br>' + place.vicinity : "<br><em>No Address Provided</em>";
-                    
-                    contentStr += (place.formatted_phone_number) ? '<br>' + place.formatted_phone_number : "<br><em>No Phone Number Provided</em>";
-                    
-                    contentStr += (place.website) ? '<br> <a href="' + place.website + '">Website</a>' : "<br><em>No Website Provided</em>";
-                    
-                    contentStr += (place.opening_hours) ? '<br>'+ place.opening_hours.open_now : "<br><em>No Hours Provided</em>";
-                    
+                    // PRICE LEVEL
                     contentStr += (place.price_level) ? '<br>'+ place.price_level : "<br><em>No Prices Provided</em>";
-                    
-                    contentStr += (place.rating)? '<br>'+ place.rating : "<br><em>No Ratings Yet</em>";
-                    
-                    contentStr += (place.reviews[0].author_name) ? '<br>'+ place.reviews[0].author_name : "<br><em>No Reviews Yet</em>";
-                    
-                    contentStr += (place.reviews[0].rating) ? '<br>'+ place.reviews[0].rating : "<br><em>No Reviews Yet</em>";
-                    
-                    contentStr += (place.reviews[0].text) ? '<br>'+ place.reviews[0].text : "<br><em>No Reviews Yet</em>";
+                    // RATING
+                    contentStr += (place.rating)? ' • '+ place.rating : "<br><em>No Ratings Yet</em>";
+                    contentStr += '</div>'
 
                 infowindow.setContent(contentStr);
                 infowindow.open(map, marker);
@@ -87,15 +103,7 @@ function createMarker(place) {
             }
         });
     });
-    gmarkers.push(marker);
-    var side_bar_html = "<a href='javascript:google.maps.event.trigger(gmarkers[" + parseInt(gmarkers.length - 1) + "],\"click\");'>" + place.name + "</a><br>";
-
 }
-
-function openInfoWindow(id) {
-    return true;
-}
-
 
 
 

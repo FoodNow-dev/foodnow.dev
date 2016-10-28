@@ -66,7 +66,7 @@ Route::get('vendor/map', function()
 });
 
 
-Route::resource('restaurants','RestaurantsController');
+Route::resource('restaurants', 'RestaurantsController');
 
 Route::resource('users', 'UserController');
 

@@ -1,15 +1,16 @@
 
+radius *= 1609.34;
 
 function priceFormat(level) {
     switch (level) {
         case 1 :
             return '$';
         case 2 :
-            return '$$';
+            return '$ $';
         case 3 :
-            return '$$$';
+            return '$ $ $';
         case 4 :
-            return '$$$$';
+            return '$ $ $ $';
     }
 
 }
@@ -42,7 +43,6 @@ function rating(level) {
 }
 
 function item_tmpl(data){
-    console.log(data);
     var formattedAddress = data.formatted_address.split(",").join("<br>");
     
     var content = '<div class="list text-right animated fadeInLeft"><p>';
@@ -52,23 +52,31 @@ function item_tmpl(data){
             content += '<img class="left" src"http://www.gemologyproject.com/wiki/images/5/5f/Placeholder.jpg">';
         }          
         content += '<div class="info"></p><h3>' + data.name + '</h3><p>';
-        content += (data.rating) ? '<img src="' + rating(data.rating) + '">': 'No Rating Available';
-        content += '</p><p>' + formattedAddress + '<br>';
+        content += (data.rating) ? '<img src="' + rating(data.rating) + '"><br>': 'No Rating Available<br>';
         content += (data.price_level) ? priceFormat(data.price_level) : 'No Price Info Available' ;
-        content += '</p></div></div>';
+        content += '</p><p>' + formattedAddress + '<br></p>';
+        content += '<form method="POST" action="{{ action("RestaurantsController@show") }}">';
+        content += '<input type="hidden" name="placeId" value="' + data.place_id + '"><button class="btn view" type="submit">View Restaurant</button>';
+
+
+
+
+
+
+        content += '</div></div>';
     return content;
 }
 
 var map;
 var infowindow;
 var service;
-var gmarkers = [];
-var geocoder = null;
-var bounds = null;
+// var gmarkers = [];
+// var geocoder = null;
+// var bounds = null;
 
 // --------------------------- RENDERS MAP ---------------------------
 function initMap() {
-    geocoder = new google.maps.Geocoder();
+    // geocoder = new google.maps.Geocoder();
     var userLoc = new google.maps.LatLng(29.426791, -98.489602);
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -76,22 +84,26 @@ function initMap() {
         zoom: 15
     });
 
-    geocoder.geocode({'address': "San Antonio, TX"}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            var point = results[0].geometry.location;
+    // geocoder.geocode({'address': "San Antonio, TX"}, function(results, status) {
+        // if (status == google.maps.GeocoderStatus.OK) {
+        //     var point = results[0].geometry.location;
 
             infowindow = new google.maps.InfoWindow();
             service = new google.maps.places.PlacesService(map);
             service.textSearch({
                 location: userLoc,
-                query: 'French',
-                type: ['Restaurant']
+                radius: radius,
+                open_now: true,
+                query: food,
+                minPriceLevel: minPrice,
+                maxPriceLevel: maxPrice,
+                types: 'Restaurant'
             }, callback);
             
-        } else {
-            alert("Geocode was not successful for the following reason: ")
-        }
-    })
+        // } else {
+        //     alert("Geocode was not successful for the following reason: ")
+        // }
+    // })
 }
 
 // --------------------------- AFTER MAP IS MADE ---------------------------
@@ -121,6 +133,7 @@ function createMarker(place) {
     
     google.maps.event.addListener(marker, 'click', function() {
         service.getDetails(request, function(place, status) {
+            console.log(place);
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var contentStr = '<div>' 
                     + '<strong><em>PLACE ID: </em></strong>' + place.place_id + '<br>'
@@ -142,10 +155,10 @@ function createMarker(place) {
             }
         });
     });
-    gmarkers.push(marker);
-    var side_bar_html = "<a href='javascript:google.maps.event.trigger(gmarkers[" + parseInt(gmarkers.length - 1) + "],\"click\");'>" + place.name + "</a><br>";
+    // gmarkers.push(marker);
+    // var side_bar_html = "<a href='javascript:google.maps.event.trigger(gmarkers[" + parseInt(gmarkers.length - 1) + "],\"click\");'>" + place.name + "</a><br>";
 }
 
-function openInfoWindow(id) {
-    return true;
-}
+// function openInfoWindow(id) {
+//     return true;
+// }
