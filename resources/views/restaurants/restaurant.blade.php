@@ -16,7 +16,7 @@
 				<div class="row">
 					<div class="col-xs-10 col-sm-5 text">
 						<img src="http://placehold.it/250x150">
-						<h1>Olive Garden</h1>
+						<h1>Restaurant Name</h1>
 					</div>
 					<div class="col-xs-10 col-sm-5 col-sm-offset-2 text ">
 						<img src="http://placehold.it/250x150">
@@ -25,7 +25,7 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-10 col-sm-5 text">
-						<h1>Eat With Your Friends</h1>
+						<h1>Update Your Friends Where Dinner Is</h1>
 						<form class="form-horizontal col-xs-10 col-xs-offset-3" method="POST" action="#">
 							<div class="form-group col-xs-8 col-xs-offset-7">
 								<input type="text" name="friendName" class="form-control" placeholder="Friend's name" value="">
