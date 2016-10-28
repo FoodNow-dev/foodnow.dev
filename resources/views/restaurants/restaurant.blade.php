@@ -48,6 +48,22 @@
 								<button type="submit" class="btn btn-primary">Send Message</button>
 							</div>
 
+							 	@if(session()->has('SUCCESS_MESSAGE'))
+		<div class="alert alert-success">
+			<p>{{session('SUCCESS_MESSAGE') }}</p>
+		</div>
+	@endif
+	
+	@if(session()->has('ERROR_MESSAGE'))
+		<div class="alert alert-danger">
+			<p>{{session('ERROR_MESSAGE') }}</p>
+		</div>
+	@endif
+
+	<div class="container">  
+   		 @yield('content')
+  </div>
+
 						</form>
 					</div>
 					<div class="col-xs-12 col-xs-offset-1 col-sm-5 col-sm-offset-1 text">
