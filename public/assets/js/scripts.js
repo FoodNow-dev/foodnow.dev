@@ -4,23 +4,31 @@ var service;
 
 // --------------------------- GEOLOCATION ---------------------------
 function getLocation() {
+    console.log("getLocation")
+
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(shoqPosition, showError);
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
         alert("Geolocation is not supported by this browser.");
     }
 }
 
 function showPosition(position) {
-    var latlon = position.coords.ltitude + "," + position.corrds.longitude;
+    console.log("showPosition");
 
-    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-    +latlon+"&zoom=14&size=400x300&sensor=false";
+    var latlon = position.coords.latitude + ", " + position.coords.longitude;
+
+    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=400x300&sensor=false";
 
     document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
+
+    // console.log(latlon);
+    // initMap();
 }
 
 function showError(error) {
+    console.log("showError");
+
     switch(error.code) {
         case error.PERMISSION_DENIED:
             alert("User denied the request for Geolocation.")
@@ -39,11 +47,14 @@ function showError(error) {
 
 // --------------------------- RENDERS MAP ---------------------------
 function initMap() {
+    console.log("initMap");
+
     var userLoc = new google.maps.LatLng(29.443134, -98.48138);
+    // var userLoc = new google.maps.LatLng(latlon);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
-        zoom: 13
+        zoom: 17
     });
     
     infowindow = new google.maps.InfoWindow();
@@ -59,6 +70,8 @@ function initMap() {
 // --------------------------- AFTER MAP IS MADE ---------------------------
 // --------------------------- MARKERS WILL BE PLACED ---------------------------
 function callback(results, status) {
+    console.log("callback");
+
     if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
@@ -67,6 +80,8 @@ function callback(results, status) {
 }
 
 function createMarker(place) {
+    console.log("createMarker");
+    
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
