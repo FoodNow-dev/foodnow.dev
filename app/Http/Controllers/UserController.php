@@ -137,10 +137,29 @@ class UserController extends Controller
 
         // Step 4: make an array of people we know, to send them a message. 
     // Feel free to change/add your own phone number and name here.
-    $people = array(
-        "+1(210)317-55-00" => "Snow White",
-        // "+12107303948" =>"Pikachu"
-    );
+        //input rules
+
+        // $rules = [
+        //     'friendName1'=>'required|min:1',
+        //     'friendPhone1'=>'required|numeric|size:11',
+        //     'friendName2'=>'required|min:1',
+        //     'friendPhone2'=>'required|numeric|size:11',
+        // ];
+
+        // $request->session()->flash('ERROR_MESSAGE','Text Message was not sent');
+
+        // $this->validate($request, $rules);
+
+        // $request->session()->forget('ERROR_MESSAGE');
+
+    
+
+        $people = array(
+            // "+1(210)317-55-00" => "Snow White",
+            $request->friendPhone1 => $request->friendName1,
+            $request->friendPhone2 => $request->friendName2
+        );
+        // var_dump($people);
 
     // Step 5: Loop over all our friends. $number is a phone number above, and 
     // $name is the name next to it
@@ -157,12 +176,14 @@ class UserController extends Controller
                 'from' => "+12108800682", 
                 
                 // the sms body
-                'body' => "Hey $name, we're going to Olive Garden at 7pm. Here's the location:https://goo.gl/maps/FN6mtQYign62  .See you then!"
+                'body' =>  $request->email_body
+
+                // "Hey $name, we're going to Olive Garden at 7pm. Here's the location:https://goo.gl/maps/FN6mtQYign62  .See you then!"
 
             )
         );
 
-        // Display a confirmation message on the screen
+    //     // Display a confirmation message on the screen
         echo "Sent message to $name".PHP_EOL;
     }
 
@@ -170,7 +191,7 @@ class UserController extends Controller
 
 
         return view('restaurants.restaurant');
-    }
+     }
 }
 
 

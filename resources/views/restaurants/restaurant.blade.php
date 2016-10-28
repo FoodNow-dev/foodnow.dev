@@ -29,16 +29,16 @@
 						<form class="form-horizontal col-xs-10 col-xs-offset-3" method="POST" action="/restaurants/restaurant">
 						{!! csrf_field() !!}
 							<div class="form-group col-xs-8 col-xs-offset-7">
-								<input type="text" name="friendName" class="form-control" placeholder="Friend's name" value="">
+								<input type="text" name="friendName1" class="form-control" placeholder="Friend's name" value="">
 							</div>
 							<div class="form-group col-xs-8 col-xs-offset-7">
-								<input type="text" name="friendPhone" class="form-control" placeholder="Friend's phone #" value="">
+								<input type="text" name="friendPhone1" class="form-control" placeholder="Friend's phone #" value="">
 							</div>
 							<div class="form-group col-xs-8 col-xs-offset-7">
-								<input type="text" name="friendName" class="form-control" placeholder="Friend's name" value="">
+								<input type="text" name="friendName2" class="form-control" placeholder="Friend's name" value="">
 							</div>
 							<div class="form-group col-xs-8 col-xs-offset-7">
-								<input type="text" id = "friendPhone" name="friendPhone" class="form-control" placeholder="Friend's phone #" value="">
+								<input type="text" id = "friendPhone2" name="friendPhone2" class="form-control" placeholder="Friend's phone #" value="">
 							</div>
 							<div class="form-group col-xs-8 col-xs-offset-7">
 								<textarea id="email_body" name="email_body" rows="3" cols="25" placeholder="We're meeting in Olive Garden at 7 pm"></textarea>
