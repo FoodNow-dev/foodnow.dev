@@ -48,6 +48,7 @@ function showError(error) {
 // --------------------------- RENDERS MAP ---------------------------
 function initMap(latlon) {
     console.log("initMap");
+    console.log(latlon);
 
     // var userLoc = new google.maps.LatLng(29.443134, -98.48138);
     var userLoc = new google.maps.LatLng(latlon);
