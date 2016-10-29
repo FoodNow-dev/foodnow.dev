@@ -64,7 +64,7 @@ function callback(results, status) {
     }
 }
 
-function createMarker(place) {
+function createMarker(place, userLoc) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
