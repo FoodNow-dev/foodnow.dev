@@ -16,15 +16,17 @@ function getLocation() {
 function showPosition(position) {
     console.log('showPosition');
 
-    var latlon = position.coords.latitude + "," + position.coords.longitude;
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
 
 
     // var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=400x300&sensor=false";
 
     // document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
 
-    console.log(latlon);
-    initMap(latlon);
+    console.log('lat' + lat);
+    console.log('lon' + lon);
+    initMap(lat, lon);
 }
 
 function showError(error) {
@@ -47,12 +49,13 @@ function showError(error) {
 }
 
 // --------------------------- RENDERS MAP ---------------------------
-function initMap(latlon) {
+function initMap(lat, lon) {
     console.log("initMap");
-    console.log(latlon);
+    console.log("lat" + lat);
+    console.log("lon" + lon);
 
     // var userLoc = new google.maps.LatLng(29.443134, -98.48138);
-    var userLoc = new google.maps.LatLng(latlon);
+    var userLoc = new google.maps.LatLng(lat, lon);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
