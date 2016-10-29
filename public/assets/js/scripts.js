@@ -44,15 +44,13 @@ function initMap(lat, lon) {
         zoom: 17
     });
 
-    var circle = new google.maps.Circle({
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#FF0000',
-        fillOpacity: 0.35,
+    var circle = new google.maps.Marker({
+        position: userLoc,
         map: map,
-        radius: 4,
-        position: userLoc
+        icon: {
+            url: '/assets/img/blue.png',
+            scaledSize: new google.maps.Size(30, 40)
+        }
     });
 
     infowindow = new google.maps.InfoWindow();
