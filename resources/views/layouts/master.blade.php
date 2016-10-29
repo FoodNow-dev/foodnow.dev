@@ -1,3 +1,7 @@
+<?php 
+var_dump($place['rating']);
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -41,13 +45,12 @@
 
 	</head>
 	<body>
-		<div id="wrapper">
+		
 
 			@include('partials.navbar')
 
 			@yield('content')
-		</div>
-		<div id="push"></div>
+		
 		@include('partials.footer')
 		
 		{{-- jQuery --}}

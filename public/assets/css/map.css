@@ -54,6 +54,21 @@ footer {
 	
 }
 
+.submit {
+	background: none;
+	border: none;
+}
+
+.submit:hover {
+	color: #d5b33b;
+	border: 2px solid #d5b33b;
+}
+
+.submit:active {
+	border: none;
+	outline: none;
+}
+
 #results > div > p > .left {
 	height: 100%;
     width: 40%;
