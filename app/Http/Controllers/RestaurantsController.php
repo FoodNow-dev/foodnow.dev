@@ -149,7 +149,7 @@ class RestaurantsController extends Controller
 
     public function showData(Request $request) {
         $object = urldecode($request['jsonObject']);
-
+        $data['jsonJS'] = $object;
         $data['json'] = json_decode($object);
 
         $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
@@ -161,7 +161,6 @@ class RestaurantsController extends Controller
         if($placedata['status']=="OK"){
            $data['place'] = $placedata['result'];
         }
-        
 
         return view('restaurants.show')->with($data);
     }
