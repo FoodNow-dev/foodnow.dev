@@ -22,7 +22,7 @@
 		<meta name="twitter:image" content="http://foodnow.dev/assets/img/foodnow.png" />
 		<meta name="twitter:url" content="https://foodnow.com" />
 		<meta name="twitter:card" content="summary" />
-
+		<meta name="_token" content="{{ csrf_token() }}">
 
 		<!-- Bootstrap Core CSS CDN-->
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

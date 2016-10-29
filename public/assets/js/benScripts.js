@@ -1,3 +1,11 @@
+$(function() {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-Token': $('meta[name="_token"]').attr('content')
+    }
+  });
+});
+
 radius *= 1609.34;
 
 function priceFormat(level) {
@@ -42,6 +50,9 @@ function rating(level) {
 }
 
 function item_tmpl(data){
+    var jsonString = JSON.stringify(data);
+   jsonString = escape(jsonString);
+    console.log(jsonString);
     var formattedAddress = data.formatted_address.split(",").join("<br>");
     
     var content = '<div class="list text-right animated fadeInLeft"><p>';
@@ -50,12 +61,16 @@ function item_tmpl(data){
         } else {
             content += '<img class="left" src"http://www.gemologyproject.com/wiki/images/5/5f/Placeholder.jpg">';
         }          
-        content += '<a href="/restaurants/' + data.place_id + '"> <div class="info"></p><h3>' + data.name + '</a></h3><p>';
+        content += '<form class="form" method="POST">';
+        
+
+        content += "<input type='hidden' name='jsonObject' value='" + jsonString + "'>";
+        content += '<div class="info"></p><button class="submit" type="submit"><h3>' + data.name + '</h3></button><p>';
         content += (data.rating) ? '<img src="' + rating(data.rating) + '"><br>': 'No Rating Available<br>';
         content += (data.price_level) ? priceFormat(data.price_level) : 'No Price Info Available' ;
         content += '</p><p>' + formattedAddress + '<br></p>';
 
-        content += '</div></div>';
+        content += '</form></div></div>';
     return content;
 }
 
@@ -129,7 +144,10 @@ function callback(results, status) {
             createMarker(results[i]);
             $('#results').append(item_tmpl(results[i]));
         }
-        console.log(results)
+        $('.token').clone().appendTo('.form');
+        var action = $('.action').text();
+        $('.form').attr('action', action);
+        
     }
 }
 
