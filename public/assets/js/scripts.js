@@ -14,16 +14,16 @@ function getLocation() {
 }
 
 function showPosition(position) {
-    console.log("showPosition");
 
-    var latlon = position.coords.latitude + ", " + position.coords.longitude;
+    var latlon = position.coords.latitude + "," + position.coords.longitude;
 
-    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=400x300&sensor=false";
 
-    document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
+    // var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=400x300&sensor=false";
+
+    // document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
 
     // console.log(latlon);
-    // initMap();
+    initMap(latlon);
 }
 
 function showError(error) {
@@ -46,11 +46,11 @@ function showError(error) {
 }
 
 // --------------------------- RENDERS MAP ---------------------------
-function initMap() {
+function initMap(latlon) {
     console.log("initMap");
 
-    var userLoc = new google.maps.LatLng(29.443134, -98.48138);
-    // var userLoc = new google.maps.LatLng(latlon);
+    // var userLoc = new google.maps.LatLng(29.443134, -98.48138);
+    var userLoc = new google.maps.LatLng(latlon);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
