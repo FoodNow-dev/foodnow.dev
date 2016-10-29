@@ -44,14 +44,16 @@ function initMap(lat, lon) {
         zoom: 17
     });
 
-    var cityCircle = new google.maps.Circle({
+    var circle = new google.maps.Circle({
         strokeColor: '#FF0000',
         strokeOpacity: 0.8,
         strokeWeight: 2,
         fillColor: '#FF0000',
         fillOpacity: 0.35,
-        map: map
-      });
+        map: map,
+        radius: 4,
+        position: userLoc
+    });
 
     infowindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
@@ -73,7 +75,7 @@ function callback(results, status) {
     }
 }
 
-function createMarker(place, userLoc) {
+function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
@@ -108,7 +110,6 @@ function createMarker(place, userLoc) {
 
                 infowindow.setContent(contentStr);
                 infowindow.open(map, marker);
-                console.log(place)
             }
         });
     });
