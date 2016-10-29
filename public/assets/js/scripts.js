@@ -14,6 +14,7 @@ function getLocation() {
 }
 
 function showPosition(position) {
+    console.log('showPosition');
 
     var latlon = position.coords.latitude + "," + position.coords.longitude;
 
