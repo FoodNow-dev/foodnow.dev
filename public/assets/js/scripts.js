@@ -82,6 +82,8 @@ function createMarker(place, userLoc) {
         strokeOpacity: '0.35'
     });
 
+    map.fitBounds(circle.getBounds());
+
     var request = {
         reference: place.reference
     };
