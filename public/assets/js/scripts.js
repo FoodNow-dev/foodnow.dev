@@ -49,7 +49,7 @@ function initMap(lat, lon) {
         map: map,
         icon: {
             url: '/assets/img/blue.png',
-            scaledSize: new google.maps.Size(30, 40)
+            scaledSize: new google.maps.Size(20, 20)
         }
     });
 
