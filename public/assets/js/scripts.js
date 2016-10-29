@@ -44,6 +44,18 @@ function initMap(lat, lon) {
         zoom: 17
     });
 
+    var cityCircle = new google.maps.Circle({
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35,
+        map: map,
+        center: citymap[city].center,
+        radius: Math.sqrt(citymap[city].population) * 100
+      });
+    }
+        
     infowindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
     service.textSearch({
@@ -71,18 +83,6 @@ function createMarker(place, userLoc) {
         position: place.geometry.location,
         id: place.place_id
     });
-
-
-    var circle = new google.maps.Circle({
-        center: userLoc,
-        map: map,
-        fillColor: '#FF0000',
-        fillOpacity: '0.35',
-        strokeColor: '#FF0000',
-        strokeOpacity: '0.35'
-    });
-
-    map.fitBounds(circle.getBounds());
 
     var request = {
         reference: place.reference
