@@ -4,8 +4,6 @@ var service;
 
 // --------------------------- GEOLOCATION ---------------------------
 function getLocation() {
-    console.log("getLocation")
-
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
@@ -14,24 +12,13 @@ function getLocation() {
 }
 
 function showPosition(position) {
-    console.log('showPosition');
-
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
 
-
-    // var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=400x300&sensor=false";
-
-    // document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
-
-    console.log('lat' + lat);
-    console.log('lon' + lon);
     initMap(lat, lon);
 }
 
 function showError(error) {
-    console.log("showError");
-
     switch(error.code) {
         case error.PERMISSION_DENIED:
             alert("User denied the request for Geolocation.")
@@ -50,31 +37,25 @@ function showError(error) {
 
 // --------------------------- RENDERS MAP ---------------------------
 function initMap(lat, lon) {
-    console.log("initMap");
-    console.log("lat" + lat);
-    console.log("lon" + lon);
-
-    // var userLoc = new google.maps.LatLng(29.443134, -98.48138);
     var userLoc = new google.maps.LatLng(lat, lon);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
         zoom: 17
     });
-    
-    var circle = {
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: '#FF0000',
-        fillOpacity: 0.35,
-        map: map,
-        center: citymap[city].center,
-        radius: Math.sqrt(citymap[city].population) * 100
-    };
 
-    circle = new google.maps.Circle(circle);
-    
+    var circle = new google.maps.Circle({
+        center: userLoc,
+        map: map,
+        fillColor: '#FF0000',
+        fillOpacity: '0.35',
+        strokeColor: '#FF0000',
+        strokeOpacity: '0.35'
+    });
+
+    //set the zoom level to the circle's size
+    map.fitBounds(circle.getBounds());
+
     infowindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
     service.textSearch({
@@ -88,8 +69,6 @@ function initMap(lat, lon) {
 // --------------------------- AFTER MAP IS MADE ---------------------------
 // --------------------------- MARKERS WILL BE PLACED ---------------------------
 function callback(results, status) {
-    console.log("callback");
-
     if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
@@ -98,8 +77,6 @@ function callback(results, status) {
 }
 
 function createMarker(place) {
-    console.log("createMarker");
-    
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
