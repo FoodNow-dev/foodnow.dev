@@ -62,6 +62,19 @@ function initMap(lat, lon) {
         zoom: 17
     });
     
+    var circle = {
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35,
+        map: map,
+        center: citymap[city].center,
+        radius: Math.sqrt(citymap[city].population) * 100
+    };
+
+    circle = new google.maps.Circle(circle);
+    
     infowindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
     service.textSearch({
