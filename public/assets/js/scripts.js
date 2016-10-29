@@ -22,7 +22,7 @@ function showPosition(position) {
 
     // document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
 
-    // console.log(latlon);
+    console.log(latlon);
     initMap(latlon);
 }
 
