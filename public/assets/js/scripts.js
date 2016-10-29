@@ -53,10 +53,6 @@ function initMap(lat, lon) {
         strokeOpacity: '0.35'
     });
 
-
-    //set the zoom level to the circle's size
-    map.fitBounds(circle.getBounds());
-
     infowindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
     service.textSearch({
