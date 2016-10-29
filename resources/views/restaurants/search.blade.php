@@ -32,6 +32,8 @@
 										<option value="15">15 miles</option>
 										<option value="20">20 miles</option>
 									</select>
+
+			
     							</div>
     						</div>
     						<div class="form-group">
@@ -59,6 +61,7 @@
  								<label for="cuisine" class="col-xs-12 col-sm-6 control-label text-left">What cuisine type are you craving</label>
  								
  									<select name="food" class="form-control">
+
 	 									<option value="american restaurant">American</option>
 	    								<option value="breakfast">Breakfast Food</option>
 	    								<option value="cajun">Cajun</option>

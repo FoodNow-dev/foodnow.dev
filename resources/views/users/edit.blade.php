@@ -3,9 +3,9 @@
 @section('title','Edit Profile')
 
 @section('css')
-	<link rel="stylesheet" type="text/css" href="/assets/css/landing.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/elements.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/restaurant.css">
 
 @stop
 
