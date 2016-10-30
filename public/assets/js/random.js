@@ -38,8 +38,8 @@ function showError(error) {
 
 // --------------------------- RENDERS MAP ---------------------------
 function initMap(lat, lon) {
-    var userLoc = new google.maps.LatLng(32, -97);
-    // var userLoc = new google.maps.LatLng(lat, lon);
+    // var userLoc = new google.maps.LatLng(32, -97);
+    var userLoc = new google.maps.LatLng(lat, lon);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
