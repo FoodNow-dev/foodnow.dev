@@ -4,8 +4,8 @@
 
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/restaurant.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/elements.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements2.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/elements2.css">
 
 @stop
 
@@ -31,7 +31,7 @@
 								<div class="form-group col-xs-8 col-xs-offset-7">
 									{{-- dynamic buttons --}}
 									<div class="input_fields_wrap">
-		   								 <button class="btn btn-primary add_field_button">Invite More Friends</button>
+		   								 <button class="thinner btn btn-default add_field_button">Invite More Friends</button>
 			    						<div>
 			    							<input type="text" name="mytext[]" placeholder="Phone Number">
 			    						</div>
@@ -64,7 +64,7 @@
 								   </div>
 							</form>
 						</div>
-					</div>
+					
 					<div class="col-xs-12 col-xs-offset-1 col-sm-5 col-sm-offset-1 text">
 						<h1>Reviews</h1>
 					</div>
