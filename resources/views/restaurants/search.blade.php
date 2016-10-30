@@ -23,6 +23,7 @@
 						
 						<form class="form-horizontal" method="GET" action="{{ action('RestaurantsController@index') }}">
 							{!! csrf_field() !!}
+							{{-- DISTANCE --}}
 							<div class="form-group">
 								<label for="distance" class="control-label col-xs-12 col-sm-6 text-left">How far are you willing to go?</label>
 								<div class="col-sm-6 col-xs-6 col-xs-offset-3 col-sm-offset-0">
@@ -32,12 +33,11 @@
 										<option value="15">15 miles</option>
 										<option value="20">20 miles</option>
 									</select>
-
-			
     							</div>
     						</div>
+    						{{-- LOW PRICE --}}
     						<div class="form-group">
-    							<label for="price" class="col-xs-12 col-sm-6 control-label text-left">Min Price Level</label>
+    							<label for="price" class="control-label col-xs-12 col-sm-6  text-left">Min Price Level</label>
     							<div class="col-sm-6 col-xs-6 col-xs-offset-3 col-sm-offset-0">
     								<select name="minprice" class="form-control">
     									<option value="1">$</option>
@@ -46,8 +46,9 @@
     									<option value="4">$$$$</option>
     								</select>
     							</div>
+    						{{-- HIGH PRICE --}}
     						<div class="form-group">
-    							<label for="price" class="col-xs-12 col-sm-6 control-label text-left">Max Price Level</label>
+    							<label for="price" class="control-label col-xs-12 col-sm-6 text-left">Max Price Level</label>
     							<div class="col-sm-6 col-xs-6 col-xs-offset-3 col-sm-offset-0">
     								<select name="maxprice" class="form-control">
     									<option value="1">$</option>
@@ -57,11 +58,10 @@
     								</select>
     							</div>
  							</div>
+ 							{{-- TYPE --}}
  							<div class="form-group">
- 								<label for="cuisine" class="col-xs-12 col-sm-6 control-label text-left">What cuisine type are you craving</label>
- 								
+ 								<label for="cuisine" class="control-label col-xs-12 col-sm-6 text-left">What cuisine type are you craving</label>
  									<select name="food" class="form-control">
-
 	 									<option value="american restaurant">American</option>
 	    								<option value="breakfast restaurant">Breakfast Food</option>
 	    								<option value="cajun restaurant">Cajun</option>
@@ -77,21 +77,24 @@
 	    								<option value="vietnamese restaurant">Vietnamese</option>
 	    								<option value="french restaurant">French</option>
  									</select>
- 							<div class="col-xs-offset-2 col-xs-6"><button type="submit" class="btn btn-default">Submit</button></div>
- 							</div>
- 						</div>
-						</form>
+	 							{{-- SUBMIT BUTTON --}}
+	 							<div class="col-xs-offset-2 col-xs-6"><button type="submit" class="btn btn-default">Submit</button></div>
+ 							</div> {{-- ENDS THE TYPE DIV --}}
+	 						</div> {{-- ENDS THE PRICE DIV --}}
+						</form> {{-- CLOSES THE FORM --}}
+
 						<div class="top-line"></div>
 						<div class="bottom-line"></div>
-					</div>
+					</div> {{-- CLOSES THE text col-sm-6 --}}
+
 					<div class="text col-xs-6">
 						<h1> Let Us Choose Your Dinner Tonight!</h1>
 						<br>
 						<div>
-						    <button type="submit" class="btn btn-default">Pick at Random
-						    </button>
+						    <a href="{{ action('RestaurantsController@showData') }}?random=true">Pick at Random</a>
 						</div>
 					</div>
+
 					<div class="or">
 						OR
 					</div>

@@ -85,9 +85,8 @@ class RestaurantsController extends Controller
      */
     public function show(Request $request)
     {
-        dd($request);
-        $data['placeId'] = $placeId; 
-        return view('restaurants.show')->with($data);
+        // $data['placeId'] = $placeId; 
+        return view('restaurants.randomShow');
     }
 
 
