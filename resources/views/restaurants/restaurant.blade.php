@@ -31,7 +31,8 @@
 								<div class="form-group">
 									{{-- dynamic buttons --}}
 									<div class="input_fields_wrap col-xs-7">
-		   								 <button class="btn btn-default add_field_button">Invite More Friends</button>
+		   								 <button class="btn btn-default add_field_button">Invite More Friends 
+		   								</button>
 			    						<div>
 			    							<input type="text" name="mytext[]" class="col-xs-12 space" placeholder="Friend's Phone #">
 			    						</div>
@@ -43,7 +44,9 @@
 									</div>
 									</div>
 									<div class="col-xs-6">
-										<button type="submit" class="btn btn-primary">Send Message</button>
+										<button type="submit" class="btn btn-primary">Send Message
+											<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+										</button>
 									</div>
 									<div class="col-xs-7">
 										@if(session()->has('SUCCESS_MESSAGE'))
