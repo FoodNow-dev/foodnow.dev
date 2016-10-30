@@ -80,10 +80,6 @@ class UserController extends Controller
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->email = $request->email;
-        $user->address = $request->address;
-        $user->city = $request->city;
-        $user->state = $request->state;
-        $user->zipcode = $request_>zipcode;
         $user->password = Hash::make($request->password);
         $user->save();
         Log::info('Updated User: ' . $user);
