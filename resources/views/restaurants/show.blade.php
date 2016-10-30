@@ -91,7 +91,10 @@
 @section('js-script')
 	<script type="text/javascript" src="/assets/js/rest-show.js"></script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_7RtOoqaohsnAdLReUJ_ReW9m8co-Sx0&libraries=places&callback=getLocation" async defer></script>
+	{{-- // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_7RtOoqaohsnAdLReUJ_ReW9m8co-Sx0&libraries=places&callback=getLocation" async defer></script> --}}
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_7RtOoqaohsnAdLReUJ_ReW9m8co-Sx0&libraries=places&callback=initMap" async defer></script>
+
 @stop
 
 
