@@ -81,7 +81,9 @@
 		var lat = {{$place['geometry']['location']['lat']}};
 		var lng = {{ $place['geometry']['location']['lng'] }};
 		var starrating = {{ $place['rating'] }};
-		console.log(starrating);
+		
+		var price = {{ $place['price_level']}};
+
 
 	</script>
 
