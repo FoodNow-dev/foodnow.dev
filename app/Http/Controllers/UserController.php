@@ -126,19 +126,48 @@ class UserController extends Controller
     }
 
     //method for users to send text messages to friends
-//     public function sendText(Request $request)
-//     {
-//          // Step 2: set our AccountSid and AuthToken from https://twilio.com/console
-//         $AccountSid = env('TWILIO_ID');
-//         $AuthToken = env('TWILIO_TOKEN');
+    public function sendText(Request $request)
+    {
+         // Step 2: set our AccountSid and AuthToken from https://twilio.com/console
+        $AccountSid = env('TWILIO_ID');
+        $AuthToken = env('TWILIO_TOKEN');
 
 
 //          // Step 3: instantiate a new Twilio Rest Client
-//         $client = new Client($AccountSid, $AuthToken);
+        $client = new Client($AccountSid, $AuthToken);
 
 //         // Step 4: make an array of people we know, to send them a message. 
 //     // Feel free to change/add your own phone number and name here.
 //         //input rules
+
+
+        // $rules = [
+        //     'friendName1'=>'required|min:1',
+        //     'friendPhone1'=>'required|numeric|min:11',
+        //     'friendName2'=>'required|min:1',
+        //     'friendPhone2'=>'required|numeric|min:11',
+        // ];
+
+        // $request->session()->flash('ERROR_MESSAGE','Text Message was not sent');
+
+        // $this->validate($request, $rules);
+
+        // $request->session()->forget('ERROR_MESSAGE');
+
+    
+
+        $people = array(
+            // "+1(210)317-55-00" => "Snow White",
+            // $request->friendPhone1 => $request->friendName1,
+            // $request->friendPhone2 => $request->friendName2
+
+        );
+
+        foreach($request->mytext as $phonenumber)
+        {
+            $people[$phonenumber] = "name";
+        }
+        $request->session()->flash('SUCCESS_MESSAGE', 'Message sent succesfully');
 
 //         $rules = [
 //             'friendName1'=>'required|min:1',
@@ -153,47 +182,38 @@ class UserController extends Controller
 
 //         $request->session()->forget('ERROR_MESSAGE');
 
-    
 
-//         $people = array(
-//             // "+1(210)317-55-00" => "Snow White",
-//             $request->friendPhone1 => $request->friendName1,
-//             $request->friendPhone2 => $request->friendName2
-//         );
-//         // var_dump($people);
-//         $request->session()->flash('SUCCESS_MESSAGE', 'Message sent succesfully');
+    // Step 5: Loop over all our friends. $number is a phone number above, and 
+    // $name is the name next to it
+    foreach ($people as $number => $name) {
 
-//     // Step 5: Loop over all our friends. $number is a phone number above, and 
-//     // $name is the name next to it
-//     foreach ($people as $number => $name) {
+        $sms = $client->account->messages->create(
 
-//         $sms = $client->account->messages->create(
+            // the number we are sending to - Any phone number
+            $number,
 
-//             // the number we are sending to - Any phone number
-//             $number,
-
-//             array(
-//                 // Step 6: Change the 'From' number below to be a valid Twilio number 
-//                 // that you've purchased
-//                 'from' => "+12108800682", 
+            array(
+                // Step 6: Change the 'From' number below to be a valid Twilio number 
+                // that you've purchased
+                'from' => "+12108800682", 
                 
-//                 // the sms body
-//                 'body' =>  $request->email_body
+                // the sms body
+                'body' =>  $request->email_body
 
-//                 // "Hey $name, we're going to Olive Garden at 7pm. Here's the location:https://goo.gl/maps/FN6mtQYign62  .See you then!"
+                // "Hey $name, we're going to Olive Garden at 7pm. Here's the location:https://goo.gl/maps/FN6mtQYign62  .See you then!"
 
-//             )
-//         );
+            )
+        );
 
 //     //     // Display a confirmation message on the screen
-//         echo "Sent message to $name".PHP_EOL;
-//     }
+        echo "Sent message to $name".PHP_EOL;
+    }
 
 
 
 
-//         return view('restaurants.restaurant');
-//      }
+        return view('restaurants.restaurant');
+     }
  }
 
 

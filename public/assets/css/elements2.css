@@ -1,0 +1,29 @@
+button.btn {
+	height: 50px;
+    margin: 5%;
+    padding: 0 20px;
+    vertical-align: middle;
+    background: #D5B33B;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #fff;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+    text-shadow: none;
+    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+.submit{
+    background: #fff;
+}
+
+#email_body{
+    color:black;
+}
+
+.thinner{
+    width: 38vh;
+    height: 1vh;
+}
