@@ -38,8 +38,8 @@ function showError(error) {
 
 // --------------------------- RENDERS MAP ---------------------------
 function initMap(lat, lon) {
-    // var userLoc = new google.maps.LatLng(32, -97);
-    var userLoc = new google.maps.LatLng(lat, lon);
+    var userLoc = new google.maps.LatLng(29.424122, -98.493628);
+    // var userLoc = new google.maps.LatLng(lat, lon);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
@@ -70,6 +70,7 @@ function initMap(lat, lon) {
 function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
         createMarker(results[Math.floor(Math.random() * results.length)]);
+        console.log(results);
     }
 }
 

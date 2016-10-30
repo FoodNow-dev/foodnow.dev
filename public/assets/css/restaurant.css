@@ -28,7 +28,7 @@
 	padding-top: 25px;
 	padding-bottom: 50px;
 	background-color: rgba(8, 59, 112, .65)!important;
-	color: #fff;
+	/*color: #fff;*/
 	/*height: 500px;*/
 	/*width: 50%;*/
 	border-radius: 5px;
@@ -160,7 +160,5 @@ body > div > div > div > div.row > div.col-sm-5.text {
     right: -2px;
     z-index: 1000;
 }
-
-
 
 
