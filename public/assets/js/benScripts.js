@@ -1,10 +1,3 @@
-$(function() {
-  $.ajaxSetup({
-    headers: {
-      'X-CSRF-Token': $('meta[name="_token"]').attr('content')
-    }
-  });
-});
 
 radius *= 1609.34;
 
@@ -51,13 +44,12 @@ function rating(level) {
 
 function item_tmpl(data){
     var jsonString = JSON.stringify(data);
-   jsonString = escape(jsonString);
-    console.log(jsonString);
+    jsonString = escape(jsonString);
     var formattedAddress = data.formatted_address.split(",").join("<br>");
     
     var content = '<div class="list text-right animated fadeInLeft"><p>';
         if (data.photos[0]){
-            content += '<img class="left" src="' + data.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500}) + '">';
+            content += '<img class="left" src="' + data.photos[0].getUrl({'maxWidth': 300, 'maxHeight': 250}) + '">';
         } else {
             content += '<img class="left" src"http://www.gemologyproject.com/wiki/images/5/5f/Placeholder.jpg">';
         }          
@@ -82,19 +74,17 @@ var service;
 // --------------------------- GEOLOCATION ---------------------------
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(shoqPosition, showError);
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
         alert("Geolocation is not supported by this browser.");
     }
 }
 
 function showPosition(position) {
-    var latlon = position.coords.ltitude + "," + position.corrds.longitude;
+    var lat = (position) ? position.coords.latitude : 29.443134;
+    var lon = (position) ? position.coords.longitude : -98.48138;
 
-    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-    +latlon+"&zoom=14&size=400x300&sensor=false";
-
-    document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
+    initMap(lat, lon);
 }
 
 function showError(error) {
@@ -112,11 +102,12 @@ function showError(error) {
             alert("An unknown error occurred.")
             break;
     }
+    showPosition();
 }
 
 // --------------------------- RENDERS MAP ---------------------------
-function initMap() {
-    var userLoc = new google.maps.LatLng(29.443134, -98.48138);
+function initMap(lat, lon) {
+    var userLoc = new google.maps.LatLng(lat, lon);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
@@ -132,7 +123,7 @@ function initMap() {
         query: food,
         minPriceLevel: minPrice,
         maxPriceLevel: maxPrice,
-        types: 'Restaurant'
+        types: ['Restaurant']
     }, callback);
 }
 
@@ -163,7 +154,7 @@ function createMarker(place) {
     };
 
 // --------------------------- INFOWINDOWS ---------------------------
-    google.maps.event.addListener(marker, 'click', function() {
+     google.maps.event.addListener(marker, 'click', function() {
         service.getDetails(request, function(place, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var contentStr = '<div>';
@@ -184,7 +175,6 @@ function createMarker(place) {
 
                 infowindow.setContent(contentStr);
                 infowindow.open(map, marker);
-                console.log(place)
             }
         });
     });

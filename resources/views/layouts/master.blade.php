@@ -1,7 +1,3 @@
-<?php 
-var_dump($place['rating']);
-?>
-
 <!DOCTYPE html>
 
 <html lang="en">

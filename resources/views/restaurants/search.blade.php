@@ -63,18 +63,18 @@
  									<select name="food" class="form-control">
 
 	 									<option value="american restaurant">American</option>
-	    								<option value="breakfast">Breakfast Food</option>
-	    								<option value="cajun">Cajun</option>
-	    								<option value="chinese">Chinese</option>
-	    								<option value="german">German</option>
-	    								<option value="indian">Indian</option>
-	    								<option value="italian">Italian</option>
-	    								<option value="japanese">Japanese/ Sushi</option>
-	    								<option value="mediterranean">Meditterranean</option>
-	    								<option value="mexican">Mexican</option>
-	    								<option value="soul">Soul</option>
-	    								<option value="thai">Thai</option>
-	    								<option value="vietnamese">Vietnamese</option>
+	    								<option value="breakfast restaurant">Breakfast Food</option>
+	    								<option value="cajun restaurant">Cajun</option>
+	    								<option value="chinese restaurant">Chinese</option>
+	    								<option value="german restaurant">German</option>
+	    								<option value="indian restaurant">Indian</option>
+	    								<option value="italian restaurant">Italian</option>
+	    								<option value="japanese restaurant">Japanese/ Sushi</option>
+	    								<option value="mediterranean restaurant">Meditterranean</option>
+	    								<option value="mexican restaurant">Mexican</option>
+	    								<option value="soul restaurant">Soul</option>
+	    								<option value="thai restaurant">Thai</option>
+	    								<option value="vietnamese restaurant">Vietnamese</option>
 	    								<option value="french restaurant">French</option>
  									</select>
  							<div class="col-xs-offset-2 col-xs-6"><button type="submit" class="btn btn-default">Submit</button></div>

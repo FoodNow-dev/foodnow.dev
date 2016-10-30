@@ -152,7 +152,7 @@ class RestaurantsController extends Controller
         $data['jsonJS'] = $object;
         $data['json'] = json_decode($object);
 
-        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
+        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyA_7RtOoqaohsnAdLReUJ_ReW9m8co-Sx0";
 
         $json = file_get_contents($url);
 

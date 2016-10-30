@@ -81,7 +81,9 @@
 		var lat = {{$place['geometry']['location']['lat']}};
 		var lng = {{ $place['geometry']['location']['lng'] }};
 		var starrating = {{ $place['rating'] }};
-		console.log(starrating);
+		
+		var price = {{ $place['price_level']}};
+
 
 	</script>
 
@@ -91,7 +93,7 @@
 @section('js-script')
 	<script type="text/javascript" src="/assets/js/rest-show.js"></script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=initMap" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_7RtOoqaohsnAdLReUJ_ReW9m8co-Sx0&keyword=restaurant&libraries=places&callback=getLocation" async defer></script>
 @stop
 
 
