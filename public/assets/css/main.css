@@ -8,6 +8,17 @@ body{
 
 }
 
+#wrapper, html, body{
+	height:100%;
+}
+#wrapper{
+	margin-bottom:-190px;
+}
+#push{
+	height:110px;
+	clear: both;
+}
+
 .show-box {
 	box-shadow: 0px 0px 10px rgba(8, 59, 112, 1);
 }

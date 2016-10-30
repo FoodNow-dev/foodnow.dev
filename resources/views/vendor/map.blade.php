@@ -15,6 +15,7 @@
 			<div class="col-sm-5">
 				<div id="results">
 					<!-- Contacts output here -->
+					<h1>Will this work?!?!?!?!</h1>
 				</div>
 			</div>
 			<div class="col-sm-7">
@@ -28,5 +29,8 @@
 	<script src="/assets/js/scripts.js"></script>
 
 	<!-- GOOGLE MAPS API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=getLocation" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_7RtOoqaohsnAdLReUJ_ReW9m8co-Sx0&libraries=places&callback=getLocation" async defer></script>
+
+    {{-- // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_7RtOoqaohsnAdLReUJ_ReW9m8co-Sx0&libraries=places&callback=initMap" async defer></script> --}}
+
 @stop

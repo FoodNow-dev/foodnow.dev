@@ -14,7 +14,6 @@
 		<div class="row">
 			<div class="col-sm-5">
 				<div id="results">
-					<!-- Contacts output here -->
 				</div>
 			</div>
 			<div class="col-sm-7">
@@ -22,6 +21,8 @@
 			</div>
 		</div>
 	</div>
+	<div class="token">{{ csrf_field() }}</div>
+	<div class="action">{{action('RestaurantsController@showData')}} </div>
 	<script type="text/javascript">
 		var radius = {{ $radius }};
 		var minPrice = {{ $minprice }};
@@ -37,3 +38,4 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=initMap" async defer></script>
 @stop
+

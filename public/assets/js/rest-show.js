@@ -1,13 +1,3 @@
-$(function() {
-  $.ajaxSetup({
-    headers: {
-      'X-CSRF-Token': $('meta[name="_token"]').attr('content')
-    }
-  });
-});
-
-radius *= 1609.34;
-
 function priceFormat(level) {
     switch (level) {
         case 1 :
@@ -49,89 +39,27 @@ function rating(level) {
     }
 }
 
-function item_tmpl(data){
-    var jsonString = JSON.stringify(data);
-   jsonString = escape(jsonString);
-    console.log(jsonString);
-    var formattedAddress = data.formatted_address.split(",").join("<br>");
-    
-    var content = '<div class="list text-right animated fadeInLeft"><p>';
-        if (data.photos[0]){
-            content += '<img class="left" src="' + data.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500}) + '">';
-        } else {
-            content += '<img class="left" src"http://www.gemologyproject.com/wiki/images/5/5f/Placeholder.jpg">';
-        }          
-        content += '<form class="form" method="POST">';
-        
+var ratingImg = "<img src='" + rating(starrating) + "'>";
 
-        content += "<input type='hidden' name='jsonObject' value='" + jsonString + "'>";
-        content += '<div class="info"></p><button class="submit" type="submit"><h3>' + data.name + '</h3></button><p>';
-        content += (data.rating) ? '<img src="' + rating(data.rating) + '"><br>': 'No Rating Available<br>';
-        content += (data.price_level) ? priceFormat(data.price_level) : 'No Price Info Available' ;
-        content += '</p><p>' + formattedAddress + '<br></p>';
-
-        content += '</form></div></div>';
-    return content;
-}
+$(ratingImg).appendTo('#rating');
 
 // --------------------------- RENDERS MAP ---------------------------
 var map;
 var infowindow;
 var service;
 
-// --------------------------- GEOLOCATION ---------------------------
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(shoqPosition, showError);
-    } else {
-        alert("Geolocation is not supported by this browser.");
-    }
-}
-
-function showPosition(position) {
-    var latlon = position.coords.ltitude + "," + position.corrds.longitude;
-
-    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-    +latlon+"&zoom=14&size=400x300&sensor=false";
-
-    document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
-}
-
-function showError(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            alert("User denied the request for Geolocation.")
-            break;
-        case error.PERMISSION_UNAVAILABLE:
-            alert("Location information is unavailable.")
-            break;
-        case error.TIMEOUT:
-            alert("The request to get user location timed out.")
-            break;
-        case error.UNKNOWN_ERROR:
-            alert("An unknown error occurred.")
-            break;
-    }
-}
-
-// --------------------------- RENDERS MAP ---------------------------
 function initMap() {
-    var userLoc = new google.maps.LatLng(29.443134, -98.48138);
-
+    var userLoc = new google.maps.LatLng(lat, lng);
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
-        zoom: 13
+        zoom: 15
     });
-    
+
+        
     infowindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
     service.textSearch({
         location: userLoc,
-        radius: radius,
-        open_now: true,
-        query: food,
-        minPriceLevel: minPrice,
-        maxPriceLevel: maxPrice,
         types: 'Restaurant'
     }, callback);
 }
@@ -142,12 +70,7 @@ function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
-            $('#results').append(item_tmpl(results[i]));
         }
-        $('.token').clone().appendTo('.form');
-        var action = $('.action').text();
-        $('.form').attr('action', action);
-        
     }
 }
 
@@ -155,8 +78,7 @@ function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
-        position: place.geometry.location,
-        id: place.place_id
+        position: place.geometry.location
     });
     var request = {
         reference: place.reference
@@ -165,6 +87,7 @@ function createMarker(place) {
 // --------------------------- INFOWINDOWS ---------------------------
     google.maps.event.addListener(marker, 'click', function() {
         service.getDetails(request, function(place, status) {
+            console.log(place);
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var contentStr = '<div>';
                     // PLACE ID
@@ -189,8 +112,3 @@ function createMarker(place) {
         });
     });
 }
-
-
-
-
-

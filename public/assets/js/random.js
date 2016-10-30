@@ -1,6 +1,7 @@
 var map;
 var infowindow;
 var service;
+var foodType = ["breakfast restaurant", "american restaurant", "cajun restaurant", "chinese restaurant", "german restaurant", "indean restaurant", "italian restaurant", "japanese restaurant", "mediterranean restaurant", "mexican restaurant", "soul restaurant", "thai restaurant", "vietnamese restaurant"]
 
 // --------------------------- GEOLOCATION ---------------------------
 function getLocation() {
@@ -37,13 +38,12 @@ function showError(error) {
 
 // --------------------------- RENDERS MAP ---------------------------
 function initMap(lat, lon) {
-    var userLoc = new google.maps.LatLng(lat, lon);
     // var userLoc = new google.maps.LatLng(32, -97);
-
+    var userLoc = new google.maps.LatLng(lat, lon);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
-        zoom: 13
+        zoom: 10
     });
 
     var circle = new google.maps.Marker({
@@ -51,7 +51,7 @@ function initMap(lat, lon) {
         map: map,
         icon: {
             url: '/assets/img/blue.png',
-            scaledSize: new google.maps.Size(50, 60)
+            scaledSize: new google.maps.Size(40, 50)
         }
     });
 
@@ -59,9 +59,9 @@ function initMap(lat, lon) {
     service = new google.maps.places.PlacesService(map);
     service.textSearch({
         location: userLoc,
-        query: 'French',
+        query: foodType[Math.floor(Math.random() * foodType.length)],
         type: 'restaurant',
-        radius: 50000
+        radius: 30000,
     }, callback);
 }
 
@@ -69,9 +69,7 @@ function initMap(lat, lon) {
 // --------------------------- MARKERS WILL BE PLACED ---------------------------
 function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-        }
+        createMarker(results[Math.floor(Math.random() * results.length)]);
     }
 }
 

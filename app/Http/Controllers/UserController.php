@@ -9,7 +9,8 @@ use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-require_once "/vagrant/sites/foodnow.dev/vendor/twilio/sdk/vendor/autoload.php";
+// require_once "/vagrant/sites/foodnow.dev/vendor/twilio/sdk/vendor/autoload.php";
+
 use Twilio\Rest\Client;
 
 
@@ -132,12 +133,13 @@ class UserController extends Controller
         $AuthToken = env('TWILIO_TOKEN');
 
 
-         // Step 3: instantiate a new Twilio Rest Client
+//          // Step 3: instantiate a new Twilio Rest Client
         $client = new Client($AccountSid, $AuthToken);
 
-        // Step 4: make an array of people we know, to send them a message. 
-    // Feel free to change/add your own phone number and name here.
-        //input rules
+//         // Step 4: make an array of people we know, to send them a message. 
+//     // Feel free to change/add your own phone number and name here.
+//         //input rules
+
 
         // $rules = [
         //     'friendName1'=>'required|min:1',
@@ -167,6 +169,20 @@ class UserController extends Controller
         }
         $request->session()->flash('SUCCESS_MESSAGE', 'Message sent succesfully');
 
+//         $rules = [
+//             'friendName1'=>'required|min:1',
+//             'friendPhone1'=>'required|numeric|min:11',
+//             'friendName2'=>'required|min:1',
+//             'friendPhone2'=>'required|numeric|min:11',
+//         ];
+
+//         $request->session()->flash('ERROR_MESSAGE','Text Message was not sent');
+
+//         $this->validate($request, $rules);
+
+//         $request->session()->forget('ERROR_MESSAGE');
+
+
     // Step 5: Loop over all our friends. $number is a phone number above, and 
     // $name is the name next to it
     foreach ($people as $number => $name) {
@@ -189,7 +205,7 @@ class UserController extends Controller
             )
         );
 
-    //     // Display a confirmation message on the screen
+//     //     // Display a confirmation message on the screen
         echo "Sent message to $name".PHP_EOL;
     }
 
@@ -198,7 +214,7 @@ class UserController extends Controller
 
         return view('restaurants.restaurant');
      }
-}
+ }
 
 
 

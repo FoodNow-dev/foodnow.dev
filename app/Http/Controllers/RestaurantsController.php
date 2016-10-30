@@ -85,10 +85,11 @@ class RestaurantsController extends Controller
      */
     public function show(Request $request)
     {
-        $data['place_id'] = $request->input('placeId');
-        dd($data);
-        return view('restaurants.show')->with($data);
+        // $data['placeId'] = $placeId; 
+        return view('restaurants.randomShow');
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -144,4 +145,27 @@ class RestaurantsController extends Controller
 
         return back();
     }
+
+    public function showData(Request $request) {
+        $object = urldecode($request['jsonObject']);
+        $data['jsonJS'] = $object;
+        $data['json'] = json_decode($object);
+
+        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
+
+        $json = file_get_contents($url);
+
+        $placedata = json_decode($json, TRUE);
+
+        if($placedata['status']=="OK"){
+           $data['place'] = $placedata['result'];
+        }
+
+        return view('restaurants.show')->with($data);
+    }
+
+
+
+
+
 }
