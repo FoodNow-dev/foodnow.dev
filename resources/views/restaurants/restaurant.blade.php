@@ -28,12 +28,12 @@
 						<h1>Update Your Friends Where Dinner Is</h1>
 							<form class="form-horizontal col-xs-10 col-xs-offset-3" method="POST" action="/restaurants/restaurant">
 							{!! csrf_field() !!}
-								<div class="form-group col-xs-8 col-xs-offset-7">
+								<div class="form-group">
 									{{-- dynamic buttons --}}
-									<div class="input_fields_wrap">
-		   								 <button class="thinner btn btn-default add_field_button">Invite More Friends</button>
+									<div class="input_fields_wrap col-xs-7">
+		   								 <button class="btn btn-default add_field_button">Invite More Friends</button>
 			    						<div>
-			    							<input type="text" name="mytext[]" placeholder="Phone Number">
+			    							<input type="text" name="mytext[]" class="col-xs-12 space" placeholder="Friend's Phone #">
 			    						</div>
 			    					</div>
 
@@ -45,7 +45,7 @@
 									<div class="col-xs-6">
 										<button type="submit" class="btn btn-primary">Send Message</button>
 									</div>
-									<div class="col-xs-10">
+									<div class="col-xs-7">
 										@if(session()->has('SUCCESS_MESSAGE'))
 										<div class="alert alert-success">
 											<p>{{session('SUCCESS_MESSAGE') }}</p>
@@ -80,7 +80,7 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     {{-- <script src="../../../public/assets/js/bootstrap.min.js"></script> --}}
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+    
     <script> $(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fields_wrap"); //Fields wrapper
@@ -91,7 +91,7 @@
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="mytext[]" placeholder="Phone Number"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+            $(wrapper).append('<div><input type="text" name="mytext[]" class="col-xs-12 space" placeholder="Friend\'s Phone #"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
         }
     });
     

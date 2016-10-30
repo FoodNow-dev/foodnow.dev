@@ -5,7 +5,7 @@ input[type="number"],
 select, 
 select.form-control {
 	height: 50px;
-    margin: 0;
+    margin: 7px;
     padding: 0 20px;
     vertical-align: middle;
     background: #f8f8f8;
