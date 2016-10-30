@@ -91,8 +91,7 @@
 						<h1> Let Us Choose Your Dinner Tonight!</h1>
 						<br>
 						<div>
-						    <button type="submit" class="btn btn-default">Pick at Random
-						    </button>
+						    <a href="{{ action('RestaurantsController@showData') }}?random=true">Pick at Random</a>
 						</div>
 					</div>
 
