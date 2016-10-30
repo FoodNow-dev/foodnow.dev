@@ -139,27 +139,32 @@ class UserController extends Controller
     // Feel free to change/add your own phone number and name here.
         //input rules
 
-        $rules = [
-            'friendName1'=>'required|min:1',
-            'friendPhone1'=>'required|numeric|min:11',
-            'friendName2'=>'required|min:1',
-            'friendPhone2'=>'required|numeric|min:11',
-        ];
+        // $rules = [
+        //     'friendName1'=>'required|min:1',
+        //     'friendPhone1'=>'required|numeric|min:11',
+        //     'friendName2'=>'required|min:1',
+        //     'friendPhone2'=>'required|numeric|min:11',
+        // ];
 
-        $request->session()->flash('ERROR_MESSAGE','Text Message was not sent');
+        // $request->session()->flash('ERROR_MESSAGE','Text Message was not sent');
 
-        $this->validate($request, $rules);
+        // $this->validate($request, $rules);
 
-        $request->session()->forget('ERROR_MESSAGE');
+        // $request->session()->forget('ERROR_MESSAGE');
 
     
 
         $people = array(
             // "+1(210)317-55-00" => "Snow White",
-            $request->friendPhone1 => $request->friendName1,
-            $request->friendPhone2 => $request->friendName2
+            // $request->friendPhone1 => $request->friendName1,
+            // $request->friendPhone2 => $request->friendName2
+
         );
-        // var_dump($people);
+
+        foreach($request->mytext as $phonenumber)
+        {
+            $people[$phonenumber] = "name";
+        }
         $request->session()->flash('SUCCESS_MESSAGE', 'Message sent succesfully');
 
     // Step 5: Loop over all our friends. $number is a phone number above, and 

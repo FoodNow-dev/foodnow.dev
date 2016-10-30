@@ -69,12 +69,12 @@
 						<form class="form-horizontal col-xs-10 col-xs-offset-3" method="POST" action="/restaurants/restaurant">
 						{!! csrf_field() !!}
 							<div class="form-group col-xs-8 col-xs-offset-7">
-							{{-- dynamic buttons --}}
+								{{-- dynamic buttons --}}
 							<div class="input_fields_wrap">
    								 <button class="btn btn-primary add_field_button">Add More Fields</button>
     						<div>
-    								<input type="text" name="mytext[]">
-    							</div>
+    							<input type="text" name="mytext[]">
+    						</div>
 								<input type="text" name="friendName1" class="form-control" placeholder="Friend's name" value="">
 							</div>
 							<div class="form-group col-xs-8 col-xs-offset-7">
