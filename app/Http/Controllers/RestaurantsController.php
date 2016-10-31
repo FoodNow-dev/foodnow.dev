@@ -72,7 +72,7 @@ class RestaurantsController extends Controller
         $data['jsonJS'] = $object;
         $data['json'] = json_decode($object);
 
-        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyDDoH-4M2T1bP18mM28xVoWmimK1GNokUw";
+        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
 
         $json = file_get_contents($url);
 
@@ -81,20 +81,19 @@ class RestaurantsController extends Controller
         if($placedata['status']=="OK"){
            $data['place'] = $placedata['result'];
 
-        $data['photos'] = [];
-        
-        foreach ($placedata['result']['photos'] as $key => $photo) {
+            $data['photos'] = [];
             
-            $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyDDoH-4M2T1bP18mM28xVoWmimK1GNokUw";
+            foreach ($placedata['result']['photos'] as $key => $photo) {
+                
+                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
 
-            $photodata = file_get_contents($photoUrl);
-            
-            $photoBase64 = chunk_split(base64_encode($photodata));
-          
-            $data['photos'][] = $photoBase64;
+                $photodata = file_get_contents($photoUrl);
+                
+                $photoBase64 = chunk_split(base64_encode($photodata));
+              
+                $data['photos'][] = $photoBase64;
 
-        }
-
+            }
         }
 
         return view('restaurants.show')->with($data);

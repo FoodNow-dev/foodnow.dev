@@ -38,7 +38,7 @@
 							</div>
 						</div>
 						<div class="form-bottom show-box">
-							<form role="form" action="{{ action('Auth\AuthController@postRegister') }}" method="POST" class="registration-form">
+							<form id="signupForm" role="form" action="{{ action('Auth\AuthController@postRegister') }}" method="POST" class="registration-form" novalidate="">
 								{!! csrf_field() !!}
 								<div class="form-group">
 									<label class="sr-only" for="first_name">First name</label>
@@ -50,7 +50,7 @@
 								</div>
 								<div class="form-group">
 									<label class="sr-only" for="email">Email</label>
-									<input type="text" name="email" placeholder="Email..." class="email form-control" id="email">
+									<input type="email" name="email" placeholder="Email..." class="email form-control" id="email">
 								</div>
 								<div class="form-group">
 									<label class="sr-only" for="phone">Phone</label>
@@ -65,8 +65,11 @@
 									<label class="sr-only" for="password_confirmation">Confirm Password</label>
 									<input type="password" name="password_confirmation" placeholder="Confirm Password..." class="password_confirmation form-control" id="password_confirmation">
 								</div>
-								<button type="submit" class="btn btn-register">Sign me up!</button>
+								<button type="submit" class="submit btn btn-register" value="Submit">Sign me up!</button>
 							</form>
+							<script>
+								$("#signupForm").validate();
+							</script>
 						</div>
 					</div>
 				</div>
@@ -77,6 +80,12 @@
 
 @section('js-script')
 	<script src="assets/js/scripts.js"></script>
+	{{-- jQuery validation files --}}
+	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script> --}}
+  
+     <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
+      <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/signup-form.js') }}"></script>
 @stop
 
 
