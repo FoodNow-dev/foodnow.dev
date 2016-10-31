@@ -38,12 +38,8 @@ $().ready(function() {
 		},
 		messages: {
 			first_name: "Please enter your firstname",
-			last_name: "Please enter your last name",
-			phone: {
-				required: "Please provide valid U.S. number"
-			},
-
-
+			last_name: "Please enter your last name"
+			
 		}
 	});
 	
