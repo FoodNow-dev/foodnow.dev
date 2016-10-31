@@ -21,9 +21,16 @@ button.btn {
 
 #email_body{
     color:black;
+    margin:16px;
 }
 
-.thinner{
-    width: 38vh;
-    height: 1vh;
+.remove_field{
+    background-color:#c4aa4b;
+    color:white;
+    border-radius: 60px;
+    padding:5px;
+}
+
+.space{
+    margin:7px;
 }
