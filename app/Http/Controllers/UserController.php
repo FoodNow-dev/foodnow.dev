@@ -72,21 +72,29 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->session()->flash('ERROR_MESSAGE', 'Invalid Inputs');
-        $this->validate($request, User::$rules);
-        $request->session()->forget('ERROR_MESSAGE');
-
         $user = User::findOrFail($id);
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
-        $user->email = $request->email;
-        $user->address = $request->address;
-        $user->city = $request->city;
-        $user->state = $request->state;
-        $user->zipcode = $request_>zipcode;
-        $user->password = Hash::make($request->password);
+        
+        if(!empty($request->first_name)) {
+            $user->first_name = $request->first_name;
+            $user->last_name = $request->last_name;
+            $user->email = $request->email;
+            $user->phone = $request->phone;
+            $user->password = Hash::make($request->password);
+            $user->save();
+        }
+
+        if (!empty($request->file('image'))) {
+            if ($request->file('image')->isValid()) {
+
+                $user->image = '/assets/img/profile/' . $user->id . $request->file('image')->getClientOriginalName();
+
+                $request->file('image')->move(
+                    base_path() . '/public/assets/img/profile/', $user->image
+                );  
+            };
+        };
+
         $user->save();
-        Log::info('Updated User: ' . $user);
 
         $request->session()->flash('SUCCESS_MESSAGE', 'Update Successful');
 

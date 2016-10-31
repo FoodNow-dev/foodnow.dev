@@ -3,8 +3,6 @@
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/restaurant.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/elements.css">
-
 @stop
 
 @section('content')
@@ -18,7 +16,6 @@
 							<h1>{{$place['name']}}</h1>
 							<div id="rating"></div>
 							<p>
-
 								{{$place['formatted_address']}}
 							</p>
 						</div>
@@ -63,11 +60,6 @@
 								</div>
 								@endif
 							</div>
-
-							<div class="container">  
-						   		 @yield('content')
-						  </div>
-
 						</form>
 					</div>
 					<div class="col-xs-12 col-xs-offset-1 col-sm-5 col-sm-offset-1 text">
@@ -77,26 +69,22 @@
 			</div>
 		</div>
 	</div>
+
 	<script type="text/javascript">
-		var lat = {{$place['geometry']['location']['lat']}};
+		// Passes Scalar data held in PHP to JS
+		var lat = {{ $place['geometry']['location']['lat'] }};
 		var lng = {{ $place['geometry']['location']['lng'] }};
 		var starrating = {{ $place['rating'] }};
-		
-		var price = {{ $place['price_level']}};
-
-
+		var price = {{ $place['price_level'] }};
 	</script>
-
 @stop
 
 
 @section('js-script')
+	{{-- Custom JS --}}
 	<script type="text/javascript" src="/assets/js/rest-show.js"></script>
-
-	{{-- // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_7RtOoqaohsnAdLReUJ_ReW9m8co-Sx0&libraries=places&callback=getLocation" async defer></script> --}}
-
+	{{-- Google Maps API --}}
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_7RtOoqaohsnAdLReUJ_ReW9m8co-Sx0&libraries=places&callback=initMap" async defer></script>
-
 @stop
 
 
