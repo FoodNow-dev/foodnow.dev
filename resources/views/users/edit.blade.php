@@ -39,7 +39,7 @@
 							</div>
 						</div>
 						<div class="form-bottom show-box">
-							<form role="form" action="{{ action('UserController@update', $user->id) }}" method="POST" class="registration-form">
+							<form id="editForm" role="form" action="{{ action('UserController@update', $user->id) }}" method="POST" class="registration-form">
 								{!! csrf_field() !!}
 								{!! method_field('PUT') !!}
 								<div class="form-group">
@@ -67,6 +67,9 @@
 									</div>
 								</div>
 							</form>
+							<script>
+								$("#editForm").validate();
+							</script>
 						</div>
 					</div>
 				</div>
@@ -77,6 +80,9 @@
 
 @section('js-script')
 	<script type="text/javascript" src="/assets/js/image-uploader.js"></script>
+	  <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
+      <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/editScripts.js') }}"></script>
 @stop
 
 
