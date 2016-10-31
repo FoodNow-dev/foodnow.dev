@@ -43,13 +43,18 @@
 	margin: 20px 0 10px 0;
 }
 
-.top-content .description p { opacity: 0.8; color: #dcd22a; }
+.top-content .description p { 
+	opacity: 0.8; 
+	color: #dcd22a; 
+}
 
 .top-content .description a {
 	color: #d5b33b;
 }
 .top-content .description a:hover, 
-.top-content .description a:focus { border-bottom: 1px dotted #d5b33b; }
+.top-content .description a:focus { 
+	border-bottom: 1px dotted #d5b33b; 
+}
 
 .top-content .top-big-link {
 	margin-top: 35px;
@@ -66,24 +71,6 @@
 	
 	width: 205px;
 }
-
-.btn-link-1 {
-	display: inline-block;
-	height: 50px;
-	margin: 0 5px;
-	padding: 16px 20px 0 20px;
-	background: #d5b33b;
-	font-size: 16px;
-    font-weight: 300;
-    line-height: 16px;
-    color: #fff;
-    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
-}
-.btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; opacity: 0.6; color: #fff; }
-
-.btn-link-2:hover, .btn-link-2:focus, 
-.btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
-
 
 .form-top {
 	overflow: hidden;
@@ -173,6 +160,10 @@ form {
     text-shadow: none;
     -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
     -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+.btn:hover {
+	transition: .5s;
+	color: #d5b33b !important;
 }
 
 body > div > div > div > div > div.text.col-xs-6 > div {
