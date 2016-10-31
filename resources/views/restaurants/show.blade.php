@@ -16,9 +16,7 @@
 						<h1><strong>{{ $place['name'] }}</strong></h1>
 						<div class="description">
 							<ul>
-								<li>
-									<div id="rating"></div>
-								</li>
+								
 								<li>
 									{{ $place['address_components'][0]['long_name'] }} {{ $place['address_components'][1]['long_name'] }}
 								</li>
@@ -35,9 +33,7 @@
 							
 						</div>
 					</div>
-					<script type="text/javascript">
-						var reviewRating = [];
-					</script>
+					
 					<div class="col-sm-5 form-box animated fadeInRight">
 						@foreach($place['reviews'] as $key => $review) 
 
@@ -45,11 +41,18 @@
 							<div class="col-sm-12 form-bottom show-box">
 								<div class="review-container">
 									<img class="google-profile" src="{{ (isset($review['profile_photo_url'])) ? $review['profile_photo_url'] : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png' }}" width="30%" height="150px">
-									<div class="review-info">
-										<h3 class="pull-right"><b>{{$review['author_name']}}</b></h3>
-										<div id="reviewStars{{ $key }}"></div>
-										
+									<div class="review-info text-right">
+										<h3><b>{{$review['author_name']}}</b></h3>
+										<p>
+											<img class="stars" src="{{ $starRating[$key] }}">
+										</p>
+										<p>
+											{{ $time[$key] }}
+										</p>
 									</div>
+										
+										
+										
 									<div class="review"> 
 										
 											{{ $review['text']}}
@@ -57,9 +60,7 @@
 									</div>
 								</div>
 							</div>
-							<script type="text/javascript">
-								reviewRating.push({{ $review['rating'] }});
-							</script>
+							
 						@endforeach
 
 					</div>
@@ -150,10 +151,11 @@
 
 @section('js-script')
 	{{-- Custom JS --}}
+	<script type="text/javascript" src="{{ URL::asset('assets/js/rest-show.js') }}"></script>
 	<script type="text/javascript" src="/assets/js/rest-show.js"></script>
-	
+
 	{{-- Google Maps API --}}
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4	&libraries=places&callback=initMap" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs	&libraries=places&callback=initMap" async defer></script>
 @stop
 
 
