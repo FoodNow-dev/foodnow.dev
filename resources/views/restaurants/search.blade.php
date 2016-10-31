@@ -6,10 +6,7 @@
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/search.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/elements.css">
-
 	<link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
-
 @stop
 
 @section('content')

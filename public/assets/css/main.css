@@ -131,6 +131,12 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 	margin-bottom: 10px;
 }
 
+#nav-image {
+	max-height: 40px;
+	position: relative;
+	top: 5px;
+}
+
 @media(max-width:768px) {
 	#login-dp {
 		background-color: inherit;

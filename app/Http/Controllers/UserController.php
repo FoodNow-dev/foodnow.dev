@@ -74,7 +74,6 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         
-        
         if(!empty($request->first_name)) {
             $user->first_name = $request->first_name;
             $user->last_name = $request->last_name;
