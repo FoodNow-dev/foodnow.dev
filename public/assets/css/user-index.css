@@ -15,3 +15,22 @@
 	height: 50%;
 }
 
+body > div.form-group > input {
+	width: 60%;
+	display: inline-block;
+}
+
+form {
+	width: 40%;
+	display: inline-block;
+}
+
+h4 {
+	color: white;
+}
+
+.search {
+	text-align: center;
+	margin-left: 37.5%;
+}
+

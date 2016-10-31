@@ -39,6 +39,9 @@
 		{{-- Custom Main CSS --}}
 		<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 
+		<!-- http://fontawesome.io/cdn/success/ -->
+        <script src="https://use.fontawesome.com/37f2d2a99c.js"></script>
+
 	</head>
 	<body>
 		
