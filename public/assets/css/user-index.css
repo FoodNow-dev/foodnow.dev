@@ -20,6 +20,13 @@ body > div.form-group > input {
 	display: inline-block;
 }
 
+footer {
+	position: fixed !important;
+	bottom: 0px;
+	width: 100%;
+	z-index: 1000;
+}
+
 form {
 	width: 40%;
 	display: inline-block;
@@ -34,3 +41,6 @@ h4 {
 	margin-left: 37.5%;
 }
 
+body > div.row.text-center {
+	margin-bottom: 4%;
+}
