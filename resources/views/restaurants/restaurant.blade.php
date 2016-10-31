@@ -10,6 +10,13 @@
 	{{-- <link rel="stylesheet" type="text/css" href="/assets/css/elements2.css"> --}}
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/elements2.css') }}" />
 
+	 <script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
+      <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
+
 @stop
 
 @section('content')
@@ -29,7 +36,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-xs-offset-1 col-sm-5 col-sm-offset-0 text">
 						<h1>Update Your Friends Where Dinner Is</h1>
-							<form class="form-horizontal col-xs-10 col-xs-offset-3" method="POST" action="/restaurants/restaurant">
+							<form id= "info" class="form-horizontal col-xs-10 col-xs-offset-3" method="POST" action="/restaurants/restaurant">
 							{!! csrf_field() !!}
 								<div class="form-group">
 									{{-- dynamic buttons --}}
@@ -37,7 +44,7 @@
 		   								 <button class="btn btn-default add_field_button">Invite More Friends 
 		   								</button>
 			    						<div>
-			    							<input type="text" name="mytext[]" class="col-xs-12 space" placeholder="Friend's Phone #">
+			    							<input type="text" name="mytext[]" id = "mytext[]" class="col-xs-12 space" placeholder="Friend's Phone #">
 			    						</div>
 			    					</div>
 
@@ -69,6 +76,14 @@
 								   		 @yield('content')
 								   </div>
 							</form>
+							    <script>
+								    $( "#info" ).validate({
+								  rules: {
+								    email_body: {
+								      required: true,
+								      minlength: 2
+								    }
+  								}</script>
 						</div>
 					
 					<div class="col-xs-12 col-xs-offset-1 col-sm-5 col-sm-offset-1 text">
@@ -81,10 +96,11 @@
 	    <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-     <script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
+{{--      <script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
-     <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
+      <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script> --}}
 
 @stop
