@@ -41,9 +41,15 @@ function rating(level) {
     }
 }
 
-var ratingImg = "<img src='" + rating(starrating) + "'>";
+var ratingImg = "<img src='" + rating(element) + "'>";
 $(ratingImg).appendTo('#rating');
-console.log(ratingImg);
+
+console.log(reviewRating);
+reviewRating.forEach(function(element, index){
+    var reviewStars = "<img src='" + rating(reviewRating) + "'>" ;
+    var div = '#reviewStars' + index;
+    $(reviewStars).html(div);
+});
 
 // --------------------------- GEOLOCATION ---------------------------
 function getLocation() {
@@ -122,7 +128,7 @@ function createMarker(place) {
 // --------------------------- INFOWINDOWS ---------------------------
     google.maps.event.addListener(marker, 'click', function() {
         service.getDetails(request, function(place, status) {
-            console.log(place);
+            
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var contentStr = '<div>';
                     // PLACE ID

@@ -118,7 +118,7 @@
 .form-bottom {
 	padding: 25px 25px 0px 25px;
 	margin: 10px;
-	
+	color: #d5b33b;
 	background: rgba(8, 59, 112, .65);
 	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
 	text-align: left;
@@ -130,13 +130,20 @@
 
 .google-profile{
 	width: 30% !important;
-	height: 100% !important;
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	border-radius: 10px;
 }
 
+.review-info h3 {
+	position: relative;
+	bottom: 25px;
+}
 
+.review {
+	clear: both;
+}
 
 
 

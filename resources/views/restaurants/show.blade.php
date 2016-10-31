@@ -35,22 +35,31 @@
 							
 						</div>
 					</div>
+					<script type="text/javascript">
+						var reviewRating = [];
+					</script>
 					<div class="col-sm-5 form-box animated fadeInRight">
 						@foreach($place['reviews'] as $key => $review) 
+
+
 							<div class="col-sm-12 form-bottom show-box">
 								<div class="review-container">
-									<img class="google-profile" src="{{ (isset($review['profile_photo_url'])) ? $review['profile_photo_url'] : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png' }}" width="30%" height="100%">
+									<img class="google-profile" src="{{ (isset($review['profile_photo_url'])) ? $review['profile_photo_url'] : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png' }}" width="30%" height="150px">
 									<div class="review-info">
-										<h3><b>{{$review['author_name']}}</b></h3>
+										<h3 class="pull-right"><b>{{$review['author_name']}}</b></h3>
+										<div id="reviewStars{{ $key }}"></div>
+										
 									</div>
 									<div class="review"> 
-										<ul class="text-right">
-											<li class="name"></li>
-											<li>{{ $review['text']}}</li>
-										</ul>
+										
+											{{ $review['text']}}
+										
 									</div>
 								</div>
 							</div>
+							<script type="text/javascript">
+								reviewRating.push({{ $review['rating'] }});
+							</script>
 						@endforeach
 
 					</div>
@@ -142,8 +151,9 @@
 @section('js-script')
 	{{-- Custom JS --}}
 	<script type="text/javascript" src="/assets/js/rest-show.js"></script>
+	
 	{{-- Google Maps API --}}
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDoH-4M2T1bP18mM28xVoWmimK1GNokUw	&libraries=places&callback=initMap" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4	&libraries=places&callback=initMap" async defer></script>
 @stop
 
 
