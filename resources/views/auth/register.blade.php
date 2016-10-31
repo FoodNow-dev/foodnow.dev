@@ -65,7 +65,7 @@
 									<label class="sr-only" for="password_confirmation">Confirm Password</label>
 									<input type="password" name="password_confirmation" placeholder="Confirm Password..." class="password_confirmation form-control" id="password_confirmation">
 								</div>
-								<button type="submit" class="btn btn-register">Sign me up!</button>
+								<button type="submit" class="submit btn btn-register">Sign me up!</button>
 							</form>
 							<script>
 								$("#signupForm").validate();
