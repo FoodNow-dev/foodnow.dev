@@ -80,8 +80,6 @@
 
 @section('js-script')
 	<script src="assets/js/scripts.js"></script>
-	{{-- jQuery validation files --}}
-	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script> --}}
   
      <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
       <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>

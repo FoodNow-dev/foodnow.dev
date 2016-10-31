@@ -10,6 +10,7 @@ use App\Models\Restaurant;
 use App\Models\Review;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
 
 class RestaurantsController extends Controller
 {
@@ -72,7 +73,7 @@ class RestaurantsController extends Controller
         $data['jsonJS'] = $object;
         $data['json'] = json_decode($object);
 
-        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
+        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
 
         $json = file_get_contents($url);
 
@@ -85,7 +86,7 @@ class RestaurantsController extends Controller
             
             foreach ($placedata['result']['photos'] as $key => $photo) {
                 
-                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
+                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
 
                 $photodata = file_get_contents($photoUrl);
                 
@@ -95,7 +96,52 @@ class RestaurantsController extends Controller
 
             }
         }
+        foreach($data['place']['reviews'] as $key => $review) {
 
+            $level = $review['rating'];
+
+            switch ($level) {
+                case ($level < .25) :
+                    $data['starRating'][] = '/assets/img/star-rating0.png';
+                    break;
+                case ($level >= .25 && $level < .75) :
+                    $data['starRating'][] = '/assets/img/star-rating-half.png';
+                    break;
+                case ($level >= .75 && $level < 1.25) :
+                    $data['starRating'][] = '/assets/img/star-rating1.png';
+                    break;
+                case ($level >= 1.25 && $level < 1.75) :
+                    $data['starRating'][] = '/assets/img/star-rating1half.png';
+                    break;
+                case ($level >= 1.75 && $level < 2.25) :
+                    $data['starRating'][] = '/assets/img/star-rating2.png';
+                    break;
+                case ($level >= 2.25 && $level < 2.75) :
+                    $data['starRating'][] = '/assets/img/star-rating2half.png';
+                    break;
+                case ($level >= 2.75 && $level < 3.25) :
+                    $data['starRating'][] = '/assets/img/star-rating3.png';
+                    break;
+                case ($level >= 3.25 && $level < 3.75) :
+                    $data['starRating'][] = '/assets/img/star-rating3half.png';
+                    break;
+                case ($level >= 3.75 && $level < 4.25) :
+                    $data['starRating'][] = '/assets/img/star-rating4.png';
+                    break;
+                case ($level >= 4.25 && $level < 4.75) :
+                    $data['starRating'][] = '/assets/img/star-rating4half.png';
+                    break;
+                case ($level >= 4.75) :
+                    $data['starRating'][] = '/assets/img/star-rating5.png';
+                    break;
+            }
+            
+            $time = Carbon::createFromTimestamp($review['time'])->toDateTimeString();
+            $data['time'][] = Carbon::now()->subSeconds($time)->diffForHumans();
+        }
+
+
+        
         return view('restaurants.show')->with($data);
     }
 

@@ -11,8 +11,7 @@ function priceFormat(level) {
     }
 
 }
-var priceSign = '<p>' + priceFormat(price) + '</p>';
-$(priceSign).appendTo('#rating');
+
 
 function rating(level) {
     switch (true) {
@@ -41,15 +40,9 @@ function rating(level) {
     }
 }
 
-var ratingImg = "<img src='" + rating(element) + "'>";
-$(ratingImg).appendTo('#rating');
 
-console.log(reviewRating);
-reviewRating.forEach(function(element, index){
-    var reviewStars = "<img src='" + rating(reviewRating) + "'>" ;
-    var div = '#reviewStars' + index;
-    $(reviewStars).html(div);
-});
+var ratingImg = "<img src='" + rating(starrating) + "'>";
+$(ratingImg).appendTo('#rating');
 
 // --------------------------- GEOLOCATION ---------------------------
 function getLocation() {
