@@ -9,10 +9,10 @@ $().ready(function() {
 				required: true,
 				email: true
 			},
-			// phone:{
-			// 	required:true,
-			// 	phone: true
-			// },
+			phone:{
+				required:true,
+				phone: true
+			},
 			password:{
 				required: true,
 				minlength: 5
