@@ -50,7 +50,7 @@
 
 									
 									<div class="form-group col-xs-8 col-xs-offset-7">
-										<textarea id="email_body" name="email_body" rows="3" cols="25" placeholder="We're meeting in Olive Garden at 7 pm"></textarea>
+										<textarea id="email_body" name="email_body" rows="3" cols="25" placeholder="">We're meeting in Olive Garden at 7 pm</textarea>
 									</div>
 									</div>
 									<div class="col-xs-6">
@@ -76,6 +76,16 @@
 								   		 @yield('content')
 								   </div>
 							</form>
+					{{-- 			<script>
+								$( "#myform" ).validate({
+								  rules: {
+								    field: {
+								      required: true,
+								      phoneUS: true
+								    }
+								  }
+								});
+								</script> --}}
 							    <script>
 								    $( "#info" ).validate({
 								  rules: {
@@ -83,7 +93,8 @@
 								      required: true,
 								      minlength: 2
 								    }
-  								}</script>
+  								}
+  								});</script>
 						</div>
 					
 					<div class="col-xs-12 col-xs-offset-1 col-sm-5 col-sm-offset-1 text">
