@@ -1,6 +1,6 @@
 .img-circle {
-	max-height: 200px;
-	max-width: 200px;
+	margin-top: 8vh;
+	max-height: 50vh;
 	background-color: rgba(255, 255, 255, .5);
 	border-radius: 50%;
 	border: 5px solid rgba(195, 191, 61, .5);
@@ -30,4 +30,15 @@
 	list-style-type: none;
 	margin-right: 40px;
 	margin-left: 0px;
+}
+
+footer {
+	position: fixed !important;
+	bottom: 0px;
+	width: 100%;
+	z-index: 1000;
+}
+
+#edit_buttons {
+	width: 94px;
 }
