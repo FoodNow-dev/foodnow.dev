@@ -38,7 +38,7 @@
 							</div>
 						</div>
 						<div class="form-bottom show-box">
-							<form role="form" action="{{ action('Auth\AuthController@postRegister') }}" method="POST" class="registration-form">
+							<form id="signupForm" role="form" action="{{ action('Auth\AuthController@postRegister') }}" method="POST" class="registration-form">
 								{!! csrf_field() !!}
 								<div class="form-group">
 									<label class="sr-only" for="first_name">First name</label>
@@ -50,7 +50,7 @@
 								</div>
 								<div class="form-group">
 									<label class="sr-only" for="email">Email</label>
-									<input type="text" name="email" placeholder="Email..." class="email form-control" id="email">
+									<input type="email" name="email" placeholder="Email..." class="email form-control" id="email">
 								</div>
 								<div class="form-group">
 									<label class="sr-only" for="phone">Phone</label>
@@ -67,6 +67,9 @@
 								</div>
 								<button type="submit" class="btn btn-register">Sign me up!</button>
 							</form>
+							<script>
+								$("#signupForm").validate();
+							</script>
 						</div>
 					</div>
 				</div>
@@ -77,6 +80,11 @@
 
 @section('js-script')
 	<script src="assets/js/scripts.js"></script>
+	{{-- jQuery validation files --}}
+	<script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/signup-form.js') }}"></script>
 @stop
 
 
