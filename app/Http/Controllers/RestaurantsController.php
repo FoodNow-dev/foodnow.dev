@@ -44,7 +44,7 @@ class RestaurantsController extends Controller
      */
     public function show(Request $request)
     {
-        // $data['placeId'] = $placeId; 
+        
         return view('restaurants.randomShow');
     }
 
@@ -66,51 +66,13 @@ class RestaurantsController extends Controller
         return back();
     }
 
-    public function setReview(Request $request) {
-
-        $review = Review::with('restaurant')->firstOrCreate([
-            'rest_id' => $request->input('rest_id'),
-            'created_by' => $request->user()->id
-        ]);
-
-        $review->score = $request->input('score');
-        $review->content = $request->input('content');
-        $review->price = $request->input('price');
-
-        $review->save();
-
-        $restaurant = $review->restaurant;
-
-        $restaurant->score = $restaurant->score();
-        $restaurant->price = $restaurant->price();
-
-        $data = [
-            'score' => $restaurant->score,
-            'price' => $restaurant->price,
-            'content' => $review->content
-        ];
-
-        return back()->with($data);
-    }
-
-    public function setFavorite(Request $request) {
-
-        $favorite = Favorite::with('restaurant')->firstOrCreate([
-            'rest_id' => $request->input('rest_id'),
-            'user_id' => $request->user()->id
-        ]);
-
-        $favorite->save();
-
-        return back();
-    }
 
     public function showData(Request $request) {
         $object = urldecode($request['jsonObject']);
         $data['jsonJS'] = $object;
         $data['json'] = json_decode($object);
 
-        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyA_7RtOoqaohsnAdLReUJ_ReW9m8co-Sx0";
+        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyDDoH-4M2T1bP18mM28xVoWmimK1GNokUw";
 
         $json = file_get_contents($url);
 
@@ -118,6 +80,21 @@ class RestaurantsController extends Controller
 
         if($placedata['status']=="OK"){
            $data['place'] = $placedata['result'];
+
+        $data['photos'] = [];
+        
+        foreach ($placedata['result']['photos'] as $key => $photo) {
+            
+            $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyDDoH-4M2T1bP18mM28xVoWmimK1GNokUw";
+
+            $photodata = file_get_contents($photoUrl);
+            
+            $photoBase64 = chunk_split(base64_encode($photodata));
+          
+            $data['photos'][] = $photoBase64;
+
+        }
+
         }
 
         return view('restaurants.show')->with($data);
