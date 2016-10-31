@@ -111,7 +111,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect()->action('RestaurantsController@index');
+        return redirect()->action('Auth\AuthController@getRegister');
     }
 
     public function setFriend(Request $request, $status) {
