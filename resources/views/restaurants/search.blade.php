@@ -18,7 +18,7 @@
 		<div class="inner-bg">
 			<div class="container">
 				<div class="row">
-					<div class="text col-sm-6">
+					<div class="text animated zoomIn col-sm-6">
 						<h1><strong>My Restaurant Preferences:</strong></h1>
 						
 						<form class="form-horizontal" method="GET" action="{{ action('RestaurantsController@index') }}">
@@ -82,22 +82,22 @@
     								</select>
     							</div>
  							</div>
-							<div class="top-line"></div>
-							<div class="or">
-								OR
-							</div>
-							<div class="bottom-line"></div>
  							{{-- SUBMIT BUTTON --}}
  							<div class="col-xs-offset-3"><button type="submit" class="btn"><b>Submit</b></button></div>
 						</form> {{-- CLOSES THE FORM --}}
 
 					</div> {{-- CLOSES THE text col-sm-6 --}}
-					<div class="text col-xs-6">
+					<div class="or">
+						OR
+					</div>
+					<div class="animated zoomIn text col-xs-6">
 						<h1> <strong>Let Us Choose For You:</strong></h1>
 						<br>
 						<div>
 						    <a class="btn" href="{{ action('RestaurantsController@showData') }}?random=true">Pick at Random</a>
 						</div>
+						<div class="top-line animated fadeInDown"></div>
+						<div class="bottom-line animated fadeInUp"></div>
 					</div>
 				</div>{{-- /.row --}}
 			</div>{{-- /.container --}}

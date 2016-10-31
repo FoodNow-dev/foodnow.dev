@@ -13,11 +13,11 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-5 text text-center show-box animated flipInX">
-						<p class="animated zoomIn"><img class="img-circle" src="{{ (isset($user->image)) ? $user->image : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png' }}"></p>
+						<p class="animated zoomIn"><img class="img-circle" id="profile" src="{{ (isset($user->image)) ? $user->image : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png' }}"></p>
 						<h1><strong>{{ $user->first_name }} {{ $user->last_name }}</strong></h1>
 						<ul class="profile-list">
 							<li>{{ $user->email }}</li>
-							<li></li>
+							<li>{{ $user->phone }}</li>
 							<li></li>
 							<li></li>
 						</ul>

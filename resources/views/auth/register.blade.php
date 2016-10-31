@@ -52,6 +52,10 @@
 									<label class="sr-only" for="email">Email</label>
 									<input type="text" name="email" placeholder="Email..." class="email form-control" id="email">
 								</div>
+								<div class="form-group">
+									<label class="sr-only" for="phone">Phone</label>
+									<input type="text" name="phone" placeholder="Phone..." class="phone form-control" id="phone">
+								</div>
 								
 								<div class="form-group">
 									<label class="sr-only" for="password">Password</label>

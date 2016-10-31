@@ -39,6 +39,10 @@ footer {
 
 }
 
+.action {
+	visibility: hidden;
+}
+
 .list {
 	background: rgba(8, 59, 112, .85);
 	border: 4px solid #d5b33b;

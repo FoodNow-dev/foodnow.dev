@@ -4,9 +4,6 @@
 .inner-bg {
     padding: 10px 0 50px 0;
 }
-.btn .btn-default{
-	/*justify-right: 0%;*/
-}
 
 .row{
 	margin-left:0;
@@ -14,11 +11,7 @@
 
 .top-right {
 	float: right;
-	/*width: 25%;*/
-	/*padding-top: 5px;*/
-	/*font-size: 12px;*/
 	color: white;
-	/*line-height: 100px;*/
 	text-align: right;
 	bottom: 284px;
 }
@@ -29,10 +22,11 @@
 	padding-bottom: 50px;
 	background-color: rgba(8, 59, 112, .85);
 	color: #d5b33b;
-	font-size: 1.1em;
+	font-size: 1.4em;
 	height: 500px;
 	width: 50%;
 	border-radius: 10px;
+	
 }
 
 .top-content .text h1 { color: #d5b33b; }
@@ -63,8 +57,8 @@
 
 .or {
 	position: absolute;
-	top: 33%;
-	left: 82%;
+	top: 38%;
+	left: 43.5%;
 	z-index: 1000;
 	font-size: 6em;
 	color: #d5b33b;
@@ -134,11 +128,12 @@
 	position: absolute;
     border: 6px solid #d5b33b;
     height: 175px;
-    top: 0px;
-    right: -5px;
+    top: -17.25%;
+    left: -1%;
     z-index: 1000;
     border-bottom-left-radius: 15px; 
     border-bottom-right-radius: 15px; 
+    animation-delay: .6s;
 
 }
 
@@ -146,11 +141,12 @@
 	position: absolute;
     border: 6px solid #d5b33b;
     height: 215px;
-    bottom: 0px;
-    right: -5px;
+    top: 39.75%;
+    left: -1%;
     z-index: 1000;
     border-top-left-radius: 15px; 
     border-top-right-radius: 15px;
+    animation-delay: .6s;
 }
 
 .form-control {
@@ -191,7 +187,7 @@ body > div > div > div > div > div.text.col-sm-6 > form > div.col-xs-offset-3 > 
 
 body > div > div > div > div > div.text.col-xs-6 > div > a {
 	width: 50%;
-	font-size: 2em;
+	font-size: 1.5em;
 	font-weight: bolder;
 	line-height: 100px;
 	height: 100px !important;
@@ -199,6 +195,11 @@ body > div > div > div > div > div.text.col-xs-6 > div > a {
 }
 body > div > div > div > div > div.text.col-sm-6 > form > div.col-xs-offset-3 > button {
 	font-weight: bold;
+}
+
+body > div > div > div > div > div.text.animated.zoomIn.col-sm-6 {
+	position: relative;
+	left: 1px;
 }
 
 footer {

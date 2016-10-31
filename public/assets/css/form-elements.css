@@ -1,4 +1,5 @@
-
+input[type='file'],
+input[type="email"],
 input[type="password"],
 input[type="text"],
 input[type="number"], 
@@ -27,6 +28,7 @@ select.form-control {
 	line-height: 30px;
 }
 
+
 input[type="password"]:focus,
 input[type="text"]:focus,
 input[type="number"]:focus, 
@@ -35,12 +37,36 @@ select.form-control:focus {
 	outline: 0;
 	background: #fff;
     border: 3px solid #ccc;
-    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+    -moz-box-shadow: none; 
+    -webkit-box-shadow: none; 
+    box-shadow: none;
 }
 
-input[type="password"]:-moz-placeholder, input[type="text"]:-moz-placeholder, input[type="number"]:-moz-placeholder, select:-moz-placeholder, select.form-control:-moz-placeholder { color: #888; }
-input[type="password"]:-ms-input-placeholder, input[type="text"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeholder, select:-ms-input-placeholder, select.form-control:-ms-input-placeholder { color: #888; }
-input[type="password"]::-webkit-input-placeholder, input[type="text"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, select::-webkit-input-placeholder, select.form-control::-webkit-input-placeholder { color: #888; }
+input[type="password"]:-moz-placeholder, 
+input[type="text"]:-moz-placeholder, 
+input[type="number"]:-moz-placeholder, 
+select:-moz-placeholder, 
+select.form-control:-moz-placeholder { 
+    color: #888; 
+}
+
+
+
+input[type="password"]:-ms-input-placeholder, 
+input[type="text"]:-ms-input-placeholder, 
+input[type="number"]:-ms-input-placeholder, 
+select:-ms-input-placeholder, 
+select.form-control:-ms-input-placeholder { 
+    color: #888; 
+}
+
+input[type="password"]::-webkit-input-placeholder, 
+input[type="text"]::-webkit-input-placeholder, 
+input[type="number"]::-webkit-input-placeholder, 
+select::-webkit-input-placeholder, 
+select.form-control::-webkit-input-placeholder { 
+    color: #888; 
+}
 
 button.btn {
 	height: 50px;
@@ -50,24 +76,51 @@ button.btn {
     background: #d5b33b;
     border: 0;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 1.4em;
+    font-weight: bold;
     line-height: 50px;
-    color: #fff;
-    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+    color: rgba(8, 59, 112, 1);
+    -moz-border-radius: 4px; 
+    -webkit-border-radius: 4px; 
+    border-radius: 4px;
     text-shadow: none;
-    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
-    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+    -moz-box-shadow: none; 
+    -webkit-box-shadow: none; 
+    box-shadow: none;
+    -o-transition: all .3s; 
+    -moz-transition: all .3s; 
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s; 
+    transition: all .3s;
 }
 
 a.btn:hover,
-button.btn:hover { opacity: 0.6; color: #fff; }
+button.btn:hover { 
+    background-color: rgba(8, 59, 112, 1);
+    color: #d5b33b; 
+}
 
-button.btn:active { outline: 0; opacity: 0.6; color: #fff; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
+button.btn:active { 
+    outline: 0; 
+    color: #d5b33b; 
+    -moz-box-shadow: none; 
+    -webkit-box-shadow: none; 
+    box-shadow: none; 
+}
 
-button.btn:focus { outline: 0; opacity: 0.6; background: #d5b33b; color: #fff; }
+button.btn:focus { 
+    outline: 0; 
 
-button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; background: #d5b33b; color: #fff; }
+    background: #d5b33b; 
+    color: rgba(8, 59, 112, 1); 
+}
+
+button.btn:active:focus, 
+button.btn.active:focus { 
+    outline: 0; 
+    background: #d5b33b; 
+    color: rgba(8, 59, 112, 1); 
+}
 
 select.form-control {
     width: 135px;
@@ -83,3 +136,111 @@ input[type="number"] {
 .form-control {
     width:95%;
 }
+/*__________________*/
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    max-width: 80%;
+    height: 50px;
+    line-height: 33px;
+    border-radius: 5px;
+    font-size: 1.4em;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.no-js .inputfile + label {
+    display: none;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+}
+
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: rgba(8, 59, 112, 1);
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+
+
+/*___________________*/
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: rgba(8, 59, 112, 1);
+    background-color: black;
+    display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: #d5b33b;
+}
+
+.inputfile + label {
+    cursor: pointer;  "hand" cursor 
+}
+
+.inputfile:focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile-1 + label {
+    color: rgba(8, 59, 112, 1);
+    background-color: #d5b33b;
+}
+
+.inputfile-1:focus + label,
+.inputfile-1.has-focus + label,
+.inputfile-1 + label:hover {
+    transition: .25s;
+    background-color: rgba(8, 59, 112, .85);
+    color:#d5b33b;
+}
+
+.inputfile:hover + label svg {
+    transition: .25s;
+    fill:#d5b33b;
+}
+
+.inputfile:focus + label svg {
+    fill:#d5b33b;
+}
+
