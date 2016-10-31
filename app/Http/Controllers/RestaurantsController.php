@@ -32,51 +32,10 @@ class RestaurantsController extends Controller
         return view('restaurants.index')->with($data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function search() 
     {
-        return view('restaurants.create');
+        return view('restaurants.search');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $request->session()->flash('ERROR_MESSAGE', 'Invalid Inputs');
-        $this->validate($request, Restaurant::$rules);
-        $request->session()->forget('ERROR_MESSAGE');
-
-        $restaurant = new Restaurant();
-        $restaurant->place_id = $request->input('place_id');
-        
-        if (!empty($request->file('image'))) {
-            if ($request->file('image')->isValid()) {
-
-                $restaurant->image = '/img/restaurant-images/' . $restaurant->id . $request->file('image')->getClientOriginalName();
-
-                $request->file('image')->move(
-                    base_path() . '/public/img/restaurant-images/', $restaurant->image
-                );  
-            };
-        };
-
-        $restaurant->save();
-
-        Log::info('Created Restaurant: ' . $restaurant);
-
-        $request->session()->flash('SUCCESS_MESSAGE', 'Restaurant was saved successfully');
-
-        return redirect()->action('RestaurantsController@show', $restaurant->id);
-    }
-
     /**
      * Display the specified resource.
      *

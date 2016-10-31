@@ -2,27 +2,20 @@ body{
 	background:url(/assets/img/dining.jpg);
 	background-size: 100%;
 	background-repeat: no-repeat;
-	background-position: 0px 215px;
+	background-position: 0px 150px;
 	background-color: rgba(59,103,140,.25);
 	text-align: center;
 
 }
 
-#wrapper, html, body{
-	height:100%;
-}
-#wrapper{
-	margin-bottom:-190px;
-}
-#push{
-	height:110px;
-	clear: both;
-}
 
 .show-box {
+	
 	box-shadow: 0px 0px 10px rgba(8, 59, 112, 1);
 }
-
+.form-box {
+	margin-top: 50px;
+}
 /*****************************************/
 /*               Navbar                  */
 /*****************************************/
@@ -66,6 +59,11 @@ body{
 
 #navbar-collapse-1 > ul:nth-child(1) > li.dropdown.open > ul {
 	background-color:rgba(255,255,255,.7);
+}
+
+#profile {
+	width: 250px;
+	height: 250px;
 }
 
 #navbar-collapse-1 > ul:nth-child(1) > li.dropdown.open > ul > li:nth-child(4),

@@ -8,7 +8,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"><img id="logo" src="/assets/img/foodnow.png"></a>
+			<a class="navbar-brand" href="{{ (Auth::check()) ? '/home': '/' }}"><img id="logo" src="/assets/img/foodnow.png"></a>
 		</div>
 
 		{{-- Collect the nav links, forms, and other content for toggling --}}

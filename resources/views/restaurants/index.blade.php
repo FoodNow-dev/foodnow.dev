@@ -4,8 +4,7 @@
 
 {{-- the following section may change if I user custom css --}}
 @section('css')
-	<link rel="stylesheet" type="text/css" href="/assets/css/map.css">
-	{{-- <link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css"> --}}
+	<link rel="stylesheet" type="text/css" href="/assets/css/rest-index.css">
 @stop
 
 @section('content')
