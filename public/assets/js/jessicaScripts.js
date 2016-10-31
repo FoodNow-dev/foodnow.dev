@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".input_fields_wrap"); //Fields wrapper
@@ -8,7 +9,7 @@ $(document).ready(function() {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+            $(wrapper).append('<div><input type="text" name="mytext[]" class="col-xs-12 space" placeholder="Friend\'s Phone #"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
         }
     });
     
@@ -16,5 +17,3 @@ $(document).ready(function() {
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
 });
-
-console.log("This works");

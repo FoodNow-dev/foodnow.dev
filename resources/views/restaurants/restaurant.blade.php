@@ -3,9 +3,12 @@
 @section('title','Restaurant')
 
 @section('css')
-	<link rel="stylesheet" type="text/css" href="/assets/css/restaurant.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements2.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/elements2.css">
+	{{-- <link rel="stylesheet" type="text/css" href="/assets/css/restaurant.css"> --}}
+	<link rel="stylesheet" href="{{ URL::asset('assets/css/restaurant.css') }}" />
+	{{-- <link rel="stylesheet" type="text/css" href="/assets/css/form-elements2.css"> --}}
+	<link rel="stylesheet" href="{{ URL::asset('assets/css/form-elements2.css') }}" />
+	{{-- <link rel="stylesheet" type="text/css" href="/assets/css/elements2.css"> --}}
+	<link rel="stylesheet" href="{{ URL::asset('assets/css/elements2.css') }}" />
 
 @stop
 
@@ -78,28 +81,10 @@
 	    <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-    {{-- <script src="../../../public../assets/js/jQuery.js"></script> --}}
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    {{-- <script src="../../../public/assets/js/bootstrap.min.js"></script> --}}
-    
-    <script> $(document).ready(function() {
-    var max_fields      = 10; //maximum input boxes allowed
-    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
-    var add_button      = $(".add_field_button"); //Add button ID
-    
-    var x = 1; //initlal text box count
-    $(add_button).click(function(e){ //on add input button click
-        e.preventDefault();
-        if(x < max_fields){ //max input box allowed
-            x++; //text box increment
-            $(wrapper).append('<div><input type="text" name="mytext[]" class="col-xs-12 space" placeholder="Friend\'s Phone #"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-        }
-    });
-    
-    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-        e.preventDefault(); $(this).parent('div').remove(); x--;
-    })
-});</script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
+
 @stop
