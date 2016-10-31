@@ -14,7 +14,7 @@ body{
 	box-shadow: 0px 0px 10px rgba(8, 59, 112, 1);
 }
 .form-box {
-	margin-top: 50px;
+	margin-top: 25px;
 }
 /*****************************************/
 /*               Navbar                  */
@@ -133,6 +133,7 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 
 #nav-image {
 	max-height: 40px;
+	max-width: 40px;
 	position: relative;
 	top: 5px;
 }

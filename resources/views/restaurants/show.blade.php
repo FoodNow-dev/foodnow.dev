@@ -1,19 +1,78 @@
 @extends('layouts.master')
 
 @section('css')
-	<link rel="stylesheet" type="text/css" href="/assets/css/restaurant.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/rest-show.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css">
 @stop
 
 @section('content')
-	
+<!-- Top content -->
+	<div class="top-content">
+		<div class="inner-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-7 text text-center show-box animated flipInX">
+						<p class="animated zoomIn"><img src="data:image/gif;base64,{{ $photos[0] }}" width="200" height="200"></p>
+						<h1><strong>{{ $place['name'] }}</strong></h1>
+						<div class="description">
+							<ul>
+								<li>
+									<div id="rating"></div>
+								</li>
+								<li>
+									{{ $place['address_components'][0]['long_name'] }} {{ $place['address_components'][1]['long_name'] }}
+								</li>
+								<li>
+									{{ $place['address_components'][3]['long_name'] }}, {{  $place['address_components'][5]['long_name'] }}
+								</li>
+								<li>
+									{{ $place['formatted_phone_number'] }}
+								</li>
+							</ul>
+						</div>
+						<div class="top-big-link">
+							<button class="btn" href="#">Create Event</button>
+							
+						</div>
+					</div>
+					<div class="col-sm-5 form-box animated fadeInRight">
+						@foreach($place['reviews'] as $key => $review) 
+							<div class="col-sm-12 form-bottom show-box">
+								<div class="review-container">
+									<img class="google-profile" src="{{ (isset($review['profile_photo_url'])) ? $review['profile_photo_url'] : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png' }}" width="30%" height="100%">
+									<div class="review-info">
+										<h3><b>{{$review['author_name']}}</b></h3>
+									</div>
+									<div class="review"> 
+										<ul class="text-right">
+											<li class="name"></li>
+											<li>{{ $review['text']}}</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						@endforeach
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	{{-- ********************************************************************************* --}}
 	<div class="top-content">
 		<div class="inner-bg">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 text">
 						<div class="col-lg-6">
-							<h1>{{$place['name']}}</h1>
+							<h1> {{$place['name']}} </h1>
 							<div id="rating"></div>
 							<p>
 								{{$place['formatted_address']}}
@@ -84,7 +143,7 @@
 	{{-- Custom JS --}}
 	<script type="text/javascript" src="/assets/js/rest-show.js"></script>
 	{{-- Google Maps API --}}
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_7RtOoqaohsnAdLReUJ_ReW9m8co-Sx0&libraries=places&callback=initMap" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDoH-4M2T1bP18mM28xVoWmimK1GNokUw	&libraries=places&callback=initMap" async defer></script>
 @stop
 
 
