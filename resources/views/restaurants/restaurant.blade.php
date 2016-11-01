@@ -99,10 +99,6 @@
 								      required: true,
 								      minlength: 2
 								    }
-								    // "mytext[]":{
-								    // 	require: true,
-								    // 	phoneUS: true
-								    // }
   								  }
   								});
   								</script>
