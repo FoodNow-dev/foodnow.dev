@@ -243,4 +243,7 @@ input[type="number"] {
 .inputfile:focus + label svg {
     fill:#d5b33b;
 }
-
+.help-block{
+    color:white !important;
+    font-weight: bold;
+}
