@@ -114,6 +114,15 @@ function initMap(lat, lon) {
         zoom: 13
     });
     
+     var circle = new google.maps.Marker({
+        position: userLoc,
+        map: map,
+        icon: {
+            url: '/assets/img/blue.png',
+            scaledSize: new google.maps.Size(50, 60)
+        }
+    });
+     
     infowindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
     service.textSearch({
