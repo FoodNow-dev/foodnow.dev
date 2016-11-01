@@ -4,6 +4,7 @@
 
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/profile.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css">
 @stop
 
 @section('content')
@@ -37,6 +38,12 @@
 							        </form>
 							    </div>
 						    </div>
+						@else
+							<form method="POST" action="{{ action('UserController@setFriend', 0) }}">
+								{!! csrf_field() !!}
+								<input type="hidden" value="{{ $user->id }}">
+								<button href="{{ action('UserController@setFriend', $user->id) }}" class="btn">Add Friend</button>
+							</form>
 						@endif
 
 					</div>
