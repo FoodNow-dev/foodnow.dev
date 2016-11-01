@@ -4,6 +4,7 @@
 
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/profile.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css">
 @stop
 
 @section('content')
@@ -24,11 +25,11 @@
 							<h4 class="text-center">{{ $user->phone }}</h4>
 
 							<div class="row">
-								<div class="col-sm-1 col-sm-offset-3">
-							        {{-- Edit profile --}}
-									<a class="btn btn-primary btn-md" href="{{ action('UserController@edit', $user->id) }}">Edit Profile</a><br>
-								</div>
 								<div class="col-sm-1 col-sm-offset-2">
+							        {{-- Edit profile --}}
+									<button class="btn btn-primary btn-md" href="{{ action('UserController@edit', $user->id) }}">Edit Profile</button><br>
+								</div>
+								<div class="col-sm-1 col-sm-offset-3">
 									{{-- Delete profile --}}
 									<form method="POST" action="{{ action('UserController@destroy', $user->id) }}" class="delete-form">
 						        		{!! csrf_field() !!}
@@ -37,6 +38,12 @@
 							        </form>
 							    </div>
 						    </div>
+						@else
+							<form method="POST" action="{{ action('UserController@setFriend', 0) }}">
+								{!! csrf_field() !!}
+								<input type="hidden" value="{{ $user->id }}">
+								<button href="{{ action('UserController@setFriend', $user->id) }}" class="btn">Add Friend</button>
+							</form>
 						@endif
 
 					</div>
