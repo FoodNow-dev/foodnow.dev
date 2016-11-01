@@ -27,7 +27,7 @@
 							<div class="row">
 								<div class="col-sm-1 col-sm-offset-2">
 							        {{-- Edit profile --}}
-									<button class="btn btn-primary btn-md" href="{{ action('UserController@edit', $user->id) }}">Edit Profile</button><br>
+									<a class="btn-link-2" href="{{ action('UserController@edit', $user->id) }}">Edit Profile</a><br>
 								</div>
 								<div class="col-sm-1 col-sm-offset-3">
 									{{-- Delete profile --}}
