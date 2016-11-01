@@ -8,12 +8,11 @@
 @stop
 
 @section('content')
-
-<div class="top-content">
+	<div class="top-content">
 		<div class="inner-bg">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-5 text text-center show-box animated flipInX">
+					<div class="col-sm-5 text text-center show-box animated flipInX" id="topBox">
 						<p class="animated zoomIn">
 							<img class="img-circle" id="profile" src="{{ (isset($user->image)) ? $user->image : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png' }}">
 						</p>
@@ -27,7 +26,7 @@
 							<div class="row">
 								<div class="col-sm-1 col-sm-offset-2">
 							        {{-- Edit profile --}}
-									<button class="btn btn-primary btn-md" href="{{ action('UserController@edit', $user->id) }}">Edit Profile</button><br>
+									<a class="btn-link-2" href="{{ action('UserController@edit', $user->id) }}">Edit Profile</a><br>
 								</div>
 								<div class="col-sm-1 col-sm-offset-3">
 									{{-- Delete profile --}}
@@ -39,38 +38,31 @@
 							    </div>
 						    </div>
 						@else
+							{{-- if they are not friends it will show a button where they can be added --}}
 							<form method="POST" action="{{ action('UserController@setFriend', 0) }}">
 								{!! csrf_field() !!}
-								<input type="hidden" value="{{ $user->id }}">
+								<input type="hidden" name="friend_id" value="{{ $user->id }}">
 								<button href="{{ action('UserController@setFriend', $user->id) }}" class="btn">Add Friend</button>
 							</form>
 						@endif
-
 					</div>
-					<div class="col-sm-5 col-sm-offset-2 text text-center show-box animated flipInX">
-						<h1><strong>My Restaurant Reviews</strong></h1>
 
-						<h3> Chilli's Review</h3>
-						<ul style="list-style-type:none">
-								<li>lorem ipsum</li>
-								<li>lorem ipsum</li>
-								<li>lorem ipsum</li>
-						</ul>
+					{{-- Friends list --}}
+					<div class="col-sm-5 col-sm-offset-1 text text-center show-box animated flipInX">
+						<h1><strong>Friends List</strong></h1>
+						<hr>
+						@foreach($friends as $friend) 
+							@if($user->id != $friend->id)
+								<div class="list">
+									<a href="{{ action('UserController@show', $friend->id) }}">
+										<img id="userImg" src="{{ (isset($friend->image)) ? $friend->image : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png'}}">
+										<h4>{{ $friend->first_name }} {{ $friend->last_name }}</h4>
+									</a>
+								</div>
+							@endif
+						@endforeach
+					</div>	
 
-						<h3> Hop Doddy's Restaurant Review</h3>
-						<ul style="list-style-type:none">
-								<li>lorem ipsum</li>
-								<li>lorem ipsum</li>
-								<li>lorem ipsum</li>
-						</ul>
-						<h3> Olive Garden Review</h3>
-						<ul style="list-style-type:none">
-								<li>lorem ipsum</li>
-								<li>lorem ipsum</li>
-								<li>lorem ipsum</li>
-						</ul>
-
-					</div>
 				</div>
 			</div>
 		</div>

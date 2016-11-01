@@ -45,7 +45,7 @@ class User extends BaseModel implements AuthenticatableContract,
 
     public function friends()
     {
-        return $this->hasMany('App\Models\Friend', 'user_id');
+        return $this->belongsToMany('App\User', 'friends', 'user_id', 'friend_id');
     }
 
     public function favorites()
