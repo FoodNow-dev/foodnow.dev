@@ -71,6 +71,7 @@ Route::resource('restaurants', 'RestaurantsController');
 
 Route::resource('users', 'UserController');
 
-// Route::post('users/setfriend/{status}', 'UserController@setFriend');
+// Make friends...
+Route::post('users/setfriend/{status}', 'UserController@setFriend');
 
 

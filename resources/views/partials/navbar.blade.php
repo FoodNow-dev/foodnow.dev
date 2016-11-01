@@ -27,7 +27,7 @@
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="{{ action('UserController@show', Auth::id()) }}">Profile</a></li>
 						<li><a href="{{ action('UserController@edit', Auth::id()) }}">Edit Account</a></li>
-						<li><a href="#">Settings</a></li>
+						<li><a href="{{ action('UserController@index') }}">Find Friends</a></li>
 						<li class="divider"></li>
 						<li><a href="{{ action('Auth\AuthController@getLogout') }}">Logout</a></li>
 					</ul>
