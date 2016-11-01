@@ -25,11 +25,11 @@
 							<h4 class="text-center">{{ $user->phone }}</h4>
 
 							<div class="row">
-								<div class="col-sm-1 col-sm-offset-3">
-							        {{-- Edit profile --}}
-									<a class="btn btn-primary btn-md" href="{{ action('UserController@edit', $user->id) }}">Edit Profile</a><br>
-								</div>
 								<div class="col-sm-1 col-sm-offset-2">
+							        {{-- Edit profile --}}
+									<button class="btn btn-primary btn-md" href="{{ action('UserController@edit', $user->id) }}">Edit Profile</button><br>
+								</div>
+								<div class="col-sm-1 col-sm-offset-3">
 									{{-- Delete profile --}}
 									<form method="POST" action="{{ action('UserController@destroy', $user->id) }}" class="delete-form">
 						        		{!! csrf_field() !!}
