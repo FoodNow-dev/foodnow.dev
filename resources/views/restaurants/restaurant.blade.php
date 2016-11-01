@@ -3,11 +3,8 @@
 @section('title','Restaurant')
 
 @section('css')
-	{{-- <link rel="stylesheet" type="text/css" href="/assets/css/restaurant.css"> --}}
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/restaurant.css') }}" />
-	{{-- <link rel="stylesheet" type="text/css" href="/assets/css/form-elements2.css"> --}}
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/form-elements2.css') }}" />
-	{{-- <link rel="stylesheet" type="text/css" href="/assets/css/elements2.css"> --}}
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/elements2.css') }}" />
 
 	 <script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
@@ -17,7 +14,6 @@
       <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
      additional-methods.js') }}"></script>
-     {{-- <script type="text/javascript" src="{{ URL::asset('assets/js/messageForm.js') }}"></script> --}}
 
 @stop
 
@@ -78,31 +74,16 @@
 								   		 @yield('content')
 								   </div>
 							</form>
-					{{-- 			<script>
-								$( "#myform" ).validate({
-								  rules: {
-								    field: {
-								      required: true,
-								      phoneUS: true
-								    }
-								  }
-								});
-								</script> --}}
 							    <script>
 							    	$.validator.addMethod("cRequired", $.validator.methods.required, "Please provide a phone number");
 							    	$.validator.addMethod("cPhone", $.validator.methods.phoneUS, "Please provide a valid U.S. phone number");
 							    	$.validator.addClassRules("phone", {cRequired:true, cPhone:true});
-							    	// $("#info").validate();
 								    $( "#info" ).validate({
 								  rules: {
 								    email_body: {
 								      required: true,
 								      minlength: 2
 								    }
-								    // "mytext[]":{
-								    // 	require: true,
-								    // 	phoneUS: true
-								    // }
   								  }
   								});
   								</script>
@@ -118,11 +99,13 @@
 	    <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-{{--      <script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
+{{--  <script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
       <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
-     <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script> --}}
+     <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
+     additional-methods.js') }}"></script> --}}
+    
 
 @stop
