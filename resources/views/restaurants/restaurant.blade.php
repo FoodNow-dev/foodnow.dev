@@ -12,6 +12,7 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
      additional-methods.js') }}"></script>
@@ -38,6 +39,16 @@
 							<form id= "info" class="form-horizontal col-xs-10 col-xs-offset-3" method="POST" action="/restaurants/restaurant">
 							{!! csrf_field() !!}
 								<div class="form-group">
+	
+								  <div class="dropdown col-xs-6 ">
+								    <button class=" btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+								    <span class="caret"></span></button>
+								    <ul class="dropdown-menu">
+								      <li><a href="#">Ben</a></li>
+								      <li><a href="#">Mittsy</a></li>
+								      <li><a href="#">Whitney</a></li>
+								    </ul>
+								  </div>
 									{{-- dynamic buttons --}}
 									<div class="input_fields_wrap col-xs-7">
 		   								 <button class="btn btn-default add_field_button">Invite More Friends 
