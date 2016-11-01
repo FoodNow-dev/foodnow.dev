@@ -3,6 +3,7 @@
 @section('title','Restaurant')
 
 @section('css')
+	
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/restaurant.css') }}" />
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/form-elements2.css') }}" />
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/elements2.css') }}" />
