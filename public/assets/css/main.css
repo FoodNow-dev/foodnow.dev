@@ -7,7 +7,6 @@ body{
 	text-align: center;
 }
 
-
 .show-box {
 	
 	box-shadow: 0px 0px 10px rgba(8, 59, 112, 1);
@@ -146,26 +145,16 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 		border-top:0 none;
 	}
 
-	.footer-bottom .pull-left,
-	.footer-bottom .pull-right {
-		float: none !important;
-	}
-
-	.footer-bottom .pull-left {
-		position: relative;
-		top: 40px;
-	}
-	.social {
-		position: relative;
-		bottom:30px;
-	}
-	.footer-bottom .container {
-		padding-left: none;
-	}
-
 	.top-content .text { margin-top: 50px; padding-top: 0; padding-bottom: 60px; }
 	.top-content .top-big-link { margin-top: 25px; }
 	.top-content .top-big-link a.btn { margin-top: 10px; }
+}
+
+@media(min-width: 800px) and (min-height: 745px){
+	.footer-bottom {
+		position: absolute;
+		bottom: 0px;
+	}
 }
 
 
@@ -331,84 +320,12 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 /*          Footer          */
 /****************************/
 
-footer ul li a {
-	padding: 5px;
-	display: block;
-}
-
-footer ul {
-	font-size: 13px;
-	list-style-type: none;
-	margin-left: 0;
-	padding-left: 0;
-	margin-top: 15px;
-	color: #083b66;
-}
-
-.social li {
-	background: none repeat scroll 0 0 #083b66;
-	border: 2px solid #083b66;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-o-border-radius: 50%;
-	-ms-border-radius: 50%;
-	border-radius: 50%;
-	float: left;
-	height: 36px;
-	line-height: 36px;
-	margin: 0 8px 0 0;
-	padding: 0;
-	text-align: center;
-	width: 36px;
-	transition: all 0.5s ease 0s;
-	-moz-transition: all 0.5s ease 0s;
-	-webkit-transition: all 0.5s ease 0s;
-	-ms-transition: all 0.5s ease 0s;
-	-o-transition: all 0.5s ease 0s;
-}
-.social li:hover {
-	transform: scale(1.15) rotate(360deg);
-	-webkit-transform: scale(1.1) rotate(360deg);
-	-moz-transform: scale(1.1) rotate(360deg);
-	-ms-transform: scale(1.1) rotate(360deg);
-	-o-transform: scale(1.1) rotate(360deg);
-}
-.social li a {
-	color: #d5b33b ;
-}
-
-.social li:hover {
-	border: 2px solid  #d5b33b;
-	background: #d5b33b;
-}
-
-footer > div > div > p {
- 	position: relative;
- 	top: 10px;
-}
-
-footer > div > div > div {
-	position: relative;
-	bottom: 10px;
-}
-
-.social li a i {
-	font-size: 16px;
-	margin: 0 0 0 5px;
-	color:#d5b33b;
-}
-
-.social li a i:hover {
-	color: #083b66;
-}
-
 .footer-bottom {
-	width: 100%;
-	background: #FEFEFE;
-	border-top: 1px solid black;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	margin-top: 0px;
+	clear: both;
+	bottom: 0px;
+	padding-top: 20px;
+	text-align: left;
+	margin-left: 2%;
 }
-.footer-bottom p.pull-left {
-	padding-top: 6px;
-}
+
