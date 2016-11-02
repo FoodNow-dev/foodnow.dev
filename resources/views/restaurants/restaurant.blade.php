@@ -13,10 +13,8 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
-     additional-methods.js') }}"></script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.jquery.min.js') }}"></script>
 
 @stop
@@ -44,9 +42,14 @@
 	
 								  <div class="col-xs-7 ">
 								 	  <select class="my_select_box" data-placeholder="Select Your Options" multiple="">
-									    <option value="1">Option 1</option>
+								 	  	@foreach($friends as $friend)
+								 	  		@if($user->id != $friend->id)
+								 	  			<option value= {{$friend->phone}}>{{"$friend->first_name $friend->last_name"}}</option>
+								 	  		@endif
+								 	  	@endforeach 
+									   {{--  <option value="1">Option 1</option>
 									    <option value="2">Option 2</option>
-									    <option value="3">Option 3</option>
+									    <option value="3">Option 3</option> --}}
 									  </select>
 
 								  </div>

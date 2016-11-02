@@ -15,10 +15,7 @@ use App\Models\Restaurant;
 */
 use SKAgarwal\GoogleApi\PlacesApi;
 
-Route::get('restaurants/restaurant', function(){
-
-	return view('restaurants/restaurant');
-});
+Route::get('restaurants/restaurant', 'UserController@selectFriends');
 
 Route::post('restaurants/restaurant', 'UserController@sendText');
 
