@@ -1,17 +1,10 @@
 body{
-	/*background:url(/assets/img/dining.jpg);*/
-	background:url(/assets/img/hands.jpg);
-	/*width: 100%;*/
-	/*height: 400px;*/
-	
-	/*background-attachment: fixed;*/
-	background-size: 200%, 100%;
-	/*background: contain;*/
-	/*background-size: 100%*/
-	/*background-height: 100%;*/
-	/*background-repeat: no-repeat;*/
-	/*background-position: 0px 150px;*/
-	/*background-color: rgba(59,103,140,.25);*/
+	background-image: url(/assets/img/plates.jpeg);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: 100% 100%;
+	background-attachment: fixed;
 	text-align: center;
 }
 
@@ -222,7 +215,6 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 }
 
 .hvr-icon-dropdown {
-
 	color: #67746d;
 	display: inline-block;
 	vertical-align: middle;
@@ -255,7 +247,6 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 .hvr-icon-dropdown:hover:before, 
 .hvr-icon-dropdown:focus:before, 
 .hvr-icon-dropdown:active:before{
-	
 	-webkit-animation-name: hvr-icon-dropdown-sink, hvr-icon-dropdown;
 	animation-name: hvr-icon-dropdown-sink, hvr-icon-dropdown;
 	-webkit-animation-duration: .3s, 1.5s;
@@ -274,53 +265,52 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 
 
 /* Hover background */
-
 .hvr-background {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  position: relative;
-  overflow: hidden;
-  background: #fff;
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
+  	display: inline-block;
+  	vertical-align: middle;
+  	-webkit-transform: perspective(1px) translateZ(0);
+  	transform: perspective(1px) translateZ(0);
+  	box-shadow: 0 0 1px transparent;
+  	position: relative;
+  	overflow: hidden;
+  	background: #fff;
+  	-webkit-transition-property: color;
+  	transition-property: color;
+  	-webkit-transition-duration: 0.3s;
+  	transition-duration: 0.3s;
 }
 
 .hvr-background:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #083b66;
-  border-radius: 100%;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
+  	content: "";
+  	position: absolute;
+  	z-index: -1;
+  	top: 0;
+  	left: 0;
+  	right: 0;
+  	bottom: 0;
+  	background: #083b66;
+  	border-radius: 100%;
+  	-webkit-transform: scale(0);
+  	transform: scale(0);
+  	-webkit-transition-property: transform;
+  	transition-property: transform;
+  	-webkit-transition-duration: 0.3s;
+  	transition-duration: 0.3s;
+  	-webkit-transition-timing-function: ease-out;
+  	transition-timing-function: ease-out;
 }
 
 .hvr-background:hover, 
 .hvr-background:focus, 
 .hvr-background:active {
-  color: white;
+  	color: white;
 }
 
 .hvr-background:hover:before, 
 .hvr-background:focus:before, 
 .hvr-background:active:before {
-  -webkit-transform: scale(2);
-  transform: scale(2);
+  	-webkit-transform: scale(2);
+  	transform: scale(2);
 }
 
 /****************************/

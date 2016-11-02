@@ -3,6 +3,7 @@
 @section('title', 'Welcome')
 
 @section('css')
+	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/register.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css">
 @stop
