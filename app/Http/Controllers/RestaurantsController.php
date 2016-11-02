@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Cache\Factory;
+use Illuminate\Contracts\Cache\Repository;
 
 class RestaurantsController extends Controller
 {
@@ -70,9 +72,7 @@ class RestaurantsController extends Controller
 
 
     public function showData(Request $request) {
-        $object = urldecode($request['jsonObject']);
-        $data['jsonJS'] = $object;
-        $data['json'] = json_decode($object);
+
         $data['time'] = [];
 
         $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
