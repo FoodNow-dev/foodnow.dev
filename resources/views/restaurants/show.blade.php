@@ -15,16 +15,60 @@
 				<h4 class="modal-title" id="exampleModalLabel">Create Event</h4>
 			</div>
 			<div class="modal-body">
-				<form>
-					<div class="form-group">
-						<label for="recipient-name" class="control-label">Recipient:</label>
-						<input type="text" class="form-control" id="recipient-name">
-					</div>
-					<div class="form-group">
-						<label for="message-text" class="control-label">Message:</label>
-						<textarea class="form-control" id="message-text"></textarea>
-					</div>
-				</form>
+				<form id= "info" class="form-horizontal col-xs-10 col-xs-offset-3" method="POST" action="/restaurants/restaurant">
+							{!! csrf_field() !!}
+								<div class="form-group">
+	
+								  <div class="col-xs-7 ">
+								 	  <select class="my_select_box" data-placeholder="Select Your Options" multiple="">
+								 	  	@foreach($friends as $friend)
+								 	  		@if($user->id != $friend->id)
+								 	  			<option value= {{$friend->phone}}>{{"$friend->first_name $friend->last_name"}}</option>
+								 	  		@endif
+								 	  	@endforeach 
+									   {{--  <option value="1">Option 1</option>
+									    <option value="2">Option 2</option>
+									    <option value="3">Option 3</option> --}}
+									  </select>
+
+								  </div>
+									{{-- dynamic buttons --}}
+									<div class="input_fields_wrap col-xs-7">
+		   								 <button class="btn btn-default add_field_button">Invite More Friends 
+		   								</button>
+			    						<div>
+			    							<input type="text" name="mytext[]" id = "mytext[]" class="phone col-xs-12 space" placeholder="Friend's Phone #">
+			    						</div>
+			    					</div>
+
+									
+									<div class="form-group col-xs-8 col-xs-offset-7">
+										<textarea id="email_body" name="email_body" rows="3" cols="25" placeholder="">We're meeting in Olive Garden at 7 pm</textarea>
+									</div>
+									</div>
+									<div class="col-xs-6">
+										<button type="submit" class="btn btn-primary">Send Message
+											<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+										</button>
+									</div>
+									<div class="col-xs-7">
+										@if(session()->has('SUCCESS_MESSAGE'))
+										<div class="alert alert-success">
+											<p>{{session('SUCCESS_MESSAGE') }}</p>
+										</div>
+										@endif
+				
+										@if(session()->has('ERROR_MESSAGE'))
+										<div class="alert alert-danger">
+											<p>{{session('ERROR_MESSAGE') }}</p>
+										</div>
+										@endif
+									</div>
+
+									<div class="container">  
+								   		 @yield('content')
+								   </div>
+							</form>
 		  	</div>
 		  	<div class="modal-footer">
 				<button type="button" class="btn" data-dismiss="modal">Close</button>
