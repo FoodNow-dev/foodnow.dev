@@ -2,14 +2,12 @@
 
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/rest-show.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css">
 	<link rel="stylesheet" href="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.min.css') }}"/>
 
 	<script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
 	
 	{{-- jQuery Chosen Plugin --}}
 	<script type="text/javascript" src="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.jquery.min.js') }}"></script>
-
 @stop
 
 @section('content')
@@ -17,62 +15,63 @@
 <!-- Modal -->
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
  	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="exampleModalLabel">Create Event</h4>
-			</div>
-			<div class="modal-body">
-				<form id= "info" class="form-horizontal col-xs-10 col-xs-offset-3" method="POST" action="{{ action('UserController@sendText') }}">
-							{!! csrf_field() !!}
-								<div class="form-group">
-	
-								  <div class="col-xs-7 ">
-								 	  <select class="my_select_box" data-placeholder="Select Your Options" name="mytext[]" multiple>
-								 	  	@foreach($friends as $friend)
-								 	  		@if($user->id != $friend->id)
-								 	  			<option value= {{$friend->phone}}>{{"$friend->first_name $friend->last_name"}}</option>
-								 	  		@endif
-								 	  	@endforeach 
+		<form id="info" class="form-horizontal" method="POST" action="{{ action('UserController@sendText') }}">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="exampleModalLabel">Create Event</h4>
+				</div>
+				<div class="modal-body">
+					{!! csrf_field() !!}
+					<div class="form-group">
+						<div class="col-xs-7 ">
+						 	<select class="my_select_box" data-placeholder="Select Your Friends" name="mytext[]" multiple>
+						 	  	@foreach($friends as $friend)
+						 	  		@if($user->id != $friend->id)
+						 	  			<option value= {{$friend->phone}}>{{"$friend->first_name $friend->last_name"}}</option>
+						 	  		@endif
+						 	  	@endforeach 
+							</select>
+						</div>
 									 
-									  </select>
+						{{-- dynamic buttons --}}
+						<div class="input_fields_wrap ">
+							{{-- <button class="btn btn-default add_field_button">Add other numbers</button> --}}
 
-								  </div>
-									{{-- dynamic buttons --}}
-									<div class="input_fields_wrap col-xs-7">
-		   								 <button class="btn btn-default add_field_button">Add other numbers 
-		   								</button>
-			    						<div class="input-group">
-			    							<input type="text" name="mytext[]" id = "mytext[]" class="phone col-xs-12 space" placeholder="Friend's Phone #">
-			    							<div class="input-group-addon">.00</div>
-			    						</div>
-			    					</div>
-
-									
-									<div class="form-group col-xs-8 col-xs-offset-7">
-										<textarea id="email_body" name="email_body" rows="4" cols="50" placeholder="">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }} is inviting you to dinner at {{ $place['name']}}!</textarea>
-									</div>
-									</div>
-			  	</div>
+							<div class="form-group">
+								<label class="sr-only" for="mytext[]"><button class="btn btn-default add_field_button">Add other numbers</button></label>
+								<div class="input-group">
+									<input type="text" class="form-control phone space" id="mytext[]" name="mytext[]" placeholder="Phone #...">
+									<div class="input-group-addon">X</div>
+								</div>
+							</div>
+    					</div>
+						<div class="form-group col-xs-8 col-xs-offset-7">
+							<textarea id="email_body" name="email_body" rows="4" cols="50" placeholder="">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }} is inviting you to dinner at {{ $place['name']}}!</textarea>
+						</div>
+					</div>{{-- /.form-group --}}
+			  	</div>{{-- /.modal-body --}}
 			  	<div class="modal-footer">
 					<button type="button" class="btn" data-dismiss="modal">Close</button>
 					<button type="submit" class="btn btn-primary">Send Message
 						<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
 					</button>
 				</div>
-			</form>
-			<script>
-				$(".my_select_box").chosen({
-					disable_search_threshold: 1,
-					no_results_text: "Oops, nothing found!",
-					width: "95%",
-					display_selected_options:false
-				});
-			</script>
-
-		</div>
+			</div>
+		</form>
+		<script>
+			$(".my_select_box").chosen({
+				disable_search_threshold: 1,
+				no_results_text: "Oops, nothing found!",
+				width: "95%",
+				display_selected_options:false
+			});
+		</script>
  	</div>
 </div>
+
+									
+
 
 
 <!-- Top content -->

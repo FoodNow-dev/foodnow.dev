@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Cache\Factory;
+use Illuminate\Contracts\Cache\Repository;
 
 class RestaurantsController extends Controller
 {
@@ -70,7 +72,7 @@ class RestaurantsController extends Controller
 
 
     public function showData(Request $request) {
-       
+
         $data['time'] = [];
        
         // Google Maps API
