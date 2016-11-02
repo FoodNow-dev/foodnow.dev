@@ -16,15 +16,5 @@ $(document).ready(function() {
     $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
         e.preventDefault(); $(this).parent('div').remove(); x--;
     })
-    // $("#info").validate();
-    // $( "#info" ).validate({
-  // rules: {
-  //   .mytext[]: {
-  //     required: true,
-  //     phoneUS: true
-  //   }
-  // }
-  // });
-    
 
 });
