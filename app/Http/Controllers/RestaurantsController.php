@@ -138,7 +138,6 @@ class RestaurantsController extends Controller
             }
             
             $data['time'][$key] = Carbon::createFromTimestamp($review['time'])->diffForHumans();
-
         }
         
         return view('restaurants.show')->with($data);

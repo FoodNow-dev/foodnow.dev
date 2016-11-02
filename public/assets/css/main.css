@@ -1,10 +1,17 @@
 body{
-	background:url(/assets/img/dining.jpg);
-	background-size: 135% 115%;
-
-	background-repeat: no-repeat;
+	/*background:url(/assets/img/dining.jpg);*/
+	background:url(/assets/img/hands.jpg);
+	/*width: 100%;*/
+	/*height: 400px;*/
+	
+	/*background-attachment: fixed;*/
+	background-size: 200%, 100%;
+	/*background: contain;*/
+	/*background-size: 100%*/
+	/*background-height: 100%;*/
+	/*background-repeat: no-repeat;*/
 	/*background-position: 0px 150px;*/
-	background-color: rgba(59,103,140,.25);
+	/*background-color: rgba(59,103,140,.25);*/
 	text-align: center;
 }
 
