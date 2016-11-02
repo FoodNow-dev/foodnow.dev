@@ -72,8 +72,9 @@ class RestaurantsController extends Controller
         $object = urldecode($request['jsonObject']);
         $data['jsonJS'] = $object;
         $data['json'] = json_decode($object);
+        $data['time'] = [];
 
-        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
+        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
 
         $json = file_get_contents($url);
 
@@ -86,7 +87,7 @@ class RestaurantsController extends Controller
             
             foreach ($placedata['result']['photos'] as $key => $photo) {
                 
-                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
+                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
 
                 $photodata = file_get_contents($photoUrl);
                 
@@ -136,11 +137,9 @@ class RestaurantsController extends Controller
                     break;
             }
             
-            $time = Carbon::createFromTimestamp($review['time'])->toDateTimeString();
-            $data['time'][] = Carbon::now()->subSeconds($time)->diffForHumans();
+            $data['time'][$key] = Carbon::createFromTimestamp($review['time'])->diffForHumans();
+
         }
-
-
         
         return view('restaurants.show')->with($data);
     }

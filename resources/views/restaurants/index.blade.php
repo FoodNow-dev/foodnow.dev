@@ -35,6 +35,6 @@
 	<!-- GOOGLE MAPS API -->
 	<script src="/assets/js/benScripts.js"></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&rankBy=distance&callback=getLocation" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30&libraries=places&rankBy=distance&callback=getLocation" async defer></script>
 @stop
 

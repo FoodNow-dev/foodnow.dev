@@ -12,6 +12,12 @@ body{
 	/*background-repeat: no-repeat;*/
 	/*background-position: 0px 150px;*/
 	/*background-color: rgba(59,103,140,.25);*/
+	background:url(/assets/img/dining.jpg);
+	background-size: 135% 115%;
+
+	background-repeat: no-repeat;
+	/*background-position: 0px 150px;*/
+	background-color: rgba(59,103,140,.25);
 	text-align: center;
 }
 
