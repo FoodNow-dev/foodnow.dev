@@ -11,6 +11,7 @@ use App\Models\Review;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class RestaurantsController extends Controller
 {
@@ -74,7 +75,7 @@ class RestaurantsController extends Controller
         $data['json'] = json_decode($object);
         $data['time'] = [];
 
-        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
+        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
 
         $json = file_get_contents($url);
 
@@ -138,7 +139,15 @@ class RestaurantsController extends Controller
             }
             
             $data['time'][$key] = Carbon::createFromTimestamp($review['time'])->diffForHumans();
+
+            $data['user'] = Auth::user();
+
         }
+            $data['friends'] = $data['user']->friends()
+                ->where("user_id", '=', $data['user']->id)
+                ->orWhere("friend_id", '=', $data['user']->id)
+                ->orderBy('last_name', 'asc')
+                ->get();
         
         return view('restaurants.show')->with($data);
     }

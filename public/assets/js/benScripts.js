@@ -43,26 +43,21 @@ function rating(level) {
 }
 
 function item_tmpl(data){
-    var jsonString = JSON.stringify(data);
-    jsonString = escape(jsonString);
+    
     var formattedAddress = data.formatted_address.split(",").join("<br>");
     
-    var content = '<div class="list text-right animated fadeInLeft"><p>';
-        if (data.photos[0]){
+    var content = '<a href="/restaurants/show?place_id=' + data.place_id + '"><div class="list text-right"><p>';
+        if (data.photos){
             content += '<img class="left" src="' + data.photos[0].getUrl({'maxWidth': 300, 'maxHeight': 250}) + '">';
         } else {
             content += '<img class="left" src"http://www.gemologyproject.com/wiki/images/5/5f/Placeholder.jpg">';
         }          
-        content += '<form class="form" method="POST">';
-        
-
-        content += "<input type='hidden' name='jsonObject' value='" + jsonString + "'>";
-        content += '<div class="info"></p><button class="submit" type="submit"><h3>' + data.name + '</h3></button><p>';
+        content += '<div class="info"></p><h3>' + data.name + '</h3><p>';
         content += (data.rating) ? '<img src="' + rating(data.rating) + '"><br>': 'No Rating Available<br>';
         content += (data.price_level) ? priceFormat(data.price_level) : 'No Price Info Available' ;
         content += '</p><p>' + formattedAddress + '<br></p>';
 
-        content += '</form></div></div>';
+        content += '</div></div></a>';
     return content;
 }
 
@@ -144,10 +139,7 @@ function callback(results, status) {
             createMarker(results[i]);
             $('#results').append(item_tmpl(results[i]));
         }
-        $('.token').clone().appendTo('.form');
-        var action = $('.action').text();
-        $('.form').attr('action', action);
-        
+        // $('.token').clone().appendTo('.form');
     }
 }
 
@@ -167,9 +159,6 @@ function createMarker(place) {
         service.getDetails(request, function(place, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var contentStr = '<div>';
-                    // PLACE ID
-                    // + '<strong><em>PLACE ID: </em></strong>' + place.place_id + '<br>'
-
                     // PHOTOS
                     contentStr += (place.photos) ? '<img class="pull-left" src="' + place.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}) + '">' : "<br><em>No Image Provided</em><br>";
                     // NAME
