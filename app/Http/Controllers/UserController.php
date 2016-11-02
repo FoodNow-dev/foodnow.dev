@@ -41,6 +41,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // FUNCTION USED TO CONNECT FRIENDS TO FRIENDS!
     public function show($id)
     {
         $data['user'] = User::findOrFail($id);
