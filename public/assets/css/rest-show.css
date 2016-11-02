@@ -1,11 +1,25 @@
 /**********************************/
 /*          Restaurant        */
 /**********************************/
+body {
+	background-attachment: fixed !important;
+}
+
+nav {
+	position: fixed !important;
+	width: 100%;
+	z-index: 1000;
+}
+
+
+
+.fixed {
+	position: fixed !important;
+
+}
+
 .inner-bg {
     padding: 10px 0 50px 0;
-}
-.btn .btn-default{
-	/*justify-right: 0%;*/
 }
 
 .row{
@@ -14,31 +28,26 @@
 
 .top-right {
 	float: right;
-	/*width: 25%;*/
-	/*padding-top: 5px;*/
-	/*font-size: 12px;*/
 	color: white;
-	/*line-height: 100px;*/
 	text-align: right;
 	bottom: 284px;
 }
+
 .text {
-	margin-top: 50px;
+	margin-top: 75px;
 	margin-right: 0px;	
 	padding-top: 25px;
 	padding-bottom: 50px;
-	background-color: rgba(8, 59, 112, .65)!important;
-	/*color: #fff;*/
-	/*height: 500px;*/
-	/*width: 50%;*/
+	background-color: rgba(8, 59, 112, .85)!important;
+	color: #d5b33b;
+	max-width: 750px;
 	border-radius: 5px;
 }
 
 .top-content .text h1 { color: #d5b33b; }
 
-
-
 .top-content .description {
+	color: #d5b33b;
 	font-size: 1.5em;
 	margin: 20px 0 10px 0;
 }
@@ -48,14 +57,10 @@
 .top-content .description a {
 	color: #d5b33b;
 }
-.top-content .description a:hover, 
-.top-content .description a:focus { border-bottom: 1px dotted #d5b33b; }
 
 .top-content .top-big-link {
 	margin-top: 35px;
 }
-
-
 
 .btn-link-1 {
 	display: inline-block;
@@ -69,29 +74,30 @@
     color: #fff;
     -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
 }
+
 .btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; opacity: 0.6; color: #fff; }
 
 #map {
 	height: 50vh;
-	width: 45%;
+	width: 100%;
 	border: 1px solid black;
-	margin-bottom: 2%;
-	float: right;
-	margin-top: 70px;
 	position: relative;
-	bottom: 55px;
-	right: 25px;
+	left: 10px;
+	margin-bottom: 2%;
+	
+	margin-top: 85px;
+	
 }
 
-.btn-link-2:hover, .btn-link-2:focus, 
-.btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
-
+.form-box {
+	margin-top: 75px !important;
+}
 
 .form-top {
 	overflow: hidden;
 	color: #d5b33b;
 	padding: 0 25px 0px 25px;
-	background: rgba(8, 59, 112, .65);
+	background: rgba(8, 59, 112, .85);
 	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
 	text-align: left;
 }
@@ -117,11 +123,13 @@
 
 .form-bottom {
 	padding: 25px 25px 0px 25px;
-	margin: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
 	color: #d5b33b;
-	background: rgba(8, 59, 112, .65);
-	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+	background: rgba(8, 59, 112, .85);
+	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
 	text-align: left;
+	width: 100%;
 }
 
 .form-bottom form .input-error {
@@ -133,7 +141,9 @@
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	border-radius: 10px;
+	border-radius: 50%;
+	border:2px solid #d5b33b;
+	margin: 10px;
 }
 
 .review-info h3 {
@@ -149,10 +159,45 @@
 	clear: right;
 }
 
+.description > ul {
+	color: #d5b33b;
+	list-style: none;
+	position: relative;
+	right: 25px;
+}
 
+.carousel-inner img {
+  	margin: 0 auto;
+  	vertical-align: middle;
 
+}
 
+#myCarousel {
+	border-radius: 50%;
+	clear: both;
+}
 
+.carousel-controls-mini > a {
+	color: #d5b33b !important;
+	border:3px solid #d5b33b;
+	font-size: 2.5em;
+  	width:60px;
+    display:block;
+    float:left;
+    text-align:center;
+}
+.carousel-controls-mini {
+	margin-left: 40.75%;
+	clear: both;
+}
+#carousel-bounding-box,
+#myCarousel,
+.active {
+	text-align: center;
+	
+	height: 200px;
+	width: 100%;
+}
 
 
 
