@@ -18,7 +18,7 @@
 		<div class="collapse navbar-collapse" id="navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 				@if(Auth::check())
-					<li><img id="nav-image" src="{{Auth::user()->image}}"></li>
+					<li><img id="nav-image" src="{{Auth::user()->image}}" class="img-circle"></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle hvr-icon-dropdown" data-toggle="dropdown">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }} &nbsp;&nbsp;&nbsp;</a>
 						<ul class="dropdown-menu" role="menu">

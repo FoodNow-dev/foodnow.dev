@@ -6,6 +6,7 @@
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/search.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css">
+	{{-- THIS LINK IF FOR THE 'OR' --}}
 	<link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
 @stop
 
