@@ -73,7 +73,7 @@ footer {
 	outline: none;
 }
 
-#results > div > p > .left {
+ .left {
 	height: 100%;
     width: 40%;
     position: absolute;
