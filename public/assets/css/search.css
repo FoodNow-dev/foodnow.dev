@@ -1,75 +1,144 @@
 /**********************************/
 /*          Landing         */
 /**********************************/
-.inner-bg {
-    padding: 10px 0 50px 0;
-}
 
-.row{
+/*.row{
 	margin-left:0;
 }
-
-.top-right {
+*/
+/*.top-right {
 	float: right;
 	color: white;
 	text-align: right;
 	bottom: 284px;
+}*/
+
+
+
+/*.top-content .text h1 { 
+	color: #d5b33b; 
 }
+*/
+/*.top-content img {
+	background-color: rgba(255, 255, 255, .5);
+	border-radius: 50%;
+	border: 5px solid rgba(195, 191, 61, .5);
+	box-shadow: 0px 0px 100px #ced9e2;
+}
+*/
+/*.top-content .description {
+	font-size: 1.5em;
+	margin: 20px 0 10px 0;
+}
+*/
+/*.top-content .description p { 
+	opacity: 0.8; 
+	color: #dcd22a; 
+}*/
+
+/*.top-content .description a {
+	color: #d5b33b;
+}
+*/
+/*.top-content .description a:hover, 
+.top-content .description a:focus { 
+	border-bottom: 1px dotted #d5b33b; 
+}*/
+
+/*.top-content .top-big-link {
+	margin-top: 35px;
+}
+*/
+
+
+/*.form-bottom form .input-error {
+	border-color: #19b9e7;
+}*/
+
+.inner-bg {
+    /*padding: 10px 0 50px 0;*/
+    margin-top: 8%;
+    display: inline-block;
+}
+
 .top-content .text {
-	margin-top: 50px;
-	margin-right: 0px;	
-	padding-top: 25px;
-	padding-bottom: 50px;
+	/*margin: 5%;*/
+	/*margin-right: 0px;*/
+	/*padding-top: 25px;*/
+	/*padding-bottom: 50px;*/
 	background-color: rgba(8, 59, 112, .85);
 	color: #d5b33b;
 	font-size: 1.4em;
 	height: 500px;
 	width: 50%;
 	border-radius: 10px;
-	
+
+	padding: 3%;
+	/*border: 1px solid red;*/
 }
 
-.top-content .text h1 { color: #d5b33b; }
 
-.top-content img {
-	background-color: rgba(255, 255, 255, .5);
-	border-radius: 50%;
-	border: 5px solid rgba(195, 191, 61, .5);
-	box-shadow: 0px 0px 100px #ced9e2;
+/*----------------------- BUTTONS -----------------------*/
+.btn:hover {
+	transition: .5s;
+	color: #d5b33b !important;
 }
 
-.top-content .description {
-	font-size: 1.5em;
-	margin: 20px 0 10px 0;
+/*body > div > div > div > div > div.text.col-sm-6 > form > div.col-xs-offset-3 > button {
+	width: 135px;
+	margin-right: -40px;
+	margin-top: 15%;
+}*/
+
+
+/*----------------------- LEFT DIV -----------------------*/
+div.text.animated.zoomIn.col-sm-6 {
+	position: relative;
+	/*margin-top: 15%;*/
 }
 
-.top-content .description p { 
-	opacity: 0.8; 
-	color: #dcd22a; 
+/* SUBMIT BUTTON */
+body > div > div > div > div > div.text.col-sm-6 > form > div.col-xs-offset-3 > button {
+	font-weight: bold;
 }
 
-.top-content .description a {
-	color: #d5b33b;
-}
-.top-content .description a:hover, 
-.top-content .description a:focus { 
-	border-bottom: 1px dotted #d5b33b; 
+form {
+	margin-top: 50px;
+	margin-right: 100px;
 }
 
-.top-content .top-big-link {
-	margin-top: 35px;
+.form-control {
+	margin: 2px !important;
 }
 
-.or {
+
+/*----------------------- OR DIV -----------------------*/
+body > div > div > div > div > div.text.col-xs-6 > div {
+	margin-top: 15%;
+}
+
+.top-line {
 	position: absolute;
-	top: 300px;
-	left: 866px;
-	z-index: 1000;
-	font-size: 6em;
-	color: #d5b33b;
-	font-family: 'Bevan', cursive;
-	
-	width: 205px;
+    border: 6px solid #d5b33b;
+    height: 175px;
+    top: -17.25%;
+    left: -1%;
+    z-index: 1000;
+    border-bottom-left-radius: 15px; 
+    border-bottom-right-radius: 15px; 
+    animation-delay: .6s;
+}
+
+.bottom-line {
+	position: absolute;
+    border: 6px solid #d5b33b;
+    height: 215px;
+    top: 39.75%;
+    left: -1%;
+    z-index: 1000;
+    border-top-left-radius: 15px; 
+    border-top-right-radius: 15px;
+    animation-delay: .6s;
 }
 
 .form-top {
@@ -107,41 +176,30 @@
 	text-align: left;
 }
 
-.form-bottom form .input-error {
-	border-color: #19b9e7;
-}
-
-.top-line {
+.or {
 	position: absolute;
-    border: 6px solid #d5b33b;
-    height: 175px;
-    top: -17.25%;
-    left: -1%;
-    z-index: 1000;
-    border-bottom-left-radius: 15px; 
-    border-bottom-right-radius: 15px; 
-    animation-delay: .6s;
+	/*top: 300px;*/
+	/*left: 866px;*/
+	z-index: 1000;
+	font-size: 6em;
+	color: #d5b33b;
+	font-family: 'Bevan', cursive;
+	/*width: 205px;*/
 
+	top: 40%;
+	left: 46.5%;
 }
 
-.bottom-line {
-	position: absolute;
-    border: 6px solid #d5b33b;
-    height: 215px;
-    top: 39.75%;
-    left: -1%;
-    z-index: 1000;
-    border-top-left-radius: 15px; 
-    border-top-right-radius: 15px;
-    animation-delay: .6s;
-}
 
-.form-control {
-	margin: 2px !important;
-}
-form {
-	margin-top: 50px;
-	margin-right: 100px;
+/*----------------------- RIGHT DIV -----------------------*/
+/* RANDOM BUTTON */
+body > div > div > div > div > div.text.col-xs-6 > div > a {
+	width: 50%;
+	font-size: 1.5em;
+	font-weight: bolder;
+	line-height: 100px;
+	height: 100px !important;
+	/*margin-bottom: 33.5%;*/
 }
 
 .btn{
@@ -155,46 +213,9 @@ form {
     font-size: 16px;
     line-height: 50px;
     color: rgba(8, 59, 112, 1) !important;
-    
     -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
     text-shadow: none;
     -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
     -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
-.btn:hover {
-	transition: .5s;
-	color: #d5b33b !important;
-}
 
-body > div > div > div > div > div.text.col-xs-6 > div {
-	margin-top: 15%;
-}
-
-body > div > div > div > div > div.text.col-sm-6 > form > div.col-xs-offset-3 > button {
-	width: 135px;
-	margin-right: -40px;
-	margin-top: 5px;
-}
-
-body > div > div > div > div > div.text.col-xs-6 > div > a {
-	width: 50%;
-	font-size: 1.5em;
-	font-weight: bolder;
-	line-height: 100px;
-	height: 100px !important;
-	
-}
-body > div > div > div > div > div.text.col-sm-6 > form > div.col-xs-offset-3 > button {
-	font-weight: bold;
-}
-
-body > div > div > div > div > div.text.animated.zoomIn.col-sm-6 {
-	position: relative;
-	left: 1px;
-}
-
-footer {
-	position: absolute;
-	bottom: 0px;
-	width: 100%;
-}
