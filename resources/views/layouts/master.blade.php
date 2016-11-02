@@ -50,8 +50,6 @@
 
 			@yield('content')
 		
-		@include('partials.footer')
-		
 		{{-- jQuery --}}
 		<script src="/assets/js/jquery-1.11.1.min.js"></script>
 		{{-- Bootstrap.js --}}

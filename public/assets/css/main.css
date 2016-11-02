@@ -6,6 +6,7 @@ body{
   	background-size: 100% 100%;
 	background-attachment: fixed;
 	text-align: center;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
 .show-box {
@@ -15,6 +16,8 @@ body{
 .form-box {
 	margin-top: 0px;
 }
+
+
 /*****************************************/
 /*               Navbar                  */
 /*****************************************/
@@ -144,22 +147,10 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 		background-color: inherit;
 		border-top:0 none;
 	}
-
 	.top-content .text { margin-top: 50px; padding-top: 0; padding-bottom: 60px; }
 	.top-content .top-big-link { margin-top: 25px; }
 	.top-content .top-big-link a.btn { margin-top: 10px; }
 }
-
-@media(min-width: 800px) and (min-height: 745px){
-	.footer-bottom {
-		position: relative;
-		bottom: 0px;
-	}
-}
-
-
-
-
 
 
 
@@ -311,18 +302,5 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 .hvr-background:active:before {
   	-webkit-transform: scale(2);
   	transform: scale(2);
-}
-
-/****************************/
-/*          Footer          */
-/****************************/
-
-.footer-bottom {
-	margin-top: 0px;
-	clear: both;
-	bottom: 0px;
-	padding-top: 20px;
-	text-align: left;
-	margin-left: 2%;
 }
 
