@@ -3,9 +3,11 @@
 @section('title','Restaurant')
 
 @section('css')
+	
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/restaurant.css') }}" />
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/form-elements2.css') }}" />
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/elements2.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.min.css') }}"/>
 
 	 <script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
@@ -13,7 +15,7 @@
      <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
       <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
-     additional-methods.js') }}"></script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.jquery.min.js') }}"></script>
 
 @stop
 
@@ -37,6 +39,20 @@
 							<form id= "info" class="form-horizontal col-xs-10 col-xs-offset-3" method="POST" action="/restaurants/restaurant">
 							{!! csrf_field() !!}
 								<div class="form-group">
+	
+								  <div class="col-xs-7 ">
+								 	  <select class="my_select_box" data-placeholder="Select Your Options" multiple="">
+								 	  	@foreach($friends as $friend)
+								 	  		@if($user->id != $friend->id)
+								 	  			<option value= {{$friend->phone}}>{{"$friend->first_name $friend->last_name"}}</option>
+								 	  		@endif
+								 	  	@endforeach 
+									   {{--  <option value="1">Option 1</option>
+									    <option value="2">Option 2</option>
+									    <option value="3">Option 3</option> --}}
+									  </select>
+
+								  </div>
 									{{-- dynamic buttons --}}
 									<div class="input_fields_wrap col-xs-7">
 		   								 <button class="btn btn-default add_field_button">Invite More Friends 
@@ -86,7 +102,16 @@
 								    }
   								  }
   								});
+
   								</script>
+  								<script>
+  								 $(".my_select_box").chosen({
+								    disable_search_threshold: 1,
+								    no_results_text: "Oops, nothing found!",
+								    width: "95%",
+								    display_selected_options:false
+								  });
+								  								</script>
 						</div>
 					
 					<div class="col-xs-12 col-xs-offset-1 col-sm-5 col-sm-offset-1 text">
@@ -96,16 +121,4 @@
 			</div>
 		</div>
 	</div>
-	    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-{{--  <script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-     <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
-     <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
-      <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
-     <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
-     additional-methods.js') }}"></script> --}}
-    
-
 @stop

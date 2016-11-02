@@ -223,6 +223,20 @@ class UserController extends Controller
 
         return view('restaurants.restaurant');
      }
+
+     public function selectFriends(Request $request)
+     {
+        $data['user'] = Auth::user();
+
+        $data['friends'] = $data['user']->friends()
+            ->where("user_id", '=', $data['user']->id)
+            ->orWhere("friend_id", '=', $data['user']->id)
+            ->orderBy('last_name', 'asc')
+            ->get();
+
+        return view('restaurants.restaurant')->with($data);
+    }    
+
  }
 
 
