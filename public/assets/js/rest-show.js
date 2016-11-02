@@ -1,3 +1,24 @@
+$('#myCarousel').carousel({
+    interval: 5000
+});
+
+$('#carousel-text').html($('#slide-content-0').html());
+
+//Handles the carousel thumbnails
+$('[id^=carousel-selector-]').click( function(){
+    var id_selector = $(this).attr("id");
+    var id = id_selector.substr(id_selector.length-1);
+    var id = parseInt(id);
+    $('#myCarousel').carousel(id);
+});
+
+// When the carousel slides, auto update the text
+$('#myCarousel').on('slid', function (e) {
+    var id = $('.item.active').data('slide-number');
+    $('#carousel-text').html($('#slide-content-'+id).html());
+});
+
+// switches price number into 
 function priceFormat(level) {
     switch (level) {
         case 1 :
@@ -12,6 +33,8 @@ function priceFormat(level) {
 
 }
 
+var priceSign = '<p>' + priceFormat(price) + '</p>';
+$(priceSign).html('#rating');
 
 function rating(level) {
     switch (true) {
@@ -44,49 +67,18 @@ function rating(level) {
 var ratingImg = "<img src='" + rating(starrating) + "'>";
 $(ratingImg).appendTo('#rating');
 
-// --------------------------- GEOLOCATION ---------------------------
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-        alert("Geolocation is not supported by this browser.");
-    }
-}
-
-function showPosition(position) {
-    var latitude = (position) ? position.coords.latitude : lat;
-    var longitude = (position) ? position.coords.longitude : lng;
-
-    initMap(latitude, longitude);
-}
-
-function showError(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            alert("User denied the request for Geolocation.")
-            break;
-        case error.PERMISSION_UNAVAILABLE:
-            alert("Location information is unavailable.")
-            break;
-        case error.TIMEOUT:
-            alert("The request to get user location timed out.")
-            break;
-        case error.UNKNOWN_ERROR:
-            alert("An unknown error occurred.")
-            break;
-    }
-    showPosition();
-}
+console.log('asdlfl');
 // --------------------------- RENDERS MAP ---------------------------
 var map;
 var infowindow;
 var service;
 
-function initMap(latitude, longitude) {
-    var userLoc = new google.maps.LatLng(latitude, longitude);
+function initMap() {
+    var userLoc = new google.maps.LatLng(lat, lng);
+
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
-        zoom: 15
+        zoom: 17
     });
 
         
@@ -103,6 +95,7 @@ function initMap(latitude, longitude) {
 function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
+            console.log(results);
             createMarker(results[i]);
         }
     }

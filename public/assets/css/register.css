@@ -3,12 +3,12 @@
 /**********************************/
 
 .inner-bg {
-    padding: 10px 0 50px 0;
+    padding: 25px 0 50px 0;
 }
 
 .top-content .text {
 	height: 635px;
-	margin-top: 25px;
+	margin-top: 0px;
 	margin-right: -15px;	
 	padding-top: 50px;
 	padding-bottom: 50px;
@@ -78,6 +78,9 @@
 .btn-link-2:hover, .btn-link-2:focus, 
 .btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
 
+form-box{
+	margin-top: 25px;
+}
 
 .form-top {
 	overflow: hidden;
