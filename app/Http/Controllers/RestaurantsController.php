@@ -91,7 +91,6 @@ class RestaurantsController extends Controller
 
 
 
-
         $json = file_get_contents($url);
 
         $placedata = json_decode($json, TRUE);
