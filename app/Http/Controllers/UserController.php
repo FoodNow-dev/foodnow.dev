@@ -137,6 +137,8 @@ class UserController extends Controller
     //method for users to send text messages to friends
     public function sendText(Request $request)
     {
+
+        // dd($request->all());
          // Step 2: set our AccountSid and AuthToken from https://twilio.com/console
         $AccountSid = env('TWILIO_ID');
         $AuthToken = env('TWILIO_TOKEN');
@@ -148,7 +150,6 @@ class UserController extends Controller
 //         // Step 4: make an array of people we know, to send them a message. 
 //     // Feel free to change/add your own phone number and name here.
 //         //input rules
-
 
         // $rules = [
         //     'friendName1'=>'required|min:1',
@@ -221,7 +222,7 @@ class UserController extends Controller
 
 
 
-        return view('restaurants.restaurant');
+        return redirect()->action('UserController@selectFriends');
      }
 
      public function selectFriends(Request $request)
