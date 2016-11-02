@@ -137,6 +137,8 @@ class UserController extends Controller
     //method for users to send text messages to friends
     public function sendText(Request $request)
     {
+
+        
          // Step 2: set our AccountSid and AuthToken from https://twilio.com/console
         $AccountSid = env('TWILIO_ID');
         $AuthToken = env('TWILIO_TOKEN');
@@ -147,49 +149,21 @@ class UserController extends Controller
 
 //         // Step 4: make an array of people we know, to send them a message. 
 //     // Feel free to change/add your own phone number and name here.
-//         //input rules
 
 
-        // $rules = [
-        //     'friendName1'=>'required|min:1',
-        //     'friendPhone1'=>'required|numeric|min:11',
-        //     'friendName2'=>'required|min:1',
-        //     'friendPhone2'=>'required|numeric|min:11',
-        // ];
-
-        // $request->session()->flash('ERROR_MESSAGE','Text Message was not sent');
-
-        // $this->validate($request, $rules);
-
-        // $request->session()->forget('ERROR_MESSAGE');
 
     
 
         $people = array(
-            // "+1(210)317-55-00" => "Snow White",
-            // $request->friendPhone1 => $request->friendName1,
-            // $request->friendPhone2 => $request->friendName2
-
+    
         );
 
         foreach($request->mytext as $phonenumber)
         {
             $people[$phonenumber] = "name";
         }
-        $request->session()->flash('SUCCESS_MESSAGE', 'Message sent succesfully');
+       
 
-//         $rules = [
-//             'friendName1'=>'required|min:1',
-//             'friendPhone1'=>'required|numeric|min:11',
-//             'friendName2'=>'required|min:1',
-//             'friendPhone2'=>'required|numeric|min:11',
-//         ];
-
-//         $request->session()->flash('ERROR_MESSAGE','Text Message was not sent');
-
-//         $this->validate($request, $rules);
-
-//         $request->session()->forget('ERROR_MESSAGE');
 
 
     // Step 5: Loop over all our friends. $number is a phone number above, and 
@@ -219,6 +193,7 @@ class UserController extends Controller
     }
 
         return redirect()->back();
+
      }
 
      public function selectFriends(Request $request)

@@ -7,17 +7,17 @@
 }
 
 .top-content .text {
-	height: 635px;
-	margin-top: 0px;
-	margin-right: -15px;	
-	padding-top: 50px;
-	padding-bottom: 50px;
+	height: 100%;
+	margin-top: 8%;
+	padding-bottom: 4%;
+	padding-left: 4%;
+	padding-right: 4%;
 	background-color: rgba(8, 59, 112, .85);
 	color: #fff;
 	border-radius: 5px;
 }
 
-.top-content .text h1 { color: #d5b33b; }
+.top-content .text, h1, p { color: #d5b33b; }
 
 .top-content img {
 	background-color: rgba(255, 255, 255, .5);
@@ -29,6 +29,7 @@
 
 .animated.zoomIn {
 	animation-delay: .35s;
+	padding-top: 5%;
 }
 
 .top-content .description {
@@ -36,7 +37,7 @@
 	margin: 20px 0 10px 0;
 }
 
-.top-content .description p { opacity: 0.8; color: #dcd22a; }
+.top-content .description { opacity: 0.8; color: #dcd22a; }
 
 .top-content .description a {
 	color: #d5b33b;
@@ -98,7 +99,7 @@ form-box{
 	padding-top: 25px;
 }
 
-.form-top-left h3 { margin-top: 0; color: #d5b33b;}
+.form-top-left, h3 { margin-top: 0; color: #d5b33b;}
 
 .form-top-right {
 	float: left;
@@ -125,3 +126,7 @@ form-box{
 	margin: 0px;
 }
 
+#signupForm {
+	display: inline-block;
+	width: 80%;
+}

@@ -42,8 +42,9 @@
 									<div class="input_fields_wrap col-xs-7">
 		   								 <button class="btn btn-default add_field_button">Add other numbers 
 		   								</button>
-			    						<div>
+			    						<div class="input-group">
 			    							<input type="text" name="mytext[]" id = "mytext[]" class="phone col-xs-12 space" placeholder="Friend's Phone #">
+			    							<div class="input-group-addon">.00</div>
 			    						</div>
 			    					</div>
 
