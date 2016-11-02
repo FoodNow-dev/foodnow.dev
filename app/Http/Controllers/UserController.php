@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-// use App\Http\Controllers\Auth;
-
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 use Hash;
 use App\User;
@@ -48,11 +45,8 @@ class UserController extends Controller
     public function show($id)
     {
         $data['user'] = User::findOrFail($id);
-
-        $data['friends'] = $data['user']->friends()
-            ->where("user_id", '=', $data['user']->id)
-            ->orWhere("friend_id", '=', $data['user']->id)
-            ->paginate(10);
+        $data['favorites'] = $data['user']->favorites()->paginate(3);
+        $data['friends'] = $data['user']->friends()->paginate(10);
 
         return view('users.show')->with($data);
     }
@@ -122,17 +116,17 @@ class UserController extends Controller
     }
 
     public function setFriend(Request $request, $status) {
-        $user = Auth::user();
-        $user->friends()->sync([
-            $request->input('friend_id')=>['action_id'=>$user->id]
-            ], false);
+
+        $friend = Friend::with('users')->firstOrCreate([
+            'friend_id' => $request->input('user_id'),
+            'user_id' => $request->user()->id,
+            'action_id' => $request->user()->id,
+            'status' => $status
+        ]);
+
+        $friend->save();
 
         return back();
-    }
-
-    public function friendsList(Request $request)
-    {
-        return Friend::allFriends($request->user()->id);
     }
 
     //method for users to send text messages to friends
@@ -224,20 +218,6 @@ class UserController extends Controller
 
         return view('restaurants.restaurant');
      }
-
-     public function selectFriends(Request $request)
-     {
-        $data['user'] = Auth::user();
-
-        $data['friends'] = $data['user']->friends()
-            ->where("user_id", '=', $data['user']->id)
-            ->orWhere("friend_id", '=', $data['user']->id)
-            ->orderBy('last_name', 'asc')
-            ->get();
-
-        return view('restaurants.restaurant')->with($data);
-    }    
-
  }
 
 
