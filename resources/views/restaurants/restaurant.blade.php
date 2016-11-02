@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/restaurant.css') }}" />
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/form-elements2.css') }}" />
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/elements2.css') }}" />
+
     <link rel="stylesheet" href="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.min.css') }}"/>
 
 	 <script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
@@ -41,7 +42,8 @@
 								<div class="form-group">
 	
 								  <div class="col-xs-7 ">
-								 	  <select class="my_select_box" data-placeholder="Select Your Options" multiple="">
+								 	  <select class="my_select_box" data-placeholder="Select Your Options" multiple="" name="mytext[]">
+
 								 	  	@foreach($friends as $friend)
 								 	  		@if($user->id != $friend->id)
 								 	  			<option value= {{$friend->phone}}>{{"$friend->first_name $friend->last_name"}}</option>
@@ -108,7 +110,7 @@
 								    width: "95%",
 								    display_selected_options:false
 								  });
-								  								</script>
+								</script>
 						</div>
 					
 					<div class="col-xs-12 col-xs-offset-1 col-sm-5 col-sm-offset-1 text">
