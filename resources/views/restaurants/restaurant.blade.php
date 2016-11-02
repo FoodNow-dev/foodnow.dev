@@ -108,7 +108,7 @@
 								    width: "95%",
 								    display_selected_options:false
 								  });
-								  								</script>
+								</script>
 						</div>
 					
 					<div class="col-xs-12 col-xs-offset-1 col-sm-5 col-sm-offset-1 text">

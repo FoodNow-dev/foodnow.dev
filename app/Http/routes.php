@@ -32,7 +32,7 @@ Route::get('vendor/map', function()
 	return view('vendor/map');
 });
 
-Route::post('restaurants/show', 'RestaurantsController@showData' );
+Route::get('restaurants/show', 'RestaurantsController@showData' );
 
 
 // Authentication routes...
