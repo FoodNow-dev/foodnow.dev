@@ -1,5 +1,5 @@
 <footer>
 	<div class="footer-bottom">
-		<p> Copyright © FoodNow 2016. All right reserved. </p>
+	 	Copyright © FoodNow 2016. All right reserved. 
 	</div><!--/.footer-bottom--> 
 </footer> 

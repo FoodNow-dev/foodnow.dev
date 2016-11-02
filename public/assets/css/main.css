@@ -152,7 +152,7 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 
 @media(min-width: 800px) and (min-height: 745px){
 	.footer-bottom {
-		position: absolute;
+		position: relative;
 		bottom: 0px;
 	}
 }
