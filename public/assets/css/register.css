@@ -2,13 +2,10 @@
 /*          Registration          */
 /**********************************/
 
-.inner-bg {
-    padding: 25px 0 50px 0;
-}
-
 .top-content .text {
 	height: 100%;
 	margin-top: 8%;
+	margin-bottom: 5%;
 	padding-bottom: 4%;
 	padding-left: 4%;
 	padding-right: 4%;
@@ -37,93 +34,12 @@
 	margin: 20px 0 10px 0;
 }
 
-.top-content .description { opacity: 0.8; color: #dcd22a; }
-
-.top-content .description a {
-	color: #d5b33b;
-}
-.top-content .description a:hover, 
-.top-content .description a:focus { border-bottom: 1px dotted #d5b33b; }
-
 .top-content .top-big-link {
 	margin-top: 35px;
 }
 
-.btn-link-1 {
-	display: inline-block;
-	height: 50px;
-	margin: 0 5px;
-	padding: 16px 20px 0 20px;
-	background: #d5b33b;
-	font-size: 16px;
-    font-weight: 300;
-    line-height: 16px;
-    color: #fff;
-    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
-}
-.btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; opacity: 0.6; color: #fff; }
-
-.btn-link-2 {
-	display: inline-block;
-	height: 50px;
-	margin: 0 5px;
-	padding: 15px 20px 0 20px;
-	background: rgba(0, 0, 0, 0.3);
-	border: 1px solid #dcd22a;
-	font-size: 16px;
-    font-weight: 300;
-    line-height: 16px;
-    color: #d5b33b;
-    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
-}
-.btn-link-2:hover, .btn-link-2:focus, 
-.btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
-
-form-box{
-	margin-top: 25px;
-}
-
-.form-top {
-	overflow: hidden;
-	color: #d5b33b;
-	padding: 0 25px 0px 25px;
-	background: rgba(8, 59, 112, .85);
-	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
-	text-align: left;
-}
-
-.form-top-left {
-	color: #d5b33b;
-	float: left;
-	width: 75%;
-	padding-top: 25px;
-}
-
-.form-top-left, h3 { margin-top: 0; color: #d5b33b;}
-
-.form-top-right {
-	float: left;
-	width: 25%;
-	padding-top: 5px;
-	font-size: 66px;
-	color: #d5b33b;;
-	line-height: 100px;
-	text-align: right;
-}
-
-.form-bottom {
-	padding: 30px;
-	background: rgba(8, 59, 112, .85);
-	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
-	text-align: left;
-}
-
 .form-bottom form .input-error {
 	border-color: #19b9e7;
-}
-
-.registration-form {
-	margin: 0px;
 }
 
 #signupForm {
