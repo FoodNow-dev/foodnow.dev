@@ -192,10 +192,8 @@ class UserController extends Controller
         echo "Sent message to $name".PHP_EOL;
     }
 
+        return redirect()->back();
 
-
-
-        return redirect()->action('UserController@selectFriends');
      }
 
      public function selectFriends(Request $request)

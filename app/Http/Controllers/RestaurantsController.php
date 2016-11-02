@@ -11,6 +11,7 @@ use App\Models\Review;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class RestaurantsController extends Controller
 {
@@ -69,23 +70,22 @@ class RestaurantsController extends Controller
 
 
     public function showData(Request $request) {
-        $object = urldecode($request['jsonObject']);
-        $data['jsonJS'] = $object;
-        $data['json'] = json_decode($object);
+       
         $data['time'] = [];
        
         // Google Maps API
         // MAIN API
-        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
+        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
 
         // JESSICA API
-        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
+        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
         
         // BENS API
-        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
+        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
         
         // WHITNEY API
-        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $data['json']->place_id . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
+        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
+
 
 
 
@@ -103,7 +103,7 @@ class RestaurantsController extends Controller
 
                 // Google Maps API
                 // MAIN API
-                // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
+                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
 
                 // JESSICA API
                 // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
@@ -112,7 +112,7 @@ class RestaurantsController extends Controller
                 // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
                 
                 // WHITNEY API
-                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
+                // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
 
 
 
@@ -166,7 +166,15 @@ class RestaurantsController extends Controller
             }
             
             $data['time'][$key] = Carbon::createFromTimestamp($review['time'])->diffForHumans();
+
+            $data['user'] = Auth::user();
+
         }
+            $data['friends'] = $data['user']->friends()
+                ->where("user_id", '=', $data['user']->id)
+                ->orWhere("friend_id", '=', $data['user']->id)
+                ->orderBy('last_name', 'asc')
+                ->get();
         
         return view('restaurants.show')->with($data);
     }

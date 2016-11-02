@@ -20,8 +20,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="token">{{ csrf_field() }}</div>
-	<div class="action">{{action('RestaurantsController@showData')}} </div>
+
+	{{-- Passing data to JS --}}
 	<script type="text/javascript">
 		var radius = {{ $radius }};
 		var minPrice = {{ $minprice }};
