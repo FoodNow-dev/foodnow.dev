@@ -55,7 +55,6 @@
  									</select>
  								</div>
  							</div>
-
     						{{-- LOW PRICE --}}
     						<div class="form-group">
     							<label for="price" class="control-label col-xs-12 col-sm-6  text-left">Min Price Level</label>
@@ -89,7 +88,7 @@
 						OR
 					</div>
 					<div class="animated zoomIn text col-xs-6 col-lg-6">
-						<h1> <strong>Let Us Choose For You:</strong></h1>
+						<h1><strong>Let Us Choose For You:</strong></h1>
 						<br>
 						<div>
 						    <a class="btn" href="{{ action('RestaurantsController@showData') }}?random=true">Pick at Random</a>
