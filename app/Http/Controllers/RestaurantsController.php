@@ -77,10 +77,10 @@ class RestaurantsController extends Controller
        
         // Google Maps API
         // MAIN API
-        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
+        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
 
         // JESSICA API
-        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
+        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
         
         // BENS API
         // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
