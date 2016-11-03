@@ -3,64 +3,66 @@
 /**********************************/
 body {
 	background-attachment: fixed !important;
+	height: 100%;
 }
 
-nav {
+/*nav {
 	position: fixed !important;
 	width: 100%;
 	z-index: 1000;
-}
+}*/
 
-.fixed {
-	position: fixed !important;
+/*.fixed {
+	margin-left: 5%;
+	height: 85%;
+}*/
 
-}
-
-.inner-bg {
+/*.inner-bg {
     padding: 10px 0 50px 0;
-}
+}*/
 
-.row{
+/*.row{
 	margin-left:0;
-}
+}*/
 
-.top-right {
+/*.top-right {
 	float: right;
 	color: white;
 	text-align: right;
 	bottom: 284px;
-}
+}*/
 
 .text {
-	margin-top: 75px;
-	margin-right: 0px;	
-	padding-top: 25px;
-	padding-bottom: 50px;
+	position: fixed !important;
+	margin: 5%;
+	margin-top: 10%;
+	height: 80%;
 	background-color: rgba(8, 59, 112, .85)!important;
 	color: #d5b33b;
 	width: 50%;
 	border-radius: 5px;
+    border: 1px solid red;
 }
 
+/*.top-content .text h1 {
+	color: #d5b33b; 
+}*/
 
-
-.top-content .text h1 { color: #d5b33b; }
-
-.top-content .description {
+/*.top-content .description {
 	color: #d5b33b;
 	font-size: 1.5em;
 	margin: 20px 0 10px 0;
-}
+}*/
 
-.top-content .description p { opacity: 0.8; color: #dcd22a; }
+/*.top-content .description p { opacity: 0.8; color: #dcd22a; }*/
 
-.top-content .description a {
+/*.top-content .description a {
 	color: #d5b33b;
 }
-
-.top-content .top-big-link {
+*/
+/*.top-content .top-big-link {
 	margin-top: 35px;
-}
+}*/
 
 .btn-link-1 {
 	display: inline-block;
@@ -81,14 +83,13 @@ nav {
 	height: 50vh;
 	width: 100%;
 	border: 1px solid black;
-	position: relative;
+	/*position: relative;*/
 	left: 10px;
 	margin-bottom: 2%;
-	
-	margin-top: 85px;
-	
+	/*margin-top: 85px;*/	
 }
 
+/* --------------------- MODAL -------------------*/
 .form-box {
 	margin-top: 75px !important;
 }
@@ -136,6 +137,7 @@ nav {
 	border-color: #19b9e7;
 }
 
+/* --------------------- GOOGLE PROFILE -------------------*/
 .google-profile{
 	width: 30% !important;
 	position: absolute;
@@ -166,25 +168,32 @@ nav {
 	right: 25px;
 }
 
+/* --------------------- CAROUSEL -------------------*/
 .carousel-inner img {
-  	margin: 0 auto;
-  	vertical-align: middle;
-
+  	width: 100%;
 }
 
-#myCarousel {
+/*#myCarousel {
 	border-radius: 50%;
-	
 }
+*/
 
+
+
+
+
+
+
+/*====================================START HERE IN THE MORNING!!!=============================*/
+/* carousel buttons */
 .carousel-controls-mini > a {
 	color: #d5b33b !important;
 	border:3px solid #d5b33b;
 	font-size: 2.5em;
-  	width:60px;
+  	width:30%;
     display:block;
     float:left;
-    text-align:center;
+    /*text-align:center;*/
 }
 
 .carousel-controls-mini {

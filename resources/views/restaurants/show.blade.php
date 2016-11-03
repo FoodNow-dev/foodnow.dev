@@ -2,7 +2,7 @@
 
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/rest-show.css">
-	<link rel="stylesheet" href="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.min.css') }}"/>
+	<link rel="stylesheet" href="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.min.css') }}">
 
 	<script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
 	
@@ -76,9 +76,9 @@
 
 <!-- Top content -->
 <div class="top-content">
-	<div class="inner-bg">
-		<div class="row">
-			<div class="col-sm-4 col-sm-offset-1">
+	{{-- <div class="inner-bg"> --}}
+		{{-- <div class="row"> --}}
+			{{-- <div class="col-sm-3 col-sm-offset-1"> --}} 
 				<div class="fixed text text-center show-box">
 					<h1><strong>{{ $place['name'] }}</strong></h1>
 					<div class="description">
@@ -94,43 +94,45 @@
 							</li>
 						</ul>
 					</div>{{-- /.description --}}
-				</div>{{-- /.fixed --}}
-				<!-- Slider -->
-				<div class="row-fluid">
-					<div class="span9" id="slider">
-						<!-- Top part of the slider -->
-						<div class="row-fluid">
-							<div class="span2" id="carousel-bounding-box">
-								<div id="myCarousel" class="carousel slide">
-									<!-- Carousel items -->
-									<div class="carousel-inner">
-										@foreach($photos as $key => $photo)
+				{{-- </div> --}}{{-- /.fixed --}}
 
-											<div class="{{($key == 0)? "active item" : "item" }}"data-slide-number="{{($key + 1)}}">
-												<img class="rest-img" src="data:image/gif;base64,{{ $photo }}">
-											</div>
-										@endforeach
+					<!-- Slider -->
+					<div class="row-fluid">
+						<div class="span9" id="slider">
+							<!-- Top part of the slider -->
+							<div class="row-fluid">
+								<div class="span2" id="carousel-bounding-box">
+									<div id="myCarousel" class="carousel slide">
+										<!-- Carousel items -->
+										<div class="carousel-inner">
+											@foreach($photos as $key => $photo)
+												<div class="{{($key == 0)? "active item" : "item" }}"data-slide-number="{{($key + 1)}}">
+													<img class="rest-img" src="data:image/gif;base64,{{ $photo }}">
+												</div>
+											@endforeach
+										</div> {{-- CAROUSEL-INNER --}}
+									</div> {{-- /.carouselslide --}} 
+
+								  
+									<!-- Carousel nav -->
+									<div class="carousel-controls-mini">
+										<a href="#myCarousel" class="direction" data-slide="prev">‹</a>
+										<a href="#myCarousel" class="direction" data-slide="next">›</a>
 									</div>
-								</div>{{-- /.carouselslide --}}
-							  
-								<!-- Carousel nav -->
-								<div class="carousel-controls-mini">
-									<a href="#myCarousel" class="direction" data-slide="prev">‹</a>
-									<a href="#myCarousel" class="direction" data-slide="next">›</a>
-								</div>
-							</div>{{-- /.span2 --}}
-						</div>{{-- /.row-fluid --}}
-					</div>{{-- ./span9 --}}
-				</div>{{-- /.row-fluid --}}
-			</div>{{-- /.col-sm-4 --}}
+
+								</div>{{-- /.span2 --}}
+							</div>{{-- /.row-fluid --}}
+						</div>{{-- ./span9 --}}
+					</div>{{-- /.row-fluid --}}
+				</div>{{-- /.fixed
+			</div>{{-- /.col-sm-3 --}}
 			<br>
 			<br>
-			<!--/Slider-->
-		<div class="top-big-link">
-			<button type="button" class="btn" data-toggle="modal" data-target="#modal" href="#">Create Event</button>
-		</div>
 			
-		
+			<!--/Slider-->
+			<div class="top-big-link">
+				<button type="button" class="btn" data-toggle="modal" data-target="#modal" href="#">Create Event</button>
+			</div>
 			
 			<div class="col-sm-4 col-sm-offset-7 form-box animated fadeInRight">
 				<div id="map"></div>
@@ -147,19 +149,19 @@
 									{{ $time[$key] }}
 								</p>
 								<br>
-							</div>
+							</div> {{-- REVIEW-INFO --}}
 							<div class="review"> 
 								{{ $review['text']}}
 								<br>
 								<br>
-							</div>
-						</div>
-					</div>
-				@endforeach
-			</div>
-		</div>
-	</div>
-</div>
+							</div> {{-- REVIEW --}}
+						</div> {{-- REVIEW CONTAINER --}}
+					</div> {{-- col-sm-12 form-bottom show-box --}}
+				@endforeach 
+			</div> {{-- col-sm-4 col-sm-offset-7 form-box animated fadeInRight --}}
+		</div> {{-- ROW --}}
+	</div> {{-- INNER-BG --}}
+</div> {{-- TOP CONTENT --}}
 				
 
 @stop
@@ -167,7 +169,7 @@
 
 @section('js-script')
 
-	{{-- Passes Scalar data held in PHP to JS --}}
+	{{-- Passes Scalar data held in PHP to JS
 	<script type="text/javascript">
 		var lat = {{ $place['geometry']['location']['lat'] }};
 		var lng = {{ $place['geometry']['location']['lng'] }};
@@ -193,17 +195,17 @@
 
 
 	{{-- JESSICA API --}}
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4&libraries=places&callback=initMap" async defer></script>
+	{{-- // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4&libraries=places&callback=initMap" async defer></script> --}}
 	
 	
 	{{-- BENS API --}}
 
-	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA49FZPs3ZmqNEQXUfNrgKKoXWihUwnEWQ&libraries=places&callback=initMap" async defer></script> --}}
+	{{-- // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA49FZPs3ZmqNEQXUfNrgKKoXWihUwnEWQ&libraries=places&callback=initMap" async defer></script> --}}
 	
 	{{-- // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI&libraries=places&callback=initMap" async defer></script> --}}
 	
 	{{-- WHITNEY API --}}
-	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30	&libraries=places&callback=initMap" async defer></script> --}}
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30	&libraries=places&callback=initMap" async defer></script>
 	
 
 
