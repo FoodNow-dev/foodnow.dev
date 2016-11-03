@@ -36,7 +36,6 @@
 									 
 						{{-- dynamic buttons --}}
 						<div class="input_fields_wrap ">
-							{{-- <button class="btn btn-default add_field_button">Add other numbers</button> --}}
 
 							<div class="form-group">
 								<button class="btn btn-default add_field_button">Add other numbers</button>
@@ -76,95 +75,91 @@
 
 
 <!-- Top content -->
-	<div class="top-content">
-		<div class="inner-bg">
-				<div class="row">
-					<div class="fixed col-sm-7 col-sm-offset-1 text text-center show-box animated flipInX">
-					<div class="row">
-						<h1><strong>{{ $place['name'] }}</strong></h1>
-						<div class="description">
-							<ul>
-								
-								<li>
-									{{ $place['address_components'][0]['long_name'] }} {{ $place['address_components'][1]['long_name'] }}
-								</li>
-								<li>
-									{{ $place['address_components'][3]['long_name'] }}, {{  $place['address_components'][5]['long_name'] }}
-								</li>
-								<li>
-									{{ $place['formatted_phone_number'] }}
-								</li>
-							</ul>
-						</div>
-					</div>
-					<!-- Slider -->
-					<div class="row-fluid">
-						<div class="span9" id="slider">
-							<!-- Top part of the slider -->
-							<div class="row-fluid">
-								<div class="span2" id="carousel-bounding-box">
-									<div id="myCarousel" class="carousel slide">
-										<!-- Carousel items -->
-										<div class="carousel-inner">
-											@foreach($photos as $key => $photo)
+<div class="top-content">
+	<div class="inner-bg">
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-1">
+				<div class="fixed text text-center show-box">
+					<h1><strong>{{ $place['name'] }}</strong></h1>
+					<div class="description">
+						<ul>
+							<li>
+								{{ $place['address_components'][0]['long_name'] }} {{ $place['address_components'][1]['long_name'] }}
+							</li>
+							<li>
+								{{ $place['address_components'][3]['long_name'] }}, {{  $place['address_components'][5]['long_name'] }}
+							</li>
+							<li>
+								{{ $place['formatted_phone_number'] }}
+							</li>
+						</ul>
+					</div>{{-- /.description --}}
+				</div>{{-- /.fixed --}}
+				<!-- Slider -->
+				<div class="row-fluid">
+					<div class="span9" id="slider">
+						<!-- Top part of the slider -->
+						<div class="row-fluid">
+							<div class="span2" id="carousel-bounding-box">
+								<div id="myCarousel" class="carousel slide">
+									<!-- Carousel items -->
+									<div class="carousel-inner">
+										@foreach($photos as $key => $photo)
 
-												<div class="{{($key == 0)? "active item" : "item" }}"data-slide-number="{{($key + 1)}}">
-													<img class="rest-img" src="data:image/gif;base64,{{ $photo }}">
-												</div>
-											@endforeach
-										</div>
+											<div class="{{($key == 0)? "active item" : "item" }}"data-slide-number="{{($key + 1)}}">
+												<img class="rest-img" src="data:image/gif;base64,{{ $photo }}">
+											</div>
+										@endforeach
+									</div>
+								</div>{{-- /.carouselslide --}}
 							  
-									</div>
-								  
-									<!-- Carousel nav -->
-									<div class="carousel-controls-mini">
-										<a href="#myCarousel" class="direction" data-slide="prev">‹</a>
-										<a href="#myCarousel" class="direction" data-slide="next">›</a>
-									</div>
+								<!-- Carousel nav -->
+								<div class="carousel-controls-mini">
+									<a href="#myCarousel" class="direction" data-slide="prev">‹</a>
+									<a href="#myCarousel" class="direction" data-slide="next">›</a>
 								</div>
+							</div>{{-- /.span2 --}}
+						</div>{{-- /.row-fluid --}}
+					</div>{{-- ./span9 --}}
+				</div>{{-- /.row-fluid --}}
+			</div>{{-- /.col-sm-4 --}}
+			<br>
+			<br>
+			<!--/Slider-->
+		<div class="top-big-link">
+			<button type="button" class="btn" data-toggle="modal" data-target="#modal" href="#">Create Event</button>
+		</div>
+			
+		
+			
+			<div class="col-sm-4 col-sm-offset-7 form-box animated fadeInRight">
+				<div id="map"></div>
+				@foreach($place['reviews'] as $key => $review) 
+					<div class="col-sm-12 form-bottom show-box">
+						<div class="review-container">
+							<img class="google-profile" src="{{ (isset($review['profile_photo_url'])) ? $review['profile_photo_url'] : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png' }}" width="30%" height="150px">
+							<div class="review-info text-right">
+								<h3><b>{{$review['author_name']}}</b></h3>
+								<p>
+									<img class="stars" src="{{ $starRating[$key] }}">
+								</p>
+								<p>
+									{{ $time[$key] }}
+								</p>
+								<br>
+							</div>
+							<div class="review"> 
+								{{ $review['text']}}
+								<br>
+								<br>
 							</div>
 						</div>
 					</div>
-					<br>
-					<br>
-					<!--/Slider-->
-				<div class="top-big-link">
-					<button type="button" class="btn" data-toggle="modal" data-target="#modal" href="#">Create Event</button>
-				</div>
-					
-				</div>
-					
-					<div class="col-sm-4 col-sm-offset-7 form-box animated fadeInRight">
-						<div id="map"></div>
-						@foreach($place['reviews'] as $key => $review) 
-							<div class="col-sm-12 form-bottom show-box">
-								<div class="review-container">
-									<img class="google-profile" src="{{ (isset($review['profile_photo_url'])) ? $review['profile_photo_url'] : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png' }}" width="30%" height="150px">
-									<div class="review-info text-right">
-										<h3><b>{{$review['author_name']}}</b></h3>
-										<p>
-											<img class="stars" src="{{ $starRating[$key] }}">
-										</p>
-										<p>
-											{{ $time[$key] }}
-										</p>
-										<br>
-									</div>
-									<div class="review"> 
-										{{ $review['text']}}
-										<br>
-										<br>
-									</div>
-								</div>
-							</div>
-							
-						@endforeach
-
-					</div>
-				
+				@endforeach
 			</div>
 		</div>
 	</div>
+</div>
 				
 
 @stop
