@@ -16,15 +16,15 @@
 		<div class="inner-bg">
 			<div class="container">
 				<div class="row">
-					<div class="text animated zoomIn col-sm-6">
+					<div class="text col-xs-12 col-md-6">
 						<h1><strong>My Restaurant Preferences:</strong></h1>
 						
 						<form class="form-horizontal" method="GET" action="{{ action('RestaurantsController@index') }}">
 							{!! csrf_field() !!}
 							{{-- DISTANCE --}}
 							<div class="form-group">
-								<label for="distance" class="control-label col-xs-12 col-sm-6 text-left">Distance</label>
-								<div class="col-sm-6 col-xs-6 col-xs-offset-3 col-sm-offset-0">
+								<label for="distance" class="col-xs-2 col-md-4">Distance</label>
+								<div class="col-xs-8">
 	 								<select name="radius" class="form-control">
 										<option value="5">5 miles</option>
 										<option value="10">10 miles</option>
@@ -35,8 +35,8 @@
     						</div>
  							{{-- TYPE --}}
  							<div class="form-group">
- 								<label for="cuisine" class="control-label col-xs-12 col-sm-6 text-left">Type Of Food</label>
- 								<div class="col-sm-6 col-xs-6 col-xs-offset-3 col-sm-offset-0">
+ 								<label for="cuisine" class="col-xs-2 col-md-4">Cuisine</label>
+ 								<div class="col-xs-8">
  									<select name="food" class="form-control">
 	 									<option value="american restaurant">American</option>
 	    								<option value="breakfast restaurant">Breakfast Food</option>
@@ -57,8 +57,8 @@
  							</div>
     						{{-- LOW PRICE --}}
     						<div class="form-group">
-    							<label for="price" class="control-label col-xs-12 col-sm-6  text-left">Min Price Level</label>
-    							<div class="col-sm-6 col-xs-6 col-xs-offset-3 col-sm-offset-0">
+    							<label for="price" class="col-xs-2 col-md-4">Min Price</label>
+    							<div class="col-xs-8">
     								<select name="minprice" class="form-control">
     									<option value="1">$</option>
     									<option value="2">$$</option>
@@ -69,8 +69,8 @@
     						</div>
     						{{-- HIGH PRICE --}}
     						<div class="form-group">
-    							<label for="price" class="control-label col-xs-12 col-sm-6 text-left">Max Price Level</label>
-    							<div class="col-sm-6 col-xs-6 col-xs-offset-3 col-sm-offset-0">
+    							<label for="price" class="col-xs-2 col-md-4">Max Price</label>
+    							<div class="col-xs-8">
     								<select name="maxprice" class="form-control">
     									<option value="1">$</option>
     									<option value="2">$$</option>
@@ -80,21 +80,23 @@
     							</div>
  							</div>
  							{{-- SUBMIT BUTTON --}}
- 							<div class="col-xs-offset-3"><button type="submit" class="btn"><b>Submit</b></button></div>
+ 							<div class="col-xs-8 col-md-6 col-xs-offset-2"><button type="submit" class="btn"><b>Submit</b></button></div>
 						</form> {{-- CLOSES THE FORM --}}
 
 					</div> {{-- CLOSES THE text col-sm-6 --}}
 					<div class="or">
 						OR
 					</div>
-					<div class="animated zoomIn text col-xs-6 col-lg-6">
-						<h1><strong>Let Us Choose For You:</strong></h1>
+
+					<div class="text col-xs-12 col-lg-6">
+						<h1> <strong>Let Us Choose For You:</strong></h1>
+
 						<br>
 						<div>
-						    <a class="btn" href="{{ action('RestaurantsController@showData') }}?random=true">Pick at Random</a>
+						    <a class="random-btn btn" href="{{ action('RestaurantsController@showData') }}?random=true">Random</a>
 						</div>
-						<div class="top-line animated fadeInDown"></div>
-						<div class="bottom-line animated fadeInUp"></div>
+						<div class="top-line"></div>
+						<div class="bottom-line"></div>
 					</div>
 				</div>{{-- /.row --}}
 			</div>{{-- /.container --}}

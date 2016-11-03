@@ -34,7 +34,7 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $data['users'] = ($request->has('search')) ? User::search($request->search)->paginate(6) :  User::paginate(20);
+        $data['users'] = ($request->has('search')) ? User::search($request->search)->paginate(12) :  User::paginate(12);
         return view('users.index')->with($data);
     }
 

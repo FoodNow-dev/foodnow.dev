@@ -77,10 +77,10 @@ class RestaurantsController extends Controller
        
         // Google Maps API
         // MAIN API
-        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
+        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
 
         // JESSICA API
-        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
+        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
         
         // BENS API
         // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
@@ -95,6 +95,7 @@ class RestaurantsController extends Controller
 
         $placedata = json_decode($json, TRUE);
 
+
         if($placedata['status']=="OK"){
            $data['place'] = $placedata['result'];
 
@@ -104,10 +105,10 @@ class RestaurantsController extends Controller
 
                 // Google Maps API
                 // MAIN API
-                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
+                // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
 
                 // JESSICA API
-                // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
+                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
                 
                 // BENS API
                 // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
@@ -118,12 +119,12 @@ class RestaurantsController extends Controller
 
 
 
-                $photodata = file_get_contents($photoUrl);
+                $photodata = file_get_contents($photoUrl);            
                 
                 $photoBase64 = chunk_split(base64_encode($photodata));
               
                 $data['photos'][] = $photoBase64;
-
+                sleep(0.1);
             }
         }
         foreach($data['place']['reviews'] as $key => $review) {

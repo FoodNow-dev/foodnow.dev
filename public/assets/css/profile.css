@@ -15,7 +15,7 @@ footer {
 	z-index: 1000;
 }
 
-.img-circle {
+#profile {
 	margin-top: 8vh;
 	max-height: 50vh;
 	background-color: rgba(255, 255, 255, .5);
