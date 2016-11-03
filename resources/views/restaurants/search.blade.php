@@ -55,7 +55,6 @@
  									</select>
  								</div>
  							</div>
-
     						{{-- LOW PRICE --}}
     						<div class="form-group">
     							<label for="price" class="col-xs-2 col-md-4">Min Price</label>
@@ -81,15 +80,17 @@
     							</div>
  							</div>
  							{{-- SUBMIT BUTTON --}}
- 							<div class="col-md-8 col-md-offset-4"><button type="submit" class="btn"><b>Submit</b></button></div>
+ 							<div class="col-xs-8 col-md-6 col-xs-offset-2"><button type="submit" class="btn"><b>Submit</b></button></div>
 						</form> {{-- CLOSES THE FORM --}}
 
 					</div> {{-- CLOSES THE text col-sm-6 --}}
 					<div class="or">
 						OR
 					</div>
+
 					<div class="text col-xs-12 col-lg-6">
 						<h1> <strong>Let Us Choose For You:</strong></h1>
+
 						<br>
 						<div>
 						    <a class="random-btn btn" href="{{ action('RestaurantsController@showData') }}?random=true">Random</a>

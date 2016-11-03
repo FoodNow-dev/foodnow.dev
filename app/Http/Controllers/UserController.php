@@ -150,10 +150,6 @@ class UserController extends Controller
 //         // Step 4: make an array of people we know, to send them a message. 
 //     // Feel free to change/add your own phone number and name here.
 
-
-
-    
-
         $people = array(
     
         );

@@ -37,7 +37,8 @@
 
 	{{-- Google Maps API --}}
 	{{-- MAIN API --}}
-	// <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=getLocation" async defer></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=getLocation" async defer></script>
 
 	{{-- JESSICA API --}}
 	{{-- // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4&libraries=places&callback=getLocation" async defer></script> --}}
@@ -45,8 +46,9 @@
 	
 	{{-- BENS API --}}
 	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA49FZPs3ZmqNEQXUfNrgKKoXWihUwnEWQ&libraries=places&callback=getLocation" async defer></script> --}}
+
 	
 	{{-- WHITNEY API --}}
-	{{-- // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI&libraries=places&callback=getLocation" async defer></script> --}}
+	// <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI&libraries=places&callback=getLocation" async defer></script>
 @stop
 

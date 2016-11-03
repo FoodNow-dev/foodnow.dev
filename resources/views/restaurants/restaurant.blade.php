@@ -57,7 +57,7 @@
 		   								 <button class="btn btn-default add_field_button">Invite More Friends 
 		   								</button>
 			    						<div>
-			    							<input type="text" name="mytext[]" id = "mytext[]" class="phone col-xs-12 space" placeholder="Friend's Phone #">
+			    							{{-- <input type="text" name="mytext[]" id = "mytext[]" class="phone col-xs-12 space" placeholder="Friend's Phone #"> --}}
 			    						</div>
 			    					</div>
 
