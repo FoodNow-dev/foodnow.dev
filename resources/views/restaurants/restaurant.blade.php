@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/elements2.css') }}" />
 
     <link rel="stylesheet" href="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.min.css') }}"/>
+    <link rel="stylesheet" href="{{ URL::asset('assets/sweetalert-master/dist/sweetalert.css') }}" />
 
 	 <script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
@@ -17,6 +18,7 @@
       <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.jquery.min.js') }}"></script>
+     <script type="text/javascript" src="{{ URL::asset('assets/sweetalert-master/dist/sweetalert.min.js') }}"></script>
 
 @stop
 
@@ -67,13 +69,9 @@
 									</div>
 									</div>
 									<div class="col-xs-6">
-									{{-- 	<button type="submit" class="btn btn-primary">Send Message
+										<button type="submit" class="btn btn-primary send">Send Message
 											<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-										</button> --}}
-										<button type="submit" class="btn btn-primary">Send Message
-											<span class="glyphicon glyphicon-send" aria-hidden="true" swal("Good job!", "You clicked the button!", "success")></span>
 										</button>
-
 									</div>
 									<div class="col-xs-7">
 										@if(session()->has('SUCCESS_MESSAGE'))
@@ -94,6 +92,7 @@
 								   </div>
 							</form>
 							    <script>
+								// validation
 							    	$.validator.addMethod("cRequired", $.validator.methods.required, "Please provide a phone number");
 							    	$.validator.addMethod("cPhone", $.validator.methods.phoneUS, "Please provide a valid U.S. phone number");
 							    	$.validator.addClassRules("phone", {cRequired:true, cPhone:true});
@@ -108,6 +107,7 @@
 
   								</script>
   								<script>
+  								// dropdown
   								 $(".my_select_box").chosen({
 								    disable_search_threshold: 1,
 								    no_results_text: "Oops, nothing found!",
@@ -115,6 +115,14 @@
 								    display_selected_options:false
 								  });
 								</script>
+								<div>
+								<script>
+								   $(".send").click(function() { 
+										swal("Good job!", "You clicked the button!", "success");
+									});
+									
+								</script>
+								</div>
 						</div>
 					
 					<div class="col-xs-12 col-xs-offset-1 col-sm-5 col-sm-offset-1 text">
