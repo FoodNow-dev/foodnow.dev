@@ -212,22 +212,43 @@ body > div > div > div > div > div.text.col-xs-6 > div {
 @media(max-width: 1200px) {
 	.or {
 		position: static;
-		margin-left: 40%;
+		margin-top:20px;
+		margin-left: 37%;
 		font-size: 6em;
 		color: #d5b33b;
 	}
 	body > div > div > div > div > div.text.col-xs-12.col-lg-6 {
-		margin-top: 0px;
-		padding-top: 100px;
+		margin-top: -15.35%;
+		padding-top: 150px;
 		position: relative;
+		z-index: -1000;
 		bottom: 10%;
 	}
 	.text {
 		margin: 0px;
 	    width: 100%;
+	    min-height: 90vh;
 	}
 	.container {
 		padding: 0px;
+	}
+	.left-line {
+		border: 6px solid #d5b33b;
+		width: 32vw;
+		position: absolute;
+		top:10%;
+		left: 0%;
+		border-top-right-radius: 15px;
+		border-bottom-right-radius: 15px;
+	}
+	.right-line {
+		border: 6px solid #d5b33b;
+		width: 32vw;
+		position: absolute;
+		top:10%;
+		right: 0%;
+		border-top-left-radius: 15px;
+		border-bottom-left-radius: 15px;
 	}
 }
 
