@@ -17,8 +17,7 @@
 					<p class="animated zoomIn"><img src="/assets/img/foodnow.png"></p>
 					<div class="description">
 						<p>
-							<h1>Welcome to FoodNow!</h1> 
-							<p>Can't decide where to eat? No worries, FoodNow can help you by answering 4 simple questions or letting us choose at random for you. Once you have decided, we will send a text to your friends with the restaurant and a link for directions.</p>
+							<h1>Let us choose your dinner tonight!</h1>
 						</p>
 					</div>
 					<hr><br>
