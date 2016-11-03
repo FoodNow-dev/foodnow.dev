@@ -15,6 +15,11 @@ use App\Models\Restaurant;
 */
 use SKAgarwal\GoogleApi\PlacesApi;
 
+Route::get('restaurants/random' , function()
+{
+	return view('restaurants/randomShow');
+});
+
 Route::get('restaurants/restaurant', 'UserController@selectFriends');
 
 Route::post('restaurants/restaurant', 'UserController@sendText');
