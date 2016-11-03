@@ -37,6 +37,7 @@
 
 	{{-- Google Maps API --}}
 	{{-- MAIN API --}}
+
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=getLocation" async defer></script>
 
 	{{-- JESSICA API --}}
@@ -44,10 +45,7 @@
 	
 	
 	{{-- BENS API --}}
-
 	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA49FZPs3ZmqNEQXUfNrgKKoXWihUwnEWQ&libraries=places&callback=getLocation" async defer></script> --}}
-
-	{{-- // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA49FZPs3ZmqNEQXUfNrgKKoXWihUwnEWQ&libraries=places&callback=getLocation" async defer></script> --}}
 
 	
 	{{-- WHITNEY API --}}

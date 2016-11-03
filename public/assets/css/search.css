@@ -25,6 +25,20 @@
 	border: 5px solid rgba(195, 191, 61, .5);
 	box-shadow: 0px 0px 100px #ced9e2;
 }
+<<<<<<< HEAD
+
+@media(max-width: 760px) {
+	.top-content .text {
+		width: 100%;
+		clear: both;
+	}
+}
+	
+.top-content .text {
+	margin-top: 10%;
+	margin-right: 0px;	
+	padding-top: 3%;
+=======
 */
 /*.top-content .description {
 	font-size: 1.5em;
@@ -66,15 +80,19 @@
 	/*margin-right: 0px;*/
 	/*padding-top: 25px;*/
 	/*padding-bottom: 50px;*/
+
 	background-color: rgba(8, 59, 112, .85);
 	color: #d5b33b;
 	font-size: 1.4em;
-	height: 500px;
-	width: 50%;
+	height: 75vh;
 	border-radius: 10px;
+
+	text-align: center;
+
 
 	padding: 3%;
 	/*border: 1px solid red;*/
+
 }
 
 
@@ -117,35 +135,11 @@ body > div > div > div > div > div.text.col-xs-6 > div {
 	margin-top: 15%;
 }
 
-.top-line {
-	position: absolute;
-    border: 6px solid #d5b33b;
-    height: 175px;
-    top: -17.25%;
-    left: -1%;
-    z-index: 1000;
-    border-bottom-left-radius: 15px; 
-    border-bottom-right-radius: 15px; 
-    animation-delay: .6s;
-}
-
-.bottom-line {
-	position: absolute;
-    border: 6px solid #d5b33b;
-    height: 215px;
-    top: 39.75%;
-    left: -1%;
-    z-index: 1000;
-    border-top-left-radius: 15px; 
-    border-top-right-radius: 15px;
-    animation-delay: .6s;
-}
-
 .form-top {
 	overflow: hidden;
 	color: #d5b33b;
 	padding: 0 25px 0px 25px;
-	background: rgba(8, 59, 112, .65);
+	background: rgba(8, 59, 112, .85);
 	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
 	text-align: left;
 }
@@ -176,41 +170,90 @@ body > div > div > div > div > div.text.col-xs-6 > div {
 	text-align: left;
 }
 
+
 .or {
 	position: absolute;
-	/*top: 300px;*/
-	/*left: 866px;*/
 	z-index: 1000;
 	font-size: 6em;
 	color: #d5b33b;
 	font-family: 'Bevan', cursive;
-	/*width: 205px;*/
+	width: 205px;
+	top: 43%;
+	left: 43%;
+}
 
-	top: 40%;
-	left: 46.5%;
+@media(min-width: 1200px) {
+	.top-line {
+		position: absolute;
+	    border: 6px solid #d5b33b;
+	    height: 26vh;
+	    top: 0;
+	    left: -.5vw;
+	    z-index: 1000;
+	    border-bottom-left-radius: 15px; 
+	    border-bottom-right-radius: 15px; 
+	    animation-delay: .6s;
+
+	}
+
+	.bottom-line {
+		position: absolute;
+	    border: 6px solid #d5b33b;
+	    height: 30vh;
+	    top: 45vh;
+	    left: -.5vw;
+	    z-index: 1000;
+	    border-top-left-radius: 15px; 
+	    border-top-right-radius: 15px;
+	    animation-delay: .6s;
+	}
+}
+
+@media(max-width: 1200px) {
+	.or {
+		position: static;
+		margin-left: 40%;
+		font-size: 6em;
+		color: #d5b33b;
+	}
+	body > div > div > div > div > div.text.col-xs-12.col-lg-6 {
+		margin-top: 0px;
+		padding-top: 100px;
+		position: relative;
+		bottom: 10%;
+	}
+	.text {
+		margin: 0px;
+	    width: 100%;
+	}
+	.container {
+		padding: 0px;
+	}
+}
+
+@media(max-width: 770px) {
+	select.form-control {
+		position: relative;
+		left: 15vw;
+		width: 50%;
+	}
 }
 
 
 /*----------------------- RIGHT DIV -----------------------*/
 /* RANDOM BUTTON */
-body > div > div > div > div > div.text.col-xs-6 > div > a {
-	width: 50%;
-	font-size: 1.5em;
-	font-weight: bolder;
-	line-height: 100px;
-	height: 100px !important;
-	/*margin-bottom: 33.5%;*/
-}
+
 
 .btn{
-	height: 50px;
+	height: 10vh;
+	width: 100%;
     margin: 10px;
-    padding: 0 20px;
+    padding: 10px;
     vertical-align: middle;
     background: #d5b33b;
     border: 0;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 100%;
     line-height: 50px;
     color: rgba(8, 59, 112, 1) !important;
     -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
@@ -219,3 +262,41 @@ body > div > div > div > div > div.text.col-xs-6 > div > a {
     -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
 
+
+
+select.form-control {
+	width: 100% !important;
+}
+
+.form-horizontal {
+	margin-left: 15%;
+}
+
+.random-btn {
+	word-wrap: normal;
+	height: 12vh;
+	width: 25vw;
+    margin: 10px;
+    margin-top: 100px;
+    padding: 5px;
+    vertical-align: middle;
+    background: #d5b33b;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.75em;
+    font-weight: bold;
+    line-height: 225%;
+    color: rgba(8, 59, 112, 1);
+    -moz-border-radius: 4px; 
+    -webkit-border-radius: 4px; 
+    border-radius: 4px;
+    text-shadow: none;
+    -moz-box-shadow: none; 
+    -webkit-box-shadow: none; 
+    box-shadow: none;
+    -o-transition: all .3s; 
+    -moz-transition: all .3s; 
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s; 
+    transition: all .3s;
+}
