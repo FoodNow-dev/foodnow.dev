@@ -118,7 +118,7 @@
 								<div>
 								<script>
 								   $(".send").click(function() { 
-										swal("Good job!", "You clicked the button!", "success");
+										swal("Message sent!", "Time to enjoy yourself!", "success");
 									});
 									
 								</script>
