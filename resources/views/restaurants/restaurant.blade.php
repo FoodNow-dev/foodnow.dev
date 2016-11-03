@@ -67,9 +67,13 @@
 									</div>
 									</div>
 									<div class="col-xs-6">
-										<button type="submit" class="btn btn-primary">Send Message
+									{{-- 	<button type="submit" class="btn btn-primary">Send Message
 											<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+										</button> --}}
+										<button type="submit" class="btn btn-primary">Send Message
+											<span class="glyphicon glyphicon-send" aria-hidden="true" swal("Good job!", "You clicked the button!", "success")></span>
 										</button>
+
 									</div>
 									<div class="col-xs-7">
 										@if(session()->has('SUCCESS_MESSAGE'))
