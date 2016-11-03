@@ -11,8 +11,6 @@ nav {
 	z-index: 1000;
 }
 
-
-
 .fixed {
 	position: fixed !important;
 
@@ -40,9 +38,11 @@ nav {
 	padding-bottom: 50px;
 	background-color: rgba(8, 59, 112, .85)!important;
 	color: #d5b33b;
-	max-width: 750px;
+	width: 50%;
 	border-radius: 5px;
 }
+
+
 
 .top-content .text h1 { color: #d5b33b; }
 
@@ -174,7 +174,7 @@ nav {
 
 #myCarousel {
 	border-radius: 50%;
-	clear: both;
+	
 }
 
 .carousel-controls-mini > a {
@@ -186,15 +186,16 @@ nav {
     float:left;
     text-align:center;
 }
+
 .carousel-controls-mini {
 	margin-left: 40.75%;
 	clear: both;
 }
+
 #carousel-bounding-box,
 #myCarousel,
 .active {
 	text-align: center;
-	
 	height: 200px;
 	width: 100%;
 }
