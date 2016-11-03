@@ -43,16 +43,16 @@ function rating(level) {
 }
 
 function item_tmpl(data){
-    
-    var formattedAddress = data.formatted_address.split(",").join("<br>");
+    console.log(data);
+    var formattedAddress = data.formatted_address.substring(data.formatted_address.indexOf(","), 1);
     
     var content = '<a href="/restaurants/show?place_id=' + data.place_id + '"><div class="list text-right"><p>';
         if (data.photos){
-            content += '<img class="left" src="' + data.photos[0].getUrl({'maxWidth': 300, 'maxHeight': 250}) + '">';
+            content += '<img class="left" src="' + data.photos[0].getUrl({'maxWidth': 400, 'maxHeight': 250}) + '">';
         } else {
             content += '<img class="left" src"http://www.gemologyproject.com/wiki/images/5/5f/Placeholder.jpg">';
         }          
-        content += '<div class="info"></p><h3>' + data.name + '</h3><p>';
+        content += '<div class="info"></p><h4>' + data.name + '</h4><p>';
         content += (data.rating) ? '<img src="' + rating(data.rating) + '"><br>': 'No Rating Available<br>';
         content += (data.price_level) ? priceFormat(data.price_level) : 'No Price Info Available' ;
         content += '</p><p>' + formattedAddress + '<br></p>';
