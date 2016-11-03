@@ -26,11 +26,11 @@
 					<div class="form-group">
 						<div class="col-xs-7 ">
 						 	<select class="my_select_box" data-placeholder="Select Your Friends" name="mytext[]" multiple>
-						 	  	@foreach($friends as $friend)
-						 	  		@if($user->id != $friend->id)
-						 	  			<option value= {{$friend->phone}}>{{"$friend->first_name $friend->last_name"}}</option>
-						 	  		@endif
-						 	  	@endforeach 
+						 	  	{{-- @foreach($friends as $friend) --}}
+						 	  		{{-- @if($user->id != $friend->id) --}}
+						 	  			{{-- <option value= {{$friend->phone}}>{{"$friend->first_name $friend->last_name"}}</option> --}}
+						 	  		{{-- @endif --}}
+						 	  	{{-- @endforeach  --}}
 							</select>
 						</div>
 									 
@@ -47,7 +47,7 @@
 							</div>
     					</div>
 						<div class="form-group col-xs-8 col-xs-offset-7">
-							<textarea id="email_body" name="email_body" rows="4" cols="50" placeholder="">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }} is inviting you to dinner at {{ $place['name']}}!</textarea>
+							{{-- <textarea id="email_body" name="email_body" rows="4" cols="50" placeholder="">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }} is inviting you to dinner at {{ $place['name']}}!</textarea> --}}
 						</div>
 					</div>{{-- /.form-group --}}
 			  	</div>{{-- /.modal-body --}}
@@ -80,18 +80,18 @@
 				<div class="row">
 					<div class="fixed col-sm-7 col-sm-offset-1 text text-center show-box animated flipInX">
 					<div class="row">
-						<h1><strong>{{ $place['name'] }}</strong></h1>
+						{{-- <h1><strong>{{ $place['name'] }}</strong></h1> --}}
 						<div class="description">
 							<ul>
 								
 								<li>
-									{{ $place['address_components'][0]['long_name'] }} {{ $place['address_components'][1]['long_name'] }}
+									{{-- {{ $place['address_components'][0]['long_name'] }} {{ $place['address_components'][1]['long_name'] }} --}}
 								</li>
 								<li>
-									{{ $place['address_components'][3]['long_name'] }}, {{  $place['address_components'][5]['long_name'] }}
+									{{-- {{ $place['address_components'][3]['long_name'] }}, {{  $place['address_components'][5]['long_name'] }} --}}
 								</li>
 								<li>
-									{{ $place['formatted_phone_number'] }}
+									{{-- {{ $place['formatted_phone_number'] }} --}}
 								</li>
 							</ul>
 						</div>
@@ -105,12 +105,12 @@
 									<div id="myCarousel" class="carousel slide">
 										<!-- Carousel items -->
 										<div class="carousel-inner">
-											@foreach($photos as $key => $photo)
+											{{-- @foreach($photos as $key => $photo) --}}
 
-												<div class="{{($key == 0)? "active item" : "item" }}"data-slide-number="{{($key + 1)}}">
-													<img class="rest-img" src="data:image/gif;base64,{{ $photo }}">
+												{{-- <div class="{{($key == 0)? "active item" : "item" }}"data-slide-number="{{($key + 1)}}"> --}}
+													{{-- <img class="rest-img" src="data:image/gif;base64,{{ $photo }}"> --}}
 												</div>
-											@endforeach
+											{{-- @endforeach --}}
 										</div>
 							  
 									</div>
@@ -135,29 +135,29 @@
 					
 					<div class="col-sm-4 col-sm-offset-7 form-box animated fadeInRight">
 						<div id="map"></div>
-						@foreach($place['reviews'] as $key => $review) 
+						{{-- @foreach($place['reviews'] as $key => $review)  --}}
 							<div class="col-sm-12 form-bottom show-box">
 								<div class="review-container">
 									<img class="google-profile" src="{{ (isset($review['profile_photo_url'])) ? $review['profile_photo_url'] : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png' }}" width="30%" height="150px">
 									<div class="review-info text-right">
-										<h3><b>{{$review['author_name']}}</b></h3>
+										{{-- <h3><b>{{$review['author_name']}}</b></h3> --}}
 										<p>
-											<img class="stars" src="{{ $starRating[$key] }}">
+											{{-- <img class="stars" src="{{ $starRating[$key] }}"> --}}
 										</p>
 										<p>
-											{{ $time[$key] }}
+											{{-- {{ $time[$key] }} --}}
 										</p>
 										<br>
 									</div>
 									<div class="review"> 
-										{{ $review['text']}}
+										{{-- {{ $review['text']}} --}}
 										<br>
 										<br>
 									</div>
 								</div>
 							</div>
 							
-						@endforeach
+						{{-- @endforeach --}}
 
 					</div>
 				
@@ -172,12 +172,12 @@
 @section('js-script')
 
 	{{-- Passes Scalar data held in PHP to JS --}}
-	<script type="text/javascript">
-		var lat = {{ $place['geometry']['location']['lat'] }};
-		var lng = {{ $place['geometry']['location']['lng'] }};
-		var starrating = {{ $place['rating'] }};
-		var price = {{ $place['price_level'] }};
-	</script>
+	{{-- // <script type="text/javascript"> --}}
+		{{-- // var lat = {{ $place['geometry']['location']['lat'] }}; --}}
+		{{-- // var lng = {{ $place['geometry']['location']['lng'] }}; --}}
+		{{-- // var starrating = {{ $place['rating'] }}; --}}
+		{{-- // var price = {{ $place['price_level'] }}; --}}
+	{{--</script> --}}
 
 	{{-- jQuery Validate --}}
 	<script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
@@ -190,8 +190,9 @@
 	{{-- Form Validation Methods --}}
 	<script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
 
-	{{-- Google Maps API --}}
 
+
+	{{-- Google Maps API --}}
 	{{-- MAIN API --}}
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=initMap" async defer></script>
 

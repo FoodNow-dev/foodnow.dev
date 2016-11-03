@@ -40,6 +40,7 @@ class RestaurantsController extends Controller
     {
         return view('restaurants.search');
     }
+
     /**
      * Display the specified resource.
      *
@@ -48,10 +49,8 @@ class RestaurantsController extends Controller
      */
     public function show(Request $request)
     {
-        
         return view('restaurants.randomShow');
     }
-
 
 
     /**
@@ -166,11 +165,9 @@ class RestaurantsController extends Controller
                     $data['starRating'][] = '/assets/img/star-rating5.png';
                     break;
             }
-            
             $data['time'][$key] = Carbon::createFromTimestamp($review['time'])->diffForHumans();
 
             $data['user'] = Auth::user();
-
         }
             $data['friends'] = $data['user']->friends()
                 ->where("user_id", '=', $data['user']->id)
@@ -180,9 +177,4 @@ class RestaurantsController extends Controller
         
         return view('restaurants.show')->with($data);
     }
-
-
-
-
-
 }
