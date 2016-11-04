@@ -141,7 +141,7 @@
 					<br>
 					<br>
 					<!--/Slider-->
-				<div class="col-sm-12">
+				<div class="col-sm-6 col-sm-offset-3">
 					<button type="button" class="btn-create" data-toggle="modal" data-target="#modal" href="#">Create Event</button>
 				</div>
 					
@@ -164,7 +164,7 @@
 	{{-- jQuery Validate --}}
 	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script> --}}
 
-	<script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
+	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script> --}}
 	
 	{{-- Form Validation Methods --}}
 	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script> --}}
