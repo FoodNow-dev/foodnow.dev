@@ -131,8 +131,8 @@
 								  
 									<!-- Carousel nav -->
 									<div class="carousel-controls-mini">
-										<a href="#myCarousel" class="direction btn" data-slide="prev">‹</a>
-										<a href="#myCarousel" class="direction btn" data-slide="next">›</a>
+										<a href="#myCarousel" class="direction btn-link-1" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+										<a href="#myCarousel" class="direction btn-link-1" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 									</div>
 								</div>
 							</div>
@@ -141,18 +141,16 @@
 					<br>
 					<br>
 					<!--/Slider-->
-				<div class="top-big-link">
-					<button type="button" class="btn" data-toggle="modal" data-target="#modal" href="#">Create Event</button>
+				<div class="col-sm-12">
+					<button type="button" class="btn-create" data-toggle="modal" data-target="#modal" href="#">Create Event</button>
 				</div>
 					
 				</div>
-					
-					<div class="col-sm-4 col-sm-offset-7 form-box">
-						<div id="map"></div>
-						
-
+				<div class="col-sm-5 col-sm-offset-6 form-box">
+					<div id="map">
+						{{-- Map Renders Here --}}
 					</div>
-				
+				</div>
 			</div>
 		</div>
 	</div>
@@ -162,14 +160,6 @@
 
 
 @section('js-script')
-
-	{{-- Passes Scalar data held in PHP to JS --}}
-	{{-- // <script type="text/javascript"> --}}
-		{{-- // var lat = {{ $place['geometry']['location']['lat'] }}; --}}
-		{{-- // var lng = {{ $place['geometry']['location']['lng'] }}; --}}
-		{{-- // var starrating = {{ $place['rating'] }}; --}}
-		{{-- // var price = {{ $place['price_level'] }}; --}}
-	{{--</script> --}}
 
 	{{-- jQuery Validate --}}
 	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script> --}}
