@@ -83,6 +83,7 @@
 
 		</script>
 		<script>
+		//dropdown
 			$(".my_select_box").chosen({
 				disable_search_threshold: 1,
 				no_results_text: "Oops, nothing found!",
@@ -90,6 +91,12 @@
 				display_selected_options:false
 			});
 		</script>
+			<script>
+			   $(".send").click(function() { 
+					swal("Message sent!", "Time to enjoy yourself!", "success");
+				});
+				
+			</script>
  	</div>
 </div> {{-- end of Modal --}}
 
