@@ -30,7 +30,8 @@
 				<div class="modal-body">
 					{!! csrf_field() !!}
 					<div class="form-group">
-						<div class="col-xs-7 ">
+					{{-- dropdown --}}
+						<div class="col-xs-12 ">
 						 	<select class="my_select_box" data-placeholder="Select Friends" name="mytext[]" multiple>
 						 	  	@foreach($friends as $friend)
 						 	  		@if($user->id != $friend->id)
@@ -44,7 +45,7 @@
 						<div class="input_fields_wrap ">
 
 							<div class="form-group">
-								<button class="btn btn-default add_field_button">Add other numbers</button>
+								<button class="btn btn-primary add_field_button">Add other numbers</button>
 								<label class="sr-only" for="mytext[]"></label>
 								<div class="input-group">
 									{{-- fields to type phone numbers appears here --}}
