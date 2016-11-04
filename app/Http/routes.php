@@ -16,10 +16,7 @@ use App\Models\Restaurant;
 use SKAgarwal\GoogleApi\PlacesApi;
 
 // Random page button
-Route::get('restaurants/random' , function()
-{
-	return view('restaurants/randomShow');
-});
+Route::get('restaurants/random', 'RestaurantsController@random');
 
 Route::get('restaurants/restaurant', 'UserController@selectFriends');
 

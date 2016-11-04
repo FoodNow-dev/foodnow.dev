@@ -1,7 +1,67 @@
+$('#myCarousel').carousel({
+    interval: 5000
+});
+
+$('#carousel-text').html($('#slide-content-0').html());
+
+//Handles the carousel thumbnails
+$('[id^=carousel-selector-]').click( function(){
+    var id_selector = $(this).attr("id");
+    var id = id_selector.substr(id_selector.length-1);
+    var id = parseInt(id);
+    $('#myCarousel').carousel(id);
+});
+
+// When the carousel slides, auto update the text
+$('#myCarousel').on('slid', function (e) {
+    var id = $('.item.active').data('slide-number');
+    $('#carousel-text').html($('#slide-content-'+id).html());
+});
+
 var map;
 var infowindow;
 var service;
 var foodType = ["breakfast restaurant", "american restaurant", "cajun restaurant", "chinese restaurant", "german restaurant", "indean restaurant", "italian restaurant", "japanese restaurant", "mediterranean restaurant", "mexican restaurant", "soul restaurant", "thai restaurant", "vietnamese restaurant"]
+
+function priceFormat(level) {
+    switch (level) {
+        case 1 :
+            return '$';
+        case 2 :
+            return '$ $';
+        case 3 :
+            return '$ $ $';
+        case 4 :
+            return '$ $ $ $';
+    }
+}
+
+function rating(level) {
+    switch (true) {
+        case (level < .25) :
+            return '/assets/img/star-rating0.png';
+        case (level >= .25 && level < .75) :
+            return '/assets/img/star-rating-half.png';
+        case (level >= .75 && level < 1.25) :
+            return '/assets/img/star-rating1.png';
+        case (level >= 1.25 && level < 1.75) :
+            return '/assets/img/star-rating1half.png';
+        case (level >= 1.75 && level < 2.25) :
+            return '/assets/img/star-rating2.png';
+        case (level >= 2.25 && level < 2.75) :
+            return '/assets/img/star-rating2half.png';
+        case (level >= 2.75 && level < 3.25) :
+            return '/assets/img/star-rating3.png';
+        case (level >= 3.25 && level < 3.75) :
+            return '/assets/img/star-rating3half.png';
+        case (level >= 3.75 && level < 4.25) :
+            return '/assets/img/star-rating4.png';
+        case (level >= 4.25 && level < 4.75) :
+            return '/assets/img/star-rating4half.png';
+        case (level >= 4.75) :
+            return '/assets/img/star-rating5.png';
+    }
+}
 
 // --------------------------- GEOLOCATION ---------------------------
 function getLocation() {
@@ -61,18 +121,18 @@ function initMap(lat, lon) {
         location: userLoc,
         query: foodType[Math.floor(Math.random() * foodType.length)],
         type: 'restaurant',
-        radius: 30000,
+        radius: 7000,
     }, callback);
 }
 
-// --------------------------- AFTER MAP IS MADE ---------------------------
-// --------------------------- MARKERS WILL BE PLACED ---------------------------
 function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
         createMarker(results[Math.floor(Math.random() * results.length)]);
-        console.log(results);
+        
     }
 }
+// --------------------------- AFTER MAP IS MADE ---------------------------
+// --------------------------- MARKERS WILL BE PLACED ---------------------------
 
 function createMarker(place) {
     var placeLoc = place.geometry.location;
@@ -85,6 +145,46 @@ function createMarker(place) {
     var request = {
         reference: place.reference
     };
+
+    service.getDetails(request, function(details, status) {
+        var content;
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            content = '<h1>' + details.name + '</h1>';
+            content += '<img src="' + rating(details.rating) + '">';
+            content += '<h4>' + priceFormat(details.price_level) + '</h4>';
+            content += '<h4>' + details.formatted_phone_number + '</h4>';
+            content += '<h4>' + details.address_components[0].long_name + " ";
+            content += details.address_components[1].long_name + '</h4>';
+            content += '<h4>' + details.address_components[2].long_name + ', ';
+            content += details.address_components[3].long_name + '</h4>';
+            $('.description').append(content);
+            console.log(details);
+
+            if(details.photos) {
+                details.photos.forEach(function(photo, i) {
+                    var carouselPics = '<div class="' + ((i == 0)? "active item" : "item");
+                    carouselPics += '" data-slide-number="' + (i + 1) + '">';
+                    carouselPics += '<img class="rest-img" src="' + photo.getUrl({'maxwidth': 200, 'maxHeight': 200}) + '"></div>';
+                    console.log(carouselPics);
+                    $('.carousel-inner').append(carouselPics);
+                });
+            } else {
+                $('.carousel-inner').append('<div class="active item" data-slide-number="1"> <img class="rest-img" src="https://ugotalksalot.files.wordpress.com/2016/06/no-thumb.jpg"></div>');
+            }
+
+            if(details.reviews){
+                details.reviews.forEach(function(review, i) {
+                    var reviewContent = '<div class="review-container"><div class="col-sm-12 form-bottom show-box"><img class="google-profile" src=' + ((review.profile_photo_url) ? review.profile_photo_url : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png');
+                    reviewContent += '"><div class="review-rest-info text-right"><h3><b>' + review.author_name;
+                    reviewContent += '</b></h3><p><img class="stars" src="' + rating(review.rating) + '"></p>';
+                    reviewContent += '<p></p><br></div><div class="review">' + review.text;
+                    reviewContent += '<br><br></div></div></div>';
+
+                    $('.form-box').append(reviews);
+                });
+            }
+        }
+    });
 
 // --------------------------- INFOWINDOWS ---------------------------
 

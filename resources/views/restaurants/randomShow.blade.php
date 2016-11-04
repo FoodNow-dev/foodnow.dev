@@ -15,7 +15,7 @@
 <!-- Modal -->
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
  	<div class="modal-dialog" role="document">
-		<form id="info" class="form-horizontal" method="POST" action="{{ action('UserController@sendText') }}">
+		<form id="rest-info" class="form-horizontal" method="POST" action="{{ action('UserController@sendText') }}">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -26,11 +26,11 @@
 					<div class="form-group">
 						<div class="col-xs-7 ">
 						 	<select class="my_select_box" data-placeholder="Select Your Friends" name="mytext[]" multiple>
-						 	  	{{-- @foreach($friends as $friend) --}}
-						 	  		{{-- @if($user->id != $friend->id) --}}
-						 	  			{{-- <option value= {{$friend->phone}}>{{"$friend->first_name $friend->last_name"}}</option> --}}
-						 	  		{{-- @endif --}}
-						 	  	{{-- @endforeach  --}}
+						 	  	@foreach($friends as $friend)
+						 	  		@if($user->id != $friend->id)
+						 	  			<option value= {{$friend->phone}}>{{"$friend->first_name $friend->last_name"}}</option>
+						 	  		@endif
+						 	  	@endforeach 
 							</select>
 						</div>
 									 
@@ -82,18 +82,7 @@
 					<div class="row">
 						{{-- <h1><strong>{{ $place['name'] }}</strong></h1> --}}
 						<div class="description">
-							<ul>
-								
-								<li>
-									{{-- {{ $place['address_components'][0]['long_name'] }} {{ $place['address_components'][1]['long_name'] }} --}}
-								</li>
-								<li>
-									{{-- {{ $place['address_components'][3]['long_name'] }}, {{  $place['address_components'][5]['long_name'] }} --}}
-								</li>
-								<li>
-									{{-- {{ $place['formatted_phone_number'] }} --}}
-								</li>
-							</ul>
+							{{-- Restaurant Info appends here --}}
 						</div>
 					</div>
 					<!-- Slider -->
@@ -105,20 +94,15 @@
 									<div id="myCarousel" class="carousel slide">
 										<!-- Carousel items -->
 										<div class="carousel-inner">
-											{{-- @foreach($photos as $key => $photo) --}}
-
-												{{-- <div class="{{($key == 0)? "active item" : "item" }}"data-slide-number="{{($key + 1)}}"> --}}
-													{{-- <img class="rest-img" src="data:image/gif;base64,{{ $photo }}"> --}}
-												</div>
-											{{-- @endforeach --}}
+											
 										</div>
 							  
 									</div>
 								  
 									<!-- Carousel nav -->
 									<div class="carousel-controls-mini">
-										<a href="#myCarousel" class="direction" data-slide="prev">‹</a>
-										<a href="#myCarousel" class="direction" data-slide="next">›</a>
+										<a href="#myCarousel" class="direction btn" data-slide="prev">‹</a>
+										<a href="#myCarousel" class="direction btn" data-slide="next">›</a>
 									</div>
 								</div>
 							</div>
@@ -133,31 +117,9 @@
 					
 				</div>
 					
-					<div class="col-sm-4 col-sm-offset-7 form-box animated fadeInRight">
+					<div class="col-sm-4 col-sm-offset-7 form-box">
 						<div id="map"></div>
-						{{-- @foreach($place['reviews'] as $key => $review)  --}}
-							<div class="col-sm-12 form-bottom show-box">
-								<div class="review-container">
-									<img class="google-profile" src="{{ (isset($review['profile_photo_url'])) ? $review['profile_photo_url'] : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png' }}" width="30%" height="150px">
-									<div class="review-info text-right">
-										{{-- <h3><b>{{$review['author_name']}}</b></h3> --}}
-										<p>
-											{{-- <img class="stars" src="{{ $starRating[$key] }}"> --}}
-										</p>
-										<p>
-											{{-- {{ $time[$key] }} --}}
-										</p>
-										<br>
-									</div>
-									<div class="review"> 
-										{{-- {{ $review['text']}} --}}
-										<br>
-										<br>
-									</div>
-								</div>
-							</div>
-							
-						{{-- @endforeach --}}
+						
 
 					</div>
 				
@@ -209,7 +171,7 @@
 
 	
 	{{-- Custom JS --}}
-	<script type="text/javascript" src="{{ URL::asset('assets/js/rest-show.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::asset('assets/js/random.js') }}"></script>
 @stop
 
 
