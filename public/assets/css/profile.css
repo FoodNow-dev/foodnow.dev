@@ -27,7 +27,7 @@ footer {
 }
 
 #userImg {
-	width: 50%;
+	width: 75%;
 	height: 50%;
 	max-height: 228.75px;
 }
@@ -61,6 +61,11 @@ footer {
 .btn-link-2:hover, .btn-link-2:focus, 
 .btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
 
+#topBox {
+	margin-left: 4%;
+	position: fixed !important;
+}
+
 /* ------------- BOTH SIDES ---------------- */
 .top-content .text {
 	margin-top: 100px;
@@ -75,14 +80,20 @@ footer {
 .text {
 	min-height: 70%;
 	margin-top: 50px !important;
-	margin-bottom: 50px;
-}
-
-
-a {
-	color: #d5b33b;
+	margin-bottom: 3.5%;
 }
 
 .row {
 	margin-top: 5%;
 }
+
+/* ------------- RIGHT SIDES ---------------- */
+a {
+	color: #d5b33b;
+}
+
+body > div > div > div > div > div.col-sm-5.col-sm-offset-6.text.text-center.show-box.animated.flipInX {
+	margin-left: 55%;
+}
+
+
