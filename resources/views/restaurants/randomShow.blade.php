@@ -47,22 +47,21 @@
 							<div class="form-group">
 								<label class="sr-only" for="mytext[]"><button class="btn btn-default add_field_button">Add other numbers</button></label>
 								<div class="input-group">
-									{{-- <input type="text" class="form-control phone space" id="mytext[]" name="mytext[]" placeholder="Phone #..."> --}}
-									{{-- <div class="input-group-addon">X</div> --}}
+									{{-- text message body appears here --}}
 								</div>
 							</div>
     					</div>
 						<div class="form-group col-xs-8 col-xs-offset-7">
 						{{-- 	<textarea id="email_body" name="email_body" rows="4" cols="50" placeholder="">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }} is inviting you to dinner at {{ $place['name']}}!</textarea> --}}
 
-						{{-- I added the following temporarily so that I wouldn't get an error for not finding "places" --}}
+						{{-- I temporarily added the following so I wouldn't get an error for not finding "places" --}}
 						<textarea id="email_body" name="email_body" rows="3" cols="25" placeholder="">We're meeting in Olive Garden at 7 pm</textarea>
 						</div>
 					</div>{{-- /.form-group --}}
 			  	</div>{{-- /.modal-body --}}
 			  	<div class="modal-footer">
 					<button type="button" class="btn" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary">Send Message
+					<button type="submit" class="btn btn-primary send">Send Message
 						<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
 					</button>
 				</div>
@@ -73,7 +72,7 @@
 	    	$.validator.addMethod("cRequired", $.validator.methods.required, "Please provide a phone number");
 	    	$.validator.addMethod("cPhone", $.validator.methods.phoneUS, "Please provide a valid U.S. phone number");
 	    	$.validator.addClassRules("phone", {cRequired:true, cPhone:true});
-		    $( "#info" ).validate({
+		    $( "#rest-info" ).validate({
 		  rules: {
 		    email_body: {
 		      required: true,
