@@ -50,12 +50,13 @@
 
 			@yield('content')
 		
+
+	</body>
+	
 		{{-- jQuery --}}
 		<script src="/assets/js/jquery-1.11.1.min.js"></script>
 		{{-- Bootstrap.js --}}
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		{{-- Custom JS --}}
 		@yield('js-script')
-
-	</body>
 </html>

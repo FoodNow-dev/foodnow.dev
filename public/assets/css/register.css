@@ -4,7 +4,7 @@
 
 .top-content .text {
 	height: 100%;
-	margin-top: 8%;
+	margin-top: 10%;
 	margin-bottom: 5%;
 	padding-bottom: 4%;
 	padding-left: 4%;
@@ -29,15 +29,6 @@
 	padding-top: 5%;
 }
 
-.top-content .description {
-	font-size: 1.5em;
-	margin: 20px 0 10px 0;
-}
-
-.top-content .top-big-link {
-	margin-top: 35px;
-}
-
 .form-bottom form .input-error {
 	border-color: #19b9e7;
 }
@@ -46,3 +37,6 @@
 	display: inline-block;
 	width: 80%;
 }
+
+
+

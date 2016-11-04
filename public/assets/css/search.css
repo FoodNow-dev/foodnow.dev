@@ -2,97 +2,23 @@
 /*          Landing         */
 /**********************************/
 
-/*.row{
-	margin-left:0;
+.row{
+	margin-top: 1%;
+	margin-bottom: 3%;
 }
-*/
-/*.top-right {
-	float: right;
-	color: white;
-	text-align: right;
-	bottom: 284px;
-}*/
-
-
-
-/*.top-content .text h1 { 
-	color: #d5b33b; 
-}
-*/
-/*.top-content img {
-	background-color: rgba(255, 255, 255, .5);
-	border-radius: 50%;
-	border: 5px solid rgba(195, 191, 61, .5);
-	box-shadow: 0px 0px 100px #ced9e2;
-}
-<<<<<<< HEAD
-
-@media(max-width: 760px) {
-	.top-content .text {
-		width: 100%;
-		clear: both;
-	}
-}
-	
-.top-content .text {
-	margin-top: 10%;
-	margin-right: 0px;	
-	padding-top: 3%;
-=======
-*/
-/*.top-content .description {
-	font-size: 1.5em;
-	margin: 20px 0 10px 0;
-}
-*/
-/*.top-content .description p { 
-	opacity: 0.8; 
-	color: #dcd22a; 
-}*/
-
-/*.top-content .description a {
-	color: #d5b33b;
-}
-*/
-/*.top-content .description a:hover, 
-.top-content .description a:focus { 
-	border-bottom: 1px dotted #d5b33b; 
-}*/
-
-/*.top-content .top-big-link {
-	margin-top: 35px;
-}
-*/
-
-
-/*.form-bottom form .input-error {
-	border-color: #19b9e7;
-}*/
 
 .inner-bg {
-    /*padding: 10px 0 50px 0;*/
     margin-top: 8%;
     display: inline-block;
 }
 
 .top-content .text {
-	/*margin: 5%;*/
-	/*margin-right: 0px;*/
-	/*padding-top: 25px;*/
-	/*padding-bottom: 50px;*/
-
 	background-color: rgba(8, 59, 112, .85);
 	color: #d5b33b;
 	font-size: 1.4em;
 	height: 75vh;
-	border-radius: 10px;
-
 	text-align: center;
-
-
 	padding: 3%;
-	/*border: 1px solid red;*/
-
 }
 
 
@@ -102,17 +28,10 @@
 	color: #d5b33b !important;
 }
 
-/*body > div > div > div > div > div.text.col-sm-6 > form > div.col-xs-offset-3 > button {
-	width: 135px;
-	margin-right: -40px;
-	margin-top: 15%;
-}*/
-
 
 /*----------------------- LEFT DIV -----------------------*/
 div.text.animated.zoomIn.col-sm-6 {
 	position: relative;
-	/*margin-top: 15%;*/
 }
 
 /* SUBMIT BUTTON */
@@ -294,19 +213,13 @@ select.form-control {
 }
 
 .random-btn {
-	word-wrap: normal;
-	height: 12vh;
 	width: 25vw;
-    margin: 10px;
-    margin-top: 100px;
-    padding: 5px;
     vertical-align: middle;
     background: #d5b33b;
     border: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 1.75em;
     font-weight: bold;
-    line-height: 225%;
     color: rgba(8, 59, 112, 1);
     -moz-border-radius: 4px; 
     -webkit-border-radius: 4px; 
