@@ -1,5 +1,7 @@
 body{
-	padding-top: 75px;
+	padding-top: 10%;
+	width: 100%;
+	margin-left: 2%;
 }
 
 .list {
@@ -42,7 +44,9 @@ h4 {
 
 .search {
 	text-align: center;
-	margin-left: 37.5%;
+	display: inline-block;
+	margin-left: 30%;
+	width: 100%;
 }
 
 body > div.row.text-center {
