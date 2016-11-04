@@ -1,4 +1,4 @@
-body {
+/*body {
 	background-attachment: fixed !important;
 }
 
@@ -13,10 +13,11 @@ footer {
 	bottom: 0px;
 	width: 100%;
 	z-index: 1000;
-}
+}*/
 
+/* ------------- LEFT SIDE ---------------- */
 #profile {
-	margin-top: 8vh;
+	margin-top: 2%;
 	max-height: 50vh;
 	background-color: rgba(255, 255, 255, .5);
 	border-radius: 50%;
@@ -25,20 +26,10 @@ footer {
 	animation-delay: .55s;
 }
 
-.top-content .text {
-	margin-top: 100px;
-	margin-right: 0px;	
-	padding-top: 25px;
-	padding-bottom: 50px;
-	background-color: rgba(8, 59, 112, .85);
-	color: #d5b33b;
-	border-radius: 5px;
-}
-
-.text {
-	min-height: 600px;
-	margin-top: 50px !important;
-	margin-bottom: 50px;
+#userImg {
+	width: 50%;
+	height: 50%;
+	max-height: 228.75px;
 }
 
 .profile-list {
@@ -48,19 +39,12 @@ footer {
 	margin-left: 0px;
 }
 
-footer {
-	position: fixed !important;
-	bottom: 0px;
-	width: 100%;
-	z-index: 1000;
-}
-
 #edit_buttons {
-	width: 143px;
+	width: 130px;
 }
 
 .btn-link-2 {
-	width: 143px;
+	width: 130px;
 	height: 50px;
     display: inline-block;
     padding: 15px 20px 0 20px;
@@ -77,14 +61,26 @@ footer {
 .btn-link-2:hover, .btn-link-2:focus, 
 .btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
 
-a {
+/* ------------- BOTH SIDES ---------------- */
+.top-content .text {
+	margin-top: 100px;
+	margin-right: 0px;	
+	padding-top: 2%;
+	padding-bottom: 2%;
+	background-color: rgba(8, 59, 112, .85);
 	color: #d5b33b;
+	border-radius: 5px;
 }
 
-#userImg {
-	width: 50%;
-	height: 50%;
-	max-height: 228.75px;
+.text {
+	min-height: 70%;
+	margin-top: 50px !important;
+	margin-bottom: 50px;
+}
+
+
+a {
+	color: #d5b33b;
 }
 
 .row {

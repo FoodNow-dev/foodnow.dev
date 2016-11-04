@@ -207,7 +207,7 @@ function createMarker(place) {
                 details.photos.forEach(function(photo, i) {
                     var carouselPics = '<div class="' + ((i == 0)? "active item" : "item");
                     carouselPics += '" data-slide-number="' + (i + 1) + '">';
-                    carouselPics += '<img class="rest-img" src="' + photo.getUrl({'maxwidth': 377, 'maxHeight': 300}) + '"></div>';
+                    carouselPics += '<img class="rest-img" src="' + photo.getUrl({'maxwidth': 500, 'maxHeight': 500}) + '"></div>';
                     $('.carousel-inner').append(carouselPics);
                 });
             } else {
