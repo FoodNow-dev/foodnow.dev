@@ -95,10 +95,6 @@
  	</div>
 </div>
 
-									
-
-
-
 <!-- Top content -->
 <div class="top-content">
 	{{-- <div class="inner-bg"> --}}
