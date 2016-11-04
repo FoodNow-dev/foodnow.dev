@@ -16,6 +16,8 @@
      <script type="text/javascript" src="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.jquery.min.js') }}"></script>
      <script type="text/javascript" src="{{ URL::asset('assets/sweetalert-master/dist/sweetalert.min.js') }}"></script>
 
+
+
 @stop
 
 @section('content')
@@ -146,7 +148,11 @@
 							</div>{{-- /.row-fluid --}}
 						</div>{{-- ./span9 --}}
 					</div>{{-- /.row-fluid --}}
+
 				</div>{{-- /.fixed --}}
+
+				</div>{{-- /.fixed
+
 			</div>{{-- /.col-sm-3 --}}
 			<br>
 			<br>
