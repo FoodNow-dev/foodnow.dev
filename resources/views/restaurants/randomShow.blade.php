@@ -102,52 +102,55 @@
 
 
 <!-- Top content -->
-<div class="top-content">
-	<div class="inner-bg">
-		<div class="row">
-			<div class="fixed col-sm-7 col-sm-offset-1 text text-center show-box animated flipInX">
+	<div class="top-content">
+		<div class="inner-bg">
 				<div class="row">
-					<div class="description">
-						{{-- Restaurant Info appends here --}}
+					<div class="fixed col-sm-7 col-sm-offset-1 text text-center show-box animated flipInX">
+					<div class="row">
+						{{-- <h1><strong>{{ $place['name'] }}</strong></h1> --}}
+						<div class="description">
+							{{-- Restaurant Info appends here --}}
+						</div>
 					</div>
-				</div>
-				<!-- Slider -->
-				<div class="row-fluid">
-					<div class="span9" id="slider">
-						<!-- Top part of the slider -->
-						<div class="row-fluid">
-							<div class="span2" id="carousel-bounding-box">
-								<div id="myCarousel" class="carousel slide">
-									<!-- Carousel items -->
-									<div class="carousel-inner">
-										{{-- Images append here --}}
+					<!-- Slider -->
+					<div class="row-fluid">
+						<div class="span9" id="slider">
+							<!-- Top part of the slider -->
+							<div class="row-fluid">
+								<div class="span2" id="carousel-bounding-box">
+									<div id="myCarousel" class="carousel slide">
+										<!-- Carousel items -->
+										<div class="carousel-inner">
+											
+										</div>
+							  
 									</div>
-								</div>
-								<!-- Carousel nav -->
-								<div class="carousel-controls-mini">
-									<a href="#myCarousel" class="direction btn-link-1" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-									<a href="#myCarousel" class="direction btn-link-1" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+								  
+									<!-- Carousel nav -->
+									<div class="carousel-controls-mini">
+										<a href="#myCarousel" class="direction btn-link-1" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+										<a href="#myCarousel" class="direction btn-link-1" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<br>
-				<br>
-				<!--/Slider-->
+					<br>
+					<br>
+					<!--/Slider-->
 				<div class="col-sm-6 col-sm-offset-3">
 					<button type="button" class="btn-create" data-toggle="modal" data-target="#modal" href="#">Create Event</button>
 				</div>
-			</div>
-			<div class="col-sm-5 col-sm-offset-6 form-box">
-				<div id="map">
-					{{-- Map Renders Here --}}
+					
+				</div>
+				<div class="col-sm-5 col-sm-offset-6 form-box">
+					<div id="map">
+						{{-- Map Renders Here --}}
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-
 				
 
 @stop
