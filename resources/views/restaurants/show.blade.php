@@ -22,7 +22,7 @@
 <!-- Modal -->
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
  	<div class="modal-dialog" role="document">
-		<form id="info" class="form-horizontal" method="POST" action="{{ action('UserController@sendText') }}">
+		<form id="rest-info" class="form-horizontal" method="POST" action="{{ action('UserController@sendText') }}">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -44,17 +44,16 @@
 									 
 						{{-- dynamic input field buttons --}}
 						<div class="input_fields_wrap ">
-
+							<button class="btn btn-primary add_field_button">Add other numbers</button>
 							<div class="form-group">
-								<button class="btn btn-primary add_field_button">Add other numbers</button>
-								<label class="sr-only" for="mytext[]"></label>
+								<label class="sr-only" for="mytext[]"><button class="btn btn-primary add_field_button">Add other numbers</button></label>
 								<div class="input-group">
 									{{-- fields to type phone numbers appears here --}}
 								</div>
 							</div>
     					</div>
 						<div class="form-group col-xs-8 col-xs-offset-7">
-							<textarea id="email_body" name="email_body" rows="4" cols="50" placeholder="">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }} is inviting you to dinner at {{ $place['name']}}!</textarea>
+							<textarea id="email_body" name="email_body" rows="25" cols="50" placeholder="">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }} is inviting you to dinner at {{ $place['name']}}!</textarea>
 						</div>
 					</div>{{-- /.form-group --}}
 			  	</div>{{-- /.modal-body --}}
