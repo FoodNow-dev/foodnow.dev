@@ -76,7 +76,7 @@ class RestaurantsController extends Controller
        
         // Google Maps API
         // MAIN API
-        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
+        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
 
         // JESSICA API
         // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
@@ -104,7 +104,7 @@ class RestaurantsController extends Controller
 
                 // Google Maps API
                 // MAIN API
-                // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
+                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
 
                 // JESSICA API
                 // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
@@ -176,4 +176,20 @@ class RestaurantsController extends Controller
         
         return view('restaurants.show')->with($data);
     }
+
+    public function random() {
+        $data = [];
+        $data['user'] = Auth::user();
+
+        $data['friends'] = $data['user']->friends()
+                ->where("user_id", '=', $data['user']->id)
+                ->orWhere("friend_id", '=', $data['user']->id)
+                ->orderBy('last_name', 'asc')
+                ->get();
+
+        return view('restaurants.randomShow')->with($data);
+
+    }
 }
+
+

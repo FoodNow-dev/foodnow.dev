@@ -93,7 +93,7 @@
 
 						<br>
 						<div>
-						    <a class="random-btn btn" href="{{ action('RestaurantsController@showData') }}?random=true">Random</a>
+						    <a class="random-btn btn" href="/restaurants/random">Random</a>
 						</div>
 						<div class="right-line"></div>
 						<div class="left-line"></div>
