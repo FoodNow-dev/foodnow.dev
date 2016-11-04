@@ -161,13 +161,10 @@
 
 @section('js-script')
 
-	{{-- jQuery Validate --}}
-	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script> --}}
+	
 
 	<script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
 	
-	{{-- Form Validation Methods --}}
-	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script> --}}
 
 
 
