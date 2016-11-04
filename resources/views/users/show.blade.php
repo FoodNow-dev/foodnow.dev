@@ -48,7 +48,7 @@
 					</div>
 
 					{{-- Friends list --}}
-					<div class="col-sm-5 col-sm-offset-1 text text-center show-box animated flipInX">
+					<div class="col-sm-5 col-sm-offset-6 text text-center show-box animated flipInX">
 						<h1><strong>Friends List</strong></h1>
 						<hr>
 						@foreach($friends as $friend) 

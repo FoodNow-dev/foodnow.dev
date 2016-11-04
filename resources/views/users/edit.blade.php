@@ -14,7 +14,7 @@
 		<div class="inner-bg">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-7 text text-center show-box animated flipInX">
+					<div class="col-sm-6 text text-center show-box animated flipInX">
 						<form method="POST" action="{{ action('UserController@update', $user->id) }}" enctype="multipart/form-data">
 							{{ csrf_field() }}
 							{{ method_field('PUT') }}
@@ -28,7 +28,7 @@
 							</div>
 						</form>
 					</div>
-					<div class="col-sm-5 form-box animated bounceInRight">
+					<div class="col-sm-6 form-box animated bounceInRight">
 						<div class="form-top show-box">
 							<div class="form-top-left">
 								<h3>Edit Profile</h3>
