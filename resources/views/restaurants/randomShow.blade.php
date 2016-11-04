@@ -37,6 +37,7 @@
 						 	  		@if($user->id != $friend->id)
 						 	  			<option value= {{$friend->phone}}>{{"$friend->first_name $friend->last_name"}}</option>
 						 	  		@endif
+						 	  		
 						 	  	@endforeach 
 							</select>
 						</div>
