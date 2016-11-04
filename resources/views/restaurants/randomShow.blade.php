@@ -31,7 +31,7 @@
 					{!! csrf_field() !!}
 					<div class="form-group">
 					{{-- dropdown --}}
-						<div class="col-xs-12">
+						<div class="col-xs-7 ">
 						 	<select class="my_select_box" data-placeholder="Select Friends" name="mytext[]" multiple>
 						 	  	@foreach($friends as $friend)
 						 	  		@if($user->id != $friend->id)
@@ -42,7 +42,7 @@
 						</div>
 						{{-- dynamic input field buttons --}}
 						<div class="input_fields_wrap ">
-							<button class="btn btn-primary add_field_button">Add other numbers</button>
+							<button class="btn btn-default add_field_button">Add other numbers</button>
 
 							<div class="form-group">
 								<label class="sr-only" for="mytext[]"><button class="btn btn-default add_field_button">Add other numbers</button></label>
