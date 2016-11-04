@@ -18,6 +18,35 @@ $('#myCarousel').on('slid', function (e) {
     $('#carousel-text').html($('#slide-content-'+id).html());
 });
 
+function timeSince(date) {
+
+    var seconds = Math.floor((new Date() / 1000) - (new Date(date)));
+
+    var interval = Math.floor(seconds / 31536000);
+
+    if (interval > 1) {
+        return interval + " years";
+    }
+    interval = Math.floor(seconds / 2592000);
+    if (interval > 1) {
+        return interval + " months";
+    }
+    interval = Math.floor(seconds / 86400);
+    if (interval > 1) {
+        return interval + " days";
+    }
+    interval = Math.floor(seconds / 3600);
+    if (interval > 1) {
+        return interval + " hours";
+    }
+    interval = Math.floor(seconds / 60);
+    if (interval > 1) {
+        return interval + " minutes";
+    }
+    return Math.floor(seconds) + " seconds";
+}
+
+
 var map;
 var infowindow;
 var service;
@@ -149,38 +178,34 @@ function createMarker(place) {
     service.getDetails(request, function(details, status) {
         var content;
         if (status == google.maps.places.PlacesServiceStatus.OK) {
-            content = '<h1>' + details.name + '</h1>';
+            content = '<h2>' + details.name + '</h2>';
             content += '<img src="' + rating(details.rating) + '">';
             content += '<h4>' + priceFormat(details.price_level) + '</h4>';
             content += '<h4>' + details.formatted_phone_number + '</h4>';
             content += '<h4>' + details.address_components[0].long_name + " ";
             content += details.address_components[1].long_name + '</h4>';
-            content += '<h4>' + details.address_components[2].long_name + ', ';
-            content += details.address_components[3].long_name + '</h4>';
             $('.description').append(content);
-            console.log(details);
 
             if(details.photos) {
                 details.photos.forEach(function(photo, i) {
                     var carouselPics = '<div class="' + ((i == 0)? "active item" : "item");
                     carouselPics += '" data-slide-number="' + (i + 1) + '">';
-                    carouselPics += '<img class="rest-img" src="' + photo.getUrl({'maxwidth': 200, 'maxHeight': 200}) + '"></div>';
-                    console.log(carouselPics);
+                    carouselPics += '<img class="rest-img" src="' + photo.getUrl({'maxwidth': 377, 'maxHeight': 300}) + '"></div>';
                     $('.carousel-inner').append(carouselPics);
                 });
             } else {
-                $('.carousel-inner').append('<div class="active item" data-slide-number="1"> <img class="rest-img" src="https://ugotalksalot.files.wordpress.com/2016/06/no-thumb.jpg"></div>');
+                $('.carousel-inner').append('<div class="active item" data-slide-number="1"> <img class="rest-img" src="http://placehold.it/377x200?text=No+Images+Available"></div>');
             }
 
             if(details.reviews){
                 details.reviews.forEach(function(review, i) {
-                    var reviewContent = '<div class="review-container"><div class="col-sm-12 form-bottom show-box"><img class="google-profile" src=' + ((review.profile_photo_url) ? review.profile_photo_url : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png');
+                    var reviewContent = '<div class="review-container"><div class="col-sm-12 form-bottom show-box"><img class="google-profile" src="' + ((review.profile_photo_url) ? review.profile_photo_url : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png');
                     reviewContent += '"><div class="review-rest-info text-right"><h3><b>' + review.author_name;
                     reviewContent += '</b></h3><p><img class="stars" src="' + rating(review.rating) + '"></p>';
-                    reviewContent += '<p></p><br></div><div class="review">' + review.text;
+                    reviewContent += '<p>' + timeSince(review.time) + ' ago</p><br><br></div><div class="review">' + review.text;
                     reviewContent += '<br><br></div></div></div>';
 
-                    $('.form-box').append(reviews);
+                    $('.form-box').append(reviewContent);
                 });
             }
         }

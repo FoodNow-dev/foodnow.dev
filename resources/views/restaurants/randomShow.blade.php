@@ -3,11 +3,17 @@
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/rest-show.css">
 	<link rel="stylesheet" href="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.min.css') }}"/>
+    <link rel="stylesheet" href="{{ URL::asset('assets/sweetalert-master/dist/sweetalert.css') }}" />
 
 	<script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
-	
-	{{-- jQuery Chosen Plugin --}}
-	<script type="text/javascript" src="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.jquery.min.js') }}"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
+    {{--  validation --}}
+     <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
+      <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
+	{{-- jQuery Chosen Plugin (does not work if script is @ end of page--}}
+     <script type="text/javascript" src="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.jquery.min.js') }}"></script>
+     <script type="text/javascript" src="{{ URL::asset('assets/sweetalert-master/dist/sweetalert.min.js') }}"></script>
 @stop
 
 @section('content')
@@ -24,8 +30,9 @@
 				<div class="modal-body">
 					{!! csrf_field() !!}
 					<div class="form-group">
+					{{-- dropdown --}}
 						<div class="col-xs-7 ">
-						 	<select class="my_select_box" data-placeholder="Select Your Friends" name="mytext[]" multiple>
+						 	<select class="my_select_box" data-placeholder="Select Friends" name="mytext[]" multiple>
 						 	  	@foreach($friends as $friend)
 						 	  		@if($user->id != $friend->id)
 						 	  			<option value= {{$friend->phone}}>{{"$friend->first_name $friend->last_name"}}</option>
@@ -33,33 +40,50 @@
 						 	  	@endforeach 
 							</select>
 						</div>
-									 
 						{{-- dynamic buttons --}}
 						<div class="input_fields_wrap ">
-							{{-- <button class="btn btn-default add_field_button">Add other numbers</button> --}}
+							<button class="btn btn-default add_field_button">Add other numbers</button>
 
 							<div class="form-group">
 								<label class="sr-only" for="mytext[]"><button class="btn btn-default add_field_button">Add other numbers</button></label>
 								<div class="input-group">
-									<input type="text" class="form-control phone space" id="mytext[]" name="mytext[]" placeholder="Phone #...">
-									<div class="input-group-addon">X</div>
+									{{-- text message body appears here --}}
 								</div>
 							</div>
     					</div>
 						<div class="form-group col-xs-8 col-xs-offset-7">
-							{{-- <textarea id="email_body" name="email_body" rows="4" cols="50" placeholder="">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }} is inviting you to dinner at {{ $place['name']}}!</textarea> --}}
+						{{-- 	<textarea id="email_body" name="email_body" rows="4" cols="50" placeholder="">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }} is inviting you to dinner at {{ $place['name']}}!</textarea> --}}
+
+						{{-- I temporarily added the following so I wouldn't get an error for not finding "places" --}}
+						<textarea id="email_body" name="email_body" rows="3" cols="25" placeholder="">We're meeting in Olive Garden at 7 pm</textarea>
 						</div>
 					</div>{{-- /.form-group --}}
 			  	</div>{{-- /.modal-body --}}
 			  	<div class="modal-footer">
 					<button type="button" class="btn" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary">Send Message
+					<button type="submit" class="btn btn-primary send">Send Message
 						<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
 					</button>
 				</div>
 			</div>
 		</form>
 		<script>
+		// validation
+	    	$.validator.addMethod("cRequired", $.validator.methods.required, "Please provide a phone number");
+	    	$.validator.addMethod("cPhone", $.validator.methods.phoneUS, "Please provide a valid U.S. phone number");
+	    	$.validator.addClassRules("phone", {cRequired:true, cPhone:true});
+		    $( "#rest-info" ).validate({
+		  rules: {
+		    email_body: {
+		      required: true,
+		      minlength: 2
+		    }
+			  }
+			});
+
+		</script>
+		<script>
+		//dropdown
 			$(".my_select_box").chosen({
 				disable_search_threshold: 1,
 				no_results_text: "Oops, nothing found!",
@@ -67,8 +91,14 @@
 				display_selected_options:false
 			});
 		</script>
+			<script>
+			   $(".send").click(function() { 
+					swal("Message sent!", "Time to enjoy yourself!", "success");
+				});
+				
+			</script>
  	</div>
-</div>
+</div> {{-- end of Modal --}}
 
 									
 
@@ -101,8 +131,8 @@
 								  
 									<!-- Carousel nav -->
 									<div class="carousel-controls-mini">
-										<a href="#myCarousel" class="direction btn" data-slide="prev">‹</a>
-										<a href="#myCarousel" class="direction btn" data-slide="next">›</a>
+										<a href="#myCarousel" class="direction btn-link-1" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+										<a href="#myCarousel" class="direction btn-link-1" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 									</div>
 								</div>
 							</div>
@@ -111,18 +141,16 @@
 					<br>
 					<br>
 					<!--/Slider-->
-				<div class="top-big-link">
-					<button type="button" class="btn" data-toggle="modal" data-target="#modal" href="#">Create Event</button>
+				<div class="col-sm-12">
+					<button type="button" class="btn-create" data-toggle="modal" data-target="#modal" href="#">Create Event</button>
 				</div>
 					
 				</div>
-					
-					<div class="col-sm-4 col-sm-offset-7 form-box">
-						<div id="map"></div>
-						
-
+				<div class="col-sm-5 col-sm-offset-6 form-box">
+					<div id="map">
+						{{-- Map Renders Here --}}
 					</div>
-				
+				</div>
 			</div>
 		</div>
 	</div>
@@ -133,24 +161,13 @@
 
 @section('js-script')
 
-	{{-- Passes Scalar data held in PHP to JS --}}
-	{{-- // <script type="text/javascript"> --}}
-		{{-- // var lat = {{ $place['geometry']['location']['lat'] }}; --}}
-		{{-- // var lng = {{ $place['geometry']['location']['lng'] }}; --}}
-		{{-- // var starrating = {{ $place['rating'] }}; --}}
-		{{-- // var price = {{ $place['price_level'] }}; --}}
-	{{--</script> --}}
-
 	{{-- jQuery Validate --}}
-	<script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
-	
-	{{-- jQuery Chosen Plugin --}}
-	<script type="text/javascript" src="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.jquery.min.js') }}"></script>
+	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script> --}}
 
-	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script> --}}
+	<script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
 	
 	{{-- Form Validation Methods --}}
-	<script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
+	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script> --}}
 
 
 
