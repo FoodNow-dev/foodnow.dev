@@ -40,14 +40,14 @@
 						 	  	@endforeach 
 							</select>
 						</div>
-						{{-- dynamic buttons --}}
+						{{-- dynamic input field buttons --}}
 						<div class="input_fields_wrap ">
 							<button class="btn btn-default add_field_button">Add other numbers</button>
 
 							<div class="form-group">
 								<label class="sr-only" for="mytext[]"><button class="btn btn-default add_field_button">Add other numbers</button></label>
 								<div class="input-group">
-									{{-- text message body appears here --}}
+									{{-- fields to type phone numbers appears here --}}
 								</div>
 							</div>
     					</div>
@@ -91,12 +91,11 @@
 				display_selected_options:false
 			});
 		</script>
-			<script>
-			   $(".send").click(function() { 
-					swal("Message sent!", "Time to enjoy yourself!", "success");
-				});
-				
-			</script>
+		<script>
+		   $(".send").click(function() { 
+				swal("Message Sent", "Have a good time!", "success");
+			});
+		</script>
  	</div>
 </div> {{-- end of Modal --}}
 
@@ -141,7 +140,7 @@
 					<br>
 					<br>
 					<!--/Slider-->
-				<div class="col-sm-12">
+				<div class="col-sm-6 col-sm-offset-3">
 					<button type="button" class="btn-create" data-toggle="modal" data-target="#modal" href="#">Create Event</button>
 				</div>
 					
@@ -160,15 +159,6 @@
 
 
 @section('js-script')
-
-	{{-- jQuery Validate --}}
-	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script> --}}
-
-	<script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
-	
-	{{-- Form Validation Methods --}}
-	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script> --}}
-
 
 
 	{{-- Google Maps API --}}

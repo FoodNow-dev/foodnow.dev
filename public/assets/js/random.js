@@ -91,6 +91,23 @@ function rating(level) {
             return '/assets/img/star-rating5.png';
     }
 }
+//-------------------------------MODAL--------------------------------
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+    var add_button      = $(".add_field_button"); //Add button ID
+    
+    var x = 0; //initial text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div class="input-group"><input type="text" name="mytext[]" id = "mytext[]" class="phone col-xs-12 space" placeholder="Friend\'s Phone #"><div class="input-group-addon remove_field"<a href="#"></a>X</div></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
 
 // --------------------------- GEOLOCATION ---------------------------
 function getLocation() {
@@ -190,7 +207,7 @@ function createMarker(place) {
                 details.photos.forEach(function(photo, i) {
                     var carouselPics = '<div class="' + ((i == 0)? "active item" : "item");
                     carouselPics += '" data-slide-number="' + (i + 1) + '">';
-                    carouselPics += '<img class="rest-img" src="' + photo.getUrl({'maxwidth': 377, 'maxHeight': 300}) + '"></div>';
+                    carouselPics += '<img class="rest-img" src="' + photo.getUrl({'maxwidth': 500, 'maxHeight': 500}) + '"></div>';
                     $('.carousel-inner').append(carouselPics);
                 });
             } else {
