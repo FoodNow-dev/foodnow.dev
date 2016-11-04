@@ -2,12 +2,18 @@
 
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/rest-show.css">
-	<link rel="stylesheet" href="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.min.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.min.css') }}"/>
+    <link rel="stylesheet" href="{{ URL::asset('assets/sweetalert-master/dist/sweetalert.css') }}" />
 
 	<script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
-	
-	{{-- jQuery Chosen Plugin --}}
-	<script type="text/javascript" src="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.jquery.min.js') }}"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+     <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
+    {{--  validation --}}
+     <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
+      <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
+	{{-- jQuery Chosen Plugin (does not work if script is @ end of page--}}
+     <script type="text/javascript" src="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.jquery.min.js') }}"></script>
+     <script type="text/javascript" src="{{ URL::asset('assets/sweetalert-master/dist/sweetalert.min.js') }}"></script>
 @stop
 
 @section('content')
@@ -25,7 +31,7 @@
 					{!! csrf_field() !!}
 					<div class="form-group">
 						<div class="col-xs-7 ">
-						 	<select class="my_select_box" data-placeholder="Select Your Friends" name="mytext[]" multiple>
+						 	<select class="my_select_box" data-placeholder="Select Friends" name="mytext[]" multiple>
 						 	  	@foreach($friends as $friend)
 						 	  		@if($user->id != $friend->id)
 						 	  			<option value= {{$friend->phone}}>{{"$friend->first_name $friend->last_name"}}</option>
@@ -34,15 +40,14 @@
 							</select>
 						</div>
 									 
-						{{-- dynamic buttons --}}
+						{{-- dynamic input field buttons --}}
 						<div class="input_fields_wrap ">
 
 							<div class="form-group">
 								<button class="btn btn-default add_field_button">Add other numbers</button>
 								<label class="sr-only" for="mytext[]"></label>
 								<div class="input-group">
-									<input type="text" class="form-control phone space" id="mytext[]" name="mytext[]" placeholder="Phone #...">
-									<div class="input-group-addon">X</div>
+									{{-- fields to type phone numbers appears here --}}
 								</div>
 							</div>
     					</div>
@@ -53,18 +58,37 @@
 			  	</div>{{-- /.modal-body --}}
 			  	<div class="modal-footer">
 					<button type="button" class="btn" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary">Send Message
+					<button type="submit" class="btn btn-primary send">Send Message
 						<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
 					</button>
 				</div>
 			</div>
 		</form>
 		<script>
+		// validation
+	    	$.validator.addMethod("cRequired", $.validator.methods.required, "Please provide a phone number");
+	    	$.validator.addMethod("cPhone", $.validator.methods.phoneUS, "Please provide a valid U.S. phone number");
+	    	$.validator.addClassRules("phone", {cRequired:true, cPhone:true});
+		    $( "#info" ).validate({
+		  rules: {
+		    email_body: {
+		      required: true,
+		      minlength: 2
+		    }
+			  }
+			});
+		</script>
+		<script>
 			$(".my_select_box").chosen({
 				disable_search_threshold: 1,
 				no_results_text: "Oops, nothing found!",
 				width: "95%",
 				display_selected_options:false
+			});
+		</script>
+		<script>
+		   $(".send").click(function() { 
+				swal("Message Sent", "Have a good time!", "success");
 			});
 		</script>
  	</div>
@@ -177,18 +201,7 @@
 		var price = {{ $place['price_level'] }};
 	</script>
 
-	{{-- jQuery Validate --}}
-	<script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
-	
-	{{-- jQuery Chosen Plugin --}}
-	<script type="text/javascript" src="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.jquery.min.js') }}"></script>
-
-	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script> --}}
-	
-	{{-- Form Validation Methods --}}
-	<script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
-
-	{{-- Google Maps API --}}
+	{{- Google Maps API --}}
 
 	{{-- MAIN API --}}
 	{{-- // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=initMap" async defer></script> --}}
@@ -211,6 +224,8 @@
 
 	{{-- Custom JS --}}
 	<script type="text/javascript" src="{{ URL::asset('assets/js/rest-show.js') }}"></script>
+
+	<script type="text/javascript" src="{{ URL::asset('assets/js/random.js') }}"></script>
 
 @stop
 
