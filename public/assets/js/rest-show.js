@@ -33,6 +33,9 @@ function priceFormat(level) {
 
 }
 
+var priceSign = '<p>' + priceFormat(price) + '</p>';
+$(priceSign).html('#rating');
+
 function rating(level) {
     switch (true) {
         case (level < .25) :
@@ -92,6 +95,7 @@ function initMap() {
 function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
+            console.log(results);
             createMarker(results[i]);
         }
     }
@@ -113,6 +117,8 @@ function createMarker(place) {
             
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 var contentStr = '<div>';
+                    // PLACE ID
+                    // + '<strong><em>PLACE ID: </em></strong>' + place.place_id + '<br>'
 
                     // PHOTOS
                     contentStr += (place.photos) ? '<img class="pull-left" src="' + place.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}) + '">' : "<br><em>No Image Provided</em><br>";

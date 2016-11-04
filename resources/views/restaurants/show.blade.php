@@ -2,18 +2,19 @@
 
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/rest-show.css">
-	  <link rel="stylesheet" href="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.min.css') }}"/>
+
+		<link rel="stylesheet" href="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.min.css') }}"/>
     <link rel="stylesheet" href="{{ URL::asset('assets/sweetalert-master/dist/sweetalert.css') }}" />
 
-	 <script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
-
+	<script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
      <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
+    {{--  validation --}}
      <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
       <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
+	{{-- jQuery Chosen Plugin (does not work if script is @ end of page--}}
      <script type="text/javascript" src="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.jquery.min.js') }}"></script>
      <script type="text/javascript" src="{{ URL::asset('assets/sweetalert-master/dist/sweetalert.min.js') }}"></script>
-
-
 
 @stop
 
@@ -145,7 +146,7 @@
 							</div>{{-- /.row-fluid --}}
 						</div>{{-- ./span9 --}}
 					</div>{{-- /.row-fluid --}}
-				</div>{{-- /.fixed
+				</div>{{-- /.fixed --}}
 			</div>{{-- /.col-sm-3 --}}
 			<br>
 			<br>

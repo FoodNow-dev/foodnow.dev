@@ -85,7 +85,10 @@ class RestaurantsController extends Controller
         // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
         
         // WHITNEY API
-        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
+        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
+
+
+
 
         $json = file_get_contents($url);
 
@@ -101,16 +104,16 @@ class RestaurantsController extends Controller
 
                 // Google Maps API
                 // MAIN API
-                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&maxheight=500&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
+                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
 
                 // JESSICA API
-                // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&maxheight=500&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
+                // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
                 
                 // BENS API
-                // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&maxheight=500&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
+                // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
                 
                 // WHITNEY API
-                // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&maxheight=500&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
+                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
 
 
 
@@ -161,53 +164,15 @@ class RestaurantsController extends Controller
                     $data['starRating'][] = '/assets/img/star-rating5.png';
                     break;
             }
-
-            
             $data['time'][$key] = Carbon::createFromTimestamp($review['time'])->diffForHumans();
 
+            $data['user'] = Auth::user();
         }
-        switch ($review['rating']) {
-            case ($level < .25) :
-                $data['restRating'] = '/assets/img/star-rating0.png';
-                break;
-            case ($level >= .25 && $level < .75) :
-                $data['restRating'] = '/assets/img/star-rating-half.png';
-                break;
-            case ($level >= .75 && $level < 1.25) :
-                $data['restRating'] = '/assets/img/star-rating1.png';
-                break;
-            case ($level >= 1.25 && $level < 1.75) :
-                $data['restRating'] = '/assets/img/star-rating1half.png';
-                break;
-            case ($level >= 1.75 && $level < 2.25) :
-                $data['restRating'] = '/assets/img/star-rating2.png';
-                break;
-            case ($level >= 2.25 && $level < 2.75) :
-                $data['restRating'] = '/assets/img/star-rating2half.png';
-                break;
-            case ($level >= 2.75 && $level < 3.25) :
-                $data['restRating'] = '/assets/img/star-rating3.png';
-                break;
-            case ($level >= 3.25 && $level < 3.75) :
-                $data['restRating'] = '/assets/img/star-rating3half.png';
-                break;
-            case ($level >= 3.75 && $level < 4.25) :
-                $data['restRating'] = '/assets/img/star-rating4.png';
-                break;
-            case ($level >= 4.25 && $level < 4.75) :
-                $data['restRating'] = '/assets/img/star-rating4half.png';
-                break;
-            case ($level >= 4.75) :
-                $data['restRating'] = '/assets/img/star-rating5.png';
-                break;
-        }
-
-        $data['user'] = Auth::user();
-        $data['friends'] = $data['user']->friends()
-            ->where("user_id", '=', $data['user']->id)
-            ->orWhere("friend_id", '=', $data['user']->id)
-            ->orderBy('last_name', 'asc')
-            ->get();
+            $data['friends'] = $data['user']->friends()
+                ->where("user_id", '=', $data['user']->id)
+                ->orWhere("friend_id", '=', $data['user']->id)
+                ->orderBy('last_name', 'asc')
+                ->get();
         
         return view('restaurants.show')->with($data);
     }
