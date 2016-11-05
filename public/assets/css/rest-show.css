@@ -40,7 +40,6 @@ body {
 	padding: 1%;
 	margin: 10px 5px;
 	background: #d5b33b;
-    font-weight: 900 !important;
     color: rgba(8, 59, 112, .85) !important;
     border:3px solid #d5b33b;
 	font-size: 1.2em;
@@ -159,10 +158,48 @@ body {
 	width: 100%;
 }
 
+
+
+/******************************/
+/*           Modal            */
+/******************************/
+
 .my_select_box {
-	width: 100%;
+	width: 50%;
+	height: 50%;
 }
 
+.input-group{
+	width: 40%;
+	margin-left: 30%;
+	margin-bottom: 10px;
+}
+
+.modal {
+	background: rgba(255, 255, 255, .45);
+}
+
+.add_field_button {
+	margin-top: 10px;
+}
+
+.input-group-addon{
+	color: white;
+	border: 1px solid rgba(8, 59, 112, .85);
+	background: rgba(8, 59, 112, .85);
+	font-size: 1.2em;
+}
+
+.modal-header {
+	font-size: 1.5em;
+	font-weight: 900;
+	background: rgba(8, 59, 112, .85);
+	color: white;
+}
+
+.btn-primary {
+	background: rgba(8, 59, 112, .85);
+}
 
 /**************************************/
 /*            Media Queries           */
