@@ -18,7 +18,6 @@ class Friend extends BaseModel
 		return self::join('users', 'users.id', '=', 'friends.user_id')
 					->where('friends.user_id', '=', $userId)
 					->orWhere('friends.friend_id', '=', $userId)
-					->where('friends.status', '=', 1)
 					->orderBy('users.name');
 	}
 
