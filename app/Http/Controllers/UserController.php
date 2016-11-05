@@ -148,7 +148,6 @@ class UserController extends Controller
         $AccountSid = env('TWILIO_ID');
         $AuthToken = env('TWILIO_TOKEN');
 
-
 //          // Step 3: instantiate a new Twilio Rest Client
         $client = new Client($AccountSid, $AuthToken);
 
