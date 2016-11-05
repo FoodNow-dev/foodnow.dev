@@ -101,7 +101,7 @@ function rating(level) {
         e.preventDefault();
         if(x < max_fields){ //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div class="input-group"><input type="text" name="mytext[]" id = "mytext[]" class="phone col-xs-12 space" placeholder="Friend\'s Phone #"><div class="input-group-addon remove_field"<a href="#"></a>X</div></div>'); //add input box
+            $(wrapper).append('<div class="input-group"><input type="text" name="mytext[]" id = "mytext[]" class="phone space form-control" placeholder="Friend\'s Phone #"><span class="input-group-addon remove_field"<a href="#"></a><b>&times;</b></span></div>'); //add input box
         }
     });
     
@@ -225,6 +225,8 @@ function createMarker(place) {
                     $('.form-box').append(reviewContent);
                 });
             }
+
+            $('#email_body').text(user + ' is inviting you to ' + details.name);
         }
     });
 
