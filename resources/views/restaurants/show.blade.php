@@ -2,6 +2,8 @@
 
 @section('css')
 
+	{{-- THE FOLLOWING SCRIPTS NEED TO STAY AT THE TOP --}}
+
 	{{-- Custom CSS --}}
 	<link rel="stylesheet" type="text/css" href="/assets/css/rest-show.css">
 	
@@ -20,6 +22,7 @@
     {{--  jQuery Validate --}}
     <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
 
+
     {{-- Additional Methods --}}
     <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
 
@@ -28,6 +31,7 @@
 
     {{-- Sweet Alerts CSS --}}
     <script type="text/javascript" src="{{ URL::asset('assets/sweetalert-master/dist/sweetalert.min.js') }}"></script>
+
 
 @stop
 
@@ -225,6 +229,8 @@
 	
 	{{-- Custom JS --}}
 	<script type="text/javascript" src="{{ URL::asset('assets/js/rest-show.js') }}"></script>
+{{-- this needs to stay, don't delete --}}
+	<script type="text/javascript" src="{{ URL::asset('assets/js/random.js') }}"></script>
 
 @stop
 
