@@ -2,37 +2,33 @@
 
 @section('css')
 
-	{{-- THE FOLLOWING SCRIPTS NEED TO STAY AT THE TOP --}}
-
-	{{-- Custom CSS --}}
+{{-- Custom CSS --}}
 	<link rel="stylesheet" type="text/css" href="/assets/css/rest-show.css">
-	
-	{{-- Chosen Core CSS --}}
-	<link rel="stylesheet" href="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.min.css') }}">
+
+	{{-- Chosen CSS --}}
+	<link rel="stylesheet" href="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.min.css') }}"/>
 
 	{{-- Sweet Alerts CSS --}}
-    <link rel="stylesheet" href="{{ URL::asset('assets/sweetalert-master/dist/sweetalert.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/sweetalert-master/dist/sweetalert.css') }}" />
 
 	{{-- jQuery.js --}}
 	<script type="text/javascript" src="{{ URL::asset('assets/js/jQuery.js') }}"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 
     {{-- Bootstrap.js --}}
     <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
     
-    {{--  jQuery Validate --}}
+	{{-- jQuery Validation --}}
     <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/jquery.validate.min.js') }}"></script>
-
 
     {{-- Additional Methods --}}
     <script type="text/javascript" src="{{ URL::asset('assets/js/jquery-validation-1.15.1/dist/additional-methods.js') }}"></script>
 
-	{{-- jQuery Chosen Plugin (does not work if script is @ end of page--}}
+    {{-- Chosen.js --}}
     <script type="text/javascript" src="{{ URL::asset('assets/js/chosen_v1.6.2/chosen.jquery.min.js') }}"></script>
 
-    {{-- Sweet Alerts CSS --}}
+    {{-- Sweet Alerts.js --}}
     <script type="text/javascript" src="{{ URL::asset('assets/sweetalert-master/dist/sweetalert.min.js') }}"></script>
-
-
 @stop
 
 @section('content')
@@ -40,16 +36,17 @@
 <!-- Modal -->
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
  	<div class="modal-dialog" role="document">
-		<form id="info" class="form-horizontal" method="POST" action="{{ action('UserController@sendText') }}">
+		<form id="rest-info" class="form-horizontal" method="POST" action="{{ action('UserController@sendText') }}">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="exampleModalLabel">Create Event</h4>
+					<h3 class="modal-title" id="exampleModalLabel"><b>Create Event</b></h3>
 				</div>
 				<div class="modal-body">
 					{!! csrf_field() !!}
-					<div class="form-group">
-						<div class="col-xs-7 ">
+					<div class="form-group row">
+					{{-- dropdown --}}
+						<div class="col-xs-12">
 						 	<select class="my_select_box" data-placeholder="Select Friends" name="mytext[]" multiple>
 						 	  	@foreach($friends as $friend)
 						 	  		@if($user->id != $friend->id)
@@ -58,20 +55,15 @@
 						 	  	@endforeach 
 							</select>
 						</div>
-									 
 						{{-- dynamic input field buttons --}}
-						<div class="input_fields_wrap ">
-
-							<div class="form-group">
-								<button class="btn btn-default add_field_button">Add other numbers</button>
-								<label class="sr-only" for="mytext[]"></label>
-								<div class="input-group">
-									{{-- fields to type phone numbers appears here --}}
-								</div>
+						<div class="input_fields_wrap col-xs-12">
+							<button class="btn-lg btn-primary add_field_button">Add other numbers</button>
+							<div class="form-group row">
+								{{-- fields to type phone numbers appears here --}}
 							</div>
     					</div>
-						<div class="form-group col-xs-8 col-xs-offset-7">
-							<textarea id="email_body" name="email_body" rows="4" cols="50" placeholder="">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }} is inviting you to dinner at {{ $place['name']}}!</textarea>
+						<div class="form-group">
+							<textarea id="email_body" name="email_body" rows="4" cols="50" placeholder="">{{ Auth::user()->first_name }} is inviting you to {{ $place['name'] }}</textarea>
 						</div>
 					</div>{{-- /.form-group --}}
 			  	</div>{{-- /.modal-body --}}
@@ -84,34 +76,35 @@
 			</div>
 		</form>
 		<script>
-		// validation
+			// validation
 	    	$.validator.addMethod("cRequired", $.validator.methods.required, "Please provide a phone number");
 	    	$.validator.addMethod("cPhone", $.validator.methods.phoneUS, "Please provide a valid U.S. phone number");
 	    	$.validator.addClassRules("phone", {cRequired:true, cPhone:true});
-		    $( "#info" ).validate({
-		  rules: {
-		    email_body: {
-		      required: true,
-		      minlength: 2
-		    }
-			  }
+		    $( "#rest-info" ).validate({
+			  	rules: {
+				    email_body: {
+				      	required: true,
+				      	minlength: 2
+				    }
+				}
 			});
-		</script>
-		<script>
+		
+			//dropdown
 			$(".my_select_box").chosen({
 				disable_search_threshold: 1,
 				no_results_text: "Oops, nothing found!",
 				width: "95%",
 				display_selected_options:false
 			});
-		</script>
-		<script>
+
+			// sweet alert
 		   $(".send").click(function() { 
 				swal("Message Sent", "Have a good time!", "success");
 			});
 		</script>
  	</div>
-</div>
+</div> {{-- end of Modal --}}
+
 
 									
 
@@ -211,26 +204,26 @@
 	{{-- Google Maps API --}}
 
 	{{-- MAIN API --}}
-	{{-- // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=initMap" async defer></script> --}}
+	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=initMap" async defer></script> --}}
 
 
 	{{-- JESSICA API --}}
-	{{-- // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4&libraries=places&callback=initMap" async defer></script> --}}
+	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4&libraries=places&callback=initMap" async defer></script> --}}
 	
 	
 	{{-- BENS API --}}
 
-	{{-- // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA49FZPs3ZmqNEQXUfNrgKKoXWihUwnEWQ&libraries=places&callback=initMap" async defer></script> --}}
+	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA49FZPs3ZmqNEQXUfNrgKKoXWihUwnEWQ&libraries=places&callback=initMap" async defer></script> --}}
 	
-	{{-- // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI&libraries=places&callback=initMap" async defer></script> --}}
+	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI&libraries=places&callback=initMap" async defer></script> --}}
 	
 	{{-- WHITNEY API --}}
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30	&libraries=places&callback=initMap" async defer></script>
 	
 	{{-- Custom JS --}}
 	<script type="text/javascript" src="{{ URL::asset('assets/js/rest-show.js') }}"></script>
-{{-- this needs to stay, don't delete --}}
-	<script type="text/javascript" src="{{ URL::asset('assets/js/random.js') }}"></script>
+	{{-- this needs to stay, don't delete (THIS GOES TO THE RANDOM BLADE --}}
+	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/random.js') }}"></script> --}}
 
 @stop
 
