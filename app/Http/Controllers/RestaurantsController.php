@@ -125,7 +125,6 @@ class RestaurantsController extends Controller
                 $data['photos'][] = $photoBase64;
                 sleep(0.1);
             }
-        }
         foreach($data['place']['reviews'] as $key => $review) {
 
             $level = $review['rating'];
@@ -204,6 +203,7 @@ class RestaurantsController extends Controller
                 break;
         }
 
+        }
         $data['user'] = Auth::user();
         $data['friends'] = $data['user']->friends()
             ->where("user_id", '=', $data['user']->id)
