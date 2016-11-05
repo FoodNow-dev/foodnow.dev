@@ -182,6 +182,7 @@
 
 	
 	{{-- Custom JS --}}
+	
 	<script type="text/javascript" src="{{ URL::asset('assets/js/random.js') }}"></script>
 @stop
 
