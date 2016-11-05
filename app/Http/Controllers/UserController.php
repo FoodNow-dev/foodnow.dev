@@ -55,10 +55,10 @@ class UserController extends Controller
 
         // dd($data['friends']);
 
-        foreach ($data['friends'] as $friend) {
-            dd($friend->friends()->users());
+        // foreach ($data['friends'] as $friend) {
+            // dd($friend->friends()->users());
             // if ($friend->relations['pivot']->)
-        }
+        // }
         return view('users.show')->with($data);
     }
 
