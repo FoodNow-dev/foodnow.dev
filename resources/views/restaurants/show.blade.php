@@ -106,10 +106,6 @@
 </div> {{-- end of Modal --}}
 
 
-									
-
-
-
 <!-- Top content -->
 <div class="top-content">
 	<div class="inner-bg">
@@ -204,8 +200,8 @@
 	{{-- Google Maps API --}}
 
 	{{-- MAIN API --}}
-	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=initMap" async defer></script> --}}
 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=initMap" async defer></script>
 
 	{{-- JESSICA API --}}
 	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4&libraries=places&callback=initMap" async defer></script> --}}
@@ -218,7 +214,7 @@
 	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI&libraries=places&callback=initMap" async defer></script> --}}
 	
 	{{-- WHITNEY API --}}
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30	&libraries=places&callback=initMap" async defer></script>
+	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30	&libraries=places&callback=initMap" async defer></script> --}}
 	
 	{{-- Custom JS --}}
 	<script type="text/javascript" src="{{ URL::asset('assets/js/rest-show.js') }}"></script>

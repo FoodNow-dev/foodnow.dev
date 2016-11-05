@@ -19,32 +19,19 @@ body{
 	height: 50%;
 }
 
-body > div.form-group > input {
-	width: 60%;
-	display: inline-block;
-}
-
-footer {
-	position: fixed !important;
-	bottom: 0px;
-	width: 100%;
-	z-index: 1000;
-}
-
 form {
-	width: 40%;
+	width: 55%;
 	display: inline-block;
+	margin-left: -7%;
 }
 
 h4 {
-	color: white;
+	color: #d5b33b;
+	font-weight: bolder;
 }
 
 .search {
-	text-align: center;
+	text-align: left;
 	margin-left: 37.5%;
 }
 
-body > div.row.text-center {
-	margin-bottom: 4%;
-}
