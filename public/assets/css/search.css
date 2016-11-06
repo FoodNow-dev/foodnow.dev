@@ -243,7 +243,9 @@ select.form-control {
     -webkit-transition: all .3s;
     -ms-transition: all .3s; 
     transition: all .3s;
+    z-index: 1000 !important;
 }
+
 
 
 

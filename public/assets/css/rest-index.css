@@ -8,21 +8,13 @@ nav {
 	z-index: 1000;
 }
 
-footer {
-	position: fixed !important;
-	bottom: 0px;
-
-	width: 100%;
-	z-index: 1000;
-}
-
 .container {
 	width:95%;
 }
 
 #map {
+	width: 50vw;
 	height: 80vh;
-	width: 50%;
 	border: 1px solid black;
 	margin-bottom: 2%;
 	border-radius: 5px;
@@ -50,6 +42,7 @@ footer {
 	box-shadow: 0px 0px 100px #888;
 	overflow: hidden;
     position: relative;
+    right: 145%;
     width: 120%;
     margin-top: 5px;
     margin-right: 10px !important;	
@@ -98,15 +91,36 @@ body > div > div > div.col-sm-5 {
 
 @media (min-width: 1100px) {
 	.left {
-		width:40%;
+		width:30%;
 	}
 	.info {
-		width: 60%;
+		width: 70%;
 	}
 	.list {
-		width: 100%;
+		width: 90%;
+		right: 135%;
 	}
 	#map {
-		right: 6%;
+		right: 4%;
 	}
+}
+
+@media screen and (max-width: 765px) {
+	#map {
+		position: static !important;
+		top: 0px;
+		right: 5px;
+		width: 100%;
+		height: 40vh;
+		margin-left: 7%;
+		border:none;
+	}
+	.list {
+		position: relative;
+		right: -10%;
+		top: 10px;
+		width: 100%;
+		margin-left: 4%;
+	}
+	
 }

@@ -14,9 +14,9 @@ body{
     margin-top: 10px;
 }
 
-#userImg {
-	width: 100%;
-	height: 50%;
+.userImg {
+	height: 30vh;
+	width: auto;
 }
 
 form {
