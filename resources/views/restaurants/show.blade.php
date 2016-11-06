@@ -218,7 +218,7 @@
 	
 	{{-- Custom JS --}}
 	<script type="text/javascript" src="{{ URL::asset('assets/js/rest-show.js') }}"></script>
-	{{-- this needs to stay, don't delete (THIS GOES TO THE RANDOM BLADE --}}
+	{{-- this needs to stay, don't delete (THIS GOES TO THE RANDOM BLADE) --}}
 	{{-- <script type="text/javascript" src="{{ URL::asset('assets/js/random.js') }}"></script> --}}
 
 @stop
