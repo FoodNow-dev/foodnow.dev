@@ -2,7 +2,7 @@
 /*          Landing         */
 /**********************************/
 
-.row{
+.row {
 	margin-top: 1%;
 	margin-bottom: 3%;
 }
@@ -169,6 +169,16 @@ body > div > div > div > div > div.text.col-xs-6 > div {
 		border-top-left-radius: 15px;
 		border-bottom-left-radius: 15px;
 	}
+	.row {
+		height: 500px;
+	}
+	.container {
+		height: 500px;	
+	}
+	.inner-bg {
+		height: 500px;
+	}
+	
 }
 
 @media(max-width: 770px) {
@@ -192,8 +202,8 @@ body > div > div > div > div > div.text.col-xs-6 > div {
 /*----------------------- RIGHT DIV -----------------------*/
 /* RANDOM BUTTON */
 
-
 .btn{
+	z-index: 10000 !important;
 	height: 10vh;
 	width: 100%;
 	min-width: 134px;	
@@ -256,7 +266,6 @@ select.form-control {
 	.right-line {
 		width: 25vw;
 	}
-	
 }
 
 
