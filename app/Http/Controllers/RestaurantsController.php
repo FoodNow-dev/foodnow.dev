@@ -76,7 +76,7 @@ class RestaurantsController extends Controller
        
         // Google Maps API
         // MAIN API
-        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
+        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBr7QFq8EX1937OqC6Ge9n7fuE0vJ8dTIo";
 
         // JESSICA API
         // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
@@ -104,7 +104,7 @@ class RestaurantsController extends Controller
 
                 // Google Maps API
                 // MAIN API
-                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&maxheight=500&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
+                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&maxheight=500&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBr7QFq8EX1937OqC6Ge9n7fuE0vJ8dTIo";
 
                 // JESSICA API
                 // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&maxheight=500&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
