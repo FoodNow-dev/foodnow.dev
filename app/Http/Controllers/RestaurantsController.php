@@ -104,7 +104,6 @@ class RestaurantsController extends Controller
 
                 // Google Maps API
                 // MAIN API
-
                 $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&maxheight=500&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
 
                 // JESSICA API
