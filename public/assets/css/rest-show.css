@@ -268,7 +268,7 @@ body {
 		width: 95%;
 	}
 	.google-profile {
-		height: 25vh;
+		height: 20vh !important;
 	}
 	.form-box{
 		margin-bottom: 50px;

@@ -22,8 +22,9 @@ body{
 form {
 	width: 55%;
 	display: inline-block;
-	margin-left: -7%;
+	margin-left: -7vw;
 }
+
 
 h4 {
 	color: #d5b33b;
@@ -35,3 +36,8 @@ h4 {
 	margin-left: 37.5%;
 }
 
+.form-control{
+	min-width: 200px;
+}
+
+@
