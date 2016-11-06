@@ -166,39 +166,39 @@ class RestaurantsController extends Controller
             }
             $data['time'][$key] = Carbon::createFromTimestamp($review['time'])->diffForHumans();
         }
-
-        switch ($data['place']['rating']) {
-            case ($level < .25) :
+       $stars = $data['place']['rating'];
+        switch ($stars) {
+            case ($stars < .25) :
                 $data['restRating'] = '/assets/img/star-rating0.png';
                 break;
-            case ($level >= .25 && $level < .75) :
+            case ($stars >= .25 && $stars < .75) :
                 $data['restRating'] = '/assets/img/star-rating-half.png';
                 break;
-            case ($level >= .75 && $level < 1.25) :
+            case ($stars >= .75 && $stars < 1.25) :
                 $data['restRating'] = '/assets/img/star-rating1.png';
                 break;
-            case ($level >= 1.25 && $level < 1.75) :
+            case ($stars >= 1.25 && $stars < 1.75) :
                 $data['restRating'] = '/assets/img/star-rating1half.png';
                 break;
-            case ($level >= 1.75 && $level < 2.25) :
+            case ($stars >= 1.75 && $stars < 2.25) :
                 $data['restRating'] = '/assets/img/star-rating2.png';
                 break;
-            case ($level >= 2.25 && $level < 2.75) :
+            case ($stars >= 2.25 && $stars < 2.75) :
                 $data['restRating'] = '/assets/img/star-rating2half.png';
                 break;
-            case ($level >= 2.75 && $level < 3.25) :
+            case ($stars >= 2.75 && $stars < 3.25) :
                 $data['restRating'] = '/assets/img/star-rating3.png';
                 break;
-            case ($level >= 3.25 && $level < 3.75) :
+            case ($stars >= 3.25 && $stars < 3.75) :
                 $data['restRating'] = '/assets/img/star-rating3half.png';
                 break;
-            case ($level >= 3.75 && $level < 4.25) :
+            case ($stars >= 3.75 && $stars < 4.25) :
                 $data['restRating'] = '/assets/img/star-rating4.png';
                 break;
-            case ($level >= 4.25 && $level < 4.75) :
+            case ($stars >= 4.25 && $stars < 4.75) :
                 $data['restRating'] = '/assets/img/star-rating4half.png';
                 break;
-            case ($level >= 4.75) :
+            case ($stars >= 4.75) :
                 $data['restRating'] = '/assets/img/star-rating5.png';
                 break;
         }

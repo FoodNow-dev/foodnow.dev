@@ -136,12 +136,12 @@ body > div > div > div > div > div.text.col-xs-6 > div {
 		font-size: 6em;
 		color: #d5b33b;
 	}
+
 	body > div > div > div > div > div.text.col-xs-12.col-lg-6 {
 		margin-top: -15.35%;
 		padding-top: 150px;
 		position: relative;
 		z-index: -1000;
-		bottom: 10%;
 	}
 	.text {
 		margin: 0px;
@@ -196,6 +196,7 @@ body > div > div > div > div > div.text.col-xs-6 > div {
 .btn{
 	height: 10vh;
 	width: 100%;
+	min-width: 134px;	
     margin: 10px;
     padding: 10px;
     vertical-align: middle;
@@ -223,6 +224,7 @@ select.form-control {
 
 .random-btn {
 	margin-top: 10%;
+	min-width: 190px;
 	width: 25vw;
     vertical-align: middle;
     background: #d5b33b;
@@ -247,7 +249,15 @@ select.form-control {
 }
 
 
-
+@media screen and (max-width: 770px) {
+	.left-line {
+		width: 25vw;
+	}
+	.right-line {
+		width: 25vw;
+	}
+	
+}
 
 
 
