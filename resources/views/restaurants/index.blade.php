@@ -11,12 +11,15 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-5">
-				<div id="results">
+			<div class="col-xs-10 col-sm-7">
+				<div id="map">
+					{{-- Map renders here --}}
 				</div>
 			</div>
-			<div class="col-sm-7">
-				<div id="map"></div>
+			<div class="col-xs-10 col-sm-5">
+				<div id="results">
+					{{-- List of restaurants --}}
+				</div>
 			</div>
 		</div>
 	</div>
@@ -37,7 +40,7 @@
 
 	{{-- Google Maps API --}}
 	{{-- MAIN API --}}
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=getLocation" async defer></script>
+	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=getLocation" async defer></script> --}}
 
 	{{-- JESSICA API --}}
 	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4&libraries=places&callback=getLocation" async defer></script> --}}
@@ -48,6 +51,6 @@
 
 	
 	{{-- WHITNEY API --}}
-	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30&libraries=places&callback=getLocation" async defer></script> --}}
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30&libraries=places&callback=getLocation" async defer></script>
 @stop
 
