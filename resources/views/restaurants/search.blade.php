@@ -80,10 +80,13 @@
     							</div>
  							</div>
  							{{-- SUBMIT BUTTON --}}
- 							<div class="col-xs-8 col-md-6 col-xs-offset-2"><button type="submit" class="btn"><b>Submit</b></button></div>
+ 							<div class="col-xs-8 col-md-6 col-xs-offset-2">
+ 								<button type="submit" class="btn"><b>Submit</b></button>
+ 							</div>
 						</form> {{-- CLOSES THE FORM --}}
 
 					</div> {{-- CLOSES THE text col-sm-6 --}}
+
 					<div class="or">
 						OR
 					</div>
@@ -92,14 +95,13 @@
 						<h1> <strong>Let Us Choose For You:</strong></h1>
 
 						<br>
-						<div>
-						    <a class="random-btn btn" href="/restaurants/random">Random</a>
-						</div>
+					    <a class="random-btn btn" href="/restaurants/random">I'm Hangry!</a>
 						<div class="right-line"></div>
 						<div class="left-line"></div>
 						<div class="top-line"></div>
 						<div class="bottom-line"></div>
 					</div>
+
 				</div>{{-- /.row --}}
 			</div>{{-- /.container --}}
 		</div>{{-- /.inner-bg --}}

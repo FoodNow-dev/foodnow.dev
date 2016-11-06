@@ -123,11 +123,12 @@ function showError(error) {
             alert("An unknown error occurred.")
             break;
     }
+    initMap(29.424122, -98.493628);
 }
 
 // --------------------------- RENDERS MAP ---------------------------
 function initMap(lat, lon) {
-    var userLoc = new google.maps.LatLng(29.424122, -98.493628);
+    var userLoc = new google.maps.LatLng(lat,lon);
     // var userLoc = new google.maps.LatLng(lat, lon);
 
     map = new google.maps.Map(document.getElementById('map'), {
