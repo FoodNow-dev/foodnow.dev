@@ -95,7 +95,7 @@
 						<h1> <strong>Let Us Choose For You:</strong></h1>
 
 						<br>
-					    <a class="random-btn btn" href="/restaurants/random">Random</a>
+					    <a class="random-btn btn" href="/restaurants/random">I'm Hangry!</a>
 						<div class="right-line"></div>
 						<div class="left-line"></div>
 						<div class="top-line"></div>
