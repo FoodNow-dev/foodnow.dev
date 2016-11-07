@@ -149,7 +149,7 @@
 				<br>
 				<br>
 				<!--/Slider-->
-				<div class="col-sm-6 col-sm-offset-3">
+				<div>
 					<button type="button" class="btn-create" data-toggle="modal" data-target="#modal" href="#">Create Event</button>
 				</div>
 			</div>

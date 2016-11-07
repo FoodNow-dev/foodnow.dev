@@ -22,7 +22,7 @@ body {
 	display: inline-block;
 	height: 50px;
 	padding: 1.5%;
-	margin: 10px;
+	margin: 5px;
 	background: #d5b33b;
     font-weight: 900;
     color: rgba(8, 59, 112, .85) !important;
@@ -31,24 +31,11 @@ body {
   	width:25%;
     display:block;
     float:left;
+    position: relative;
+    left: 2px;
     -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
 }
 
-.btn-create {
-	display: inline-block;
-	height: 50px;
-	padding: 1%;
-	margin: 10px 5px;
-	background: #d5b33b;
-    color: rgba(8, 59, 112, .85) !important;
-    border:3px solid #d5b33b;
-	font-size: 1.2em;
-  	width:84%;
-    clear: left;
-    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
-    position: relative;
-    left: 2px;
-}
 
 .btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; opacity: 0.6; color: #fff; }
 
@@ -64,7 +51,7 @@ body {
 .form-box {
 	margin-top: 7% !important;
 	position: relative;
-	left: 30px;
+	left: 4%;
 }
 
 .form-top {
@@ -112,6 +99,9 @@ body {
 
 /* --------------------- GOOGLE PROFILE -------------------*/
 
+.google-profile {
+	max-height: 150px;
+}
 .review-info h3 {
 	position: relative;
 	bottom: 25px;
@@ -215,6 +205,22 @@ body {
 		border:2px solid #d5b33b;
 		margin: 10px;
 	}
+	.btn-create {
+		display: inline-block;
+		height: 50px;
+		padding: 1%;
+		margin: 10px;
+		background: #d5b33b;
+	    color: rgba(8, 59, 112, .85) !important;
+	    border:3px solid #d5b33b;
+		font-size: 1.2em;
+	  	width: 37.75%;
+	    clear: left;
+	    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+	    position: relative;
+	    left: 2px;
+	   
+	}
 }
 
 @media (min-width: 1100px) {
@@ -244,10 +250,25 @@ body {
 	}
 
 	.btn-link-1 {
-		margin-top: 10%;
+		margin-top: 5%;
 	}
 	.form-box {
 		margin-bottom: 6%;
+	}
+	.btn-create {
+		display: inline-block;
+		height: 50px;
+		padding: 1%;
+		margin: 10px 5px;
+		background: #d5b33b;
+	    color: rgba(8, 59, 112, .85) !important;
+	    border:3px solid #d5b33b;
+		font-size: 1.2em;
+	  	width: 36.24%;
+	    clear: left;
+	    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+	    position: relative;
+	    right: 12px;
 	}
 }
 
