@@ -50,7 +50,7 @@ function timeSince(date) {
 var map;
 var infowindow;
 var service;
-var foodType = ["breakfast restaurant", "american restaurant", "cajun restaurant", "chinese restaurant", "german restaurant", "indean restaurant", "italian restaurant", "japanese restaurant", "mediterranean restaurant", "mexican restaurant", "soul restaurant", "thai restaurant", "vietnamese restaurant"]
+var foodType = ["cajun restaurant", "chinese restaurant", "german restaurant", "indean restaurant", "italian restaurant", "japanese restaurant", "mediterranean restaurant", "mexican restaurant", "soul restaurant", "thai restaurant", "vietnamese restaurant"]
 
 function priceFormat(level) {
     switch (level) {

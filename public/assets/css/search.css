@@ -97,8 +97,8 @@ body > div > div > div > div > div.text.col-xs-6 > div {
 	color: #d5b33b;
 	font-family: 'Bevan', cursive;
 	width: 205px;
-	top: 43%;
-	left: 43%;
+	top: 45.5%;
+	left: 44.5%;
 }
 
 @media(min-width: 1200px) {
@@ -131,7 +131,7 @@ body > div > div > div > div > div.text.col-xs-6 > div {
 @media(max-width: 1200px) {
 	.or {
 		position: static;
-		margin-top:20px;
+		margin-top: 20px;
 		margin-left: 37%;
 		font-size: 6em;
 		color: #d5b33b;
@@ -196,6 +196,7 @@ body > div > div > div > div > div.text.col-xs-6 > div {
 	.text {
 		border-radius: 0px 0px 5px 5px;
 	}
+	
 }
 
 
@@ -233,15 +234,16 @@ select.form-control {
 }
 
 .random-btn {
-	margin-top: 10%;
-	min-width: 190px;
-	width: 25vw;
-    vertical-align: middle;
+	margin-top: 30%;
+	min-width: 100px;
+	width: 20vw;
     background: #d5b33b;
     border: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 1.75em;
     font-weight: bold;
+	height: 70px;
+
     color: rgba(8, 59, 112, 1);
     -moz-border-radius: 4px; 
     -webkit-border-radius: 4px; 
@@ -261,13 +263,40 @@ select.form-control {
 
 @media screen and (max-width: 770px) {
 	.left-line {
-		width: 25vw;
+		width: 15vw;
 	}
 	.right-line {
-		width: 25vw;
+		width: 15vw;
 	}
 }
 
+@media(max-width: 1200px) {
+	.random-btn {
+		margin-top: 8%;
+		min-width: 206px;
+		width: 20vw;
+	    background: #d5b33b;
+	    border: 0;
+	    font-family: 'Roboto', sans-serif;
+	    font-size: 1.75em;
+	    font-weight: bold;
+		height: 70px;
 
+	    color: rgba(8, 59, 112, 1);
+	    -moz-border-radius: 4px; 
+	    -webkit-border-radius: 4px; 
+	    border-radius: 4px;
+	    text-shadow: none;
+	    -moz-box-shadow: none; 
+	    -webkit-box-shadow: none; 
+	    box-shadow: none;
+	    -o-transition: all .3s; 
+	    -moz-transition: all .3s; 
+	    -webkit-transition: all .3s;
+	    -ms-transition: all .3s; 
+	    transition: all .3s;
+	    z-index: 1000 !important;
+	}
+}
 
 
