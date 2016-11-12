@@ -1,7 +1,5 @@
 @extends('layouts.master')
 
-@section('title', 'Profile')
-
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/user-edit.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/form-elements.css">

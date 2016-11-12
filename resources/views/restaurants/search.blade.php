@@ -1,7 +1,5 @@
 @extends('layouts.master')
 
-@section('title','Landing')
-
 {{-- the following section may change if I user custom css --}}
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/search.css">
