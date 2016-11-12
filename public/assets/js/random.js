@@ -102,8 +102,8 @@ function getLocation() {
 }
 
 function showPosition(position) {
-    var lat = position.coords.latitude;
-    var lon = position.coords.longitude;
+	var lat = (position) ? position.coords.latitude : 29.443134;
+    var lon = (position) ? position.coords.longitude : -98.48138;
 
     initMap(lat, lon);
 }
