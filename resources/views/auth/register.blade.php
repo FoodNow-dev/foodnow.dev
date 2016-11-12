@@ -1,7 +1,5 @@
 @extends('layouts.master')
 
-@section('title', 'Welcome')
-
 @section('css')
 	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/register.css">

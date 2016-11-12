@@ -1,7 +1,5 @@
 @extends('layouts.master')
 
-@section('title','Restaurant')
-
 @section('css')
 	
 	<link rel="stylesheet" href="{{ URL::asset('assets/css/restaurant.css') }}" />
