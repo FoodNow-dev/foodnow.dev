@@ -35,6 +35,11 @@ Route::get('vendor/map', function()
 	return view('vendor/map');
 });
 
+// Route::get('users/about', function()
+// {
+// 	return view('users/about');
+// });
+
 Route::get('restaurants/show', 'RestaurantsController@showData' );
 
 
@@ -68,8 +73,8 @@ Route::get('vendor/map', function()
 
 
 Route::resource('restaurants', 'RestaurantsController');
-
 Route::resource('users', 'UserController');
+
 
 // Make friends...
 Route::post('users/setfriend/{status}', 'UserController@setFriend');
