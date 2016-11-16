@@ -75,19 +75,16 @@ class RestaurantsController extends Controller
         $data['time'] = [];
        
         // Google Maps API
-        // MAIN API
-        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBr7QFq8EX1937OqC6Ge9n7fuE0vJ8dTIo";
+        // IN PRODUCTION WE WILL NEED TO USE THE BACK-END API IN ORDER TO NOT MAX OUT THE API EVERY 2 HOURS
+        // Backend API
+        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBr7QFq8EX1937OqC6Ge9n7fuE0vJ8dTIo";
 
-        // JESSICA API
-        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
+        // Production API
+        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
         
-        // BENS API
-        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
+        // DEV API
+        $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyCiz0mHf0rFhZRI-dIr7Phh-cUVuHq9dOs";
         
-        // WHITNEY API
-        // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
-
-
 
 
         $json = file_get_contents($url);
@@ -103,19 +100,16 @@ class RestaurantsController extends Controller
             foreach ($placedata['result']['photos'] as $key => $photo) {
 
                 // Google Maps API
-                // MAIN API
-                $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=500&maxheight=500&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBr7QFq8EX1937OqC6Ge9n7fuE0vJ8dTIo";
+                // IN PRODUCTION WE WILL NEED TO USE THE BACK-END API IN ORDER TO NOT MAX OUT THE API EVERY 2 HOURS
+                // Backend API
+                // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBr7QFq8EX1937OqC6Ge9n7fuE0vJ8dTIo";
 
-                // JESSICA API
-
-                // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4";
+                // Production API
+                // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
                 
-                // BENS API
-                // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI";
-                
-                // WHITNEY API
-                // $photoUrl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&maxheight=200&photoreference=" . $photo['photo_reference'] . "&key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30";
-
+                // DEV API
+                $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyCiz0mHf0rFhZRI-dIr7Phh-cUVuHq9dOs";
+        
 
 
                 $photodata = file_get_contents($photoUrl);            

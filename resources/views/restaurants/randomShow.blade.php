@@ -75,6 +75,7 @@
 				</div>
 			</div>
 		</form>
+
 		<script>
 			// validation
 	    	$.validator.addMethod("cRequired", $.validator.methods.required, "Please provide a phone number");
@@ -155,7 +156,6 @@
 		</div>
 	</div>
 </div>
-
 @stop
 
 
@@ -164,24 +164,21 @@
 		var user = '{{ Auth::user()->first_name }}';
 	</script>
 
+	
 	{{-- Google Maps API --}}
-	{{-- MAIN API --}}
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=getLocation" async defer></script>
+	{{-- WILL NEED TO USE THE PRODUCTION API HERE WHEN LIVE --}}
 
-	{{-- JESSICA API --}}
-	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4&libraries=places&callback=getLocation" async defer></script> --}}
-	
-	
-	{{-- BENS API --}}
-	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA49FZPs3ZmqNEQXUfNrgKKoXWihUwnEWQ&libraries=places&callback=getLocation" async defer></script> --}}
-	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI&libraries=places&callback=getLocation" async defer></script> --}}
-	
-	{{-- WHITNEY API --}}
-	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30&libraries=places&callback=getLocation" async defer></script> --}}
+	{{-- Production API --}}
+	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=initMap" async defer></script> --}}
 
+	<!-- Backend API -->
+	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr7QFq8EX1937OqC6Ge9n7fuE0vJ8dTIo&libraries=places&callback=initMap" async defer></script> --}}
+	
+	{{-- DEV API --}}
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiz0mHf0rFhZRI-dIr7Phh-cUVuHq9dOs&libraries=places&callback=initMap" async defer></script>
+	
 	
 	{{-- Custom JS --}}
-	
 	<script type="text/javascript" src="{{ URL::asset('assets/js/random.js') }}"></script>
 	<script type="text/javascript" src="{{ URL::asset('assets/js/jessicaScripts.js') }}"></script>
 @stop
