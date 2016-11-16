@@ -27,6 +27,11 @@ class UserController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
+    // public function about()
+    // {
+    //     return view('users.about');
+    // }
+
     /**
      * Display a listing of the resource.
      *
@@ -204,6 +209,7 @@ class UserController extends Controller
     }    
 
  }
+
 
 
 
