@@ -2,7 +2,7 @@
 
 @section('css')
 
-{{-- Custom CSS --}}
+	{{-- Custom CSS --}}
 	<link rel="stylesheet" type="text/css" href="/assets/css/rest-show.css">
 
 	{{-- Chosen CSS --}}
@@ -63,7 +63,9 @@
 							</div>
     					</div>
 						<div class="form-group">
-							<textarea id="email_body" name="email_body" rows="4" cols="50" placeholder="">{{ Auth::user()->first_name }} is inviting you to {{ $place['name'] }}</textarea>
+							<textarea id="email_body" name="email_body" rows="4" cols="50" placeholder="">
+								{{ Auth::user()->first_name }} is inviting you to {{ $place['name'] }}
+							</textarea>
 						</div>
 					</div>{{-- /.form-group --}}
 			  	</div>{{-- /.modal-body --}}
@@ -137,26 +139,29 @@
 										@endforeach
 									</div> {{-- CAROUSEL-INNER --}}
 								</div> {{-- /.carouselslide --}} 
+								
 								<!-- Carousel nav -->
 								<div class="carousel-controls-mini">
 									<a href="#myCarousel" class="direction btn-link-1" data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
 									<a href="#myCarousel" class="direction btn-link-1" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 								</div>
-							</div>
-						</div>
-					</div>
+							</div>{{--  end second "row-fulid" --}}
+						</div> {{-- end span9 --}}
+					</div> {{-- end first "row-fluid" --}}
 				</div>
 				<br>
 				<br>
+				
 				<!--/Slider-->
 				<div>
 					<button type="button" class="btn-create" data-toggle="modal" data-target="#modal" href="#">Create Event</button>
 				</div>
-			</div>
+			</div> {{-- ends "row" --}}
+			
 			<div class="col-sm-5 col-sm-offset-6 form-box">
-				<div id="map">
-					{{-- Map Renders Here --}}
-				</div>
+				{{-- Map Renders Here --}}
+				<div id="map"></div>
+
 				@foreach($place['reviews'] as $key => $review) 
 					<div class="review-container">
 						<div class="col-sm-12 form-bottom show-box">
@@ -184,8 +189,6 @@
 		</div>
 	</div>
 </div>
-				
-
 @stop
 
 
@@ -198,22 +201,18 @@
 	</script>
 
 	{{-- Google Maps API --}}
+	{{-- WILL NEED TO USE THE PRODUCTION API HERE WHEN LIVE --}}
 
-	{{-- MAIN API --}}
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=initMap" async defer></script>
+	{{-- Production API --}}
+	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=initMap" async defer></script> --}}
 
-	<!-- JESSICA API -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZU6dw9xUbnO_HXZ07ASIHhMkMHUeqpI4&libraries=places&callback=initMap" async defer></script> --}}
+	<!-- Backend API -->
+	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr7QFq8EX1937OqC6Ge9n7fuE0vJ8dTIo&libraries=places&callback=initMap" async defer></script> --}}
 	
+	{{-- DEV API --}}
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiz0mHf0rFhZRI-dIr7Phh-cUVuHq9dOs&libraries=places&callback=initMap" async defer></script>
 	
-	{{-- BENS API --}}
 
-	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA49FZPs3ZmqNEQXUfNrgKKoXWihUwnEWQ&libraries=places&callback=initMap" async defer></script> --}}
-	
-	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsi7W3rEJX-pi9_62f6d6x0_Qxt7UhMqI&libraries=places&callback=initMap" async defer></script> --}}
-	
-	{{-- WHITNEY API --}}
-	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUdJDrAvhmdwwiSpHNdKdpFTKhyM08q30&libraries=places&callback=initMap" async defer></script> --}}
 	
 	{{-- Custom JS --}}
 	<script type="text/javascript" src="{{ URL::asset('assets/js/rest-show.js') }}"></script>

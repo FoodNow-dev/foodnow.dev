@@ -93,43 +93,43 @@ function rating(level) {
 }
 
 // --------------------------- GEOLOCATION ---------------------------
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-        alert("Geolocation is not supported by this browser.");
-    }
-}
+// function getLocation() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(showPosition, showError);
+//     } else {
+//         alert("Geolocation is not supported by this browser.");
+//     }
+// }
 
-function showPosition(position) {
-	var lat = (position) ? position.coords.latitude : 29.443134;
-    var lon = (position) ? position.coords.longitude : -98.48138;
+// function showPosition(position) {
+// 	var lat = (position) ? position.coords.latitude : 29.443134;
+//     var lon = (position) ? position.coords.longitude : -98.48138;
 
-    initMap(lat, lon);
-}
+//     initMap(lat, lon);
+// }
 
-function showError(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            alert("User denied the request for Geolocation.")
-            break;
-        case error.PERMISSION_UNAVAILABLE:
-            alert("Location information is unavailable.")
-            break;
-        case error.TIMEOUT:
-            alert("The request to get user location timed out.")
-            break;
-        case error.UNKNOWN_ERROR:
-            alert("An unknown error occurred.")
-            break;
-    }
-    initMap(29.424122, -98.493628);
-}
+// function showError(error) {
+//     switch(error.code) {
+//         case error.PERMISSION_DENIED:
+//             alert("User denied the request for Geolocation.")
+//             break;
+//         case error.PERMISSION_UNAVAILABLE:
+//             alert("Location information is unavailable.")
+//             break;
+//         case error.TIMEOUT:
+//             alert("The request to get user location timed out.")
+//             break;
+//         case error.UNKNOWN_ERROR:
+//             alert("An unknown error occurred.")
+//             break;
+//     }
+//     initMap(29.424122, -98.493628);
+// }
 
 // --------------------------- RENDERS MAP ---------------------------
 function initMap(lat, lon) {
-    var userLoc = new google.maps.LatLng(lat,lon);
-    // var userLoc = new google.maps.LatLng(lat, lon);
+    // var userLoc = new google.maps.LatLng(lat,lon);
+    var userLoc = new google.maps.LatLng(29.474201, -98.627893);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,

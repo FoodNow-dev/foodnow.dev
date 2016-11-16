@@ -76,3 +76,10 @@
 		</div>{{-- /.navbar-collapse --}}
 	</div>{{-- /.container-fluid --}}
 </nav>
+
+{{-- Makes dropdown work on all pages --}}
+<script>
+	$(document).ready(function() {
+		$('.dropdown-toggle').dropdown();
+	});
+</script>
