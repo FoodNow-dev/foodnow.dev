@@ -58,11 +58,17 @@ Route::get('vendor/passwordreset', function()
 	return view('vendor/landing');
 });
 
-
+// Takes you to the edit profile page
 Route::get('vendor/edit', function()
 {
 	return view('vendor/edit');
 });
+
+// Takes you to the about us page
+// Route::get('users/about', function()
+// {
+// 	return view('users/about');
+// });
 
 
 // Map page routes...
@@ -78,5 +84,7 @@ Route::resource('users', 'UserController');
 
 // Make friends...
 Route::post('users/setfriend/{status}', 'UserController@setFriend');
+
+
 
 
