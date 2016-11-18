@@ -63,7 +63,7 @@
 							</div>
     					</div>
 						<div class="form-group">
-							<textarea id="email_body" name="email_body" rows="4" cols="50" placeholder=""></textarea>
+							<textarea id="email_body" name="email_body" rows="4" cols="40" placeholder=""></textarea>
 						</div>
 					</div>{{-- /.form-group --}}
 			  	</div>{{-- /.modal-body --}}

@@ -63,9 +63,8 @@
 							</div>
     					</div>
 						<div class="form-group">
-							<textarea id="email_body" name="email_body" rows="4" cols="50" placeholder="">
-								{{ Auth::user()->first_name }} is inviting you to {{ $place['name'] }}
-							</textarea>
+							<textarea id="email_body" name="email_body" rows="4" cols="40" placeholder="">{{ Auth::user()->first_name }} is inviting you to {{ $place['name'] }}
+							</textarea>	
 						</div>
 					</div>{{-- /.form-group --}}
 			  	</div>{{-- /.modal-body --}}
