@@ -138,14 +138,12 @@
 									<a href="#myCarousel" class="direction btn-link-1" data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 								</div>
 							</div>
+								<!--/Slider-->
+								<div>
+									<button type="button" class="btn-create" data-toggle="modal" data-target="#modal" href="#" id=><b>Create Event</b></button>
+								</div>
 						</div>
 					</div>
-				</div>
-				<br>
-				<br>
-				<!--/Slider-->
-				<div>
-					<button type="button" class="btn-create" data-toggle="modal" data-target="#modal" href="#"><b>Create Event</b></button>
 				</div>
 			</div>
 			<div class="col-sm-5 col-sm-offset-6 form-box">
