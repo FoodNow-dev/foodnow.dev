@@ -102,17 +102,17 @@ class RestaurantsController extends Controller
                 // Google Maps API
                 // IN PRODUCTION WE WILL NEED TO USE THE BACK-END API IN ORDER TO NOT MAX OUT THE API EVERY 2 HOURS
                 // Backend API
-                // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBr7QFq8EX1937OqC6Ge9n7fuE0vJ8dTIo";
+                // $photoUrl = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyBr7QFq8EX1937OqC6Ge9n7fuE0vJ8dTIo";
 
                 // Production API
-                // $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
+                // $photoUrl = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs";
                 
                 // DEV API
-                $url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyCiz0mHf0rFhZRI-dIr7Phh-cUVuHq9dOs";
-        
+                $photoUrl = "https://maps.googleapis.com/maps/api/place/details/json?placeid=" . $request['place_id'] . "&key=AIzaSyCiz0mHf0rFhZRI-dIr7Phh-cUVuHq9dOs";
 
 
-                $photodata = file_get_contents($photoUrl);            
+
+                $photodata = file_get_contents($photoUrl);                        
                 
                 $photoBase64 = chunk_split(base64_encode($photodata));
               
