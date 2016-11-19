@@ -98,7 +98,7 @@ body > div > div > div.col-sm-5 {
 	}
 }
 
-@media screen and (max-width: 765px) {
+@media (max-width: 765px) {
 	#map {
 		position: static !important;
 		top: 0px;
@@ -110,10 +110,29 @@ body > div > div > div.col-sm-5 {
 	}
 	.list {
 		position: relative;
-		right: -10%;
+		right: -2%;
 		top: 10px;
-		width: 100%;
-		margin-left: 4%;
+		width: 103%;
+		margin-left: 9%;
 	}
-	
+}
+
+@media (max-width: 670px) {
+	.list {
+		position: relative;
+		right: -2%;
+		top: 10px;
+		width: 103%;
+		margin-left: 10%;
+	}
+}
+
+@media (max-width: 476px) {
+	.list {
+		position: relative;
+		right: -2%;
+		top: 10px;
+		width: 103%;
+		margin-left: 12%;
+	}
 }
