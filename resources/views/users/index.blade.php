@@ -7,7 +7,7 @@
 @section('content')
 	<div class="search">
 	  	<form class="input-group" action="{{ action('UserController@index') }}">
-		  	<input type="text" class="form-control" placeholder="&#128270;    Search Name or Email" name="search">
+		  	<input type="text" class="form-control" placeholder="&#128270;  Search Name or Email" name="search">
 	   		<span class="input-group-btn">
 				<button type="button" class="btn btn-primary buttons">Submit</button>
 	   		</span>
