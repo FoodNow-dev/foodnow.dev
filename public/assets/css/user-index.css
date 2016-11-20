@@ -1,29 +1,26 @@
 body{
 	padding-top: 75px;
+	width: 100%;
+	margin-left: 1%;
 }
 
 .list {
 	background: rgba(8, 59, 112, .85);
-	padding: 0px;
+	padding: 0%;
 	color: #d5b33b;
 	border-radius: 10px;
 	overflow: hidden;
     width: 100%;
-    margin-top: 10px;
+    float: left;
+    height: 100%;
+    width: auto;
+    margin: 1%;
 }
 
 .userImg {
 	height: 30vh;
-	width: auto;
+	width: 182px;
 }
-
-/*form {
-	width: 32%;
-	margin-left: 32%;
-	display: block;
-	border: 2px solid red;
-}*/
-
 
 h4 {
 	color: #d5b33b;
@@ -33,25 +30,46 @@ h4 {
 	text-align: left;
 	width: 50%;
 	margin-left: 25%;
-	/*border: 2px solid red;*/
+	margin-bottom: 1%;
 }
 
 .form-control{
 	min-width: 200px;
 }
 
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5.5%;
+    /*border: 1px solid red;*/
+ }
+
+
+/* for search bar */
 @media (max-width: 550px) {
 	form {
-		width: 108%;
-		/*margin-left: 32%;*/
-		display: inline-block;
-		/*border: 2px solid red;*/
+		width: 105%;
 	}
+
 	.search {
 		text-align: left;
 		width: 100%;
 		margin-left: 0%;
-		/*border: 2px solid green;*/
 	}
 }
 
+/* for images */
+@media (max-width: 767px) {
+	.row {
+		display: block;
+		padding-left: 11%;
+		width: 100%;
+	}
+}
+
+@media (max-width: 715px) {
+	.userImg {
+		width: 50%;
+	}
+}
