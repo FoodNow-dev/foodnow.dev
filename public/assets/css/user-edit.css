@@ -3,6 +3,10 @@
     padding: 10px 0 50px 0;
 }
 
+.row {
+	margin-top: 2%;
+}
+
 /* ----------------LEFT SIDES---------------- */
 .top-content .text {
 	height: 520px;
@@ -87,7 +91,12 @@
 	color: #d5b33b;
 	float: left;
 	width: 75%;
-	padding-top: 25px;
+	padding-top: 5%;
+	padding-left: 8%;
+}
+
+p {
+	padding-left: 6px;
 }
 
 .form-top-left h3 { 
@@ -127,4 +136,11 @@
 
 body > div > div > div > div > div.col-sm-6.form-box.animated.bounceInRight > div.form-bottom.show-box {
 	border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+	body > div > div > div > div > div.col-sm-6.text.text-center.show-box.animated.flipInX > form > p {
+		/*border: 2px solid red;*/
+		padding-top: 5%;
+	}
 }

@@ -29,7 +29,7 @@
 					<div class="col-sm-6 form-box animated bounceInRight">
 						<div class="form-top show-box">
 							<div class="form-top-left">
-								<h3>Edit Profile</h3>
+								<h3 class="edit">Edit Profile</h3>
 								<p>Change the information below:</p>
 							</div>
 							<div class="form-top-right">

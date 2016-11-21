@@ -17,18 +17,14 @@
 	
 
 	<div class="container center-block">
-		{{-- <div class="row"> --}}
-			@foreach($users as $user)
-				{{-- <div class="col-sm-3"> --}}
-					<div class="list">
-						<a href="{{ action('UserController@show', $user->id) }}">
-							<img class="userImg" src="{{ (isset($user->image)) ? $user->image : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png'}}">
-							<h4>{{ $user->first_name }} {{ $user->last_name }}</h4>
-						</a>
-					</div>
-				{{-- </div> --}}
-			@endforeach
-		{{-- </div> --}}
+		@foreach($users as $user)
+			<div class="list">
+				<a href="{{ action('UserController@show', $user->id) }}">
+					<img class="userImg" src="{{ (isset($user->image)) ? $user->image : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png'}}">
+					<h4>{{ $user->first_name }} {{ $user->last_name }}</h4>
+				</a>
+			</div>
+		@endforeach
 	</div>
 	
 	{{-- this will build the pages for paginate --}}
