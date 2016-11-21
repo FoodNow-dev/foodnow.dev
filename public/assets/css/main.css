@@ -96,6 +96,7 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 
 #logo {
 	height: 50px;
+	width: auto;
 	position: relative;
 	bottom: 15px;
 	float: left;
@@ -103,10 +104,16 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 
 #logoWords {
 	height: 50px;
-	width: 70%;
+	width: 60%;
 	position: relative;
 	bottom: 15px;
 	float: left;
+}
+
+@media (max-width: 290px) {
+	body > nav > div > div.navbar-header > a {
+		width: 75%;
+	}
 }
 
 #login-dp {

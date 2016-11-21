@@ -42,9 +42,15 @@ h4 {
     margin-left: auto;
     margin-right: auto;
     padding-left: 5.5%;
-    /*border: 1px solid red;*/
  }
 
+body > div.search > form > span > button {
+	margin-left: -10%;
+}
+
+body > div.container.center-block {
+	padding-left: 7%;
+}
 
 /* for search bar */
 @media (max-width: 550px) {
@@ -69,11 +75,36 @@ h4 {
 }
 
 @media (max-width: 715px) {
-	.userImg {
-		width: 50%;
+	.center-block {
+		margin: -1%;
+		padding-left: 50%;
 	}
 }
 
-body > div.container.center-block {
-	padding-left: 7%;
+@media (max-width: 631px) {
+	body > div.row.text-center {
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+	}
+
+	.center-block {
+		display: inline-block;
+	}
+
+	.userImg {
+		max-width: 170px;
+	}
+}
+
+@media (max-width: 590px) {
+	.userImg {
+		max-width: 150px;
+	}
+}
+
+@media (max-width: 519px) {
+	.userImg {
+		max-width: 130px;
+	}
 }
