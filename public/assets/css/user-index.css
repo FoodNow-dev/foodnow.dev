@@ -73,3 +73,7 @@ h4 {
 		width: 50%;
 	}
 }
+
+body > div.container.center-block {
+	padding-left: 7%;
+}
