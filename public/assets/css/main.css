@@ -110,7 +110,7 @@ body > nav > div > div.navbar-header > button > span.sr-only:active {
 	float: left;
 }
 
-@media (max-width: 290px) {
+@media (max-width: 302px) {
 	body > nav > div > div.navbar-header > a {
 		width: 75%;
 	}
