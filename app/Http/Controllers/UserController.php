@@ -35,7 +35,7 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $data['users'] = ($request->has('search')) ? User::search($request->search)->paginate(12) :  User::paginate(12);
+        $data['users'] = ($request->has('search')) ? User::search($request->search)->paginate(15) :  User::paginate(15);
         return view('users.index')->with($data);
     }
 
@@ -204,7 +204,8 @@ class UserController extends Controller
         return view('restaurants.restaurant')->with($data);
     }    
 
-    // Trying to get the about us page linked and it is not working
+    // Trying to get the about us page linked and it is not
+
     // public function about()
     // {
     //     return view('users.about');

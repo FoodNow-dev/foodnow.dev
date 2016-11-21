@@ -117,8 +117,7 @@ body > div > div > div.col-sm-5 {
 	}
 }
 
-@media (max-width: 670px) {
-	.list {
+@media (max-width: 670px) {	.list {
 		position: relative;
 		right: -2%;
 		top: 10px;

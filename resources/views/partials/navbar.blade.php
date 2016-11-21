@@ -10,7 +10,7 @@
 			</button>
 			<a class="navbar-brand" href="{{ (Auth::check()) ? '/home': '/' }}">
 				<img id="logo" src="/assets/img/foodnow-building.png">
-				<img id="logo" src="/assets/img/foodnow-words.png">
+				<img id="logoWords" src="/assets/img/foodnow-words.png">
 			</a>
 		</div>
 

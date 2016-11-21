@@ -13,19 +13,19 @@
 		<!-- <title>@yield('title')</title> -->
 
 		<!-- Facebook and Twitter integration -->
-		<meta property="og:title" content="FoodNow" />
-		<meta property="og:image" content="http://foodnow.dev/assets/img/foodnow.png" />
-		<meta property="og:url" content="https://foodnow.com" />
-		<meta property="og:type" content="website" />
-		<meta property="og:description" content=""/>
-		<meta name="twitter:title" content="FoodNow" />
-		<meta name="twitter:image" content="http://foodnow.dev/assets/img/foodnow.png" />
-		<meta name="twitter:url" content="https://foodnow.com" />
-		<meta name="twitter:card" content="summary" />
+		<meta property="og:title" content="FoodNow" >
+		<meta property="og:image" content="http://foodnow.dev/assets/img/foodnow.png" >
+		<meta property="og:url" content="https://foodnow.com" >
+		<meta property="og:type" content="website" >
+		<meta property="og:description" content="">
+		<meta name="twitter:title" content="FoodNow" >
+		<meta name="twitter:image" content="http://foodnow.dev/assets/img/foodnow.png" >
+		<meta name="twitter:url" content="https://foodnow.com" >
+		<meta name="twitter:card" content="summary" >
 		<meta name="_token" content="{{ csrf_token() }}">
 		
 		<!-- Image for tab -->
-		<link rel="icon" href="/assets/img/foodnow-building.png"/>
+		<link rel="icon" href="/assets/img/foodnow-building.png">
 		<title>FoodNow</title>
 
 		<!-- Bootstrap Core CSS CDN-->
@@ -55,12 +55,12 @@
 			@yield('content')
 		
 
-	</body>
-	
 		{{-- jQuery --}}
 		<script src="/assets/js/jquery-1.11.1.min.js"></script>
 		{{-- Bootstrap.js --}}
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		{{-- Custom JS --}}
 		@yield('js-script')
+	</body>
+	
 </html>
