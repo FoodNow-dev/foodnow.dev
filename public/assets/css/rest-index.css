@@ -13,6 +13,7 @@
 	right: 2%;
 	top:0px;
 	margin-top: 70px;
+	z-index: 1000;
 }
 
 .col-sm-7 {

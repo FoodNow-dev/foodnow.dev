@@ -14,6 +14,7 @@
 					{{-- Map renders here --}}
 				</div>
 			</div>
+		
 			<div class="col-xs-10 col-sm-5">
 				<div id="results">
 					{{-- List of restaurants --}}
