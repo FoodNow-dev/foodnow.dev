@@ -43,10 +43,10 @@ function rating(level) {
 }
 
 function item_tmpl(data){
-    console.log(data);
+    
     var formattedAddress = data.formatted_address.substring(data.formatted_address.indexOf(","), 1);
     
-    var content = '<a href="/restaurants/show?place_id=' + data.place_id + '"><div class="list text-right"><p>';
+    var content = '<div class="list text-right"><a href="/restaurants/show?place_id=' + data.place_id + '"><p>';
         if (data.photos){
             content += '<img class="left" src="' + data.photos[0].getUrl({'maxWidth': 400, 'maxHeight': 250}) + '">';
         } else {
