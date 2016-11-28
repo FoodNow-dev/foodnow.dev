@@ -168,9 +168,9 @@ function createMarker(place) {
                     // ADDRESS
                     contentStr += (place.vicinity) ? '<br>' + place.vicinity : "<br><em>No Address Provided</em>";
                     // PRICE LEVEL
-                    contentStr += (place.price_level) ? '<br>'+ place.price_level : "<br><em>No Prices Provided</em>";
+                    // contentStr += (place.price_level) ? '<br>'+ place.price_level : "<br><em>No Prices Provided</em>";
                     // RATING
-                    contentStr += (place.rating)? ' • '+ place.rating : "<br><em>No Ratings Yet</em>";
+                    // contentStr += (place.rating)? ' • '+ place.rating : "<br><em>No Ratings Yet</em>";
                     contentStr += '</div>'
 
                 infowindow.setContent(contentStr);

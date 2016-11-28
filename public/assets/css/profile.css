@@ -1,20 +1,3 @@
-/*body {
-	background-attachment: fixed !important;
-}
-
-nav {
-	position: fixed !important;
-	width: 100%;
-	z-index: 1000;
-}
-
-footer {
-	position: fixed !important;
-	bottom: 0px;
-	width: 100%;
-	z-index: 1000;
-}*/
-
 /* ------------- LEFT SIDE ---------------- */
 #profile {
 	margin-top: 2%;
@@ -62,7 +45,6 @@ footer {
 .btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
 
 #topBox {
-	margin-left: 4%;
 	position: fixed !important;
 }
 
@@ -93,7 +75,8 @@ a {
 }
 
 body > div > div > div > div > div.col-sm-5.col-sm-offset-6.text.text-center.show-box.animated.flipInX {
-	margin-left: 55%;
+	margin: 0 auto;
+	margin-bottom: 6%;
 }
 
 
