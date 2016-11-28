@@ -10,7 +10,7 @@
 		<div class="inner-bg">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-5 text text-center show-box animated flipInX" id="topBox">
+					<div class="col-sm-5 offset-sm-4 text text-center show-box animated flipInX" id="topBox">
 						<p class="animated zoomIn">
 							<img class="img-circle" id="profile" src="{{ (isset($user->image)) ? $user->image : 'https://www.carthage.edu/themes/toph/assets/img/generic-logo.png' }}">
 						</p>
@@ -22,11 +22,11 @@
 							<h4 class="text-center">{{ $user->phone }}</h4>
 
 							<div class="row">
-								<div class="col-sm-1">
+								<div class="col-sm-2 col-sm-offset-2">
 							        {{-- Edit profile --}}
-									<a class="btn-link-2" href="{{ action('UserController@edit', $user->id) }}">Edit Profile</a><br>
+									<a class="btn-link-2" href="{{ action('UserController@edit', $user->id) }}">Edit Profile</a>
 								</div>
-								<div class="col-sm-1 col-sm-offset-4">
+								<div class="col-sm-1 col-sm-offset-2">
 									{{-- Delete profile --}}
 									<form method="POST" action="{{ action('UserController@destroy', $user->id) }}" class="delete-form">
 						        		{!! csrf_field() !!}
@@ -46,7 +46,7 @@
 					</div>
 
 					{{-- Friends list --}}
-					<div class="col-sm-5 col-sm-offset-6 text text-center show-box animated flipInX">
+					<div class="col-sm-5 col-sm-offset-6 text text-center show-box animated flipInX pull-right">
 						<h1><strong>Friends List</strong></h1>
 						<hr>
 						@foreach($friends as $friend) 

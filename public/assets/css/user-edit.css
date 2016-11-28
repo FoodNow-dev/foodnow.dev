@@ -136,6 +136,7 @@ body > div > div > div > div > div.col-sm-6.form-box.animated.bounceInRight > di
 	border-radius: 5px;
 }
 
+/* --------- MEDIA --------- */
 @media (max-width: 767px) {
 	/* image */
 	body > div > div > div > div > div.col-sm-6.text.text-center.show-box.animated.flipInX > form > p {
