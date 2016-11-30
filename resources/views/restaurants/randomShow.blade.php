@@ -165,7 +165,8 @@
 	
 	{{-- Google Maps API --}}
 	{{-- WILL NEED TO USE THE PRODUCTION API HERE WHEN LIVE --}}
-
+	{{-- callback=getLocation --}}
+	
 	{{-- Production API --}}
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=getLocation" async defer></script>
 
