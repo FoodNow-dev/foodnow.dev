@@ -76,7 +76,8 @@ function getLocation() {
 }
 
 function showPosition(position) {
-    // flase position is set to Pearl Studio for Demo Day
+    // false position is set to Pearl Studio for Demo Day
+    console.log("position" + position);
     var lat = (position) ? position.coords.latitude : 29.443134;
     var lon = (position) ? position.coords.longitude : -98.48138;
 
@@ -103,10 +104,10 @@ function showError(error) {
 
 // --------------------------- RENDERS MAP ---------------------------
 function initMap(lat, lon) {
+    
     var userLoc = new google.maps.LatLng(lat, lon);
     // var userLoc = new google.maps.LatLng(29.474201, -98.627893);
     
-
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
         zoom: 13
