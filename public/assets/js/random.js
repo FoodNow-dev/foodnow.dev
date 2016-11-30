@@ -102,6 +102,7 @@ function getLocation() {
 }
 
 function showPosition(position) {
+    // flase position is set to Pearl Studio for Demo Day
 	var lat = (position) ? position.coords.latitude : 29.443134;
     var lon = (position) ? position.coords.longitude : -98.48138;
 
