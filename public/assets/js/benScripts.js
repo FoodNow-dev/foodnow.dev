@@ -12,7 +12,6 @@ function priceFormat(level) {
         case 4 :
             return '$ $ $ $';
     }
-
 }
 
 function rating(level) {
@@ -43,7 +42,6 @@ function rating(level) {
 }
 
 function item_tmpl(data){
-    
     var formattedAddress = data.formatted_address.substring(data.formatted_address.indexOf(","), 1);
     
     var content = '<div class="list text-right"><a href="/restaurants/show?place_id=' + data.place_id + '"><p>';
@@ -106,13 +104,12 @@ function initMap(lat, lon) {
     var userLoc = new google.maps.LatLng(lat, lon);
     // var userLoc = new google.maps.LatLng(29.474201, -98.627893);
     
-
     map = new google.maps.Map(document.getElementById('map'), {
         center: userLoc,
         zoom: 13
     });
     
-     var circle = new google.maps.Marker({
+    var circle = new google.maps.Marker({
         position: userLoc,
         map: map,
         icon: {
