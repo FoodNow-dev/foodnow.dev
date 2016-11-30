@@ -203,13 +203,13 @@
 	{{-- WILL NEED TO USE THE PRODUCTION API HERE WHEN LIVE --}}
 
 	{{-- Production API --}}
-	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=initMap" async defer></script> --}}
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7khJALOM8uuLkCAdi4lsDQFbojqEulHs&libraries=places&callback=initMap" async defer></script>
 
 	<!-- Backend API -->
 	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr7QFq8EX1937OqC6Ge9n7fuE0vJ8dTIo&libraries=places&callback=initMap" async defer></script> --}}
 	
 	{{-- DEV API --}}
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiz0mHf0rFhZRI-dIr7Phh-cUVuHq9dOs&libraries=places&callback=initMap" async defer></script>
+	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiz0mHf0rFhZRI-dIr7Phh-cUVuHq9dOs&libraries=places&callback=initMap" async defer></script> --}}
 	
 
 	
